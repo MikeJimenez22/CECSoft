@@ -1,0 +1,444 @@
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\bin\Release\CapaDatos.dll
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\bin\Release\CapaDatos.pdb
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\obj\Release\CapaDatos.dll
+C:\Users\MIKE\Documents\SystemCecnicManaguaLocal\CapaDatos\obj\Release\CapaDatos.pdb
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\CapaDatos.dll.config
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\CapaDatos.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\CapaDatos.pdb
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\Microsoft.Win32.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\netstandard.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.AppContext.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Collections.Concurrent.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Collections.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Collections.NonGeneric.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Collections.Specialized.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ComponentModel.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ComponentModel.EventBasedAsync.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ComponentModel.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ComponentModel.TypeConverter.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Console.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Data.Common.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.Contracts.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.Debug.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.FileVersionInfo.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.Process.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.StackTrace.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.Tools.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.TraceSource.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.Tracing.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Drawing.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Dynamic.Runtime.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Globalization.Calendars.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Globalization.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Globalization.Extensions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.Compression.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.Compression.ZipFile.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.FileSystem.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.FileSystem.DriveInfo.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.FileSystem.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.FileSystem.Watcher.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.IsolatedStorage.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.MemoryMappedFiles.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.Pipes.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.UnmanagedMemoryStream.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Linq.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Linq.Expressions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Linq.Parallel.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Linq.Queryable.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Http.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.NameResolution.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.NetworkInformation.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Ping.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Requests.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Security.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.Sockets.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.WebHeaderCollection.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.WebSockets.Client.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Net.WebSockets.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ObjectModel.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Reflection.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Reflection.Extensions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Reflection.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Resources.Reader.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Resources.ResourceManager.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Resources.Writer.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Extensions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Handles.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.InteropServices.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Numerics.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Serialization.Formatters.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Serialization.Json.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Serialization.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Serialization.Xml.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Claims.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Cryptography.Algorithms.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Cryptography.Csp.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Cryptography.Encoding.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Cryptography.Primitives.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Cryptography.X509Certificates.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Principal.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.SecureString.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Text.Encoding.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Text.Encoding.Extensions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Text.RegularExpressions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Overlapped.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Tasks.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Tasks.Parallel.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Thread.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.ThreadPool.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Timer.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.ReaderWriter.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.XDocument.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.XmlDocument.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.XmlSerializer.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.XPath.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Xml.XPath.XDocument.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\BouncyCastle.Crypto.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\BouncyCastle.Cryptography.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\Google.Protobuf.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Compression.LZ4.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Hash.xxHash.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\MySql.Data.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\MySqlConnector.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Buffers.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Configuration.ConfigurationManager.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.Pipelines.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Memory.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Numerics.Vectors.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.Loader.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.AccessControl.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Permissions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Principal.Windows.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Text.Encoding.CodePages.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ValueTuple.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\ZstdSharp.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\BouncyCastle.Crypto.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\BouncyCastle.Cryptography.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\Google.Protobuf.pdb
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\Google.Protobuf.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Compression.LZ4.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\K4os.Hash.xxHash.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\MySql.Data.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\MySqlConnector.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Buffers.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.IO.Pipelines.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Memory.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Numerics.Vectors.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.AccessControl.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Permissions.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Security.Principal.Windows.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\bin\Release\System.ValueTuple.xml
+E:\CECSoft - Sistema CECNIC\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+E:\CECSoft - Sistema CECNIC\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+E:\CECSoft - Sistema CECNIC\CapaDatos\obj\Release\CapaDatos.csproj.CopyComplete
+E:\CECSoft - Sistema CECNIC\CapaDatos\obj\Release\CapaDatos.dll
+E:\CECSoft - Sistema CECNIC\CapaDatos\obj\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\CapaDatos.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\Microsoft.Win32.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\netstandard.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.AppContext.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Collections.Concurrent.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Collections.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Collections.NonGeneric.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Collections.Specialized.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ComponentModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ComponentModel.EventBasedAsync.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ComponentModel.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ComponentModel.TypeConverter.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Console.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Data.Common.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.Contracts.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.Debug.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.FileVersionInfo.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.Process.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.StackTrace.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.Tools.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.TraceSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.Tracing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Drawing.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Dynamic.Runtime.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Globalization.Calendars.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Globalization.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Globalization.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.Compression.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.Compression.ZipFile.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.FileSystem.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.FileSystem.DriveInfo.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.FileSystem.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.FileSystem.Watcher.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.IsolatedStorage.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.MemoryMappedFiles.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.Pipes.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.UnmanagedMemoryStream.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Linq.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Linq.Expressions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Linq.Parallel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Linq.Queryable.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Http.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.NameResolution.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.NetworkInformation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Ping.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Requests.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Security.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.Sockets.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.WebHeaderCollection.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.WebSockets.Client.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Net.WebSockets.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ObjectModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Reflection.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Reflection.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Reflection.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Resources.Reader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Resources.ResourceManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Resources.Writer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Handles.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.InteropServices.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Numerics.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Serialization.Formatters.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Serialization.Json.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Serialization.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Serialization.Xml.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Claims.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Cryptography.Algorithms.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Cryptography.Csp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Cryptography.Encoding.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Cryptography.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Cryptography.X509Certificates.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Principal.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.SecureString.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Text.Encoding.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Text.Encoding.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Text.RegularExpressions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Overlapped.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Tasks.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Tasks.Parallel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Thread.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.ThreadPool.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Timer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.ReaderWriter.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.XDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.XmlDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.XmlSerializer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.XPath.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Xml.XPath.XDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\BouncyCastle.Crypto.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\BouncyCastle.Cryptography.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\Google.Protobuf.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Compression.LZ4.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Hash.xxHash.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\MySql.Data.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\MySqlConnector.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Buffers.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Configuration.ConfigurationManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.Pipelines.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Memory.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Numerics.Vectors.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.Loader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.AccessControl.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Permissions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Principal.Windows.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Text.Encoding.CodePages.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ValueTuple.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\ZstdSharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\BouncyCastle.Crypto.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\BouncyCastle.Cryptography.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\Google.Protobuf.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\Google.Protobuf.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Compression.LZ4.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\K4os.Hash.xxHash.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\MySql.Data.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\MySqlConnector.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Buffers.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.IO.Pipelines.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Memory.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Numerics.Vectors.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.AccessControl.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Permissions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Security.Principal.Windows.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\bin\Release\System.ValueTuple.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\obj\Release\CapaDatos.csproj.CopyComplete
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\obj\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\obj\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\CapaDatos.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\Microsoft.Win32.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\netstandard.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.AppContext.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Collections.Concurrent.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Collections.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Collections.NonGeneric.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Collections.Specialized.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ComponentModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ComponentModel.EventBasedAsync.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ComponentModel.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ComponentModel.TypeConverter.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Console.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Data.Common.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.Contracts.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.Debug.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.FileVersionInfo.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.Process.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.StackTrace.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.Tools.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.TraceSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.Tracing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Drawing.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Dynamic.Runtime.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Globalization.Calendars.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Globalization.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Globalization.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.Compression.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.Compression.ZipFile.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.FileSystem.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.FileSystem.DriveInfo.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.FileSystem.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.FileSystem.Watcher.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.IsolatedStorage.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.MemoryMappedFiles.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.Pipes.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.UnmanagedMemoryStream.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Linq.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Linq.Expressions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Linq.Parallel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Linq.Queryable.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Http.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.NameResolution.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.NetworkInformation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Ping.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Requests.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Security.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.Sockets.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.WebHeaderCollection.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.WebSockets.Client.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Net.WebSockets.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ObjectModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Reflection.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Reflection.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Reflection.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Resources.Reader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Resources.ResourceManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Resources.Writer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Handles.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.InteropServices.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Numerics.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Serialization.Formatters.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Serialization.Json.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Serialization.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Serialization.Xml.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Claims.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Cryptography.Algorithms.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Cryptography.Csp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Cryptography.Encoding.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Cryptography.Primitives.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Cryptography.X509Certificates.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Principal.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.SecureString.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Text.Encoding.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Text.Encoding.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Text.RegularExpressions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Overlapped.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Tasks.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Tasks.Parallel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Thread.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.ThreadPool.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Timer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.ReaderWriter.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.XDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.XmlDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.XmlSerializer.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.XPath.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Xml.XPath.XDocument.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\BouncyCastle.Crypto.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\BouncyCastle.Cryptography.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\Google.Protobuf.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Compression.LZ4.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Hash.xxHash.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\MySql.Data.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\MySqlConnector.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Buffers.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Configuration.ConfigurationManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.Pipelines.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Memory.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Numerics.Vectors.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.Loader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.AccessControl.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Permissions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Principal.Windows.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Text.Encoding.CodePages.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ValueTuple.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\ZstdSharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\BouncyCastle.Crypto.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\BouncyCastle.Cryptography.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\Google.Protobuf.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\Google.Protobuf.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Compression.LZ4.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Compression.LZ4.Streams.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\K4os.Hash.xxHash.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\MySql.Data.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\MySqlConnector.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Buffers.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Diagnostics.DiagnosticSource.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.IO.Pipelines.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Memory.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Numerics.Vectors.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.AccessControl.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Permissions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Security.Principal.Windows.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.Threading.Tasks.Extensions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\bin\Release\System.ValueTuple.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\obj\Release\CapaDatos.csproj.CopyComplete
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\obj\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CapaDatos\obj\Release\CapaDatos.pdb

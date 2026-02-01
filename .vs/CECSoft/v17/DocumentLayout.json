@@ -1,0 +1,98 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|c:\\users\\registro\\documents\\cecsoft - sistema cecnic\\caoapresentacion\\notificacionmatriculaonline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|solutionrelative:caoapresentacion\\notificacionmatriculaonline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\caoapresentacion\\cachedetallematricula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|solutionrelative:caoapresentacion\\cachedetallematricula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\caoapresentacion\\frm_datosgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|solutionrelative:caoapresentacion\\frm_datosgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\caoapresentacion\\frm_datosgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F48DEE-D9F0-49DE-85E9-9D1C9084FF0D}|CaoaPresentacion\\CapaPresentacion.csproj|solutionrelative:caoapresentacion\\frm_datosgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B44D6A18-CADC-4FC1-92A3-2E884FF2EF85}|CapaDatos\\CapaDatos.csproj|C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\capadatos\\cd_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B44D6A18-CADC-4FC1-92A3-2E884FF2EF85}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CacheDetalleMatricula.cs",
+              "DocumentMoniker": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\CacheDetalleMatricula.cs",
+              "RelativeDocumentMoniker": "CaoaPresentacion\\CacheDetalleMatricula.cs",
+              "ToolTip": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\CacheDetalleMatricula.cs",
+              "RelativeToolTip": "CaoaPresentacion\\CacheDetalleMatricula.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T21:11:51.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificacionMatriculaONLINE.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\NotificacionMatriculaONLINE.cs",
+              "RelativeDocumentMoniker": "CaoaPresentacion\\NotificacionMatriculaONLINE.cs",
+              "ToolTip": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\NotificacionMatriculaONLINE.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CaoaPresentacion\\NotificacionMatriculaONLINE.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T19:35:15.366Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CD_Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CapaDatos\\CD_Conexion.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\CD_Conexion.cs",
+              "ToolTip": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CapaDatos\\CD_Conexion.cs",
+              "RelativeToolTip": "CapaDatos\\CD_Conexion.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T15:54:04.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm_DatosGenerales.cs",
+              "DocumentMoniker": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "RelativeDocumentMoniker": "CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "ToolTip": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "RelativeToolTip": "CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "ViewState": "AgIAAAoFAAAAAAAAAAAUwBwFAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T15:26:29.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_DatosGenerales.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Registro\\Documents\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "RelativeDocumentMoniker": "CaoaPresentacion\\Frm_DatosGenerales.cs",
+              "ToolTip": "D:\\CECSoft - Sistema CECNIC\\CaoaPresentacion\\Frm_DatosGenerales.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-25T15:26:12.589Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

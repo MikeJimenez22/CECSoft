@@ -1,0 +1,509 @@
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CapaPresentacion.csprojAssemblyReference.cache
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\SistemaCecnic.exe.config
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.ResolveComReference.cache
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Asignacion_Caja.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CustomPrintPreviewForm.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_Usuarios_Activacion.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaEstados.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaGrupos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPadreTutor.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPersonas.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaTurnoCursos.Frm_VistaTurnoCursos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistasEmpleados.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_Vista_Curso_Turno.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmFacturasDeEstudiante.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmLoad.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmModuloCurso.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Anulacion_Egreso.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Aranceles.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ArqueodeCaja.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_AsistenciaEstudiantes.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedasFacturas.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Cambio.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Bajas.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiante.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiantes.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Cajas.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CambioDolar.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CuentasporCobrar.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Cursos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Curso_Turnos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_DatosGenerales.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Egresos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Empleados.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Facturacion.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Formularios_por_Roles.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Grupo.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Grupos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ImpresionCierre.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Incentivo.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Login.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ModificacionMensualidad.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_MovimientosEstudiante.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Nueva_Matricula.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_PagoIncentivo.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Principal.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ReporteRecepcion.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Roles.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Roles_Usuario.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SA.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudArreglo.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudesDeArreglos.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Sucursal.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Usuarios.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VerificacionReferencia.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaEstudiantes.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.NotificacionMatriculaONLINE.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Properties.Resources.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CaoaPresentacion.Tbl_Bajas.resources
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.GenerateResource.cache
+E:\CECSoft - Sistema CECNIC\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.CoreCompileInputs.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CapaPresentacion.csprojAssemblyReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.ResolveComReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Asignacion_Caja.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CustomPrintPreviewForm.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaEstados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaGrupos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPadreTutor.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPersonas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaTurnoCursos.Frm_VistaTurnoCursos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistasEmpleados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_Vista_Curso_Turno.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmCursos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmCursos_turno.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmFacturasDeEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmInicioSesion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmLoad.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmOpcionesAcceso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmRoles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmRolesUsuario.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Anulacion_Egreso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Aranceles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ArqueodeCaja.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Asistencia.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaMatriculasEnLinea.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedasFacturas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Cambio.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Bajas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiantes.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CambioDolar.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CarnetEstudiantil.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CuentasporCobrar.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_DatosGenerales.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Docente.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Empleados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Facturacion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Formularios_por_Roles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Grupo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Incentivo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_MovimientosEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_NotasEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Nueva_Matricula.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_PagoIncentivo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Principal.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ReporteRecepcion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ReportesUniverso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudArreglo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudesDeArreglos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Usuario.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VerificacionReferencia.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaEstudiantes.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.LoginDocente.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.NotificacionMatriculaONLINE.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Properties.Resources.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Reporte_ActaNota.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CaoaPresentacion.Tbl_Bajas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.GenerateResource.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.CoreCompileInputs.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\SistemaCecnic.exe
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\SistemaCecnic.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SqlServerTypes\x64\msvcr120.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SqlServerTypes\x86\msvcr120.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SistemaCecnic.exe.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SistemaCecnic.exe.manifest
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SistemaCecnic.application
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SistemaCecnic.exe
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SistemaCecnic.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\BouncyCastle.Cryptography.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaNegocio.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CircularProgressBar.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ClosedXML.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ClosedXML.Parser.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.Framework.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\EPPlus.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\EPPlus.Interfaces.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\EPPlus.System.Drawing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ExcelNumberFormat.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\FontAwesome.Sharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Google.Protobuf.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\HtmlAgilityPack.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.Streams.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Hash.xxHash.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\MaterialSkin.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Bcl.HashCode.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Extensions.Logging.Abstractions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.Common.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.Design.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.WinForms.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.SqlServer.Types.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\MySql.Data.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\QRCoder.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\RBush.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SixLabors.Fonts.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Buffers.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Configuration.ConfigurationManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Diagnostics.DiagnosticSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.IO.Pipelines.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Memory.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Numerics.Vectors.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Runtime.Loader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.AccessControl.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Cryptography.ProtectedData.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Permissions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Principal.Windows.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Encoding.CodePages.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Encodings.Web.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Json.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Threading.Tasks.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.ValueTuple.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\WinFormAnimation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Zen.Barcode.Core.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ZstdSharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zxing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zxing.presentation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\EnvDTE.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\stdole.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.MSXML.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaDatos.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaNegocio.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CapaNegocio.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\BouncyCastle.Cryptography.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\CircularProgressBar.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ClosedXML.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ClosedXML.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ClosedXML.Parser.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.Framework.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\EPPlus.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ExcelNumberFormat.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Google.Protobuf.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Google.Protobuf.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\HtmlAgilityPack.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\HtmlAgilityPack.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.Streams.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\K4os.Hash.xxHash.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Bcl.HashCode.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\MySql.Data.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\RBush.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\SixLabors.Fonts.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Buffers.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Configuration.ConfigurationManager.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Diagnostics.DiagnosticSource.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.IO.Pipelines.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Memory.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Numerics.Vectors.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.AccessControl.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Cryptography.ProtectedData.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Permissions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Security.Principal.Windows.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Encoding.CodePages.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Encodings.Web.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Text.Json.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.Threading.Tasks.Extensions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\System.ValueTuple.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zxing.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zxing.presentation.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\SistemaCecnic.TrustInfo.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\SistemaCecnic.exe.manifest
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\SistemaCecnic.application
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 09112025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.CopyComplete
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SqlServerTypes\x64\msvcr120.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SqlServerTypes\x86\msvcr120.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SistemaCecnic.exe.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SistemaCecnic.exe.manifest
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SistemaCecnic.application
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SistemaCecnic.exe
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SistemaCecnic.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\BouncyCastle.Cryptography.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaDatos.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaNegocio.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CircularProgressBar.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ClosedXML.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ClosedXML.Parser.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.Framework.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\EPPlus.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\EPPlus.Interfaces.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\EPPlus.System.Drawing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ExcelNumberFormat.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\FontAwesome.Sharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Google.Protobuf.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\HtmlAgilityPack.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.Streams.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Hash.xxHash.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\MaterialSkin.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Bcl.HashCode.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Extensions.Logging.Abstractions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.Common.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.Design.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.ReportViewer.WinForms.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.SqlServer.Types.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\MySql.Data.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\QRCoder.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\RBush.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SixLabors.Fonts.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Buffers.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Configuration.ConfigurationManager.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Diagnostics.DiagnosticSource.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.IO.Pipelines.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Memory.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Numerics.Vectors.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Runtime.Loader.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.AccessControl.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Cryptography.ProtectedData.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Permissions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Principal.Windows.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Encoding.CodePages.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Encodings.Web.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Json.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Threading.Tasks.Extensions.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.ValueTuple.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\WinFormAnimation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Zen.Barcode.Core.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ZstdSharp.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zxing.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zxing.presentation.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\EnvDTE.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\stdole.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.MSXML.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaDatos.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaDatos.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaNegocio.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CapaNegocio.dll.config
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\BouncyCastle.Cryptography.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\CircularProgressBar.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ClosedXML.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ClosedXML.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ClosedXML.Parser.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\DocumentFormat.OpenXml.Framework.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\EPPlus.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ExcelNumberFormat.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Google.Protobuf.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Google.Protobuf.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\HtmlAgilityPack.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\HtmlAgilityPack.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Compression.LZ4.Streams.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\K4os.Hash.xxHash.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Bcl.HashCode.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\MySql.Data.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\RBush.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\SixLabors.Fonts.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Buffers.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Configuration.ConfigurationManager.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Diagnostics.DiagnosticSource.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.IO.Pipelines.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Memory.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Numerics.Vectors.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.AccessControl.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Cryptography.ProtectedData.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Permissions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Principal.Windows.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Encoding.CodePages.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Encodings.Web.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Text.Json.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Threading.Tasks.Extensions.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.ValueTuple.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zxing.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zxing.presentation.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CapaPresentacion.csprojAssemblyReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.ResolveComReference.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Asignacion_Caja.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CustomPrintPreviewForm.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaEstados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaGrupos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPadreTutor.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistaPersonas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaTurnoCursos.Frm_VistaTurnoCursos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_VistasEmpleados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Formularios_Vistas.Frm_Vista_Curso_Turno.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmCursos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmCursos_turno.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmFacturasDeEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmInicioSesion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmLoad.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmOpcionesAcceso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmRoles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.FrmRolesUsuario.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Anulacion_Egreso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Aranceles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ArqueodeCaja.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Asistencia.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaMatriculasEnLinea.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedasFacturas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Cambio.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Bajas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_BusquedaEstudiantes.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CambioDolar.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CarnetEstudiantil.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_CuentasporCobrar.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_DatosGenerales.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Docente.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Empleados.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Facturacion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Formularios_por_Roles.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Grupo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Inasistencias.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Incentivo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_MovimientosEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_NotasEstudiante.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Nueva_Matricula.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_PagoIncentivo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Principal.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ReporteRecepcion.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_ReportesUniverso.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudArreglo.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_SolicitudesDeArreglos.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_Usuario.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VerificacionReferencia.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_VistaEstudiantes.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.LoginDocente.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.NotificacionMatriculaONLINE.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Properties.Resources.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Reporte_ActaNota.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Tbl_Bajas.resources
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.GenerateResource.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.CoreCompileInputs.cache
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\SistemaCecnic.TrustInfo.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\SistemaCecnic.exe.manifest
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\SistemaCecnic.application
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CapaPresentacion.csproj.CopyComplete
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\SistemaCecnic.exe
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\SistemaCecnic.pdb
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.IO.RecyclableMemoryStream.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.ComponentModel.Annotations.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Cryptography.Xml.dll
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\Microsoft.IO.RecyclableMemoryStream.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\bin\Release\System.Security.Cryptography.Xml.xml
+H:\Versiones CecSoft\CECSoft - Sistema CECNIC 05122025\CaoaPresentacion\obj\Release\CaoaPresentacion.Frm_EstudiantesNoAsignados.resources
