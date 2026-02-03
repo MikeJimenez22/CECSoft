@@ -1063,14 +1063,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40110592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40111104">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5Ikf28R21/4O2Epln6x33TVXwsaJmRzXm5CeDcN5758=</dsig:DigestValue>
+        <dsig:DigestValue>MlV55I4V5Cnp1I8V8M+6+Z836tGKFziqxfs5UbpsgpA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
