@@ -343,6 +343,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.TabBusquedaEstudiante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -413,7 +414,7 @@
             this.TabBusquedaEstudiante.Location = new System.Drawing.Point(4, 22);
             this.TabBusquedaEstudiante.Name = "TabBusquedaEstudiante";
             this.TabBusquedaEstudiante.Padding = new System.Windows.Forms.Padding(3);
-            this.TabBusquedaEstudiante.Size = new System.Drawing.Size(1193, 672);
+            this.TabBusquedaEstudiante.Size = new System.Drawing.Size(1210, 672);
             this.TabBusquedaEstudiante.TabIndex = 5;
             this.TabBusquedaEstudiante.Text = "TabBusqueda Estudiante";
             this.TabBusquedaEstudiante.UseVisualStyleBackColor = true;
@@ -440,7 +441,7 @@
             this.pictureBox7.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox7.Location = new System.Drawing.Point(3, 3);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1187, 50);
+            this.pictureBox7.Size = new System.Drawing.Size(1204, 50);
             this.pictureBox7.TabIndex = 56;
             this.pictureBox7.TabStop = false;
             // 
@@ -572,7 +573,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(20, 10);
+            this.button7.Location = new System.Drawing.Point(20, 12);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(141, 37);
             this.button7.TabIndex = 3;
@@ -1177,7 +1178,7 @@
             this.tabControl1.Controls.Add(this.TabAnulacionMatricula);
             this.tabControl1.Controls.Add(this.TabDescuentoMatricula);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(2, 47);
+            this.tabControl1.Location = new System.Drawing.Point(2, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1218, 698);
@@ -1198,7 +1199,7 @@
             this.TabMensualidades.Location = new System.Drawing.Point(4, 22);
             this.TabMensualidades.Name = "TabMensualidades";
             this.TabMensualidades.Padding = new System.Windows.Forms.Padding(3);
-            this.TabMensualidades.Size = new System.Drawing.Size(1193, 672);
+            this.TabMensualidades.Size = new System.Drawing.Size(1210, 672);
             this.TabMensualidades.TabIndex = 9;
             this.TabMensualidades.Text = "TabMensualidades";
             this.TabMensualidades.UseVisualStyleBackColor = true;
@@ -2030,7 +2031,7 @@
             this.TabAbonos.Controls.Add(this.btnAgregarAbono);
             this.TabAbonos.Location = new System.Drawing.Point(4, 22);
             this.TabAbonos.Name = "TabAbonos";
-            this.TabAbonos.Size = new System.Drawing.Size(1193, 672);
+            this.TabAbonos.Size = new System.Drawing.Size(1210, 672);
             this.TabAbonos.TabIndex = 14;
             this.TabAbonos.Text = "TabAbonos";
             this.TabAbonos.UseVisualStyleBackColor = true;
@@ -2323,7 +2324,7 @@
             this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1193, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(1210, 50);
             this.pictureBox1.TabIndex = 113;
             this.pictureBox1.TabStop = false;
             // 
@@ -2361,7 +2362,7 @@
             this.TabLibreria.Location = new System.Drawing.Point(4, 22);
             this.TabLibreria.Name = "TabLibreria";
             this.TabLibreria.Padding = new System.Windows.Forms.Padding(3);
-            this.TabLibreria.Size = new System.Drawing.Size(1193, 672);
+            this.TabLibreria.Size = new System.Drawing.Size(1210, 672);
             this.TabLibreria.TabIndex = 12;
             this.TabLibreria.Text = "TabLibreria";
             this.TabLibreria.UseVisualStyleBackColor = true;
@@ -2559,7 +2560,7 @@
             this.pictureBox11.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox11.Location = new System.Drawing.Point(3, 3);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(1187, 50);
+            this.pictureBox11.Size = new System.Drawing.Size(1204, 50);
             this.pictureBox11.TabIndex = 57;
             this.pictureBox11.TabStop = false;
             // 
@@ -3297,7 +3298,7 @@
             this.TabNuevaMensualidad.Location = new System.Drawing.Point(4, 22);
             this.TabNuevaMensualidad.Name = "TabNuevaMensualidad";
             this.TabNuevaMensualidad.Padding = new System.Windows.Forms.Padding(3);
-            this.TabNuevaMensualidad.Size = new System.Drawing.Size(1193, 672);
+            this.TabNuevaMensualidad.Size = new System.Drawing.Size(1210, 672);
             this.TabNuevaMensualidad.TabIndex = 15;
             this.TabNuevaMensualidad.Text = "NuevaMensualidad";
             this.TabNuevaMensualidad.UseVisualStyleBackColor = true;
@@ -3581,7 +3582,7 @@
             this.TabAnulacionMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabAnulacionMatricula.Name = "TabAnulacionMatricula";
             this.TabAnulacionMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabAnulacionMatricula.Size = new System.Drawing.Size(1193, 672);
+            this.TabAnulacionMatricula.Size = new System.Drawing.Size(1210, 672);
             this.TabAnulacionMatricula.TabIndex = 16;
             this.TabAnulacionMatricula.Text = "TabAnulacionMatricula";
             this.TabAnulacionMatricula.UseVisualStyleBackColor = true;
@@ -3658,7 +3659,7 @@
             this.TabDescuentoMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabDescuentoMatricula.Name = "TabDescuentoMatricula";
             this.TabDescuentoMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabDescuentoMatricula.Size = new System.Drawing.Size(1193, 672);
+            this.TabDescuentoMatricula.Size = new System.Drawing.Size(1210, 672);
             this.TabDescuentoMatricula.TabIndex = 17;
             this.TabDescuentoMatricula.Text = "TabDescuentoMatricula";
             this.TabDescuentoMatricula.UseVisualStyleBackColor = true;
@@ -3864,7 +3865,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1193, 672);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 672);
             this.tabPage1.TabIndex = 18;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -4302,5 +4303,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView TablaDetalleFactura;
         private System.Windows.Forms.TextBox txtIDDETALLEPROGRAMACION;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
