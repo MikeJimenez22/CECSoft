@@ -2254,6 +2254,7 @@ namespace CaoaPresentacion
                                 //InsertamoS Factura detalle
                                 CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                                 CN_Abonos objetoAbono = new CN_Abonos();
+                                CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                                 foreach (DataGridViewRow fila in dataDetalles.Rows)
                                 {
@@ -2271,6 +2272,7 @@ namespace CaoaPresentacion
 
                                         if (idArancel == "11")
                                         {
+                                            objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact,IdDetalleProgramacion,observaciones);
                                             objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                         }
                                         else if (idArancel == "12")
@@ -2343,7 +2345,8 @@ namespace CaoaPresentacion
                             //InsertamoS Factura detalle
                             CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                             CN_Abonos objetoAbono = new CN_Abonos();
-                            
+                            CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
+
                             foreach (DataGridViewRow fila in dataDetalles.Rows)
                             {
                                 if (!fila.IsNewRow) // Evitar la fila vacía al final
@@ -2360,6 +2363,7 @@ namespace CaoaPresentacion
 
                                     if (idArancel == "11")
                                     {
+                                        objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                         objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                     }else if (idArancel == "12")
                                     {
@@ -2441,6 +2445,7 @@ namespace CaoaPresentacion
                                 //InsertamoS Factura detalle
                                 CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                                 CN_Abonos objetoAbono = new CN_Abonos();
+                                CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                                 foreach (DataGridViewRow fila in dataDetalles.Rows)
                                 {
@@ -2458,6 +2463,7 @@ namespace CaoaPresentacion
 
                                         if (idArancel == "11")
                                         {
+                                            objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                             objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                         }
                                         else if (idArancel == "12")
@@ -2531,6 +2537,7 @@ namespace CaoaPresentacion
                             //InsertamoS Factura detalle
                             CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                             CN_Abonos objetoAbono = new CN_Abonos();
+                            CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                             foreach (DataGridViewRow fila in dataDetalles.Rows)
                             {
@@ -2548,6 +2555,7 @@ namespace CaoaPresentacion
 
                                     if (idArancel == "11")
                                     {
+                                        objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                         objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                     }
                                     else if (idArancel == "12")

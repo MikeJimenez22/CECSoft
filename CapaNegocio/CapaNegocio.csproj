@@ -157,6 +157,7 @@
     <Compile Include="CN_Estudiantes.cs" />
     <Compile Include="CN_Factura.cs" />
     <Compile Include="CN_FacturaGeneral.cs" />
+    <Compile Include="CN_FacturaMensualidades.cs" />
     <Compile Include="CN_Factura_Matricula.cs" />
     <Compile Include="CN_FacturDetalle.cs" />
     <Compile Include="CN_Formularios.cs" />

@@ -166,6 +166,7 @@
     <Compile Include="CD_FacturaAnulacion.cs" />
     <Compile Include="CD_FacturaDetalle.cs" />
     <Compile Include="CD_FacturaGeneral.cs" />
+    <Compile Include="CD_FacturaMensualidades.cs" />
     <Compile Include="CD_Factura_Matriculas.cs" />
     <Compile Include="CD_Formularios.cs" />
     <Compile Include="CD_Grupos.cs" />
