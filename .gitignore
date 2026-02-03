@@ -1,0 +1,118 @@
+#############################################
+# Visual Studio / C# Windows Forms GitIgnore
+#############################################
+
+# Carpetas del IDE
+.vs/
+.idea/
+
+# Compilaciones
+bin/
+obj/
+[Bb]uild/
+[Rr]elease/
+[Dd]ebug/
+
+# Archivos generados por compilación
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.meta
+
+# Archivos de usuario
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide
+
+# Configuración de Visual Studio
+*.psess
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.backup
+*.log
+
+# Archivos de base de datos locales
+*.mdf
+*.ldf
+*.ndf
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.sqlite
+*.sqlite3
+
+# Específicos de Entity Framework
+*.edmx.diagram
+
+# NuGet
+packages/
+*.nupkg
+nuget.exe
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+
+# Archivos de publicación
+Publish/
+publish/
+
+# Archivos generados por ClickOnce
+*.publishsettings
+
+# Caché y datos temporales
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.ide
+*.ide-shm
+*.ide-wal
+
+# Resharper / Rider
+_ReSharper*/
+*.DotSettings.user
+
+# Archivos de reportes
+*.rdl.data
+*.rdl
+*.rdlc
+
+# Archivos de instalación
+*.msi
+*.cab
+
+# Archivos ZIP o comprimidos
+*.zip
+*.rar
+*.7z
+
+# Carpetas de pruebas
+TestResults/
+[Tt]est[Rr]esult*/
+
+# Archivos de configuración locales
+appsettings.Development.json
+
+# Otros
+Thumbs.db
+Desktop.ini
+
+#############################################
+# EXCEPCIONES ESPECÍFICAS DE TU PROYECTO
+#############################################
+
+# Si tenés una base de datos que NO querés subir
+
