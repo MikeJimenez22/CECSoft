@@ -290,9 +290,7 @@ namespace CaoaPresentacion
         private void RealizarImpresionExpediente(string CodigoMatricula)
         {
             CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-
-
-
+            
             tabla = objetoCN.GenerarExpediente(CodigoMatricula);
             tablaFactura = objetoCN.ObtenerFacturaInicio(CodigoMatricula);
 
@@ -567,6 +565,7 @@ namespace CaoaPresentacion
                 else if (this.dataEstudiantes.Columns[e.ColumnIndex].Name == "Detalle")
                 {
                     string CodMAT = this.dataEstudiantes.CurrentRow.Cells["Cod_Matricula"].Value.ToString();
+                    this.txtIdMatricula.Text = this.dataEstudiantes.CurrentRow.Cells["Id_Matricula"].Value.ToString();
                     this.MostrarDatosMatriculasPorCodigo(CodMAT);
 
                     this.tabControl1.SelectedTab = TabMatricula;
@@ -618,18 +617,18 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (this.txtCodMatricula.Text == string.Empty)
+                if (this.txtCodigoMatricula.Text == string.Empty)
                 {
                     MessageBox.Show("No se ha seleccionado Ninguna Matricula", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    this.RealizarImpresionExpediente(this.txtCodMatricula.Text);
+                    this.RealizarImpresionExpediente(this.txtCodigoMatricula.Text);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

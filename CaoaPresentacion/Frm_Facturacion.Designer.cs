@@ -561,7 +561,7 @@
             this.TabFacturacion.Location = new System.Drawing.Point(4, 22);
             this.TabFacturacion.Name = "TabFacturacion";
             this.TabFacturacion.Padding = new System.Windows.Forms.Padding(3);
-            this.TabFacturacion.Size = new System.Drawing.Size(1193, 672);
+            this.TabFacturacion.Size = new System.Drawing.Size(1210, 672);
             this.TabFacturacion.TabIndex = 0;
             this.TabFacturacion.Text = "TabFacturacion";
             this.TabFacturacion.UseVisualStyleBackColor = true;
@@ -586,7 +586,7 @@
             this.pictureBox10.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox10.Location = new System.Drawing.Point(3, 3);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(1187, 55);
+            this.pictureBox10.Size = new System.Drawing.Size(1204, 55);
             this.pictureBox10.TabIndex = 56;
             this.pictureBox10.TabStop = false;
             // 
@@ -1177,10 +1177,10 @@
             this.tabControl1.Controls.Add(this.TabAnulacionMatricula);
             this.tabControl1.Controls.Add(this.TabDescuentoMatricula);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(13, 34);
+            this.tabControl1.Location = new System.Drawing.Point(2, 47);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1201, 698);
+            this.tabControl1.Size = new System.Drawing.Size(1218, 698);
             this.tabControl1.TabIndex = 4;
             // 
             // TabMensualidades
@@ -2584,7 +2584,7 @@
             this.TabPago.Location = new System.Drawing.Point(4, 22);
             this.TabPago.Name = "TabPago";
             this.TabPago.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPago.Size = new System.Drawing.Size(1193, 672);
+            this.TabPago.Size = new System.Drawing.Size(1210, 672);
             this.TabPago.TabIndex = 13;
             this.TabPago.Text = "TabPago";
             this.TabPago.UseVisualStyleBackColor = true;
@@ -3287,7 +3287,7 @@
             this.pictureBox12.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox12.Location = new System.Drawing.Point(3, 3);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(1187, 41);
+            this.pictureBox12.Size = new System.Drawing.Size(1204, 41);
             this.pictureBox12.TabIndex = 58;
             this.pictureBox12.TabStop = false;
             // 

@@ -6816,8 +6816,8 @@ H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Permissions.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Principal.Windows.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Threading.Tasks.Extensions.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.ValueTuple.xml
-H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
 H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.dll
 H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.pdb
+H:\Proyectos\CECSoft\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache

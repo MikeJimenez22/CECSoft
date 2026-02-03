@@ -165,6 +165,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtIdMatricula = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -497,10 +498,10 @@
             this.tabControl1.Controls.Add(this.TabGraficoMatriculas);
             this.tabControl1.Controls.Add(this.TabCarnet);
             this.tabControl1.Controls.Add(this.TabBajas);
-            this.tabControl1.Location = new System.Drawing.Point(3, 25);
+            this.tabControl1.Location = new System.Drawing.Point(4, 34);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1431, 1095);
+            this.tabControl1.Size = new System.Drawing.Size(1260, 845);
             this.tabControl1.TabIndex = 1;
             // 
             // TabUniverso
@@ -510,13 +511,14 @@
             this.TabUniverso.Location = new System.Drawing.Point(4, 22);
             this.TabUniverso.Name = "TabUniverso";
             this.TabUniverso.Padding = new System.Windows.Forms.Padding(3);
-            this.TabUniverso.Size = new System.Drawing.Size(1423, 1069);
+            this.TabUniverso.Size = new System.Drawing.Size(1252, 819);
             this.TabUniverso.TabIndex = 0;
             this.TabUniverso.Text = "TabUniverso";
             this.TabUniverso.UseVisualStyleBackColor = true;
             // 
             // TabMatricula
             // 
+            this.TabMatricula.Controls.Add(this.txtIdMatricula);
             this.TabMatricula.Controls.Add(this.button17);
             this.TabMatricula.Controls.Add(this.button10);
             this.TabMatricula.Controls.Add(this.button6);
@@ -575,7 +577,7 @@
             this.TabMatricula.Font = new System.Drawing.Font("Symbol", 8.25F);
             this.TabMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabMatricula.Name = "TabMatricula";
-            this.TabMatricula.Size = new System.Drawing.Size(1423, 1069);
+            this.TabMatricula.Size = new System.Drawing.Size(1252, 819);
             this.TabMatricula.TabIndex = 2;
             this.TabMatricula.Text = "TabMatricula";
             this.TabMatricula.UseVisualStyleBackColor = true;
@@ -886,7 +888,7 @@
             this.txtDireccionEstudiante.Location = new System.Drawing.Point(595, 227);
             this.txtDireccionEstudiante.Multiline = true;
             this.txtDireccionEstudiante.Name = "txtDireccionEstudiante";
-            this.txtDireccionEstudiante.Size = new System.Drawing.Size(651, 86);
+            this.txtDireccionEstudiante.Size = new System.Drawing.Size(648, 86);
             this.txtDireccionEstudiante.TabIndex = 24;
             // 
             // label21
@@ -1115,7 +1117,7 @@
             this.pictureBox2.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1423, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(1252, 50);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -1128,7 +1130,7 @@
             this.TabGrupo.Location = new System.Drawing.Point(4, 22);
             this.TabGrupo.Name = "TabGrupo";
             this.TabGrupo.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGrupo.Size = new System.Drawing.Size(1423, 1069);
+            this.TabGrupo.Size = new System.Drawing.Size(1252, 819);
             this.TabGrupo.TabIndex = 3;
             this.TabGrupo.Text = "TabGrupo";
             this.TabGrupo.UseVisualStyleBackColor = true;
@@ -1242,7 +1244,7 @@
             this.TabHistorialMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabHistorialMatricula.Name = "TabHistorialMatricula";
             this.TabHistorialMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabHistorialMatricula.Size = new System.Drawing.Size(1423, 1069);
+            this.TabHistorialMatricula.Size = new System.Drawing.Size(1252, 819);
             this.TabHistorialMatricula.TabIndex = 4;
             this.TabHistorialMatricula.Text = "TabHistorialMatricula";
             this.TabHistorialMatricula.UseVisualStyleBackColor = true;
@@ -1657,6 +1659,16 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
+            // txtIdMatricula
+            // 
+            this.txtIdMatricula.Enabled = false;
+            this.txtIdMatricula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdMatricula.Location = new System.Drawing.Point(1172, 57);
+            this.txtIdMatricula.Name = "txtIdMatricula";
+            this.txtIdMatricula.Size = new System.Drawing.Size(73, 26);
+            this.txtIdMatricula.TabIndex = 55;
+            this.txtIdMatricula.Visible = false;
+            // 
             // Frm_BusquedaEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1847,5 +1859,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtmotivo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIdMatricula;
     }
 }

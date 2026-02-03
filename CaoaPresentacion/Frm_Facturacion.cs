@@ -24,6 +24,40 @@ namespace CaoaPresentacion
 {
     public partial class Frm_Facturacion : Form
     {
+       
+
+        //*************** Variables **************************
+
+        string CodigoFactura;
+        string Nombres, Apellidos, Cedula, Carnet, Cod_Matricula, NombreCurso, Turno, Horario;
+        string FechaProgramada_, Concepto_, Monto_, Descripcion_, Estado_, FechaVencimiento_, Mora_, NumProgramacion_, Id_Detalle_Programacion_, IdMoneda_, TasaCambio_;
+        string VariableFactura;
+        bool MensualidadEncontrada;
+        string TipoOrigenMatricula;
+        string IdActivacionMatricula;
+        string CodigoComparacion;
+
+        CD_Conexion conexion = new CD_Conexion();
+
+        string name = System.Windows.Forms.SystemInformation.ComputerName;
+        string ValorMoneda;
+        public string CodigoFactu { get; set; }
+
+        //Cargamos el PrintDocument y el PrintDialog
+        private PrintDocument printDocument1 = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
+
+        //Cargamos el PrintDocument y el PrintDialog para los pagos por Deposito
+        private PrintDocument printDocument2 = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog2 = new PrintPreviewDialog();
+
+
+
+        //Credenciales cuenta de Google para enviar Notificaciones del sistema
+        const string Usuario = "CecnicManagua2023@gmail.com";
+        const string Password = "ajkxkeukzfjsptmk";
+
+
         string PrimerIdDetalleProgramacion;
         string ActualIdDetalleProgramacion;
         bool MoraAplicada = false;
@@ -34,15 +68,11 @@ namespace CaoaPresentacion
         string TipoAccion;
         int rowIndex;
         private DateTime fechaMasRecienteGlobal;
-
-
-
-
         int copias = 0; // cantidad de copias deseadas
         int CopiasReinicio = 0;
-        
-
         string LetraCaja;
+
+        //*****************************************************
 
         public Frm_Facturacion()
         {
@@ -54,10 +84,7 @@ namespace CaoaPresentacion
             // Eventos para los documentos de impresión
             printDocument1.PrintPage += new PrintPageEventHandler(PrintDocument1_PrintPage);
             printDocument2.PrintPage += new PrintPageEventHandler(PrintDocument2_PrintPage);
-
-      
-
-
+            
             DataGridViewConfigurator.Configure(this.TablaDetalleFactura,this.dataEstudiantes,this.dataMensualidadesEstudiante,this.dataMensualidadesEstudiante,this.dataDetalles);
             // Cargar los ComboBoxes necesarios
             CargarCombos();
@@ -390,38 +417,7 @@ namespace CaoaPresentacion
 
         
 
-        //*************** Variables **************************
-
-        string CodigoFactura;
-        string Nombres, Apellidos, Cedula, Carnet, Cod_Matricula, NombreCurso, Turno, Horario;
-        string FechaProgramada_, Concepto_, Monto_, Descripcion_, Estado_, FechaVencimiento_, Mora_, NumProgramacion_, Id_Detalle_Programacion_, IdMoneda_, TasaCambio_;
-        string VariableFactura;
-        bool MensualidadEncontrada;
-        string TipoOrigenMatricula;
-        string IdActivacionMatricula;
-        string CodigoComparacion;
-       
-        CD_Conexion conexion = new CD_Conexion();
       
-        string name = System.Windows.Forms.SystemInformation.ComputerName;
-        string ValorMoneda;
-        public string CodigoFactu { get; set; }
-
-        //Cargamos el PrintDocument y el PrintDialog
-        private PrintDocument printDocument1 = new PrintDocument();
-        private PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
-
-        //Cargamos el PrintDocument y el PrintDialog para los pagos por Deposito
-        private PrintDocument printDocument2 = new PrintDocument();
-        private PrintPreviewDialog printPreviewDialog2 = new PrintPreviewDialog();
-
-      
-
-        //Credenciales cuenta de Google para enviar Notificaciones del sistema
-        const string Usuario = "CecnicManagua2023@gmail.com";
-        const string Password = "ajkxkeukzfjsptmk";
-
-        //*****************************************************
 
 
         private void CargarFacturacion()
@@ -893,10 +889,7 @@ namespace CaoaPresentacion
             }
 
         }
-
-
-
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -950,9 +943,6 @@ namespace CaoaPresentacion
 
                 this.ObtenerDatos();
                
-
-
-
                 // Cambiar de tab y deshabilitar grupo
                 tabControl1.SelectedTab = TabPago;
             }
@@ -1019,13 +1009,10 @@ namespace CaoaPresentacion
 
                 CacheDatos.CodigodeCarnet = this.txtcodigocarnet.Text;
                 CacheDatos.ValorVentanaProgramacion = "nuevamatricula";
-
-
+                
                 this.txtNombreFactura.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
                 this.txtCedulaRuc.Text = dr["Cedula"].ToString();
-
-
-
+                
 
             }
             conexion.CerrarConexion();
@@ -1043,13 +1030,10 @@ namespace CaoaPresentacion
                 CN_FacturaGeneral objetoCNFac = new CN_FacturaGeneral();
                 objetoCNFac.ActualizarFacturaGeneralPendiente("1");
                 
-
                 this.BorrarDatosCurso();
                 Frm_Facturacion frm = new Frm_Facturacion();
                 frm.Show();
-
-
-
+                
             }
             catch (Exception)
             {
@@ -1102,8 +1086,7 @@ namespace CaoaPresentacion
                 this.txtcodigocarnet.Text = string.Empty;
                 this.txtNombreFactura.Text = string.Empty;
                 this.txtCedulaRuc.Text = string.Empty;
-
-
+                
                 CD_Conexion conexion = new CD_Conexion();
                 conexion.AbrirConexion();
                 SqlCommand cm = new SqlCommand("select a.Id_estudiante,a.Cod_carnet,b.Nombres,b.Apellidos,b.Cedula,c.NombreSucursal,d.Estado from Tbl_Estudiantes a join Tbl_Personas b on a.Id_persona = b.Id_persona join TblSucursales c on a.Id_sucursal = c.Id_sucursal join Tbl_Estados d on  a.Id_estado = d.Id_estado where a.Cod_carnet = '" + txtBusquedaEstudiante.Text + "'", conexion.Conexion());
@@ -1206,8 +1189,7 @@ namespace CaoaPresentacion
                 cmbTipoMonedaLibreria.ValueMember = "IdMoneda";
                 cmbTipoMonedaLibreria.DisplayMember = "Descripcion";
                 cmbTipoMonedaLibreria.DataSource = dt;
-
-
+                
             }
             catch (Exception)
             {
@@ -1459,8 +1441,7 @@ namespace CaoaPresentacion
                             this.MostrarDetallePago(NumProgramacion_);
 
                         }
-
-
+                        
                     }
 
                 }
@@ -1632,8 +1613,7 @@ namespace CaoaPresentacion
             return new DateTime(fecha.Year, fecha.Month, ultimoDia);
         }
 
-
-
+        
 
         private void EjecutarMetodosProgramacion(string FechaProgramada, string Concepto, string Monto, string Descripcion, string Estado, string FechaVencimiento, string Mora, string NumProgramacion, string IdDetalleProgramacion, string IdMoneda, string TasaCambio)
         {
@@ -2274,6 +2254,7 @@ namespace CaoaPresentacion
                                 //InsertamoS Factura detalle
                                 CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                                 CN_Abonos objetoAbono = new CN_Abonos();
+                                CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                                 foreach (DataGridViewRow fila in dataDetalles.Rows)
                                 {
@@ -2291,6 +2272,7 @@ namespace CaoaPresentacion
 
                                         if (idArancel == "11")
                                         {
+                                            objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact,IdDetalleProgramacion,observaciones);
                                             objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                         }
                                         else if (idArancel == "12")
@@ -2363,7 +2345,8 @@ namespace CaoaPresentacion
                             //InsertamoS Factura detalle
                             CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                             CN_Abonos objetoAbono = new CN_Abonos();
-                            
+                            CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
+
                             foreach (DataGridViewRow fila in dataDetalles.Rows)
                             {
                                 if (!fila.IsNewRow) // Evitar la fila vacía al final
@@ -2380,6 +2363,7 @@ namespace CaoaPresentacion
 
                                     if (idArancel == "11")
                                     {
+                                        objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                         objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                     }else if (idArancel == "12")
                                     {
@@ -2461,6 +2445,7 @@ namespace CaoaPresentacion
                                 //InsertamoS Factura detalle
                                 CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                                 CN_Abonos objetoAbono = new CN_Abonos();
+                                CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                                 foreach (DataGridViewRow fila in dataDetalles.Rows)
                                 {
@@ -2478,6 +2463,7 @@ namespace CaoaPresentacion
 
                                         if (idArancel == "11")
                                         {
+                                            objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                             objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                         }
                                         else if (idArancel == "12")
@@ -2551,6 +2537,7 @@ namespace CaoaPresentacion
                             //InsertamoS Factura detalle
                             CN_FacturDetalle objetoDetalle = new CN_FacturDetalle();
                             CN_Abonos objetoAbono = new CN_Abonos();
+                            CN_FacturaMensualidades objetoFacMensualidades = new CN_FacturaMensualidades();
 
                             foreach (DataGridViewRow fila in dataDetalles.Rows)
                             {
@@ -2568,6 +2555,7 @@ namespace CaoaPresentacion
 
                                     if (idArancel == "11")
                                     {
+                                        objetoFacMensualidades.InsertarFacturaMensualidades(CodigoFact, IdDetalleProgramacion, observaciones);
                                         objetoFactura.ModificarEstadoaCompletado(IdDetalleProgramacion);
                                     }
                                     else if (idArancel == "12")
