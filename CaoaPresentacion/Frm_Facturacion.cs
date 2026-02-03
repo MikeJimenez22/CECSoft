@@ -33,10 +33,11 @@ namespace CaoaPresentacion
         string CodigoSolicitud;
         string TipoAccion;
         int rowIndex;
+        private DateTime fechaMasRecienteGlobal;
 
-       
-     
-     
+
+
+
         int copias = 0; // cantidad de copias deseadas
         int CopiasReinicio = 0;
         
@@ -3678,6 +3679,12 @@ namespace CaoaPresentacion
         {
             try
             {
+             fechaMasRecienteGlobal = dataMensualidadesEstudiante.Rows
+             .Cast<DataGridViewRow>()
+             .Where(row => row.Cells["Fecha_Vencimiento"].Value != null)
+             .Select(row => Convert.ToDateTime(row.Cells["Fecha_Vencimiento"].Value))
+             .Max();
+
                 int ContadorCompletados = 0;
                 int TotalRegistros = dataMensualidadesEstudiante.Rows.Count;
                 
@@ -3761,11 +3768,22 @@ namespace CaoaPresentacion
         {
             try
             {
-                this.txtConceptoMensualidad.Text = "MENSUALIDAD, " + cmbmes.Text + " " + cmbaño.Text;
+
+
+                
 
                 int numeroMes = DateTime.ParseExact(cmbmes.Text, "MMMM", new System.Globalization.CultureInfo("es-ES")).Month;
                 fechaVencimientoMensualidad = new DateTime(int.Parse(cmbaño.Text), numeroMes, int.Parse(DiaVencimientoMensualidad.ToString()));
-                
+
+                if (fechaVencimientoMensualidad <= fechaMasRecienteGlobal)
+                {
+                    MessageBox.Show("ya esta mensualidad se encuentra cancelada", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtConceptoMensualidad.Text = string.Empty;
+                } else if (fechaVencimientoMensualidad > fechaMasRecienteGlobal)
+                {
+                    this.txtConceptoMensualidad.Text = "MENSUALIDAD, " + cmbmes.Text + " " + cmbaño.Text;
+                }
+
             }
             catch (Exception)
             {
@@ -3791,27 +3809,72 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (this.cmbTipoMonedaMensualidad.Text == "Selecciona una Moneda")
+                // VALIDACIONES
+                if (cmbTipoMonedaMensualidad.Text == "Selecciona una Moneda")
                 {
                     MessageBox.Show("Selecciona una Moneda", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }else if (this.txtMontoMensualidad.Text == string.Empty)
-                {
-                    MessageBox.Show("Monto no puede estar vacio","SISTEMA CECNIC",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }else if (this.txtConceptoMensualidad.Text == string.Empty)
-                {
-                    MessageBox.Show("Selecciona el Mes y año a cancelar", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
+                if (string.IsNullOrWhiteSpace(txtMontoMensualidad.Text))
+                {
+                    MessageBox.Show("El monto no puede estar vacío", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMontoMensualidad.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtConceptoMensualidad.Text))
+                {
+                    MessageBox.Show("Selecciona el mes y año a cancelar", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtConceptoMensualidad.Focus();
+                    return;
+                }
+
+                // PROCESO DE INSERCIÓN
                 CN_Detalle_Programacion objetoCN = new CN_Detalle_Programacion();
-                objetoCN.Insertar(this.txtNProgramacionMensualidad.Text,fechaVencimientoMensualidad.ToShortDateString(),this.txtConceptoMensualidad.Text,this.txtMontoMensualidad.Text,this.cmbTipoMonedaMensualidad.SelectedValue.ToString(),this.fechaVencimientoMensualidad.ToShortDateString(),"0","10");
-                this.MostrarDetallePago(this.txtNumProgramacionEstudiante.Text);
-                MessageBox.Show("Mensualidad Agregada Correctamente", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.tabControl1.SelectedTab = TabMensualidades;
+
+                string numeroProgramacion = txtNProgramacionMensualidad.Text;
+                string fechaVencimiento = fechaVencimientoMensualidad.ToShortDateString();
+                string concepto = txtConceptoMensualidad.Text;
+                string monto = txtMontoMensualidad.Text;
+                string tipoMoneda = cmbTipoMonedaMensualidad.SelectedValue.ToString();
+
+                objetoCN.Insertar(
+                    numeroProgramacion,
+                    fechaVencimiento,
+                    concepto,
+                    monto,
+                    tipoMoneda,
+                    fechaVencimiento,
+                    "0",
+                    "10"
+                );
+
+                // ACTUALIZAR INTERFAZ
+                MostrarDetallePago(txtNumProgramacionEstudiante.Text);
+
+                MessageBox.Show("Mensualidad agregada correctamente",
+                                "SISTEMA CECNIC",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                tabControl1.SelectedTab = TabMensualidades;
             }
-            catch (Exception)
+            catch (FormatException)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Formato de datos incorrecto. Verifique el monto ingresado.",
+                                "SISTEMA CECNIC",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de sistema: " + ex.Message,
+                                "SISTEMA CECNIC",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+
         }
 
         private void txtMontoMensualidad_KeyPress(object sender, KeyPressEventArgs e)
