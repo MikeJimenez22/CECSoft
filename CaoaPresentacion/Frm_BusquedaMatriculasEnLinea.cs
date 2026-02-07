@@ -41,7 +41,20 @@ namespace CaoaPresentacion
                 {
                     connection.Open();
 
-                    string query = "SELECT codigo_referencia,fecha_registro,nombres,apellidos,direccion,NombreCurso,Turno,Horario,FechaInicio,OrigenMatricula FROM u625629450_register45.Estudiantes where fecha_registro between @desde and @hasta; ";
+                    string query = @"SELECT codigo_referencia,
+        fecha_registro,
+        nombres,
+        apellidos,
+        direccion,
+        NombreCurso,
+        Turno,
+        Horario,
+        FechaInicio,
+        OrigenMatricula
+FROM u625629450_register45.Estudiantes
+WHERE fecha_registro >= @desde
+  AND fecha_registro < DATE_ADD(@hasta, INTERVAL 1 DAY);";
+
 
                     MySqlCommand command = new MySqlCommand(query, connection);
 
