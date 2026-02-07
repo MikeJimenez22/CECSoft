@@ -1039,6 +1039,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="721320">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8MB68OhNTdTaS9eCO6RTW8BIGzv2I+1Atlm2gUemu3U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QRCoder.dll" size="154112">
       <assemblyIdentity name="QRCoder" version="1.6.0.0" publicKeyToken="C4ED5B9AE8358A28" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -1063,14 +1075,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40111104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40121344">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sp+uSEGmGHyqkTUBUQLK5Chk+ya6KNrOieoCR6RAXkw=</dsig:DigestValue>
+        <dsig:DigestValue>S0n1buMx51O45vuEgRElHYsRT6zTgon15bjU4DPBoAY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1404,13 +1416,13 @@
       <dsig:DigestValue>/EkN/oos7QqwWcuTyuimn8UT7vHelt+5Z17GjGcscQs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SistemaCecnic.exe.config" size="6798">
+  <file name="SistemaCecnic.exe.config" size="6778">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hrJg+ENeMyhaWBi32vYMxoZqQ67iVHf4EpjPRBq+rY4=</dsig:DigestValue>
+      <dsig:DigestValue>HKrAAE+mCcvEFPxEeXUK1R879LvO3i6HPiTMcnLHIUo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SqlServerTypes\readme.htm" size="2369">

@@ -43,7 +43,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(166, 56);
+            this.label2.Location = new System.Drawing.Point(176, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 25);
             this.label2.TabIndex = 1;
@@ -52,16 +52,16 @@
             // txtValorDolar
             // 
             this.txtValorDolar.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtValorDolar.Location = new System.Drawing.Point(147, 170);
+            this.txtValorDolar.Location = new System.Drawing.Point(123, 161);
             this.txtValorDolar.Name = "txtValorDolar";
-            this.txtValorDolar.Size = new System.Drawing.Size(293, 26);
+            this.txtValorDolar.Size = new System.Drawing.Size(257, 26);
             this.txtValorDolar.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 165);
+            this.label1.Location = new System.Drawing.Point(39, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 5;
@@ -82,7 +82,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 12F);
             this.button1.Image = global::CaoaPresentacion.Properties.Resources._285657_floppy_guardar_save_icon;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(302, 204);
+            this.button1.Location = new System.Drawing.Point(386, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 43);
             this.button1.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 107);
+            this.label3.Location = new System.Drawing.Point(61, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 25);
             this.label3.TabIndex = 9;
@@ -105,7 +105,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F);
-            this.label4.Location = new System.Drawing.Point(330, 114);
+            this.label4.Location = new System.Drawing.Point(351, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 18);
             this.label4.TabIndex = 10;

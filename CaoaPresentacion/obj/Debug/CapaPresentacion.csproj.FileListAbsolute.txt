@@ -14650,3 +14650,5 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.application
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.exe
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.pdb
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.xml

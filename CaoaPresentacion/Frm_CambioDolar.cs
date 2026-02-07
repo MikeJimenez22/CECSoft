@@ -2,6 +2,8 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using TuNamespace;
+
 
 namespace CaoaPresentacion
 {
@@ -9,11 +11,14 @@ namespace CaoaPresentacion
     {
 
         CN_Moneda objetoCN = new CN_Moneda();
-
+      
 
         public Frm_CambioDolar()
         {
             InitializeComponent();
+         
+
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +83,8 @@ namespace CaoaPresentacion
             }
 
         }
+
+      
     }
 
 }
