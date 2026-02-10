@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="116736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="115712">
       <assemblyIdentity name="CapaDatos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9k5hHVWrQcu7nZEb3bg/2lcS41tMhwZpqN/fJt84WJU=</dsig:DigestValue>
+        <dsig:DigestValue>Qum97Pd67arpKLYEZO+Nx8ZgbF12y2upz8IB1Qzrrmw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1075,14 +1075,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40118272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40118784">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ic86ce3SEk95+tCZZPsrTqHK6XRieJNwR+21Q03Epso=</dsig:DigestValue>
+        <dsig:DigestValue>0w5jZpGhjuwyQuOT/PiG43fvisFYmkX2wTDmYa8YOKU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

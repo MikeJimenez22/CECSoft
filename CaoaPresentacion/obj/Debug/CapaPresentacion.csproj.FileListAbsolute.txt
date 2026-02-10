@@ -14460,6 +14460,7 @@ H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.ReportViewer.Processin
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.SqlServer.Types.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\MySql.Data.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\QRCoder.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\RBush.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\SixLabors.Fonts.dll
@@ -14521,6 +14522,7 @@ H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Extensions.DependencyI
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\MySql.Data.xml
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\RBush.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\SixLabors.Fonts.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\System.Buffers.xml
@@ -14650,5 +14652,3 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.application
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.exe
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.pdb
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.dll
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Newtonsoft.Json.xml
