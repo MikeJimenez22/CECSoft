@@ -320,103 +320,175 @@ namespace CaoaPresentacion
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Font tituloFont = new Font("Arial", 16, FontStyle.Bold);
-            Font subtituloFont = new Font("Arial", 14, FontStyle.Bold);
-            Font textoDestacadoFont = new Font("Arial", 12, FontStyle.Italic);
-            Font textoPequenioFont = new Font("Arial", 10);
+            Graphics g = e.Graphics;
 
-            Bitmap codigoDeBarras = GenerarCodigoDeBarras(tabla.Rows[0][1].ToString());
+            // ===== FUENTES =====
+            Font titulo = new Font("Arial", 18, FontStyle.Bold);
+            Font subtitulo = new Font("Arial", 11, FontStyle.Bold);
+            Font texto = new Font("Arial", 10);
+            Font textoItalic = new Font("Arial", 10, FontStyle.Italic);
+            Font footerFont = new Font("Arial", 8, FontStyle.Italic);
 
+            // ===== MEDIDAS =====
+            int margenX = 50;
+            int ancho = 750;
+            int y = 40;
 
-            
+            // ===== ENCABEZADO =====
+            Rectangle header = new Rectangle(margenX, y, ancho, 80);
+            DibujarCaja(g, header, Color.Gainsboro);
 
-            Font detalleFont = new Font("Arial", 12);
-            int x = 100;
-            int y = 100;
-            int interlineado = 20;
+            StringFormat center = new StringFormat { Alignment = StringAlignment.Center };
 
+            g.DrawString("CECNIC", titulo, Brushes.Black, margenX + ancho / 2, y + 10, center);
+            g.DrawString("EXPEDIENTE ESTUDIANTIL", subtitulo, Brushes.Black, margenX + ancho / 2, y + 45, center);
 
-            // e.Graphics.DrawImage(imageToPrint, destRect); // Cambia las coordenadas (100, 100) según sea necesario
-            e.Graphics.DrawString("CECNIC - ¡CAPACITACION SIN LIMITES!", tituloFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Expediente estudiantil", subtituloFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("_____________________________________________________", subtituloFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Detalle de Registro", textoDestacadoFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Código de Matrícula: " + tabla.Rows[0][1].ToString() + "  " + "  Fecha de Inicio: " + Convert.ToDateTime(tabla.Rows[0][3]).ToShortDateString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Matriculado Por: " + tabla.Rows[0][2].ToString() + " " + "  Fecha de Registro: " + Convert.ToDateTime(tabla.Rows[0][4]).ToShortDateString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Datos Personales", textoDestacadoFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("_____________________________________________________", subtituloFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Nombres Estudiante(*): " + tabla.Rows[0][6].ToString() + " " + tabla.Rows[0][7].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Fecha de Nacimiento: " + Convert.ToDateTime(tabla.Rows[0][8]).ToShortDateString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Celular 1: " + tabla.Rows[0][9].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Nombre del Tutor: " + tabla.Rows[0][10].ToString() + "  Celular del Tutor: " + tabla.Rows[0][11].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
+            y += 100;
 
-            e.Graphics.DrawString("Detalle de Estudiante", textoDestacadoFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("_____________________________________________________", subtituloFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Carnet Estudiantil: " + tabla.Rows[0][5].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Nombre del Curso: " + tabla.Rows[0][12].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado;
-            e.Graphics.DrawString("Turno: " + tabla.Rows[0][14].ToString() + "  Horario: " + tabla.Rows[0][15].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Observaciones (*): " + tabla.Rows[0][17].ToString(), textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado * 3;
-            e.Graphics.DrawString("Firma del Estudiante X_____________       Firma Cajero  X_____________ ", textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawString("Detalle de Pagos", textoDestacadoFont, Brushes.Black, x, y);
-            y += interlineado;
-            // Verificamos si hay registros en la tabla
-            // Inicializa una lista para almacenar las facturas
-            List<string> facturas = new List<string>();
+            // ===== DETALLE DE REGISTRO =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 90), Color.White);
+            g.DrawString("DETALLE DE REGISTRO", subtitulo, Brushes.Black, margenX + 10, y + 8);
 
-            // Recorre todas las filas en la tabla de facturas
-            foreach (DataRow row in tablaFactura.Rows)
-            {
-                // Verifica que el valor no sea DBNull antes de agregarlo
-                if (row[0] != DBNull.Value)
-                {
-                    facturas.Add(row[0].ToString());
-                }
-            }
+            DibujarTextoEnCaja(g, $"Código Matrícula: {tabla.Rows[0][1]}", texto,
+                new Rectangle(margenX + 10, y + 35, 350, 20));
 
-            // Si hay facturas, las unimos en una sola cadena separada por comas
-            if (facturas.Count > 0)
-            {
-                string todasLasFacturas = string.Join(", ", facturas);
-                e.Graphics.DrawString(todasLasFacturas, subtituloFont, Brushes.Black, x, y);
-            }
-            else
-            {
-                // Si no hay registros, mostramos "No hay registro"
-                e.Graphics.DrawString("No hay registro", subtituloFont, Brushes.Black, x, y);
-            }
+            DibujarTextoEnCaja(g, $"Fecha Inicio: {Convert.ToDateTime(tabla.Rows[0][3]).ToShortDateString()}", texto,
+                new Rectangle(margenX + 400, y + 35, 300, 20));
 
+            DibujarTextoEnCaja(g, $"Registrado por: {tabla.Rows[0][2]}", texto,
+                new Rectangle(margenX + 10, y + 60, 350, 20));
 
-            y += interlineado;
-            e.Graphics.DrawString("_____________________________________________________", subtituloFont, Brushes.Black, x, y);
-            y += interlineado * 3;
+            DibujarTextoEnCaja(g, $"Fecha Registro: {Convert.ToDateTime(tabla.Rows[0][4]).ToShortDateString()}", texto,
+                new Rectangle(margenX + 400, y + 60, 300, 20));
 
-            e.Graphics.DrawString("Tipo de Matricula:     1.Nuevo Ingreso_____     2.Reingreso______   3.Segundo Curso o mas____   ", textoPequenioFont, Brushes.Black, x, y);
-            y += interlineado * 2;
-            e.Graphics.DrawImage(codigoDeBarras, x, y); // Posición de dibujo del código de barras en el documento
+            y += 110;
 
+            // ===== DATOS PERSONALES =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
+            g.DrawString("DATOS PERSONALES", subtitulo, Brushes.Black, margenX + 10, y + 8);
 
+            DibujarTextoEnCaja(g,
+                $"Estudiante: {tabla.Rows[0][6]} {tabla.Rows[0][7]}",
+                texto,
+                new Rectangle(margenX + 10, y + 35, 350, 40));
+
+            DibujarTextoEnCaja(g,
+                $"Nacimiento: {Convert.ToDateTime(tabla.Rows[0][8]).ToShortDateString()}",
+                texto,
+                new Rectangle(margenX + 400, y + 35, 300, 20));
+
+            DibujarTextoEnCaja(g,
+                $"Celular: {tabla.Rows[0][9]}",
+                texto,
+                new Rectangle(margenX + 10, y + 75, 350, 20));
+
+            DibujarTextoEnCaja(g,
+                $"Tutor: {tabla.Rows[0][10]} ({tabla.Rows[0][11]})",
+                texto,
+                new Rectangle(margenX + 400, y + 75, 300, 40));
+
+            y += 140;
+
+            // ===== DETALLE ACADÉMICO =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
+            g.DrawString("DETALLE ACADÉMICO", subtitulo, Brushes.Black, margenX + 10, y + 8);
+
+            DibujarTextoEnCaja(g,
+                $"Carnet: {tabla.Rows[0][5]}",
+                texto,
+                new Rectangle(margenX + 10, y + 35, 350, 20));
+
+            DibujarTextoEnCaja(g,
+                $"Curso: {tabla.Rows[0][12]}",
+                texto,
+                new Rectangle(margenX + 400, y + 35, 300, 40));
+
+            DibujarTextoEnCaja(g,
+                $"Turno: {tabla.Rows[0][14]}",
+                texto,
+                new Rectangle(margenX + 10, y + 75, 350, 20));
+
+            DibujarTextoEnCaja(g,
+                $"Horario: {tabla.Rows[0][15]}",
+                texto,
+                new Rectangle(margenX + 400, y + 75, 300, 20));
+
+            y += 140;
+
+            // ===== OBSERVACIONES =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 80), Color.White);
+            g.DrawString("OBSERVACIONES", subtitulo, Brushes.Black, margenX + 10, y + 8);
+
+            DibujarTextoEnCaja(g,
+                tabla.Rows[0][17].ToString(),
+                textoItalic,
+                new Rectangle(margenX + 10, y + 35, ancho - 20, 40));
+
+            y += 100;
+
+            // ===== FIRMAS =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 70), Color.White);
+            g.DrawString("Firma Estudiante: ____________________________", texto, Brushes.Black, margenX + 40, y + 30);
+            g.DrawString("Firma Cajero: ____________________________", texto, Brushes.Black, margenX + 420, y + 30);
+
+            y += 90;
+
+            // ===== DETALLE DE PAGOS =====
+            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
+            g.DrawString("DETALLE DE PAGOS", subtitulo, Brushes.Black, margenX + 10, y + 8);
+
+            string facturas = tablaFactura.Rows.Count > 0
+                ? string.Join(", ", tablaFactura.AsEnumerable().Select(r => r[0].ToString()))
+                : "No hay registros";
+
+            DibujarTextoEnCaja(g, facturas, texto,
+                new Rectangle(margenX + 10, y + 35, ancho - 260, 40));
+
+            // ===== CÓDIGO DE BARRAS =====
+            Bitmap codigo = GenerarCodigoDeBarras(tabla.Rows[0][1].ToString());
+            Rectangle rectCodigo = new Rectangle(margenX + ancho - 230, y + 35, 200, 70);
+            g.DrawRectangle(Pens.Black, rectCodigo);
+            g.DrawImage(codigo, rectCodigo);
+
+            y += 150;
+
+            // ===== PIE DE PÁGINA =====
+            string fechaImpresion = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+            g.DrawLine(Pens.Gray, margenX, e.MarginBounds.Bottom - 30, margenX + ancho, e.MarginBounds.Bottom - 30);
+
+            g.DrawString(
+                $"Documento impreso el {fechaImpresion}",
+                footerFont,
+                Brushes.Gray,
+                margenX,
+                e.MarginBounds.Bottom - 25
+            );
 
 
         }
+
+        void DibujarCaja(Graphics g, Rectangle rect, Color fondo)
+        {
+            using (SolidBrush brush = new SolidBrush(fondo))
+                g.FillRectangle(brush, rect);
+
+            g.DrawRectangle(Pens.Black, rect);
+        }
+
+        void DibujarTextoEnCaja(Graphics g, string texto, Font font, Rectangle rect)
+        {
+            StringFormat formato = new StringFormat
+            {
+                Alignment = StringAlignment.Near,
+                LineAlignment = StringAlignment.Near,
+                Trimming = StringTrimming.Word,
+                FormatFlags = StringFormatFlags.LineLimit
+            };
+
+            g.DrawString(texto, font, Brushes.Black, rect, formato);
+        }
+     
 
 
         public Bitmap GenerarCodigoDeBarras(string contenido)

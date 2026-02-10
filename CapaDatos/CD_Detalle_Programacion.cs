@@ -34,18 +34,31 @@ namespace CapaDatos
 
         }
 
+
+
+
         public DataTable BuscarDetalles_de_Pagos(string carnet)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select a.Cod_Matricula,b.Fecha_Programada,b.Concepto,b.Monto,c.Descripcion, d.Estado,b.Fecha_Vencimiento, b.Mora,a.Num_programacion,c.ValorMoneda as [Tasa de Cambio],b.Id_Detalle_Programacion,c.IdMoneda from Tbl_ProgramacionPago a join Tbl_Detalle_Programacion b on a.Num_programacion = b.Num_programacion join Tbl_TipoMoneda c on c.IdMoneda = b.IdMoneda join Tbl_Estados d on d.Id_estado = b.Id_estado where a.Num_programacion = '" + carnet + "' order by b.Id_Detalle_Programacion asc";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_DetallePagos", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@NumProgramacion", carnet);
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
         }
 
 
-     
+
 
         public void Editar(int IdDetalleProgramacion)
         {

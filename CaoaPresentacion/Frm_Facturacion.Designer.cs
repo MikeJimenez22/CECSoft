@@ -1178,7 +1178,7 @@
             this.tabControl1.Controls.Add(this.TabAnulacionMatricula);
             this.tabControl1.Controls.Add(this.TabDescuentoMatricula);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(2, 36);
+            this.tabControl1.Location = new System.Drawing.Point(2, 32);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1218, 698);
@@ -1964,7 +1964,7 @@
             this.dataMensualidadesEstudiante.ReadOnly = true;
             this.dataMensualidadesEstudiante.Size = new System.Drawing.Size(1166, 146);
             this.dataMensualidadesEstudiante.TabIndex = 32;
-            this.dataMensualidadesEstudiante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataNotas_CellClick);
+            this.dataMensualidadesEstudiante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMensualidadesEstudiante_CellClick);
             this.dataMensualidadesEstudiante.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataNotas_CellFormatting);
             // 
             // dataAbonos

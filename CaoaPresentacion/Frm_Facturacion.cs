@@ -1452,106 +1452,7 @@ namespace CaoaPresentacion
             }
         }
 
-        private void dataNotas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                // Verificar que el clic fue en una fila válida y en la columna "Seleccionar"
-                if (e.RowIndex >= 0 && dataMensualidadesEstudiante.Columns[e.ColumnIndex].Name == "Seleccionar")
-                {
-                    string IDDETALLEPROGRAMACION = this.dataMensualidadesEstudiante.CurrentRow.Cells["Id_Detalle_Programacion"].Value.ToString();
-                    this.txtIDDETALLEPROGRAMACION.Text = IDDETALLEPROGRAMACION;
-                    this.txtIdDetalleProg_Anulacion.Text = IDDETALLEPROGRAMACION.ToString();
-                    this.txtIdDetalleMensualidad.Text = IDDETALLEPROGRAMACION.ToString();
-                    int currentRowIndex = e.RowIndex;
-
-                    // Obtener estado de la fila actual (manejo seguro con null)
-                    string estadoFilaActual = dataMensualidadesEstudiante.Rows[currentRowIndex].Cells["Estado"].Value?.ToString() ?? "";
-
-                    // Verificamos el estado de la fila actual
-                    if (estadoFilaActual.Equals("Completado", StringComparison.OrdinalIgnoreCase))
-                    {
-                        MessageBox.Show("Mensualidad ya cancelada", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    if (estadoFilaActual.Equals("En proceso", StringComparison.OrdinalIgnoreCase))
-                    {
-                        MessageBox.Show("Mensualidad en proceso", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // Contamos las mensualidades pendientes en filas anteriores
-                    int pendientesCount = ContarMensualidadesPendientes(currentRowIndex);
-
-                    // Si hay mensualidades pendientes
-                    if (pendientesCount > 0)
-                    {
-                        LimpiarCamposMensualidad(); // Método para limpiar los campos
-                        MessageBox.Show($"Hay {pendientesCount} mensualidades pendientes.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // Detenemos la ejecución si hay pendientes
-                    }
-
-                    // Procesar la fila seleccionada si es válida
-                    if (EsFilaSeleccionadaValida(currentRowIndex))
-                    {
-                        ProcesarFilaSeleccionada(currentRowIndex);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show($"Ocurrió un error", "Error del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        // Método para contar las mensualidades pendientes
-        private int ContarMensualidadesPendientes(int currentRowIndex)
-        {
-            int pendientesCount = 0;
-            for (int i = 0; i < currentRowIndex; i++)
-            {
-                string estado = dataMensualidadesEstudiante.Rows[i].Cells["Estado"].Value?.ToString();
-                if (estado == "Pendiente")
-                {
-                    pendientesCount++;
-                }
-            }
-            return pendientesCount;
-        }
-
-        // Método para verificar si la fila seleccionada es válida
-        private bool EsFilaSeleccionadaValida(int currentRowIndex)
-        {
-            return currentRowIndex == 0 || VerificarEstadoFilaAnterior(currentRowIndex - 1);
-        }
-
-        private void LimpiarCamposMensualidad()
-        {
-            try
-            {
-                // Limpiamos los campos
-                txtConcepto.Text = string.Empty;
-                txtsubtotal_.Text = "0";
-                txtmora.Text = "0";
-                txtestado.Text = "Pendiente";
-                txtSubtotalCordobas_.Text = "0";
-                txtsaldoPendiente.Text = "0";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show($"Error al limpiar campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private bool VerificarEstadoFilaAnterior(int rowIndex)
-        {
-            if (rowIndex < 0) return false; // Verifica si hay una fila anterior
-            string estadoAnterior = dataMensualidadesEstudiante.Rows[rowIndex].Cells["Estado"].Value?.ToString();
-            return estadoAnterior == "Completado" || estadoAnterior == "En proceso";
-        }
+    
 
         private void ProcesarFilaSeleccionada(int currentRowIndex)
         {
@@ -3567,6 +3468,83 @@ namespace CaoaPresentacion
                 e.Handled = true; // Indica que la celda está completamente pintada
             }
 
+        }
+
+        private void dataMensualidadesEstudiante_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Verificar que el clic fue en una fila válida y en la columna "Seleccionar"
+                if (e.RowIndex >= 0 && dataMensualidadesEstudiante.Columns[e.ColumnIndex].Name == "Seleccionar")
+                {
+                    string IDDETALLEPROGRAMACION = this.dataMensualidadesEstudiante.CurrentRow.Cells["Id_Detalle_Programacion"].Value.ToString();
+                    this.txtIDDETALLEPROGRAMACION.Text = IDDETALLEPROGRAMACION;
+                    this.txtIdDetalleProg_Anulacion.Text = IDDETALLEPROGRAMACION.ToString();
+                    this.txtIdDetalleMensualidad.Text = IDDETALLEPROGRAMACION.ToString();
+                    int currentRowIndex = e.RowIndex;
+
+                    // Obtener estado de la fila actual (manejo seguro con null)
+                    string estadoFilaActual = dataMensualidadesEstudiante.Rows[currentRowIndex].Cells["Estado"].Value?.ToString() ?? "";
+
+                    // Verificamos el estado de la fila actual
+                    if (estadoFilaActual.Equals("Completado", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Mensualidad ya cancelada", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (estadoFilaActual.Equals("En proceso", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Mensualidad en proceso", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Fecha de la fila seleccionada
+                    DateTime fechaSeleccionada = Convert.ToDateTime(
+                        dataMensualidadesEstudiante.CurrentRow.Cells["Fecha_Vencimiento"].Value
+                    );
+
+                    int cantidadPendientesAnteriores = 0;
+
+                    foreach (DataGridViewRow fila in dataMensualidadesEstudiante.Rows)
+                    {
+                        if (fila.IsNewRow) continue;
+
+                        DateTime fechaFila = Convert.ToDateTime(
+                            fila.Cells["Fecha_Vencimiento"].Value
+                        );
+
+                        string estadoFila = fila.Cells["Estado"].Value.ToString();
+
+                        // Solo fechas anteriores
+                        if (fechaFila < fechaSeleccionada && estadoFila == "Pendiente")
+                        {
+                            cantidadPendientesAnteriores++;
+                        }
+                    }
+
+
+                    if (cantidadPendientesAnteriores > 0)
+                    {
+                        MessageBox.Show(
+                            $"No puede seleccionar esta mensualidad.\n" +
+                            $"Existen {cantidadPendientesAnteriores} mensualidad(es) anterior(es) pendientes.",
+                            "Validación",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
+                        return;
+                    }
+
+                   
+                     ProcesarFilaSeleccionada(currentRowIndex);
+                    
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Ocurrió un error", "Error del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TablaDetalleFactura_CellClick(object sender, DataGridViewCellEventArgs e)
