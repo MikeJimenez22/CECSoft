@@ -343,7 +343,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.TabBusquedaEstudiante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -1178,7 +1177,7 @@
             this.tabControl1.Controls.Add(this.TabAnulacionMatricula);
             this.tabControl1.Controls.Add(this.TabDescuentoMatricula);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(2, 32);
+            this.tabControl1.Location = new System.Drawing.Point(2, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1218, 698);
@@ -1745,7 +1744,7 @@
             // txtConcepto
             // 
             this.txtConcepto.Enabled = false;
-            this.txtConcepto.Location = new System.Drawing.Point(117, 82);
+            this.txtConcepto.Location = new System.Drawing.Point(110, 91);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(397, 20);
             this.txtConcepto.TabIndex = 23;
@@ -4303,6 +4302,5 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView TablaDetalleFactura;
         private System.Windows.Forms.TextBox txtIDDETALLEPROGRAMACION;
-        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
