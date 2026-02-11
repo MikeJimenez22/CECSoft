@@ -1356,6 +1356,11 @@ namespace CaoaPresentacion
             this.dataMensualidadesEstudiante.Columns["Id_Detalle_Programacion"].Visible = false;
             this.dataMensualidadesEstudiante.Columns["IdMoneda"].Visible = false;
 
+            foreach (DataGridViewColumn columna in dataMensualidadesEstudiante.Columns)
+            {
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
         }
 
 

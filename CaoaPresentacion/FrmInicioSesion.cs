@@ -313,7 +313,7 @@ namespace CaoaPresentacion
                                      idUsuario
                                  );
 
-                                this.AgregarNuevoPagoExtra();
+                              
 
                                 Frm_Principal frm = new Frm_Principal();
                                 frm.Show();
