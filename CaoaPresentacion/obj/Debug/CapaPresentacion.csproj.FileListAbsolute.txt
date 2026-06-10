@@ -14598,6 +14598,7 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vis
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmCursos.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmCursos_turno.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmFacturasDeEstudiante.resources
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmHistorialGestion.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmInicioSesion.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmLoad.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmOpcionesAcceso.resources

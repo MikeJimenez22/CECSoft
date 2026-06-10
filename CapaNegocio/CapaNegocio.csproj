@@ -161,6 +161,7 @@
     <Compile Include="CN_Factura_Matricula.cs" />
     <Compile Include="CN_FacturDetalle.cs" />
     <Compile Include="CN_Formularios.cs" />
+    <Compile Include="CN_GestionCobro.cs" />
     <Compile Include="CN_Grupos.cs" />
     <Compile Include="CN_Horarios.cs" />
     <Compile Include="CN_Impresiones.cs" />

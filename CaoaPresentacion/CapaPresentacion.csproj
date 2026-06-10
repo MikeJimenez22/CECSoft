@@ -206,8 +206,8 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=10.0.0.8, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.10.0.8\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
@@ -231,6 +231,7 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -395,6 +396,12 @@
     </Compile>
     <Compile Include="FrmFacturasDeEstudiante.Designer.cs">
       <DependentUpon>FrmFacturasDeEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistorialGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistorialGestion.Designer.cs">
+      <DependentUpon>FrmHistorialGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicioSesion.cs">
       <SubType>Form</SubType>
@@ -704,6 +711,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFacturasDeEstudiante.resx">
       <DependentUpon>FrmFacturasDeEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistorialGestion.resx">
+      <DependentUpon>FrmHistorialGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
@@ -1118,6 +1128,11 @@
     <None Include="Resources\abrir-documento.png" />
     <None Include="Resources\sin-perfil.jpg" />
     <None Include="Resources\CarnetPersonalAdministrativo.png" />
+    <None Include="Resources\carnet-de-identidad.png" />
+    <None Include="Resources\llamar.png" />
+    <None Include="Resources\graduacion.png" />
+    <None Include="Resources\modal.png" />
+    <None Include="Resources\reloj-de-pared.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

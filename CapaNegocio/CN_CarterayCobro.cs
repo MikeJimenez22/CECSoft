@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 
+
 namespace CapaNegocio
 {
     public class CN_CarterayCobro

@@ -36,9 +36,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TabBusqueda = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblEstudiantesSinAbono = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblEstudiantesConAbonos = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -46,15 +55,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbbusquedaAño = new System.Windows.Forms.ComboBox();
             this.cmbbusquedaMes = new System.Windows.Forms.ComboBox();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataCartera = new System.Windows.Forms.DataGridView();
-            this.dataCelularesPersonas = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabEstadisticas = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
@@ -63,11 +67,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TabBusqueda.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCartera)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataCelularesPersonas)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.TabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstadisticasCartera)).BeginInit();
@@ -128,38 +132,29 @@
             this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1262, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(1262, 31);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // TabBusqueda
             // 
-            this.TabBusqueda.Controls.Add(this.label1);
             this.TabBusqueda.Controls.Add(this.groupBox1);
-            this.TabBusqueda.Controls.Add(this.groupBox3);
             this.TabBusqueda.Controls.Add(this.dataCartera);
-            this.TabBusqueda.Controls.Add(this.dataCelularesPersonas);
             this.TabBusqueda.Location = new System.Drawing.Point(4, 22);
             this.TabBusqueda.Name = "TabBusqueda";
             this.TabBusqueda.Padding = new System.Windows.Forms.Padding(3);
-            this.TabBusqueda.Size = new System.Drawing.Size(1250, 685);
+            this.TabBusqueda.Size = new System.Drawing.Size(1250, 605);
             this.TabBusqueda.TabIndex = 0;
             this.TabBusqueda.Text = "TabBusqueda";
             this.TabBusqueda.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cartera y Cobro ";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label22);
@@ -167,31 +162,142 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cmbbusquedaAño);
             this.groupBox1.Controls.Add(this.cmbbusquedaMes);
-            this.groupBox1.Controls.Add(this.lbltotal);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(6, 19);
+            this.groupBox1.Location = new System.Drawing.Point(8, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1238, 137);
+            this.groupBox1.Size = new System.Drawing.Size(1238, 160);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // pictureBox3
+            // panel3
             // 
-            this.pictureBox3.Image = global::CaoaPresentacion.Properties.Resources.Cecnic_Logo_Nuevo_300x253;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(101, 87);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.Orange;
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.lblEstudiantesSinAbono);
+            this.panel3.Location = new System.Drawing.Point(600, 25);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(125, 123);
+            this.panel3.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(8, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 32);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Estudiantes sin \r\nAbonos";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEstudiantesSinAbono
+            // 
+            this.lblEstudiantesSinAbono.AutoSize = true;
+            this.lblEstudiantesSinAbono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstudiantesSinAbono.ForeColor = System.Drawing.Color.White;
+            this.lblEstudiantesSinAbono.Location = new System.Drawing.Point(38, 62);
+            this.lblEstudiantesSinAbono.Name = "lblEstudiantesSinAbono";
+            this.lblEstudiantesSinAbono.Size = new System.Drawing.Size(45, 19);
+            this.lblEstudiantesSinAbono.TabIndex = 12;
+            this.lblEstudiantesSinAbono.Text = "label";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Green;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblEstudiantesConAbonos);
+            this.panel2.Location = new System.Drawing.Point(471, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(125, 123);
+            this.panel2.TabIndex = 29;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(8, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 32);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Estudiantes con \r\nAbonos";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblEstudiantesConAbonos
+            // 
+            this.lblEstudiantesConAbonos.AutoSize = true;
+            this.lblEstudiantesConAbonos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstudiantesConAbonos.ForeColor = System.Drawing.Color.White;
+            this.lblEstudiantesConAbonos.Location = new System.Drawing.Point(38, 62);
+            this.lblEstudiantesConAbonos.Name = "lblEstudiantesConAbonos";
+            this.lblEstudiantesConAbonos.Size = new System.Drawing.Size(45, 19);
+            this.lblEstudiantesConAbonos.TabIndex = 12;
+            this.lblEstudiantesConAbonos.Text = "label";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lbltotal);
+            this.panel1.Location = new System.Drawing.Point(343, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(125, 123);
+            this.panel1.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(8, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Total de Registros";
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(38, 62);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(45, 19);
+            this.lbltotal.TabIndex = 12;
+            this.lbltotal.Text = "label";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 12F);
+            this.button4.Image = global::CaoaPresentacion.Properties.Resources._118903_office_spreadsheet_x_office_spreadsheet;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(1093, 13);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 42);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Estadisticas";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(6, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 16);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Filtros de Busqueda";
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial", 12F);
             this.button3.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(295, 99);
+            this.button3.Location = new System.Drawing.Point(103, 117);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 32);
             this.button3.TabIndex = 26;
@@ -211,16 +317,16 @@
             "Viernes",
             "Sabados",
             "Domingos"});
-            this.comboBox1.Location = new System.Drawing.Point(176, 70);
+            this.comboBox1.Location = new System.Drawing.Point(52, 87);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 26);
+            this.comboBox1.Size = new System.Drawing.Size(152, 26);
             this.comboBox1.TabIndex = 25;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(123, 72);
+            this.label22.Location = new System.Drawing.Point(4, 94);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(46, 18);
             this.label22.TabIndex = 24;
@@ -230,7 +336,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(136, 43);
+            this.label11.Location = new System.Drawing.Point(8, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 18);
             this.label11.TabIndex = 23;
@@ -240,7 +346,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(132, 14);
+            this.label9.Location = new System.Drawing.Point(8, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 18);
             this.label9.TabIndex = 17;
@@ -250,47 +356,27 @@
             // 
             this.cmbbusquedaAño.Font = new System.Drawing.Font("Arial", 12F);
             this.cmbbusquedaAño.FormattingEnabled = true;
-            this.cmbbusquedaAño.Location = new System.Drawing.Point(176, 41);
+            this.cmbbusquedaAño.Location = new System.Drawing.Point(52, 57);
             this.cmbbusquedaAño.Name = "cmbbusquedaAño";
-            this.cmbbusquedaAño.Size = new System.Drawing.Size(220, 26);
+            this.cmbbusquedaAño.Size = new System.Drawing.Size(152, 26);
             this.cmbbusquedaAño.TabIndex = 16;
             // 
             // cmbbusquedaMes
             // 
             this.cmbbusquedaMes.Font = new System.Drawing.Font("Arial", 12F);
             this.cmbbusquedaMes.FormattingEnabled = true;
-            this.cmbbusquedaMes.Location = new System.Drawing.Point(176, 11);
+            this.cmbbusquedaMes.Location = new System.Drawing.Point(52, 29);
             this.cmbbusquedaMes.Name = "cmbbusquedaMes";
-            this.cmbbusquedaMes.Size = new System.Drawing.Size(220, 26);
+            this.cmbbusquedaMes.Size = new System.Drawing.Size(152, 26);
             this.cmbbusquedaMes.TabIndex = 15;
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Arial", 12F);
-            this.lbltotal.Location = new System.Drawing.Point(701, 65);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(41, 18);
-            this.lbltotal.TabIndex = 12;
-            this.lbltotal.Text = "label";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F);
-            this.label4.Location = new System.Drawing.Point(663, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 18);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Total de Registros";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(475, 20);
+            this.groupBox2.Location = new System.Drawing.Point(210, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(171, 95);
+            this.groupBox2.Size = new System.Drawing.Size(125, 130);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
@@ -298,7 +384,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Arial", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(25, 51);
+            this.radioButton2.Location = new System.Drawing.Point(10, 55);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(102, 22);
             this.radioButton2.TabIndex = 1;
@@ -311,7 +397,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(25, 21);
+            this.radioButton1.Location = new System.Drawing.Point(10, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(94, 22);
             this.radioButton1.TabIndex = 0;
@@ -320,65 +406,30 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Location = new System.Drawing.Point(6, 158);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1238, 55);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Arial", 12F);
-            this.button4.Image = global::CaoaPresentacion.Properties.Resources._118903_office_spreadsheet_x_office_spreadsheet;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1093, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 42);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Estadisticas";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
             // dataCartera
             // 
             this.dataCartera.AllowUserToAddRows = false;
             this.dataCartera.AllowUserToDeleteRows = false;
             this.dataCartera.AllowUserToOrderColumns = true;
             this.dataCartera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCartera.Location = new System.Drawing.Point(7, 229);
+            this.dataCartera.Location = new System.Drawing.Point(7, 164);
             this.dataCartera.Name = "dataCartera";
             this.dataCartera.ReadOnly = true;
-            this.dataCartera.Size = new System.Drawing.Size(1237, 450);
+            this.dataCartera.Size = new System.Drawing.Size(1237, 422);
             this.dataCartera.TabIndex = 0;
+            this.dataCartera.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCartera_CellClick);
+            this.dataCartera.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataCartera_CellPainting);
             this.dataCartera.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataCartera_RowPrePaint);
             this.dataCartera.Paint += new System.Windows.Forms.PaintEventHandler(this.dataCartera_Paint);
-            // 
-            // dataCelularesPersonas
-            // 
-            this.dataCelularesPersonas.AllowUserToAddRows = false;
-            this.dataCelularesPersonas.AllowUserToDeleteRows = false;
-            this.dataCelularesPersonas.AllowUserToOrderColumns = true;
-            this.dataCelularesPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCelularesPersonas.Enabled = false;
-            this.dataCelularesPersonas.Location = new System.Drawing.Point(9, 587);
-            this.dataCelularesPersonas.Name = "dataCelularesPersonas";
-            this.dataCelularesPersonas.ReadOnly = true;
-            this.dataCelularesPersonas.Size = new System.Drawing.Size(1107, 47);
-            this.dataCelularesPersonas.TabIndex = 3;
-            this.dataCelularesPersonas.Visible = false;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TabBusqueda);
             this.tabControl1.Controls.Add(this.TabEstadisticas);
-            this.tabControl1.Location = new System.Drawing.Point(4, 27);
+            this.tabControl1.Location = new System.Drawing.Point(4, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1258, 711);
+            this.tabControl1.Size = new System.Drawing.Size(1258, 631);
             this.tabControl1.TabIndex = 6;
             // 
             // TabEstadisticas
@@ -389,7 +440,7 @@
             this.TabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.TabEstadisticas.Name = "TabEstadisticas";
             this.TabEstadisticas.Padding = new System.Windows.Forms.Padding(3);
-            this.TabEstadisticas.Size = new System.Drawing.Size(1250, 685);
+            this.TabEstadisticas.Size = new System.Drawing.Size(1250, 605);
             this.TabEstadisticas.TabIndex = 1;
             this.TabEstadisticas.Text = "TabEstadisticas";
             this.TabEstadisticas.UseVisualStyleBackColor = true;
@@ -436,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 749);
+            this.ClientSize = new System.Drawing.Size(1262, 650);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
@@ -445,23 +496,25 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1278, 788);
-            this.MinimumSize = new System.Drawing.Size(1278, 788);
+            this.MaximumSize = new System.Drawing.Size(1278, 689);
+            this.MinimumSize = new System.Drawing.Size(1278, 689);
             this.Name = "Frm_CuentasporCobrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  .: CARTERA Y COBRO :.";
+            this.Text = "Gestión de Cobranza";
             this.Load += new System.EventHandler(this.Frm_CuentasporCobrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TabBusqueda.ResumeLayout(false);
-            this.TabBusqueda.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataCartera)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataCelularesPersonas)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.TabEstadisticas.ResumeLayout(false);
             this.TabEstadisticas.PerformLayout();
@@ -479,9 +532,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage TabBusqueda;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label22;
@@ -494,14 +545,20 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataCartera;
-        private System.Windows.Forms.DataGridView dataCelularesPersonas;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage TabEstadisticas;
         private System.Windows.Forms.DataGridView dataEstadisticasCartera;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblEstudiantesConAbonos;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblEstudiantesSinAbono;
     }
 }

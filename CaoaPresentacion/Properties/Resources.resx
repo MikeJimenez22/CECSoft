@@ -142,14 +142,26 @@
   <data name="5736354_clock_hour_schedule_stopwatch_time_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5736354_clock_hour_schedule_stopwatch_time_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="modal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="299107_money_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\299107_money_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kisspng-database-management-system-computer-icons-relation-5be74aa1455732.491145641541884577284" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-database-management-system-computer-icons-relation-5be74aa1455732.491145641541884577284.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="8675253_select_all_on_regular_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8675253_select_all_on_regular_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CarnetPersonalAdministrativo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CarnetPersonalAdministrativo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoPantallaSistema1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoPantallaSistema1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh-gc1fc0084b_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh-gc1fc0084b_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +175,14 @@
   <data name="FondoSistema" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoSistema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hosting-backups-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hosting-backups-03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="landscape-4626489_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\landscape-4626489_1920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="118839_applications_system_applications_system" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\118839_applications_system_applications_system.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="statements" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\statements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1055094_check_select_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1055094_check_select_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1495053_circle_content_send_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1495053_circle_content_send_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +202,11 @@
   <data name="Inicio de Sesión1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inicio de Sesión1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="134213_home_house_building_main_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\134213_home_house_building_main_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Carnet Estudiantil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Carnet Estudiantil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cross-296507_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross-296507_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8725492_arrow_up_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8725492_arrow_up_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,6 +216,9 @@
   </data>
   <data name="8725486_arrow_down_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8725486_arrow_down_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="computer-156948_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-156948_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hands-1851218_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hands-1851218_1920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,9 +231,6 @@
   </data>
   <data name="academia-de-ingles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\academia-de-ingles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="60181_back_go_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60181_back_go_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,14 +265,20 @@
   <data name="WhatsApp Image 2023-06-19 at 7.02.38 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2023-06-19 at 7.02.38 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="graduacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\graduacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="statements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\statements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="historial-de-pedidos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historial-de-pedidos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1814075_find_magnifier_magnifying glass_search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1814075_find_magnifier_magnifying glass_search_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="send-message" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\send-message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="118801_view_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\118801_view_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ABSTRACT_WALLPAPER_Mesa_de_trabajo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ABSTRACT_WALLPAPER_Mesa_de_trabajo_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,8 +289,11 @@
   <data name="WhatsApp Image 2023-06-19 at 6.57.18 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2023-06-19 at 6.57.18 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="landscape-4626489_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\landscape-4626489_1920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="incentive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\incentive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hosting-backups-03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hosting-backups-03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reception1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reception1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -297,9 +318,6 @@
   </data>
   <data name="abrir-documento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\abrir-documento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inicio de Sesión" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inicio de Sesión.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,9 +370,6 @@
   <data name="icono_alta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_alta1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inicio de Sesión2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inicio de Sesión2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Acceder al sistema (800 x 600 px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Acceder al sistema (800 x 600 px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -367,8 +382,8 @@
   <data name="view" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-156948_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-156948_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="send-message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\send-message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,11 +391,11 @@
   <data name="308135-P82MR6-683" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\308135-P82MR6-683.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="118801_view_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\118801_view_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CarnetEstudiantil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CarnetEstudiantil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carnet-de-identidad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carnet-de-identidad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hook-1727484_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hook-1727484_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,17 +508,11 @@
   <data name="299094_filter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\299094_filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1055094_check_select_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1055094_check_select_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="WhatsApp_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="d05514c82f3be6140d6ceef9645838df-icono-plano-de-cuaderno-de-espiral-abierto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d05514c82f3be6140d6ceef9645838df-icono-plano-de-cuaderno-de-espiral-abierto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2315964_accomodation_hotel_reception_vacation_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2315964_accomodation_hotel_reception_vacation_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1891023_cancel_cercle_close_delete_dismiss_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1891023_cancel_cercle_close_delete_dismiss_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -516,6 +525,9 @@
   </data>
   <data name="46795_clear_delete_remove_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\46795_clear_delete_remove_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="118805_accessories_text_editor_editor_accessories_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\118805_accessories_text_editor_editor_accessories_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Carnet Estudiantil2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Carnet Estudiantil2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -532,11 +544,14 @@
   <data name="Statistics-PNG-Clipart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Statistics-PNG-Clipart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="llamar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\llamar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="blank-profile-picture-973460_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blank-profile-picture-973460_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-database-management-system-computer-icons-relation-5be74aa1455732.491145641541884577284" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-database-management-system-computer-icons-relation-5be74aa1455732.491145641541884577284.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cross-296507_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross-296507_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1814090_delete_garbage_trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1814090_delete_garbage_trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -556,11 +571,11 @@
   <data name="Acceder al sistema" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Acceder al sistema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="134213_home_house_building_main_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\134213_home_house_building_main_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="118805_accessories_text_editor_editor_accessories_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\118805_accessories_text_editor_editor_accessories_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondoSistema (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoSistema (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -568,11 +583,11 @@
   <data name="napaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\napaka.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FondoPantallaSistema1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FondoPantallaSistema1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2315964_accomodation_hotel_reception_vacation_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2315964_accomodation_hotel_reception_vacation_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="incentive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\incentive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Inicio de Sesión2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inicio de Sesión2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cecnic-Logo-Nuevo-300x2531" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cecnic-Logo-Nuevo-300x2531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -580,7 +595,7 @@
   <data name="CarnetEstudiantil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CarnetEstudiantil1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CarnetPersonalAdministrativo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CarnetPersonalAdministrativo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reloj-de-pared" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reloj-de-pared.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

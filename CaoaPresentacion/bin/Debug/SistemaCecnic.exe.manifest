@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Qum97Pd67arpKLYEZO+Nx8ZgbF12y2upz8IB1Qzrrmw=</dsig:DigestValue>
+        <dsig:DigestValue>KZ1wgL5XVxV+geMdbcvDCNZMRebFdeJslCbGSW9FXN0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jubqbgAV+zFhc2gcb/EyXRQ7Q3GfjcchHZ7BfiX8SGc=</dsig:DigestValue>
+        <dsig:DigestValue>JnaOmTSmBIU0w291jdjFsMvf0Di+6YZmX8EVYrgo3rE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1075,14 +1075,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40118784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="40369152">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2C50jZOb4o80a8Kb6ngimLa3Lj8YQ6rdR+JLCFTiDFQ=</dsig:DigestValue>
+        <dsig:DigestValue>MK6NhnvwYXza97ODPk7SzJazZMWp+qFcznd/uEnj9B0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1135,14 +1135,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Configuration.ConfigurationManager.dll" size="91824">
-      <assemblyIdentity name="System.Configuration.ConfigurationManager" version="8.0.0.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Configuration.ConfigurationManager.dll" size="95016">
+      <assemblyIdentity name="System.Configuration.ConfigurationManager" version="10.0.0.8" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vhBo0a8kBUmvzUjyLPzxWsEMRjBgClNErgJdMFUCmDQ=</dsig:DigestValue>
+        <dsig:DigestValue>M6B9PKBA2axasrouS211Ulx/8cooOEELvCRvRXFcxAA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1416,13 +1416,13 @@
       <dsig:DigestValue>/EkN/oos7QqwWcuTyuimn8UT7vHelt+5Z17GjGcscQs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SistemaCecnic.exe.config" size="6778">
+  <file name="SistemaCecnic.exe.config" size="6780">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HKrAAE+mCcvEFPxEeXUK1R879LvO3i6HPiTMcnLHIUo=</dsig:DigestValue>
+      <dsig:DigestValue>8nM49UOotYW/pX7WCFO+bKSADarRU0rNbTZ1mpbcZoA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SqlServerTypes\readme.htm" size="2369">

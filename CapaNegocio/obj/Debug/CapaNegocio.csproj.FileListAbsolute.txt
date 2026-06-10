@@ -6989,6 +6989,7 @@ H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Text.Encoding.CodePages.dll
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Threading.Tasks.Extensions.dll
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.ValueTuple.dll
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\ZstdSharp.dll
+H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Security.Cryptography.ProtectedData.dll
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\CapaDatos.pdb
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\CapaDatos.dll.config
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\BouncyCastle.Crypto.xml
@@ -7011,6 +7012,7 @@ H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Security.Permissions.xml
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Security.Principal.Windows.xml
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Threading.Tasks.Extensions.xml
 H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.ValueTuple.xml
+H:\Proyectos\CECSoft\CapaNegocio\bin\Debug\System.Security.Cryptography.ProtectedData.xml
 H:\Proyectos\CECSoft\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
 H:\Proyectos\CECSoft\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
 H:\Proyectos\CECSoft\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete

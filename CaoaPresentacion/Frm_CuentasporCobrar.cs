@@ -17,7 +17,7 @@ namespace CaoaPresentacion
         string date1;
         string date2;
         DataTable TablCelulares = new DataTable();
-      
+
 
 
 
@@ -32,10 +32,10 @@ namespace CaoaPresentacion
             this.cmbbusquedaMes.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbbusquedaAño.DropDownStyle = ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataGridViewConfigurator.Configure(this.dataCartera,this.dataEstadisticasCartera);
+            DataGridViewConfigurator.Configure(this.dataCartera, this.dataEstadisticasCartera);
         }
 
-        
+
         private void Frm_CuentasporCobrar_Load(object sender, EventArgs e)
         {
             try
@@ -46,6 +46,13 @@ namespace CaoaPresentacion
 
                 this.radioButton2.Checked = true;
                 this.comboBox1.Text = "Regular";
+                this.lbltotal.Text = dataCartera.Rows.Count.ToString();
+                ContarEstudiantesConAbonos();
+                ContarEstudiantesSinAbonos();
+                AgregarColumnaConIcono();
+
+
+
 
 
             }
@@ -57,9 +64,73 @@ namespace CaoaPresentacion
 
         }
 
+        private void AgregarColumnaConIcono()
+        {
+            try
+            {
+                DataGridViewButtonColumn btnColumna1 = new DataGridViewButtonColumn();
+                btnColumna1.HeaderText = "Gestion";
+                btnColumna1.Name = "Gestion";
+                btnColumna1.Text = "";
+                btnColumna1.UseColumnTextForButtonValue = false;
+
+                dataCartera.Columns.Add(btnColumna1);
 
 
-        
+
+
+                dataCartera.CellPainting += dataCartera_CellPainting;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "ControlPlus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ContarEstudiantesConAbonos()
+        {
+            int totalConAbonos = 0;
+
+            foreach (DataGridViewRow fila in dataCartera.Rows)
+            {
+                if (fila.Cells["Total Abonos"].Value != null)
+                {
+                    int totalAbonos = Convert.ToInt32(fila.Cells["Total Abonos"].Value);
+
+                    if (totalAbonos > 0)
+                    {
+                        totalConAbonos++;
+                    }
+                }
+            }
+
+            lblEstudiantesConAbonos.Text = totalConAbonos.ToString();
+        }
+
+
+        private void ContarEstudiantesSinAbonos()
+        {
+            int totalConAbonos = 0;
+
+            foreach (DataGridViewRow fila in dataCartera.Rows)
+            {
+                if (fila.Cells["Total Abonos"].Value != null)
+                {
+                    int totalAbonos = Convert.ToInt32(fila.Cells["Total Abonos"].Value);
+
+                    if (totalAbonos == 0)
+                    {
+                        totalConAbonos++;
+                    }
+                }
+            }
+
+            lblEstudiantesSinAbono.Text = totalConAbonos.ToString();
+        }
+
+
+
+
         private void BuscarEntre_fechas(DateTime fecha1, DateTime fecha2)
         {
             CN_CarterayCobro objetoCN = new CN_CarterayCobro();
@@ -67,7 +138,9 @@ namespace CaoaPresentacion
 
             this.dataCartera.DataSource = objetoCN.MostrarPorFechas(fecha1.ToShortDateString(), fecha2.ToShortDateString(), this.Estado, Turno);
             this.lbltotal.Text = Convert.ToString(dataCartera.Rows.Count);
-     
+            ContarEstudiantesConAbonos();
+            ContarEstudiantesSinAbonos();
+
         }
 
 
@@ -77,10 +150,12 @@ namespace CaoaPresentacion
 
             this.dataCartera.DataSource = objetoCN.MostrarCarteraGeneral(fecha1.ToShortDateString(), fecha2.ToShortDateString(), this.Estado);
             this.lbltotal.Text = Convert.ToString(dataCartera.Rows.Count);
-       
+            ContarEstudiantesConAbonos();
+            ContarEstudiantesSinAbonos();
+
         }
 
-        
+
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -103,9 +178,9 @@ namespace CaoaPresentacion
             date2 = dateTimePicker2.Text;
         }
 
-      
 
-      
+
+
 
         private void CargarCombos()
         {
@@ -136,10 +211,13 @@ namespace CaoaPresentacion
 
                 // Obtener el último día del mes
                 DateTime ultimoDiaMes = primerDiaMes.AddMonths(1).AddDays(-1);
-                
+
                 // Pasamos directamente los objetos DateTime al método BusquedaCartera
                 this.BusquedaCartera(primerDiaMes, ultimoDiaMes);
-                this.MostrarEstadisticas(primerDiaMes.ToShortDateString(),ultimoDiaMes.ToShortDateString());
+                this.dataCartera.Columns["Id_Detalle_Programacion"].Visible = false;
+                this.dataCartera.Columns["Total Abonos"].Visible = false;
+                this.dataCartera.Columns["EstadoCartera"].Visible = false;
+                // this.MostrarEstadisticas(primerDiaMes.ToShortDateString(),ultimoDiaMes.ToShortDateString());
             }
         }
 
@@ -158,13 +236,10 @@ namespace CaoaPresentacion
                     this.BuscarEntre_fechas(fechaInicial, fechaFinal);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
 
         }
 
@@ -291,20 +366,22 @@ namespace CaoaPresentacion
         {
             try
             {
+
                 ActualizarFechaSeleccionada();
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void MostrarEstadisticas(string FechaInicio,string FechaFinal)
+        private void MostrarEstadisticas(string FechaInicio, string FechaFinal)
         {
             try
             {
                 CN_CarterayCobro objetoCN = new CN_CarterayCobro();
-                this.dataEstadisticasCartera.DataSource = objetoCN.MostrarCarteraEstadisticas(FechaInicio,FechaFinal);
+                this.dataEstadisticasCartera.DataSource = objetoCN.MostrarCarteraEstadisticas(FechaInicio, FechaFinal);
             }
             catch (Exception)
             {
@@ -333,6 +410,89 @@ namespace CaoaPresentacion
             catch (Exception)
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataCartera_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == dataCartera.Columns["Gestion"].Index && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.CellBounds, false);
+
+                using (SolidBrush brush = new SolidBrush(Color.DodgerBlue))
+                {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+
+                Bitmap icon = Properties.Resources.edit_button;
+
+                int iconWidth = 16;
+                int iconHeight = 16;
+
+                int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
+                int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
+
+                e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
+
+                // Borde
+                e.Graphics.DrawRectangle(Pens.White,
+                    e.CellBounds.Left,
+                    e.CellBounds.Top,
+                    e.CellBounds.Width - 1,
+                    e.CellBounds.Height - 1);
+
+                e.Handled = true;
+            }
+        }
+
+        private void dataCartera_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0) // Evitar clic en encabezado
+                {
+                    if (e.ColumnIndex == dataCartera.Columns["Gestion"].Index)
+                    {
+                        string Carnet = this.dataCartera.CurrentRow.Cells["Cod_carnet"].Value.ToString();
+                        string Estudiante = this.dataCartera.CurrentRow.Cells["Nombres"].Value.ToString() + " " + this.dataCartera.CurrentRow.Cells["Apellidos"].Value.ToString();
+                        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+                        Estudiante = textInfo.ToTitleCase(Estudiante.ToLower());
+
+                        string Celular = this.dataCartera.CurrentRow.Cells["Celular 1"].Value.ToString();
+                        string Curso = this.dataCartera.CurrentRow.Cells["Nombre_curso"].Value.ToString();
+                        string Turno = this.dataCartera.CurrentRow.Cells["Turno"].Value.ToString();
+                        string Horario = this.dataCartera.CurrentRow.Cells["Horario"].Value.ToString();
+                        string Concepto = this.dataCartera.CurrentRow.Cells["Concepto"].Value.ToString();
+                       
+                        string Total = "C$ " + this.dataCartera.CurrentRow.Cells["Total en Cordobas"].Value.ToString();
+                        string Mora = "C$ " + this.dataCartera.CurrentRow.Cells["Mora"].Value.ToString();
+                        string Abonado = "C$ " + this.dataCartera.CurrentRow.Cells["Monto Abonado"].Value.ToString();
+                        string Saldo = "C$ " + this.dataCartera.CurrentRow.Cells["Saldo Pendiente"].Value.ToString();
+                        string NivelMora = this.dataCartera.CurrentRow.Cells["NivelMora"].Value.ToString();
+                        string EstadoCartera = this.dataCartera.CurrentRow.Cells["EstadoCartera"].Value.ToString();
+                        DateTime fechaVencimiento = Convert.ToDateTime(
+                        this.dataCartera.CurrentRow.Cells["Fecha_Vencimiento"].Value);
+
+                        DateTime fechaActual = DateTime.Today;
+
+                        int diasMora = 0;
+
+                        if (fechaActual > fechaVencimiento)
+                        {
+                            diasMora = (fechaActual - fechaVencimiento).Days;
+                        }
+
+                        
+
+                        FrmHistorialGestion frm = new FrmHistorialGestion(
+                            Carnet,Estudiante,Celular,Curso,Turno,Horario,Concepto,fechaVencimiento.ToShortDateString(),Total,Mora,Abonado,Saldo,diasMora.ToString(),NivelMora,EstadoCartera);
+                        frm.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -6787,9 +6787,11 @@ H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.IO.Pipelines.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Memory.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Numerics.Vectors.dll
+H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Runtime.Caching.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Runtime.Loader.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.AccessControl.dll
+H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Cryptography.ProtectedData.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Permissions.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Principal.Windows.dll
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Text.Encoding.CodePages.dll
@@ -6806,12 +6808,15 @@ H:\Proyectos\CECSoft\CapaDatos\bin\Debug\K4os.Hash.xxHash.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\MySql.Data.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\MySqlConnector.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Buffers.xml
+H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Configuration.ConfigurationManager.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.IO.Pipelines.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Memory.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Numerics.Vectors.xml
+H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Runtime.Caching.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.AccessControl.xml
+H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Cryptography.ProtectedData.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Permissions.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Security.Principal.Windows.xml
 H:\Proyectos\CECSoft\CapaDatos\bin\Debug\System.Threading.Tasks.Extensions.xml
