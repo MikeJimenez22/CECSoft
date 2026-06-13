@@ -44,5 +44,47 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+
+        public DataTable MostrarHistorialGestion(int idProgramacionDetalle)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("MostrarHistorialGestionCobro", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdDetalleProgramacion", idProgramacionDetalle);
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+
+        public DataTable ValidarDuplicados(int idProgramacionDetalle)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ValidarDuplicadosGestionCobro", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdDetalleProgramacion", idProgramacionDetalle);
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -470,6 +470,7 @@ namespace CaoaPresentacion
                         string Saldo = "C$ " + this.dataCartera.CurrentRow.Cells["Saldo Pendiente"].Value.ToString();
                         string NivelMora = this.dataCartera.CurrentRow.Cells["NivelMora"].Value.ToString();
                         string EstadoCartera = this.dataCartera.CurrentRow.Cells["EstadoCartera"].Value.ToString();
+                        int IdDetalleProgramacion = Convert.ToInt32(this.dataCartera.CurrentRow.Cells["Id_Detalle_Programacion"].Value.ToString());
                         DateTime fechaVencimiento = Convert.ToDateTime(
                         this.dataCartera.CurrentRow.Cells["Fecha_Vencimiento"].Value);
 
@@ -485,7 +486,7 @@ namespace CaoaPresentacion
                         
 
                         FrmHistorialGestion frm = new FrmHistorialGestion(
-                            Carnet,Estudiante,Celular,Curso,Turno,Horario,Concepto,fechaVencimiento.ToShortDateString(),Total,Mora,Abonado,Saldo,diasMora.ToString(),NivelMora,EstadoCartera);
+                            Carnet,Estudiante,Celular,Curso,Turno,Horario,Concepto,fechaVencimiento.ToShortDateString(),Total,Mora,Abonado,Saldo,diasMora.ToString(),NivelMora,EstadoCartera,IdDetalleProgramacion);
                         frm.Show();
                     }
                 }

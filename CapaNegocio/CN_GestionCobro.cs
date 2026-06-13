@@ -35,5 +35,20 @@ namespace CapaNegocio
                 Convert.ToInt32(IdUsuario)
             );
         }
+
+        public DataTable MostrarHistorialGestion(int IdDetalleProgramacion)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarHistorialGestion(IdDetalleProgramacion);
+            return tabla;
+        }
+
+        public DataTable ValidarDuplicados(int IdDetalleProgramacion)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ValidarDuplicados(IdDetalleProgramacion);
+            return tabla;
+        }
+
     }
 }

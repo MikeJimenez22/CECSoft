@@ -77,6 +77,26 @@
             this.lblEstadoCartera = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtpProximaGestion = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaPromesa = new System.Windows.Forms.DateTimePicker();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.cbResultado = new System.Windows.Forms.ComboBox();
+            this.cbTipoGestion = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataHistorialGestion = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -92,6 +112,11 @@
             this.PanelNivelMora.SuspendLayout();
             this.PanelEstadoCartera.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHistorialGestion)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHorario
@@ -489,7 +514,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox2.Location = new System.Drawing.Point(660, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(443, 216);
+            this.groupBox2.Size = new System.Drawing.Size(440, 216);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
@@ -522,7 +547,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 18);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(437, 23);
+            this.panel2.Size = new System.Drawing.Size(434, 23);
             this.panel2.TabIndex = 19;
             // 
             // label8
@@ -640,16 +665,260 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Estado de la Cuenta";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.dtpProximaGestion);
+            this.groupBox4.Controls.Add(this.dtpFechaPromesa);
+            this.groupBox4.Controls.Add(this.txtObservacion);
+            this.groupBox4.Controls.Add(this.cbResultado);
+            this.groupBox4.Controls.Add(this.cbTipoGestion);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.panel5);
+            this.groupBox4.Location = new System.Drawing.Point(877, 239);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(460, 333);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkGray;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::CaoaPresentacion.Properties.Resources._28464_refresh_reload_sync_recycle_icon;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(313, 276);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 40);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Limpiar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::CaoaPresentacion.Properties.Resources._285657_floppy_guardar_save_icon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(171, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 40);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Guardar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtpProximaGestion
+            // 
+            this.dtpProximaGestion.Enabled = false;
+            this.dtpProximaGestion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpProximaGestion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProximaGestion.Location = new System.Drawing.Point(229, 230);
+            this.dtpProximaGestion.Name = "dtpProximaGestion";
+            this.dtpProximaGestion.Size = new System.Drawing.Size(225, 26);
+            this.dtpProximaGestion.TabIndex = 31;
+            // 
+            // dtpFechaPromesa
+            // 
+            this.dtpFechaPromesa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaPromesa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaPromesa.Location = new System.Drawing.Point(232, 198);
+            this.dtpFechaPromesa.Name = "dtpFechaPromesa";
+            this.dtpFechaPromesa.Size = new System.Drawing.Size(222, 26);
+            this.dtpFechaPromesa.TabIndex = 30;
+            this.dtpFechaPromesa.ValueChanged += new System.EventHandler(this.dtpFechaPromesa_ValueChanged);
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacion.Location = new System.Drawing.Point(14, 139);
+            this.txtObservacion.MaxLength = 500;
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(440, 49);
+            this.txtObservacion.TabIndex = 29;
+            // 
+            // cbResultado
+            // 
+            this.cbResultado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbResultado.FormattingEnabled = true;
+            this.cbResultado.Location = new System.Drawing.Point(197, 85);
+            this.cbResultado.Name = "cbResultado";
+            this.cbResultado.Size = new System.Drawing.Size(257, 26);
+            this.cbResultado.TabIndex = 28;
+            this.cbResultado.SelectedIndexChanged += new System.EventHandler(this.cbResultado_SelectedIndexChanged);
+            // 
+            // cbTipoGestion
+            // 
+            this.cbTipoGestion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoGestion.FormattingEnabled = true;
+            this.cbTipoGestion.Location = new System.Drawing.Point(197, 54);
+            this.cbTipoGestion.Name = "cbTipoGestion";
+            this.cbTipoGestion.Size = new System.Drawing.Size(257, 26);
+            this.cbTipoGestion.TabIndex = 27;
+            this.cbTipoGestion.SelectedIndexChanged += new System.EventHandler(this.cbTipoGestion_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(10, 235);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(176, 18);
+            this.label24.TabIndex = 26;
+            this.label24.Text = "Fecha Proxima Gestión:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(10, 202);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(188, 18);
+            this.label23.TabIndex = 25;
+            this.label23.Text = "Fecha Promesa de Pago:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(11, 118);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(94, 18);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "Comentario:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(11, 87);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(82, 18);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "Resultado:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(11, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 18);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Tipo Gestión:";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SlateBlue;
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(3, 16);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(454, 23);
+            this.panel5.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(7, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Nueva Gestión";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label26);
+            this.groupBox5.Controls.Add(this.dataHistorialGestion);
+            this.groupBox5.Controls.Add(this.panel6);
+            this.groupBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(10, 239);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(862, 333);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            // 
+            // dataHistorialGestion
+            // 
+            this.dataHistorialGestion.AllowUserToAddRows = false;
+            this.dataHistorialGestion.AllowUserToDeleteRows = false;
+            this.dataHistorialGestion.AllowUserToOrderColumns = true;
+            this.dataHistorialGestion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataHistorialGestion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataHistorialGestion.BackgroundColor = System.Drawing.Color.White;
+            this.dataHistorialGestion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataHistorialGestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataHistorialGestion.Location = new System.Drawing.Point(6, 44);
+            this.dataHistorialGestion.Name = "dataHistorialGestion";
+            this.dataHistorialGestion.ReadOnly = true;
+            this.dataHistorialGestion.Size = new System.Drawing.Size(850, 253);
+            this.dataHistorialGestion.TabIndex = 21;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 18);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(856, 23);
+            this.panel6.TabIndex = 14;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(19, 4);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(146, 16);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Historial de Gestiones";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.label26.Location = new System.Drawing.Point(8, 304);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 18);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "label26";
+            // 
             // FrmHistorialGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1345, 637);
+            this.ClientSize = new System.Drawing.Size(1345, 683);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1227, 676);
             this.Name = "FrmHistorialGestion";
@@ -680,6 +949,15 @@
             this.PanelEstadoCartera.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHistorialGestion)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -733,5 +1011,25 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel PanelNivelMora;
         private System.Windows.Forms.Label lblNivelMora;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cbTipoGestion;
+        private System.Windows.Forms.ComboBox cbResultado;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.DateTimePicker dtpFechaPromesa;
+        private System.Windows.Forms.DateTimePicker dtpProximaGestion;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DataGridView dataHistorialGestion;
+        private System.Windows.Forms.Label label26;
     }
 }
