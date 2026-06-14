@@ -93,10 +93,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.dataHistorialGestion = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -117,6 +121,9 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataHistorialGestion)).BeginInit();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHorario
@@ -474,7 +481,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 18);
@@ -856,9 +863,20 @@
             this.groupBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(10, 239);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(862, 333);
+            this.groupBox5.Size = new System.Drawing.Size(862, 390);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.label26.Location = new System.Drawing.Point(10, 358);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 18);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "label26";
             // 
             // dataHistorialGestion
             // 
@@ -873,12 +891,12 @@
             this.dataHistorialGestion.Location = new System.Drawing.Point(6, 44);
             this.dataHistorialGestion.Name = "dataHistorialGestion";
             this.dataHistorialGestion.ReadOnly = true;
-            this.dataHistorialGestion.Size = new System.Drawing.Size(850, 253);
+            this.dataHistorialGestion.Size = new System.Drawing.Size(850, 303);
             this.dataHistorialGestion.TabIndex = 21;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
             this.panel6.Controls.Add(this.label25);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(3, 18);
@@ -896,16 +914,46 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Historial de Gestiones";
             // 
-            // label26
+            // panel7
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.label26.Location = new System.Drawing.Point(8, 304);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(59, 18);
-            this.label26.TabIndex = 22;
-            this.label26.Text = "label26";
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(78)))), ((int)(((byte)(121)))));
+            this.panel7.Controls.Add(this.label27);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 635);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1345, 48);
+            this.panel7.TabIndex = 12;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(18, 15);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(276, 18);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "SISTEMA CECNIC | Gestión de Cobro";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.pictureBox7);
+            this.groupBox6.Location = new System.Drawing.Point(879, 570);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(458, 59);
+            this.groupBox6.TabIndex = 13;
+            this.groupBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::CaoaPresentacion.Properties.Resources.WhatsApp_icon;
+            this.pictureBox7.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 42);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // FrmHistorialGestion
             // 
@@ -913,12 +961,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1345, 683);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1227, 676);
             this.Name = "FrmHistorialGestion";
@@ -958,6 +1008,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataHistorialGestion)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1031,5 +1085,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridView dataHistorialGestion;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

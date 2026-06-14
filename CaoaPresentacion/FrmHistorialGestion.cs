@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using System.Data.SqlClient;
 using Utils;
+using System.Diagnostics;
 
 
 
@@ -58,13 +59,14 @@ namespace CaoaPresentacion
 
             this.cbTipoGestion.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbResultado.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataGridViewConfigurator.Configure(this.dataHistorialGestion);
+          //  DataGridViewConfigurator.Configure(this.dataHistorialGestion);
         }
 
         private void FrmHistorialGestion_Load(object sender, EventArgs e)
         {
             try
             {
+                EstiloDataGridView(dataHistorialGestion);
                 this.lblCarnet.Text = _Carnet;
                 this.lblEstudiante.Text = _Estudiante;
                 this.lblCelular.Text = _Celular;
@@ -90,6 +92,52 @@ namespace CaoaPresentacion
             catch (Exception)
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void EstiloDataGridView(DataGridView dgv)
+        {
+            // General
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.BackgroundColor = Color.White;
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.RowHeadersVisible = false;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.MultiSelect = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+            // Encabezados
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 78, 121);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersHeight = 40;
+
+            // Filas
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 235, 252);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Filas alternas
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+
+            // Bordes
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.GridColor = Color.LightGray;
+
+            // Altura de filas
+            dgv.RowTemplate.Height = 30;
+
+            // Centrar encabezados
+            foreach (DataGridViewColumn columna in dgv.Columns)
+            {
+                columna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
         }
 
@@ -442,5 +490,51 @@ namespace CaoaPresentacion
                 MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string telefono = this.lblCelular.Text;
+
+                string estudiante = this.lblEstudiante.Text;
+
+                string saldo = this.lblSaldo.Text;
+
+                string mensaje =
+                 $" Hola *{estudiante}*,\n\n" +
+                 $" Le saludamos de *CECNIC*.\n\n" +
+                 $" Queremos recordarle que actualmente presenta un *saldo pendiente de C$ {saldo}* correspondiente a sus cuotas académicas.\n\n" +
+                 $" Le invitamos cordialmente a ponerse al día con sus pagos para evitar inconvenientes en sus servicios académicos.\n\n" +
+                 $" Si ya realizó su pago o necesita apoyo para regularizar su situación, por favor comuníquese con nosotros. Con gusto le atenderemos.\n\n" +
+                 $" Gracias por su atención y colaboración.\n\n" +
+                 $" *CECNIC - Formando Profesionales para el Futuro*";
+
+                // Quitar espacios, guiones, etc.
+                telefono = telefono.Replace("-", "")
+                                   .Replace(" ", "");
+
+                // Agregar código de Nicaragua si no existe
+                if (!telefono.StartsWith("505"))
+                {
+                    telefono = "505" + telefono;
+                }
+
+                string url = $"https://wa.me/{telefono}?text={Uri.EscapeDataString(mensaje)}";
+
+                Process.Start(new ProcessStartInfo()
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }
