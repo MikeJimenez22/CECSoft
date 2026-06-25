@@ -14653,3 +14653,4 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.application
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.exe
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.pdb
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_HistorialGestiones.resources

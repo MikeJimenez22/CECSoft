@@ -159,6 +159,7 @@
     <Compile Include="CD_ConfiguracionImpresiones.cs" />
     <Compile Include="CD_Cursos.cs" />
     <Compile Include="CD_Cursos_Turno.cs" />
+    <Compile Include="CD_Dashboard.cs" />
     <Compile Include="CD_Denominaciones.cs" />
     <Compile Include="CD_Detalle_Programacion.cs" />
     <Compile Include="CD_Egresos.cs" />

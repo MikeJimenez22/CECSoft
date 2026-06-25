@@ -50,5 +50,20 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable ObtenerUltimas5GestionesCobro()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ObtenerUltimas5GestionesCobro();
+            return tabla;
+        }
+
+        public DataTable BuscarGestionesPorRango(string FechaInicio,string FechaFinal)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarGestionesPorRango(Convert.ToDateTime(FechaInicio),Convert.ToDateTime(FechaFinal));
+            return tabla;
+        }
+
+
     }
 }

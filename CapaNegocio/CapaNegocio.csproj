@@ -148,6 +148,7 @@
     <Compile Include="CN_Configuraciones.cs" />
     <Compile Include="CN_Cursos.cs" />
     <Compile Include="CN_Cursos_Turnos.cs" />
+    <Compile Include="CN_Dashboard.cs" />
     <Compile Include="CN_Denominaciones.cs" />
     <Compile Include="CN_Detalle_Programacion.cs" />
     <Compile Include="CN_egreso.cs" />

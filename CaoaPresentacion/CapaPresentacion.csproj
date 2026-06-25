@@ -565,6 +565,12 @@
     <Compile Include="Frm_Grupo.Designer.cs">
       <DependentUpon>Frm_Grupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_HistorialGestiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HistorialGestiones.Designer.cs">
+      <DependentUpon>Frm_HistorialGestiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Inasistencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -796,6 +802,9 @@
     <EmbeddedResource Include="Frm_Grupo.resx">
       <DependentUpon>Frm_Grupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HistorialGestiones.resx">
+      <DependentUpon>Frm_HistorialGestiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Inasistencias.resx">
       <DependentUpon>Frm_Inasistencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -991,11 +1000,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ABSTRACT_WALLPAPER_Mesa_de_trabajo_1.jpg" />
     <None Include="Resources\4882066.jpg" />
     <None Include="Resources\1055094_check_select_icon.png" />
     <None Include="Resources\check-24849_1280.png" />
-    <None Include="Resources\308135-P82MR6-683.jpg" />
     <None Include="Resources\3847904_arrow_next_right_icon.png" />
     <None Include="Resources\1495053_circle_content_send_icon.png" />
     <Content Include="119094439_3338582719542925_2145059833924420683_n.ico" />
@@ -1007,31 +1014,17 @@
     <None Include="Resources\Cecnic-Logo-Nuevo-300x253.png" />
     <None Include="Resources\istockphoto-1005214200-612x612.jpg" />
     <None Include="Resources\exit-button-flat-design-long-shadow-glyph-icon-log-out-send-file-silhouette-illustration-vector.jpg" />
-    <None Include="Resources\mountains-ga435eb574_640.png" />
     <None Include="Resources\geometric-gc4e25bd3d_1920.jpg" />
-    <None Include="Resources\heading_backup.jpg" />
     <None Include="Resources\d05514c82f3be6140d6ceef9645838df-icono-plano-de-cuaderno-de-espiral-abierto.png" />
     <Content Include="Cecnic-Logo-Nuevo-300x253.ico" />
     <None Include="Resources\39263_print_printer_icon.png" />
-    <None Include="Resources\png-transparent-business-statistics-management-business-intelligence-business-people-business-material-thumbnail.png" />
-    <None Include="Resources\Statistics-PNG-Clipart.png" />
     <None Include="Resources\icon-1968246_1280.png" />
-    <None Include="Resources\landscape-4626489_1920.jpg" />
-    <None Include="Resources\aurora-1197753_1920.jpg" />
     <None Include="Resources\299107_money_icon.png" />
     <None Include="Resources\3844411_eye_see_show_view_watch_icon.png" />
     <None Include="Resources\9004852_trash_delete_bin_remove_icon.png" />
     <None Include="Resources\8725897_dollar_alt_icon.png" />
-    <None Include="Resources\money-3219298_1920.jpg" />
-    <None Include="Resources\laptop-2589420_1920.jpg" />
-    <None Include="Resources\FondoPantallaSistema.png" />
-    <None Include="Resources\FondoPantallaSistema1.png" />
-    <None Include="Resources\imgfooter.png" />
     <None Include="Resources\588a64fed06f6719692a2d14.png" />
-    <None Include="Resources\kids-1093758_1920.jpg" />
-    <None Include="Resources\hands-1851218_1920.jpg" />
     <None Include="Resources\refresh-gc1fc0084b_1280.png" />
-    <None Include="Resources\arrow-g7d421f04f_1280.png" />
     <None Include="Resources\hosting-backups-03.png" />
     <None Include="Resources\FondoSistema.png" />
     <None Include="Resources\118869_unreadable_unreadable_emblem_emblem.png" />
@@ -1047,22 +1040,13 @@
     <None Include="Resources\Cecnic-Logo-Nuevo-300x2531.png" />
     <None Include="Resources\academia-de-ingles.png" />
     <None Include="Resources\istockphoto-1298261537-170667a.jpg" />
-    <None Include="Resources\imagenLogin.png" />
     <None Include="Resources\580b57fcd9996e24bc43c449.png" />
     <None Include="Resources\napaka.jpg" />
     <None Include="Resources\close-isolated-icon-which-can-easily-modify-or-edit-vector.jpg" />
     <None Include="Resources\pngtree-arrow-forward-arrows-right-blue-dotted-line-line-icon-png-image_1700556.jpg" />
     <None Include="Resources\unnamed.png" />
-    <None Include="Resources\image.png" />
     <None Include="Resources\309036_student_education_study_icon %281%29.png" />
     <None Include="Resources\4763259_chair_desk_pupil_school_student_icon.png" />
-    <None Include="Resources\png-clipart-computer-icons-electricity-electric-power-power-miscellaneous-angle.png" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 6.57.18 PM.jpeg" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 6.58.51 PM.jpeg" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 7.00.56 PM.jpeg" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 7.02.38 PM.jpeg" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 7.03.56 PM.jpeg" />
-    <None Include="Resources\WhatsApp Image 2023-06-19 at 7.05.27 PM.jpeg" />
     <None Include="Resources\6ebfce9ad896b2486c40828e0bd14cbd-s--mbolo-de-conexi--n-wifi-by-vexels.png" />
     <None Include="Resources\299094_filter_icon.png" />
     <None Include="Resources\22735_select_icon.png" />
@@ -1071,11 +1055,9 @@
     <None Include="Resources\1814075_find_magnifier_magnifying glass_search_icon.png" />
     <None Include="Resources\8725492_arrow_up_icon.png" />
     <None Include="Resources\8725486_arrow_down_icon.png" />
-    <None Include="Resources\FondoSistemaNuevo.png" />
     <None Include="Resources\FondoSistemaNuevo1.png" />
     <None Include="Resources\WhatsApp_icon.png" />
     <None Include="Resources\511675.png" />
-    <None Include="Resources\PantallaLogin.png" />
     <None Include="Resources\icono_alta1.png" />
     <None Include="Resources\CarnetEstudiantil.png" />
     <None Include="Resources\CarnetEstudiantil1.png" />
@@ -1088,10 +1070,7 @@
     <None Include="Resources\Carnet Estudiantil2.png" />
     <None Include="Resources\Carnet Estudiantil3.png" />
     <None Include="Resources\Carnet Estudiantil4.png" />
-    <None Include="Resources\Inicio de Sesión.png" />
     <None Include="Resources\ver.png" />
-    <None Include="Resources\Acceder al sistema.png" />
-    <None Include="Resources\Acceder al sistema %28800 x 600 px%29.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\send-message.png" />
     <None Include="Resources\edit-button.png" />
@@ -1133,6 +1112,21 @@
     <None Include="Resources\graduacion.png" />
     <None Include="Resources\modal.png" />
     <None Include="Resources\reloj-de-pared.png" />
+    <None Include="Resources\arrows-rotate-solid.png" />
+    <None Include="Resources\user-graduate-solid.png" />
+    <None Include="Resources\calendar-day-solid.png" />
+    <None Include="Resources\book-open-solid.png" />
+    <None Include="Resources\users-solid.png" />
+    <None Include="Resources\chalkboard-user-solid.png" />
+    <None Include="Resources\nueva-cuenta.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\circulo-plus.png" />
+    <None Include="Resources\calendar-days-regular.png" />
+    <None Include="Resources\computer-solid.png" />
+    <None Include="Resources\database-solid.png" />
+    <None Include="Resources\BannerLateral.png" />
+    <None Include="Resources\circle-check-solid.png" />
+    <None Include="Resources\circle-xmark-regular.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

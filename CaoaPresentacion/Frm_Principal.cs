@@ -9,21 +9,23 @@ using System.Net;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+
 
 
 namespace CaoaPresentacion
 {
     public partial class Frm_Principal : Form
     {
-      
-        
-       
         CN_Usuarios objetoCN2 = new CN_Usuarios();
         CN_CierreCaja objetoCN3 = new CN_CierreCaja();
         CN_Rol_Formularios objetoCN4 = new CN_Rol_Formularios();
         string fechaVerificacion = DateTime.Now.ToShortDateString();
 
-    
+        private readonly CN_Dashboard objDashboard = new CN_Dashboard();
+        private readonly CN_Dashboard objDashboard2 = new CN_Dashboard();
+
+
         public Frm_Principal()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace CaoaPresentacion
         }
 
 
-
+  
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -85,134 +87,93 @@ namespace CaoaPresentacion
                 this.panel14.BackColor = Color.Red;
                 this.label21.Text = "Desconectado";
 
-              //  this.menuStrip.Enabled = false;
-
-
             }
             
         }
-        
-        private void crearRegistroToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private int tiempoActual = 0;
+        private const int tiempoMaximo = 60;
+
+
+        private  void Frm_Principal_Load(object sender, EventArgs e)
         {
+            progressBarDashboard.Minimum = 0;
+            progressBarDashboard.Maximum = tiempoMaximo;
+            progressBarDashboard.Value = 0;
+
+            lblActualizacion.Text = $"Actualización en: {tiempoMaximo} s";
+
             try
             {
-                CachePersonaVentana.MetodoEntrada = "OFLINE";
-             
-                
-               
-                Frm_DatosGenerales frm = new Frm_DatosGenerales();
-                frm.Show();
 
-             
+                EstiloDataGestiones();
+                DatosDashboard();
+          
+
+
+                panel14.BackColor = Color.FromArgb(212, 237, 218);
+                label21.ForeColor = Color.FromArgb(40, 167, 69);
+                label21.Text = "Sistema Conectado";
+
+                MostrarBotonEstado();
             }
-            catch (Exception)
+            catch
             {
-                MessageBox.Show("Error de Conexion con el servidor", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                panel14.BackColor = Color.FromArgb(235, 154, 134);
+                label21.ForeColor = Color.White;
+                label21.Text = "Sistema Desconectado";
+
+                MostrarBotonEstado();
+                menuStrip.Enabled = false;
             }
+
+            this.FormClosed += new FormClosedEventHandler(cerrarform);
+            this.lblNombrePC.Text = "Terminal: " + Environment.MachineName;
+
+            lblNombreUsuario.Text =
+                "¡Bienvenido, " +
+                CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CacheUsuario.Nombres.ToLower()) +
+                " " +
+                CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CacheUsuario.Apellidos.ToLower()) +
+                "! | " +
+                CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CacheUsuario.TipoUsuario.ToLower());
+
+            CacheDetalleProgramacion.Contador4 = true;
+
+            AdministracionAcceso(CacheUsuario.TipoUsuario);
+
+            BuscarCjaAsignada();
+
+            timer1.Interval = 1000;
+            timer1.Start();
         }
 
+     
 
 
 
-        private void Frm_Principal_Load(object sender, EventArgs e)
-        {
-            try
-            {
-           
-                this.label21.Text = "Conectado";
-                this.panel14.BackColor = Color.Green;
-               
-                this.MostrarBotonEstado();
-
-                this.FormClosed += new FormClosedEventHandler(cerrarform);
-                this.lblNombres.Text = CacheUsuario.Nombres;
-                this.lblApellidos.Text = CacheUsuario.Apellidos;
-                this.lblcarnet.Text = CacheUsuario.CodigoCarnet;
-                this.lblTipoUsuario.Text = CacheUsuario.TipoUsuario;
-               
-                CacheDetalleProgramacion.Contador4 = true;
-
-                this.AdministracionAcceso(CacheUsuario.TipoUsuario);
-                this.MostrarCantidadActualUniverso();
-              
-                this.BuscarCjaAsignada();
-              
-
-            }
-            catch (Exception)
-            {
-
-                this.panel14.BackColor = Color.Red;
-                this.label21.Text = "Desconectado";
-                this.MostrarBotonEstado();
-                this.menuStrip.Enabled = false;
-                
-            }
 
 
-        }
+
+
+
 
 
         private void MostrarBotonEstado()
         {
-            if (this.label21.Text == "Conectado")
+            if (this.label21.Text == "Sistema Conectado")
             {
-                this.button1.Enabled = false;
-                this.button1.Visible = false;
+                this.pbActualizar.Enabled = false;
+                this.pbActualizar.Visible = false;
             }
-            else if (this.label21.Text == "Desconectado")
+            else if (this.label21.Text == "Sistema Desconectado")
             {
-                this.button1.Enabled = true;
-                this.button1.Visible = true;
-            }
-
-        }
-
-
-        private void MostrarCantidadActualUniverso()
-        {
-
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            DataTable tabla = new DataTable();
-
-            tabla = objetoCN.CalcularCantidadActualUniverso();
-            if (tabla.Rows.Count == 0)
-            {
-                this.label7.Text = "0";
-            }
-            else
-            {
-                this.label7.Text = tabla.Rows[0][0].ToString();
+                this.pbActualizar.Enabled = true;
+                this.pbActualizar.Visible = true;
             }
 
         }
-
-
-        private void MostrarCantidadMatriculasHoy()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            DataTable tabla = new DataTable();
-
-            string FechaActual = DateTime.Now.ToShortDateString();
-
-            tabla = objetoCN.CalcularCantidadActualUniversoHoy(Convert.ToDateTime(FechaActual));
-            if (tabla.Rows.Count == 0)
-            {
-                this.label8.Text = "0";
-            }
-            else
-            {
-                this.label8.Text = tabla.Rows[0][0].ToString();
-            }
-
-        }
-
-
-
-
-
-
-
+        
         private void cerrarform(object sender, EventArgs e)
         {
 
@@ -242,34 +203,302 @@ namespace CaoaPresentacion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.label1.Text = DateTime.Now.ToLongDateString();
-            this.label2.Text = DateTime.Now.ToLongTimeString();
+            label1.Text = DateTime.Now.ToLongDateString() + " " +
+                   DateTime.Now.ToLongTimeString();
 
+            tiempoActual++;
 
-         
+            progressBarDashboard.Value = Math.Min(tiempoActual, tiempoMaximo);
 
+            int restante = Math.Max(0, tiempoMaximo - tiempoActual);
+
+            lblActualizacion.Text = $"Actualización en: {restante} s";
+
+            if (tiempoActual >= tiempoMaximo)
+            {
+                timer1.Stop();
+
+                try
+                {
+                    lblActualizacion.Text = "Actualizando dashboard...";
+
+                    DatosDashboard();
+
+                    panel14.BackColor = Color.FromArgb(212, 237, 218);
+                    label21.ForeColor = Color.FromArgb(40, 167, 69);
+                    label21.Text = "Sistema Conectado";
+
+                    MostrarBotonEstado();
+                }
+                catch
+                {
+                    panel14.BackColor = Color.Red;
+                    label21.ForeColor = Color.White;
+                    label21.Text = "Sistema Desconectado";
+
+                    MostrarBotonEstado();
+                    menuStrip.Enabled = false;
+                }
+
+                tiempoActual = 0;
+                progressBarDashboard.Value = 0;
+                lblActualizacion.Text = $"Actualización en: {tiempoMaximo} s";
+
+                timer1.Start();
+            }
+        }
+
+        private void DatosDashboard()
+        {
             try
             {
-                this.MostrarCantidadActualUniverso();
-                this.MostrarCantidadMatriculasHoy();
+                CargarEstadisticasPrimarias();
+                CargarEstadisticasSecundarias();
+                CargarUltimoBackup();
+                CargarCarteraTurnoActual();
+                CargarGestiones();
+                CargarAsistenciaDia();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarEstadisticasPrimarias()
+        {
+            try
+            {
+                CN_Dashboard objetoCN = new CN_Dashboard();
+
+
+
+                // Dashboard General
+                DataTable dtGeneral = objetoCN.MostrarDashboard();
+
+                if (dtGeneral.Rows.Count > 0)
+                {
+                    DataRow fila = dtGeneral.Rows[0];
+
+                    lblEstudiantes.Text = fila[0].ToString();
+                    lblMatriculasHoy.Text = fila[1].ToString();
+                    lblMatriculasRegistradas.Text = fila[1].ToString();
+                    lblCursos.Text = fila[2].ToString();
+                    lblGrupos.Text = fila[3].ToString();
+                    lblDocentes.Text = fila[4].ToString();
+                }
+                else
+                {
+                    lblEstudiantes.Text = "0";
+                    lblMatriculasHoy.Text = "0";
+                    lblMatriculasRegistradas.Text = "0";
+                    lblCursos.Text = "0";
+                    lblGrupos.Text = "0";
+                    lblDocentes.Text = "0";
+                }
 
             }
             catch (Exception)
             {
-                this.panel14.BackColor = Color.Red;
-                this.label21.Text = "Desconectado";
-                this.MostrarBotonEstado();
-
-              this.menuStrip.Enabled = false;
-
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
-       
+        private void CargarEstadisticasSecundarias()
+        {
+            try
+            {
+                CN_Dashboard objetoCN  = new CN_Dashboard();
 
-       
+                // Dashboard Diario
+                DataTable dtDiario = objetoCN.MostrarDashboardDiario();
+
+                if (dtDiario.Rows.Count > 0)
+                {
+                    DataRow fila = dtDiario.Rows[0];
+
+                    lblCarnetEstudiantil.Text = fila[0].ToString();
+                    lblCertificadoGeneral.Text = fila[1].ToString();
+                    lblMensualidades.Text = fila[2].ToString();
+                    lblDiplomasCECNIC.Text = fila[3].ToString();
+                    lblDiplomasINATEC.Text = fila[4].ToString();
+                    lblGestiones.Text = fila[5].ToString();
+                    lblFacturas.Text = fila[6].ToString();
+                }
+                else
+                {
+                    lblCarnetEstudiantil.Text = "0";
+                    lblCertificadoGeneral.Text = "0";
+                    lblMensualidades.Text = "0";
+                    lblDiplomasCECNIC.Text = "0";
+                    lblDiplomasINATEC.Text = "0";
+                    lblGestiones.Text = "0";
+                    lblFacturas.Text = "0";
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarUltimoBackup()
+        {
+            try
+            {
+                CN_Dashboard objetoCN  = new CN_Dashboard();
+                DataTable dtBackup = objetoCN.UltimoBackup();
+                if (dtBackup.Rows.Count > 0)
+                {
+                    DataRow fila = dtBackup.Rows[0];
+                    this.lblBackup.Text = "Ultima copia de seguridad: " + fila[0].ToString();
+                }
+                else
+                {
+                    this.lblBackup.Text = "Ultima copia de seguridad: --- ";
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarCarteraTurnoActual()
+        {
+            try
+            {
+                CN_Dashboard objetoCN = new CN_Dashboard();
+                DataTable dtCartera = objetoCN.ObtenerCarteraTurnoActual();
+                if (dtCartera.Rows.Count > 0)
+                {
+                    DataRow fila = dtCartera.Rows[0];
+                    this.lblinsolventes.Text = fila[0].ToString();
+                    this.lblsolventes.Text = fila[1].ToString();
+                }
+                else
+                {
+                    this.lblinsolventes.Text = "0";
+                    this.lblsolventes.Text = "0";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void CargarGestiones()
+        {
+            try
+            {
+                CN_GestionCobro objCN = new CN_GestionCobro();
+                DataTable dt = objCN.ObtenerUltimas5GestionesCobro();
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    dt = new DataTable();
+                    dt.Columns.Add("Mensaje");
+                    dt.Rows.Add("No hay registros");
+                }
+
+                dataGestiones.DataSource = dt;
+
+                if (dt.Columns.Contains("Mensaje"))
+                {
+                    dataGestiones.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarAsistenciaDia()
+        {
+            try
+            {
+                CN_Dashboard ObjetoCN = new CN_Dashboard();
+                DataTable tabla = new DataTable();
+                tabla = ObjetoCN.AsistenciaGeneralDia();
+                if (tabla.Rows.Count > 0)
+                {
+                    DataRow fila = tabla.Rows[0];
+                    this.lblPresentes.Text = fila[0].ToString();
+                    this.lblAusentes.Text = fila[1].ToString();
+                    this.lblTardes.Text = fila[2].ToString();
+                    this.lblJustificados.Text = fila[3].ToString();
+
+                }else
+                {
+                    this.lblPresentes.Text = "0";
+                    this.lblAusentes.Text = "0";
+                    this.lblTardes.Text = "0";
+                    this.lblJustificados.Text = "0";
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void EstiloDataGestiones()
+        {
+            dataGestiones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGestiones.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dataGestiones.Dock = DockStyle.Fill;
+
+            dataGestiones.BackgroundColor = Color.White;
+            dataGestiones.BorderStyle = BorderStyle.None;
+            dataGestiones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            dataGestiones.EnableHeadersVisualStyles = false;
+            dataGestiones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGestiones.MultiSelect = false;
+            dataGestiones.ReadOnly = true;
+            dataGestiones.RowHeadersVisible = false;
+
+            // 🔵 HEADER (más moderno y limpio)
+            dataGestiones.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGestiones.ColumnHeadersHeight = 45;
+
+            dataGestiones.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(25, 42, 86);
+            dataGestiones.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGestiones.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
+            dataGestiones.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // 📄 FILAS (mejor lectura)
+            dataGestiones.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGestiones.DefaultCellStyle.ForeColor = Color.FromArgb(45, 45, 45);
+            dataGestiones.DefaultCellStyle.SelectionBackColor = Color.FromArgb(210, 230, 255);
+            dataGestiones.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dataGestiones.DefaultCellStyle.Padding = new Padding(8, 5, 8, 5);
+
+            // 🎨 alternancia de filas (clave para look pro)
+            dataGestiones.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 249, 251);
+
+            // 📏 altura más controlada
+            dataGestiones.RowTemplate.Height = 38;
+
+            // 🌫 grid suave (no agresivo)
+            dataGestiones.GridColor = Color.FromArgb(230, 230, 230);
+
+            // 🖱 comportamiento más fluido
+            dataGestiones.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            // 🔒 extra seguridad visual
+            dataGestiones.AllowUserToAddRows = false;
+            dataGestiones.AllowUserToResizeRows = false;
+        }
+
+
         private void VerificarEstado_Tick(object sender, EventArgs e)
         {
             try
@@ -287,8 +516,9 @@ namespace CaoaPresentacion
             }
             catch (Exception)
             {
-                this.panel14.BackColor = Color.Red;
-                this.label21.Text = "Desconectado";
+                this.panel14.BackColor = Color.FromArgb(235, 154, 134); // Rojo claro
+                this.label21.ForeColor = Color.FromArgb(255, 255, 255);   // blanco
+                this.label21.Text = "Sistema Desconectado";
                 this.MostrarBotonEstado();
 
                this.menuStrip.Enabled = false;
@@ -341,41 +571,7 @@ namespace CaoaPresentacion
             }
         }
         
-        
-
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-
-                if (conexion.Conexion().State == ConnectionState.Open)
-                {
-                    this.menuStrip.Enabled = true;
-                    this.panel4.Enabled = true;
-
-                  
-
-                    this.panel14.BackColor = Color.Green;
-                    this.label21.Text = "Conectado";
-                    this.MostrarBotonEstado();
-
-                }
-                else if (conexion.Conexion().State == ConnectionState.Closed)
-                {
-                    MessageBox.Show("Reintente Conectarse", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Reintente Conectarse", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+      
         private void registroDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -471,7 +667,6 @@ namespace CaoaPresentacion
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void reporteUniversoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -545,7 +740,6 @@ namespace CaoaPresentacion
             {
                 Frm_Usuario frm = new Frm_Usuario();
                 frm.Show();
-
             }
             catch (Exception)
             {
@@ -886,7 +1080,7 @@ namespace CaoaPresentacion
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            }
+        }
 
         private void matriculasNoAsignadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -919,6 +1113,108 @@ namespace CaoaPresentacion
             try
             {
                 Frm_CarnetAdministracion frm = new Frm_CarnetAdministracion();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pbActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CD_Conexion conexion = new CD_Conexion();
+                conexion.AbrirConexion();
+
+                if (conexion.Conexion().State == ConnectionState.Open)
+                {
+                    this.menuStrip.Enabled = true;
+                    this.panel4.Enabled = true;
+
+
+
+                    this.panel14.BackColor = Color.FromArgb(212, 237, 218); // Verde claro
+                    this.label21.ForeColor = Color.FromArgb(40, 167, 69);   // Verde fuerte
+                    this.label21.Text = "Sistema Conectado";
+                    this.MostrarBotonEstado();
+
+                }
+                else if (conexion.Conexion().State == ConnectionState.Closed)
+                {
+                    MessageBox.Show("Reintente Conectarse", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Reintente Conectarse", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CachePersonaVentana.MetodoEntrada = "OFLINE";
+
+                Frm_DatosGenerales frm = new Frm_DatosGenerales();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Conexion con el servidor", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Nueva_Matricula frm = new Frm_Nueva_Matricula();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_BusquedaEstudiantes frm = new Frm_BusquedaEstudiantes();
+                frm.Show();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_ReporteRecepcion frm = new Frm_ReporteRecepcion();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestionesDeCobroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_HistorialGestiones frm = new Frm_HistorialGestiones();
                 frm.Show();
             }
             catch (Exception)

@@ -713,9 +713,29 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrows_rotate_solid {
+            get {
+                object obj = ResourceManager.GetObject("arrows-rotate-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap aurora_1197753_1920 {
             get {
                 object obj = ResourceManager.GetObject("aurora-1197753_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BannerLateral {
+            get {
+                object obj = ResourceManager.GetObject("BannerLateral", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -753,9 +773,49 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap book_open_solid {
+            get {
+                object obj = ResourceManager.GetObject("book-open-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap budget {
             get {
                 object obj = ResourceManager.GetObject("budget", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscar {
+            get {
+                object obj = ResourceManager.GetObject("buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_day_solid {
+            get {
+                object obj = ResourceManager.GetObject("calendar-day-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar_days_regular {
+            get {
+                object obj = ResourceManager.GetObject("calendar-days-regular", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -893,6 +953,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chalkboard_user_solid {
+            get {
+                object obj = ResourceManager.GetObject("chalkboard-user-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check {
             get {
                 object obj = ResourceManager.GetObject("check", resourceCulture);
@@ -923,6 +993,36 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circle_check_solid {
+            get {
+                object obj = ResourceManager.GetObject("circle-check-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_xmark_regular {
+            get {
+                object obj = ResourceManager.GetObject("circle-xmark-regular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circulo_plus {
+            get {
+                object obj = ResourceManager.GetObject("circulo-plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_isolated_icon_which_can_easily_modify_or_edit_vector {
             get {
                 object obj = ResourceManager.GetObject("close-isolated-icon-which-can-easily-modify-or-edit-vector", resourceCulture);
@@ -943,6 +1043,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computer_solid {
+            get {
+                object obj = ResourceManager.GetObject("computer-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cross_296507_1280 {
             get {
                 object obj = ResourceManager.GetObject("cross-296507_1280", resourceCulture);
@@ -956,6 +1066,16 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap d05514c82f3be6140d6ceef9645838df_icono_plano_de_cuaderno_de_espiral_abierto {
             get {
                 object obj = ResourceManager.GetObject("d05514c82f3be6140d6ceef9645838df-icono-plano-de-cuaderno-de-espiral-abierto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_solid {
+            get {
+                object obj = ResourceManager.GetObject("database-solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1375,6 +1495,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nueva_cuenta {
+            get {
+                object obj = ResourceManager.GetObject("nueva-cuenta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PantallaLogin {
             get {
                 object obj = ResourceManager.GetObject("PantallaLogin", resourceCulture);
@@ -1559,6 +1689,26 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap unnamed {
             get {
                 object obj = ResourceManager.GetObject("unnamed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_graduate_solid {
+            get {
+                object obj = ResourceManager.GetObject("user-graduate-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_solid {
+            get {
+                object obj = ResourceManager.GetObject("users-solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

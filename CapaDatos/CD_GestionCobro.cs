@@ -86,5 +86,46 @@ namespace CapaDatos
             }
         }
 
+        public DataTable ObtenerUltimas5GestionesCobro()
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_Ultimas5GestionesCobro", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+        public DataTable BuscarGestionesPorRango(DateTime FechaInicio,DateTime FechaFinal)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ReporteGestionesCobro", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                    command.Parameters.AddWithValue("@FechaFin", FechaFinal);
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
     }
 }
