@@ -43,12 +43,17 @@
             this.consultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialPagosEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloAcademicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlDeAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeNotasAcademicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarCarnetAdministracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionAcademicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeAsistenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarCarnetAdministracionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroAcademicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeNotasAcademicasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloCuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carteraYCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionesDeCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteUniversoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCajaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,7 +179,7 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.lblJustificados = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.gestionesDeCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeNotasActasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -323,42 +328,75 @@
             // moduloAcademicoToolStripMenuItem
             // 
             this.moduloAcademicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.controlDeAsistenciaToolStripMenuItem,
-            this.gestionDeNotasAcademicasToolStripMenuItem,
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem,
-            this.generarCarnetAdministracionToolStripMenuItem});
+            this.gestionAcademicaToolStripMenuItem,
+            this.registroAcademicoToolStripMenuItem});
             this.moduloAcademicoToolStripMenuItem.Image = global::CaoaPresentacion.Properties.Resources.academic;
             this.moduloAcademicoToolStripMenuItem.Name = "moduloAcademicoToolStripMenuItem";
             this.moduloAcademicoToolStripMenuItem.Size = new System.Drawing.Size(140, 38);
             this.moduloAcademicoToolStripMenuItem.Text = "Modulo Academico";
             // 
-            // controlDeAsistenciaToolStripMenuItem
+            // gestionAcademicaToolStripMenuItem
             // 
-            this.controlDeAsistenciaToolStripMenuItem.Name = "controlDeAsistenciaToolStripMenuItem";
-            this.controlDeAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.controlDeAsistenciaToolStripMenuItem.Text = "Control de Asistencia";
-            this.controlDeAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.controlDeAsistenciaToolStripMenuItem_Click);
+            this.gestionAcademicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlDeAsistenciaToolStripMenuItem1,
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1,
+            this.generarCarnetAdministracionToolStripMenuItem1});
+            this.gestionAcademicaToolStripMenuItem.Name = "gestionAcademicaToolStripMenuItem";
+            this.gestionAcademicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionAcademicaToolStripMenuItem.Text = "Gestion Academica";
             // 
-            // gestionDeNotasAcademicasToolStripMenuItem
+            // controlDeAsistenciaToolStripMenuItem1
             // 
-            this.gestionDeNotasAcademicasToolStripMenuItem.Name = "gestionDeNotasAcademicasToolStripMenuItem";
-            this.gestionDeNotasAcademicasToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.gestionDeNotasAcademicasToolStripMenuItem.Text = "Gestion de Notas Academicas";
-            this.gestionDeNotasAcademicasToolStripMenuItem.Click += new System.EventHandler(this.gestionDeNotasAcademicasToolStripMenuItem_Click);
+            this.controlDeAsistenciaToolStripMenuItem1.Name = "controlDeAsistenciaToolStripMenuItem1";
+            this.controlDeAsistenciaToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
+            this.controlDeAsistenciaToolStripMenuItem1.Text = "Control de Asistencia";
+            this.controlDeAsistenciaToolStripMenuItem1.Click += new System.EventHandler(this.controlDeAsistenciaToolStripMenuItem1_Click);
             // 
-            // solicitudDeCarnetEstudiantilToolStripMenuItem
+            // solicitudDeCarnetEstudiantilToolStripMenuItem1
             // 
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem.Name = "solicitudDeCarnetEstudiantilToolStripMenuItem";
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem.Text = "Solicitud de Carnet Estudiantil";
-            this.solicitudDeCarnetEstudiantilToolStripMenuItem.Click += new System.EventHandler(this.solicitudDeCarnetEstudiantilToolStripMenuItem_Click);
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1.Name = "solicitudDeCarnetEstudiantilToolStripMenuItem1";
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1.Text = "Solicitud de Carnet Estudiantil";
+            this.solicitudDeCarnetEstudiantilToolStripMenuItem1.Click += new System.EventHandler(this.solicitudDeCarnetEstudiantilToolStripMenuItem1_Click);
             // 
-            // generarCarnetAdministracionToolStripMenuItem
+            // generarCarnetAdministracionToolStripMenuItem1
             // 
-            this.generarCarnetAdministracionToolStripMenuItem.Name = "generarCarnetAdministracionToolStripMenuItem";
-            this.generarCarnetAdministracionToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.generarCarnetAdministracionToolStripMenuItem.Text = "Generar Carnet Administracion";
-            this.generarCarnetAdministracionToolStripMenuItem.Click += new System.EventHandler(this.generarCarnetAdministracionToolStripMenuItem_Click);
+            this.generarCarnetAdministracionToolStripMenuItem1.Name = "generarCarnetAdministracionToolStripMenuItem1";
+            this.generarCarnetAdministracionToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
+            this.generarCarnetAdministracionToolStripMenuItem1.Text = "Generar Carnet Administracion";
+            this.generarCarnetAdministracionToolStripMenuItem1.Click += new System.EventHandler(this.generarCarnetAdministracionToolStripMenuItem1_Click);
+            // 
+            // registroAcademicoToolStripMenuItem
+            // 
+            this.registroAcademicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDeNotasAcademicasToolStripMenuItem1,
+            this.librosToolStripMenuItem1,
+            this.tiposDeDocumentosToolStripMenuItem,
+            this.registroDeNotasActasToolStripMenuItem});
+            this.registroAcademicoToolStripMenuItem.Name = "registroAcademicoToolStripMenuItem";
+            this.registroAcademicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registroAcademicoToolStripMenuItem.Text = "Registro Academico";
+            // 
+            // gestionDeNotasAcademicasToolStripMenuItem1
+            // 
+            this.gestionDeNotasAcademicasToolStripMenuItem1.Name = "gestionDeNotasAcademicasToolStripMenuItem1";
+            this.gestionDeNotasAcademicasToolStripMenuItem1.Size = new System.Drawing.Size(231, 22);
+            this.gestionDeNotasAcademicasToolStripMenuItem1.Text = "Gestion de Notas Academicas";
+            this.gestionDeNotasAcademicasToolStripMenuItem1.Click += new System.EventHandler(this.gestionDeNotasAcademicasToolStripMenuItem1_Click);
+            // 
+            // librosToolStripMenuItem1
+            // 
+            this.librosToolStripMenuItem1.Name = "librosToolStripMenuItem1";
+            this.librosToolStripMenuItem1.Size = new System.Drawing.Size(231, 22);
+            this.librosToolStripMenuItem1.Text = "Libros";
+            this.librosToolStripMenuItem1.Click += new System.EventHandler(this.librosToolStripMenuItem1_Click);
+            // 
+            // tiposDeDocumentosToolStripMenuItem
+            // 
+            this.tiposDeDocumentosToolStripMenuItem.Name = "tiposDeDocumentosToolStripMenuItem";
+            this.tiposDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.tiposDeDocumentosToolStripMenuItem.Text = "Tipos de Documentos";
+            this.tiposDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeDocumentosToolStripMenuItem_Click);
             // 
             // moduloCuentasPorCobrarToolStripMenuItem
             // 
@@ -373,9 +411,16 @@
             // carteraYCobroToolStripMenuItem
             // 
             this.carteraYCobroToolStripMenuItem.Name = "carteraYCobroToolStripMenuItem";
-            this.carteraYCobroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carteraYCobroToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.carteraYCobroToolStripMenuItem.Text = "Cartera y cobro";
             this.carteraYCobroToolStripMenuItem.Click += new System.EventHandler(this.carteraYCobroToolStripMenuItem_Click);
+            // 
+            // gestionesDeCobroToolStripMenuItem
+            // 
+            this.gestionesDeCobroToolStripMenuItem.Name = "gestionesDeCobroToolStripMenuItem";
+            this.gestionesDeCobroToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.gestionesDeCobroToolStripMenuItem.Text = "Gestiones de Cobro";
+            this.gestionesDeCobroToolStripMenuItem.Click += new System.EventHandler(this.gestionesDeCobroToolStripMenuItem_Click);
             // 
             // moduloReportesToolStripMenuItem
             // 
@@ -1856,12 +1901,12 @@
             this.label28.TabIndex = 15;
             this.label28.Text = "Justificados";
             // 
-            // gestionesDeCobroToolStripMenuItem
+            // registroDeNotasActasToolStripMenuItem
             // 
-            this.gestionesDeCobroToolStripMenuItem.Name = "gestionesDeCobroToolStripMenuItem";
-            this.gestionesDeCobroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionesDeCobroToolStripMenuItem.Text = "Gestiones de Cobro";
-            this.gestionesDeCobroToolStripMenuItem.Click += new System.EventHandler(this.gestionesDeCobroToolStripMenuItem_Click);
+            this.registroDeNotasActasToolStripMenuItem.Name = "registroDeNotasActasToolStripMenuItem";
+            this.registroDeNotasActasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.registroDeNotasActasToolStripMenuItem.Text = "Registro de Notas - Actas";
+            this.registroDeNotasActasToolStripMenuItem.Click += new System.EventHandler(this.registroDeNotasActasToolStripMenuItem_Click);
             // 
             // Frm_Principal
             // 
@@ -1962,9 +2007,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeMatriculasEnLineaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem universoEstudiantilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduloAcademicoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem controlDeAsistenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDeNotasAcademicasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitudDeCarnetEstudiantilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduloDeFacturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarPagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeFacturasToolStripMenuItem;
@@ -1997,7 +2039,6 @@
         private System.Windows.Forms.ToolStripMenuItem inasistenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matriculasNoAsignadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarCarnetAdministracionToolStripMenuItem;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -2089,6 +2130,15 @@
         private System.Windows.Forms.Label lblTardes;
         private System.Windows.Forms.Label lblJustificados;
         private System.Windows.Forms.ToolStripMenuItem gestionesDeCobroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionAcademicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeAsistenciaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem solicitudDeCarnetEstudiantilToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem generarCarnetAdministracionToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registroAcademicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeNotasAcademicasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tiposDeDocumentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeNotasActasToolStripMenuItem;
     }
 }
 

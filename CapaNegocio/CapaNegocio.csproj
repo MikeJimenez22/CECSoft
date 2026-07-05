@@ -167,6 +167,7 @@
     <Compile Include="CN_Horarios.cs" />
     <Compile Include="CN_Impresiones.cs" />
     <Compile Include="CN_Incentivo.cs" />
+    <Compile Include="CN_Libros.cs" />
     <Compile Include="CN_Matriculas.cs" />
     <Compile Include="CN_ModulosCurso.cs" />
     <Compile Include="CN_Moneda.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="CN_Roles.cs" />
     <Compile Include="CN_Roles_Usuarios.cs" />
     <Compile Include="CN_Rol_Formularios.cs" />
+    <Compile Include="CN_TiposDocumento.cs" />
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="CN_VerificacionMatricula.cs" />
     <Compile Include="CN_VistaUniverso.cs" />

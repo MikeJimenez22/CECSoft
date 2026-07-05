@@ -14437,11 +14437,8 @@ H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ClosedXML.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ClosedXML.Parser.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\DocumentFormat.OpenXml.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\EPPlus.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\EPPlus.Interfaces.dll
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\EPPlus.System.Drawing.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ExcelNumberFormat.dll
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\FontAwesome.Sharp.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Google.Protobuf.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\HtmlAgilityPack.dll
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\K4os.Compression.LZ4.dll
@@ -14507,7 +14504,6 @@ H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ClosedXML.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ClosedXML.Parser.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\DocumentFormat.OpenXml.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\EPPlus.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\ExcelNumberFormat.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Google.Protobuf.pdb
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Google.Protobuf.xml
@@ -14590,7 +14586,6 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Asignacion_Caja
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CustomPrintPreviewForm.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vistas.Frm_VistaEstados.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vistas.Frm_VistaGrupos.resources
-H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vistas.Frm_VistaPadreTutor.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vistas.Frm_VistaPersonas.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_VistaTurnoCursos.Frm_VistaTurnoCursos.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Formularios_Vistas.Frm_VistasEmpleados.resources
@@ -14601,7 +14596,6 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmFacturasDeEs
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmHistorialGestion.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmInicioSesion.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmLoad.resources
-H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmOpcionesAcceso.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmRoles.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.FrmRolesUsuario.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_AcercaDe.resources
@@ -14626,6 +14620,7 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Estudiantes
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Facturacion.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Formularios_por_Roles.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Grupo.resources
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_HistorialGestiones.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Inasistencias.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Incentivo.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_MovimientosEstudiante.resources
@@ -14640,7 +14635,6 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Solicitudes
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_Usuario.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_VerificacionReferencia.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_VistaEstudiantes.resources
-H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.LoginDocente.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.NotificacionMatriculaONLINE.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Properties.Resources.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Reporte_ActaNota.resources
@@ -14653,4 +14647,14 @@ H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.application
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.exe
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\SistemaCecnic.pdb
-H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_HistorialGestiones.resources
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.Core.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.Core.xml
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_LibrosRegistro.resources
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_TiposDocumentos.resources

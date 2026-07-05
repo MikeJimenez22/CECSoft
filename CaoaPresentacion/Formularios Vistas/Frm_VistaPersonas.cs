@@ -1,6 +1,7 @@
 ﻿using CapaNegocio;
 using System;
 using System.Windows.Forms;
+using Utils;
 
 namespace CaoaPresentacion.Formularios_Vistas
 {
@@ -9,6 +10,7 @@ namespace CaoaPresentacion.Formularios_Vistas
         public Frm_VistaPersonas()
         {
             InitializeComponent();
+            DataGridViewConfigurator.Configure(datapersonas);
         }
 
         private void Frm_VistaPersonas_Load(object sender, EventArgs e)
@@ -23,6 +25,15 @@ namespace CaoaPresentacion.Formularios_Vistas
                 this.AgregarBtnDatagridViewPersona();
                 this.Mostrar();
             }
+
+            this.datapersonas.Columns["Id_persona"].Visible = false;
+            this.datapersonas.Columns["Cedula"].Visible = false;
+            this.datapersonas.Columns["Correo"].Visible = false;
+            this.datapersonas.Columns["Genero"].Visible = false;
+            this.datapersonas.Columns["TipoSangre"].Visible = false;
+            this.datapersonas.Columns["CodigoPersona"].Visible = false;
+            this.datapersonas.Columns["Id_ciudad"].Visible = false;
+            this.datapersonas.Columns["IdPartidaNacimiento"].Visible = false;
 
 
         }

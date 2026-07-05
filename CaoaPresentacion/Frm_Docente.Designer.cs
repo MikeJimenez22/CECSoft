@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Docente));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabNotas = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
@@ -54,11 +51,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabModulos = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataModulosCurso = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabEstudiante = new System.Windows.Forms.TabPage();
             this.dataMatriculas = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -69,82 +66,45 @@
             this.cmbBusquedas = new System.Windows.Forms.ComboBox();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabNotas.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).BeginInit();
             this.panel3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabModulos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataModulosCurso)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tabEstudiante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataMatriculas)).BeginInit();
             this.panel5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 881);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Registro de Notas";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(217, 14);
+            this.tabControl1.Controls.Add(this.tabNotas);
+            this.tabControl1.Controls.Add(this.tabModulos);
+            this.tabControl1.Controls.Add(this.tabEstudiante);
+            this.tabControl1.Location = new System.Drawing.Point(12, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1064, 1013);
+            this.tabControl1.Size = new System.Drawing.Size(1057, 631);
             this.tabControl1.TabIndex = 1;
             // 
-            // tabPage2
+            // tabNotas
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1056, 987);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "inicio";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.panel4);
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1056, 987);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "notas";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabNotas.Controls.Add(this.panel4);
+            this.tabNotas.Controls.Add(this.panel3);
+            this.tabNotas.Controls.Add(this.label1);
+            this.tabNotas.Location = new System.Drawing.Point(4, 22);
+            this.tabNotas.Name = "tabNotas";
+            this.tabNotas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNotas.Size = new System.Drawing.Size(1049, 605);
+            this.tabNotas.TabIndex = 0;
+            this.tabNotas.Text = "notas";
+            this.tabNotas.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -159,9 +119,9 @@
             this.panel4.Controls.Add(this.dataEstudiantes);
             this.panel4.Controls.Add(this.txtNombreModulo);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(18, 121);
+            this.panel4.Location = new System.Drawing.Point(6, 122);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1022, 687);
+            this.panel4.Size = new System.Drawing.Size(1034, 468);
             this.panel4.TabIndex = 8;
             // 
             // button5
@@ -190,9 +150,9 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.Gainsboro;
             this.panel7.Controls.Add(this.button4);
-            this.panel7.Location = new System.Drawing.Point(761, 560);
+            this.panel7.Location = new System.Drawing.Point(761, 376);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(251, 107);
+            this.panel7.Size = new System.Drawing.Size(251, 64);
             this.panel7.TabIndex = 17;
             // 
             // button4
@@ -229,7 +189,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 539);
+            this.label8.Location = new System.Drawing.Point(15, 321);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 18);
             this.label8.TabIndex = 13;
@@ -239,10 +199,10 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservaciones.Location = new System.Drawing.Point(18, 560);
+            this.txtObservaciones.Location = new System.Drawing.Point(18, 342);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(737, 107);
+            this.txtObservaciones.Size = new System.Drawing.Size(737, 98);
             this.txtObservaciones.TabIndex = 12;
             // 
             // txtCodigoActa
@@ -276,7 +236,7 @@
             this.dataEstudiantes.Location = new System.Drawing.Point(18, 82);
             this.dataEstudiantes.Name = "dataEstudiantes";
             this.dataEstudiantes.ReadOnly = true;
-            this.dataEstudiantes.Size = new System.Drawing.Size(990, 421);
+            this.dataEstudiantes.Size = new System.Drawing.Size(990, 233);
             this.dataEstudiantes.TabIndex = 8;
             this.dataEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEstudiantes_CellContentClick);
             this.dataEstudiantes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEstudiantes_CellEndEdit);
@@ -378,25 +338,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro de Notas";
             // 
-            // tabPage3
+            // tabModulos
             // 
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.dataModulosCurso);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1056, 987);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ModulosCurso";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabModulos.Controls.Add(this.button6);
+            this.tabModulos.Controls.Add(this.label9);
+            this.tabModulos.Controls.Add(this.dataModulosCurso);
+            this.tabModulos.Location = new System.Drawing.Point(4, 22);
+            this.tabModulos.Name = "tabModulos";
+            this.tabModulos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabModulos.Size = new System.Drawing.Size(1061, 605);
+            this.tabModulos.TabIndex = 2;
+            this.tabModulos.Text = "ModulosCurso";
+            this.tabModulos.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::CaoaPresentacion.Properties.Resources._60181_back_go_icon;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(476, 32);
+            this.button6.Location = new System.Drawing.Point(428, 32);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(128, 36);
             this.button6.TabIndex = 7;
@@ -426,21 +386,21 @@
             this.dataModulosCurso.Location = new System.Drawing.Point(20, 74);
             this.dataModulosCurso.Name = "dataModulosCurso";
             this.dataModulosCurso.ReadOnly = true;
-            this.dataModulosCurso.Size = new System.Drawing.Size(584, 344);
+            this.dataModulosCurso.Size = new System.Drawing.Size(536, 240);
             this.dataModulosCurso.TabIndex = 0;
             this.dataModulosCurso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataModulosCurso_CellClick);
             // 
-            // tabPage4
+            // tabEstudiante
             // 
-            this.tabPage4.Controls.Add(this.dataMatriculas);
-            this.tabPage4.Controls.Add(this.panel5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1056, 987);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Estudiantes";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabEstudiante.Controls.Add(this.dataMatriculas);
+            this.tabEstudiante.Controls.Add(this.panel5);
+            this.tabEstudiante.Location = new System.Drawing.Point(4, 22);
+            this.tabEstudiante.Name = "tabEstudiante";
+            this.tabEstudiante.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstudiante.Size = new System.Drawing.Size(1056, 605);
+            this.tabEstudiante.TabIndex = 3;
+            this.tabEstudiante.Text = "Estudiantes";
+            this.tabEstudiante.UseVisualStyleBackColor = true;
             // 
             // dataMatriculas
             // 
@@ -562,93 +522,60 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Buscar";
             // 
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(121, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(212, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 36);
-            this.panel2.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(13, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Bienvenido | ";
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1076, 31);
+            this.pictureBox1.TabIndex = 10002;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_Docente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1284, 881);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1076, 655);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1300, 1044);
-            this.MinimumSize = new System.Drawing.Size(1278, 726);
+            this.MaximumSize = new System.Drawing.Size(1092, 694);
+            this.MinimumSize = new System.Drawing.Size(1092, 694);
             this.Name = "Frm_Docente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Portal Docente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Docente_Load);
-            this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabNotas.ResumeLayout(false);
+            this.tabNotas.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabModulos.ResumeLayout(false);
+            this.tabModulos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataModulosCurso)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.tabEstudiante.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataMatriculas)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabNotas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbGrupos;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbEstados;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
@@ -666,11 +593,11 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabModulos;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataModulosCurso;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabEstudiante;
         private System.Windows.Forms.DataGridView dataMatriculas;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -681,5 +608,6 @@
         private System.Windows.Forms.ComboBox cmbBusquedas;
         private System.Windows.Forms.TextBox txtbusqueda;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

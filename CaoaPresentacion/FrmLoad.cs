@@ -24,8 +24,7 @@ namespace CaoaPresentacion
             if (circularProgressBar1.Value == 100)
             {
                 timer1.Enabled = false;
-               
-                FrmOpcionesAcceso frm = new FrmOpcionesAcceso();
+                FrmInicioSesion frm = new FrmInicioSesion();
                 frm.Show();
                 this.Hide();
             }

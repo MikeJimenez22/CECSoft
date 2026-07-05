@@ -92,9 +92,7 @@ namespace CaoaPresentacion
 
             try
             {
-                FrmOpcionesAcceso frm = new FrmOpcionesAcceso();
-                frm.Show();
-                this.Hide();
+                Application.Exit();
             }
             catch (Exception)
             {
@@ -109,9 +107,7 @@ namespace CaoaPresentacion
         {
             try
             {
-                FrmOpcionesAcceso frm = new FrmOpcionesAcceso();
-                frm.Show();
-                this.Hide();
+                Application.Exit();
             }
             catch (Exception)
             {

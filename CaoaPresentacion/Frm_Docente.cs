@@ -44,8 +44,7 @@ namespace CaoaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.generarcodigoActa();
-            this.tabControl1.SelectedIndex = 1;
+            
 
 
         }
@@ -54,6 +53,10 @@ namespace CaoaPresentacion
         {
             try
             {
+
+                this.generarcodigoActa();
+               
+
                 this.cmbEstados.Text = "Activo";
                 this.tabControl1.SelectedIndex = 0;
                 Id_usuario = CacheUsuario.IdUsuario;
@@ -61,13 +64,9 @@ namespace CaoaPresentacion
                 IdEmpleado = CacheUsuario.IdEmpleado;
                 this.Cargar_GruposPorDocente(Convert.ToInt32(IdEmpleado), IdEstadoBusqueda);
 
-                this.label3.Text = NombreUsuario.ToString().ToUpper();
-
-
-                this.FormClosed += new FormClosedEventHandler(cerrarform);
-
-
-
+       
+                this.tabControl1.SelectedTab = tabNotas;
+                
             }
             catch (Exception)
             {
@@ -144,15 +143,7 @@ namespace CaoaPresentacion
         }
 
 
-        private void cerrarform(object sender, EventArgs e)
-        {
-            
-
-            LoginDocente frm = new LoginDocente();
-            frm.Show();
-            this.Hide();
-
-        }
+     
         public void Cargar_GruposPorDocente(int idEmpleado, int IdEstado)
         {
             try
@@ -704,7 +695,7 @@ namespace CaoaPresentacion
                             string HoraActual = DateTime.Now.ToShortTimeString();
 
                             CN_NotaModulos objetoCN = new CN_NotaModulos();
-                            objetoCN.InsertarActaNota(this.txtCodigoActa.Text, FechaActual, HoraActual, CacheUsuario.IdUsuario, ip, nombrePC, this.label3.Text, this.txtObservaciones.Text);
+                            //objetoCN.InsertarActaNota(this.txtCodigoActa.Text, FechaActual, HoraActual, CacheUsuario.IdUsuario, ip, nombrePC, this.label3.Text, this.txtObservaciones.Text);
 
                             CN_NotaModulos objetoCN2 = new CN_NotaModulos();
 

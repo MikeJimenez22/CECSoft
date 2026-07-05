@@ -127,5 +127,44 @@ namespace CapaDatos
             }
         }
 
+
+        public DataTable GestionesProgramadasHoy()
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ReporteGestionesParaHoy", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+        public DataTable BuscarCarteraPorDetalle(int IdDetalleProgramacion)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("BuscarCarteraPorDetalle", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Id_Detalle_Programacion", IdDetalleProgramacion);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
     }
 }

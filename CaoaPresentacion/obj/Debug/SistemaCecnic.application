@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SistemaCecnic.exe.manifest" size="87353">
+    <dependentAssembly dependencyType="install" codebase="SistemaCecnic.exe.manifest" size="88710">
       <assemblyIdentity name="SistemaCecnic.exe" version="2.0.2.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/vFYiVCy4RpHj9/2ZW5kWQanq7d15gUWZu77jmkg4N0=</dsig:DigestValue>
+        <dsig:DigestValue>foCb324YeKlpwO4BF3IrWuh4JOXp/yiX7R91p4urv8s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

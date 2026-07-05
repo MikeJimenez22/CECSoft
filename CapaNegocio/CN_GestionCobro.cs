@@ -65,5 +65,21 @@ namespace CapaNegocio
         }
 
 
+        public DataTable BuscarGestionesProgramadasParaHoy()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.GestionesProgramadasHoy();
+            return tabla;
+        }
+
+
+        public DataTable BuscarCarteraPorDetalle(string IdDetalleProgramacion)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarCarteraPorDetalle(Convert.ToInt32(IdDetalleProgramacion));
+            return tabla;
+        }
+
+
     }
 }

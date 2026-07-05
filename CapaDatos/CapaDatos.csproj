@@ -180,6 +180,7 @@
     <Compile Include="CD_Horarios.cs" />
     <Compile Include="CD_Impresiones.cs" />
     <Compile Include="CD_Incentivo.cs" />
+    <Compile Include="CD_Libros.cs" />
     <Compile Include="CD_Matricula.cs" />
     <Compile Include="CD_ModulosCurso.cs" />
     <Compile Include="CD_Moneda.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="CD_Roles.cs" />
     <Compile Include="CD_Roles_Usuarios.cs" />
     <Compile Include="CD_Rol_Formularios.cs" />
+    <Compile Include="CD_TiposDocumentos.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="CD_Padre_Tutor.cs" />
     <Compile Include="CD_VerificacionMatricula.cs" />

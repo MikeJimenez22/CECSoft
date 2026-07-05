@@ -658,15 +658,7 @@ namespace CaoaPresentacion
 
         private void controlDeAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Frm_Asistencia frm = new Frm_Asistencia();
-                frm.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void reporteUniversoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -684,28 +676,12 @@ namespace CaoaPresentacion
 
         private void gestionDeNotasAcademicasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Frm_NotasEstudiante frm = new Frm_NotasEstudiante();
-                frm.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
         }
 
         private void solicitudDeCarnetEstudiantilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Frm_CarnetEstudiantil frm = new Frm_CarnetEstudiantil();
-                frm.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void carteraYCobroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -880,9 +856,6 @@ namespace CaoaPresentacion
             { "UniversoEstudiantil", universoEstudiantilToolStripMenuItem },
             { "RealizarPagos", realizarPagosToolStripMenuItem },
             { "ConsultaFacturas", consultaDeFacturasToolStripMenuItem },
-            { "ControlAsistencia", controlDeAsistenciaToolStripMenuItem },
-            { "GestionNotas", gestionDeNotasAcademicasToolStripMenuItem },
-            { "SolicitudCarnet", solicitudDeCarnetEstudiantilToolStripMenuItem },
             { "CarteraCobro", carteraYCobroToolStripMenuItem },
             { "ReporteUniverso", reporteUniversoToolStripMenuItem },
             { "ArqueoCaja", arqueoDeCajaToolStripMenuItem },
@@ -903,8 +876,7 @@ namespace CaoaPresentacion
             {"ReporteDiario",reporteCajaDiariaToolStripMenuItem},
             {"ReporteAusencias",inasistenciasToolStripMenuItem},
             {"ReporteNoAsignado",matriculasNoAsignadosToolStripMenuItem},
-            {"Acerca",acercaDeToolStripMenuItem },
-            {"CarnetAdministracion",generarCarnetAdministracionToolStripMenuItem}
+            {"Acerca",acercaDeToolStripMenuItem }
         };
 
                 // Definición de permisos por rol (solo listamos los que están habilitados)
@@ -1110,15 +1082,7 @@ namespace CaoaPresentacion
 
         private void generarCarnetAdministracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Frm_CarnetAdministracion frm = new Frm_CarnetAdministracion();
-                frm.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
         }
 
         private void pbActualizar_Click(object sender, EventArgs e)
@@ -1215,6 +1179,102 @@ namespace CaoaPresentacion
             try
             {
                 Frm_HistorialGestiones frm = new Frm_HistorialGestiones();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void librosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void controlDeAsistenciaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Asistencia frm = new Frm_Asistencia();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gestionDeNotasAcademicasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_NotasEstudiante frm = new Frm_NotasEstudiante();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void solicitudDeCarnetEstudiantilToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_CarnetEstudiantil frm = new Frm_CarnetEstudiantil();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void generarCarnetAdministracionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_CarnetAdministracion frm = new Frm_CarnetAdministracion();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void librosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_LibrosRegistro frm = new Frm_LibrosRegistro();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tiposDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_TiposDocumentos frm = new Frm_TiposDocumentos();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void registroDeNotasActasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Docente frm = new Frm_Docente();
                 frm.Show();
             }
             catch (Exception)

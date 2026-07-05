@@ -4,6 +4,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Utils;
+using CaoaPresentacion;
 
 namespace CaoaPresentacion
 {
@@ -13,6 +15,7 @@ namespace CaoaPresentacion
         {
             InitializeComponent();
             this.Cargar_ComboRoles();
+           DataGridViewConfigurator.Configure(dataFormularios);
         }
 
         CD_Conexion conexion = new CD_Conexion();
@@ -21,9 +24,9 @@ namespace CaoaPresentacion
 
         private void Frm_Formularios_por_Roles_Load(object sender, EventArgs e)
         {
-
-            this.Mostrar();
             this.AgregarBtnDatagridView();
+            this.Mostrar();
+           
         }
 
         private void AgregarBtnDatagridView()
@@ -46,6 +49,7 @@ namespace CaoaPresentacion
         {
             CN_Rol_Formularios objetoCN = new CN_Rol_Formularios();
             this.dataFormularios.DataSource = objetoCN.Mostrar_FormulariosxRol(this.cmbRol.Text);
+            this.dataFormularios.Columns["Id_Rol_Formularios"].Visible = false;
         }
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)

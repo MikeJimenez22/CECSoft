@@ -603,6 +603,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abrir_paginas_de_libros_en_blanco {
+            get {
+                object obj = ResourceManager.GetObject("abrir-paginas-de-libros-en-blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ABSTRACT_WALLPAPER_Mesa_de_trabajo_1 {
             get {
                 object obj = ResourceManager.GetObject("ABSTRACT_WALLPAPER_Mesa_de_trabajo_1", resourceCulture);
@@ -1033,6 +1043,26 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap colegio {
+            get {
+                object obj = ResourceManager.GetObject("colegio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap colegio__1_ {
+            get {
+                object obj = ResourceManager.GetObject("colegio (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer_156948_1280 {
             get {
                 object obj = ResourceManager.GetObject("computer-156948_1280", resourceCulture);
@@ -1144,6 +1174,26 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flecha_correcta {
+            get {
+                object obj = ResourceManager.GetObject("flecha-correcta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecha_correcta__1_ {
+            get {
+                object obj = ResourceManager.GetObject("flecha-correcta (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder {
             get {
                 object obj = ResourceManager.GetObject("folder", resourceCulture);
@@ -1227,6 +1277,16 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap geometric_gc4e25bd3d_1920 {
             get {
                 object obj = ResourceManager.GetObject("geometric-gc4e25bd3d_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gorro_de_graduacion {
+            get {
+                object obj = ResourceManager.GetObject("gorro-de-graduacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1445,6 +1505,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap libro {
+            get {
+                object obj = ResourceManager.GetObject("libro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap llamar {
             get {
                 object obj = ResourceManager.GetObject("llamar", resourceCulture);
@@ -1505,6 +1575,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nulo {
+            get {
+                object obj = ResourceManager.GetObject("nulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PantallaLogin {
             get {
                 object obj = ResourceManager.GetObject("PantallaLogin", resourceCulture);
@@ -1549,6 +1629,16 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap pngtree_arrow_forward_arrows_right_blue_dotted_line_line_icon_png_image_1700556 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-arrow-forward-arrows-right-blue-dotted-line-line-icon-png-image_1700556", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap procesamiento_de_datos {
+            get {
+                object obj = ResourceManager.GetObject("procesamiento-de-datos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1809,6 +1899,26 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap WhatsApp_Image_2023_06_19_at_7_05_27_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2023-06-19 at 7.05.27 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x {
+            get {
+                object obj = ResourceManager.GetObject("x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x__1_ {
+            get {
+                object obj = ResourceManager.GetObject("x (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
