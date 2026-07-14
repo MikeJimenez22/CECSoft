@@ -22,6 +22,8 @@ namespace CapaDatos
 
                     comando.Parameters.AddWithValue("@NombreDocumento", NombreDocumento);
                     comando.Parameters.AddWithValue("@Prefijo", Prefijo);
+
+                    comando.ExecuteNonQuery();
                 }
             }
             catch (SqlException ex)
@@ -46,6 +48,8 @@ namespace CapaDatos
                     comando.Parameters.AddWithValue("@IdTipoDocumento", IdDocumento);
                     comando.Parameters.AddWithValue("@NombreDocumento", NombreDocumento);
                     comando.Parameters.AddWithValue("@Prefijo", Prefijo);
+
+                    comando.ExecuteNonQuery();
                 }
             }
             catch (SqlException ex)
@@ -87,6 +91,26 @@ namespace CapaDatos
                 comando.ExecuteNonQuery();
             }
             conexion.CerrarConexion();
+        }
+
+
+        public DataTable CargarTiposDocumentos()
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_CargarTiposDocumentos", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
         }
 
 

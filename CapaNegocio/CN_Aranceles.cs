@@ -35,5 +35,13 @@ namespace CapaNegocio
 
 
 
+        public DataTable CargarAranceles()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.CargarAranceles();
+            return tabla;
+        }
+
+
     }
 }

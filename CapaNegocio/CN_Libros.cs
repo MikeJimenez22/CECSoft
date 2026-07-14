@@ -23,9 +23,9 @@ namespace CapaNegocio
 
         public void InsertarlibroRegistro(string NombreLibro,
                             string Tomo,
-                            string Observaciones)
+                            string Observaciones,int IdTipoDocumento)
         {
-            ObjetoCD.InsertarLibro(NombreLibro,Convert.ToInt32(Tomo),Observaciones);
+            ObjetoCD.InsertarLibro(NombreLibro,Convert.ToInt32(Tomo),Observaciones,IdTipoDocumento);
         }
 
 
@@ -50,6 +50,20 @@ namespace CapaNegocio
         {
             ObjetoCD.AnularLibro(Convert.ToInt32(IdLibro));
         }
+
+
+        public DataTable CargarLibrosPorTipoDocumento(int IdTipoDocumento)
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObjetoCD.CargarLibrosPorTipoDocumento(IdTipoDocumento);
+            return tabla;
+        }
+
+        public DataTable ObtenerSiguienteRegistro(int idLibro, int idTipoDocumento)
+        {
+            return ObjetoCD.ObtenerSiguienteRegistro(idLibro, idTipoDocumento);
+        }
+
 
     }
 }

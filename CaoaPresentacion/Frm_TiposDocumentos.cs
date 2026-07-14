@@ -21,6 +21,8 @@ namespace CaoaPresentacion
         {
             InitializeComponent();
             DataGridViewConfigurator.Configure(dataDocumentos);
+
+      
         }
 
         private void Frm_TiposDocumentos_Load(object sender, EventArgs e)
@@ -31,9 +33,9 @@ namespace CaoaPresentacion
                 this.AgregarColumnaConIcono();
                 ListarDocumentos("");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " +ex,"SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -45,9 +47,9 @@ namespace CaoaPresentacion
                 this.dataDocumentos.DataSource = ObjetoCN.ListarDocumento(Buscar);
                 this.dataDocumentos.Columns["IdTipoDocumento"].Visible = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " +ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -217,6 +219,7 @@ namespace CaoaPresentacion
             }
         }
 
+      
 
         private void Limpiar()
         {

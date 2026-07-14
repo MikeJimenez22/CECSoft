@@ -695,7 +695,7 @@ namespace CaoaPresentacion
                             string HoraActual = DateTime.Now.ToShortTimeString();
 
                             CN_NotaModulos objetoCN = new CN_NotaModulos();
-                            //objetoCN.InsertarActaNota(this.txtCodigoActa.Text, FechaActual, HoraActual, CacheUsuario.IdUsuario, ip, nombrePC, this.label3.Text, this.txtObservaciones.Text);
+                           // objetoCN.InsertarActaNota(this.txtCodigoActa.Text, FechaActual, HoraActual, CacheUsuario.IdUsuario, ip, nombrePC, this.label3.Text, this.txtObservaciones.Text);
 
                             CN_NotaModulos objetoCN2 = new CN_NotaModulos();
 

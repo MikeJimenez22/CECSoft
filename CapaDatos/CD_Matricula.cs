@@ -184,6 +184,26 @@ namespace CapaDatos
         }
 
 
+        public DataTable ObtenerInformacionMatricula(string CodMatricula)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ObtenerInformacionMatricula", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CodMatricula", CodMatricula);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+
 
     }
 }

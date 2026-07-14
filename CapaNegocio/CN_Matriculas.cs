@@ -80,6 +80,13 @@ namespace CapaNegocio
         }
 
 
+        public DataTable ObtenerInformacionMatricula(string CodMatricula)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ObtenerInformacionMatricula(CodMatricula);
+            return tabla;
+        }
+
 
 
     }

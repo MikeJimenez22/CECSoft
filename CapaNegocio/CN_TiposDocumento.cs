@@ -38,5 +38,13 @@ namespace CapaNegocio
             ObjetoCD.ActualizarDocumento(Convert.ToInt32(IdDocumento));
         }
 
+
+        public DataTable CargaTiposDocumentos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObjetoCD.CargarTiposDocumentos();
+            return tabla;
+        }
+
     }
 }

@@ -79,6 +79,13 @@ namespace CapaNegocio
 
 
 
+        public DataTable MostrarPagosEstudiante(string CodMatricula)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarPagosEstudiante(CodMatricula);
+            return tabla;
+        }
+
 
 
 

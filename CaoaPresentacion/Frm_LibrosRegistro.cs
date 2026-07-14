@@ -19,7 +19,11 @@ namespace CaoaPresentacion
         public Frm_LibrosRegistro()
         {
             InitializeComponent();
+            cbTipoDocumento.DropDownStyle = ComboBoxStyle.DropDownList;
             DataGridViewConfigurator.Configure(dataLibros);
+
+            this.CargarTiposDocumentos();
+            
         }
 
         private void Frm_LibrosRegistro_Load(object sender, EventArgs e)
@@ -50,6 +54,32 @@ namespace CaoaPresentacion
             }
 
         }
+
+        public void CargarTiposDocumentos()
+        {
+            try
+            {
+                CN_TiposDocumento objetoCN = new CN_TiposDocumento();
+
+                DataTable dt = objetoCN.CargaTiposDocumentos();
+
+                DataRow fila = dt.NewRow();
+                fila["IdTipoDocumento"] = 0;
+                fila["NombreDocumento"] = "-- Seleccione --";
+
+                dt.Rows.InsertAt(fila, 0);
+
+                cbTipoDocumento.ValueMember = "IdTipoDocumento";
+                cbTipoDocumento.DisplayMember = "NombreDocumento";
+                cbTipoDocumento.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -91,7 +121,7 @@ namespace CaoaPresentacion
                     }else
                     {
                         CN_Libros ObjetoCN = new CN_Libros();
-                        ObjetoCN.InsertarlibroRegistro(this.txtNombreLibro.Text,this.txtTomo.Text,this.txtObservaciones.Text);
+                        ObjetoCN.InsertarlibroRegistro(this.txtNombreLibro.Text,this.txtTomo.Text,this.txtObservaciones.Text,Convert.ToInt32(cbTipoDocumento.SelectedValue));
                         MessageBox.Show("Registrado Correctamente","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.txtBuscar.Text = string.Empty;
                         ListarLibros("");
@@ -370,6 +400,8 @@ namespace CaoaPresentacion
                         txtNombreLibro.Text = this.dataLibros.CurrentRow.Cells["NombreLibro"].Value.ToString();
                         txtTomo.Text = this.dataLibros.CurrentRow.Cells["Tomo"].Value.ToString();
                         txtObservaciones.Text = this.dataLibros.CurrentRow.Cells["Observaciones"].Value.ToString();
+                        this.cbTipoDocumento.SelectedValue = this.dataLibros.CurrentRow.Cells["IdTipoDocumento"].Value;
+                        this.cbTipoDocumento.Enabled = false;
 
                         Editar = true;
                         this.tabControl1.SelectedTab = tabPage2;

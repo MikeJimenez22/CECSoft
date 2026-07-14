@@ -190,6 +190,28 @@ namespace CapaDatos
 
 
 
+        public DataTable MostrarPagosEstudiante(string CodMatricula)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_MostrarPagosEstudiante", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@CodMatricula", CodMatricula);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+
+
+
 
     }
 }

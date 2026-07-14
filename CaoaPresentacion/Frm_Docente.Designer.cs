@@ -67,6 +67,8 @@
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabNotas.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -264,6 +266,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.cmbEstados);
             this.panel3.Controls.Add(this.cmbGrupos);
@@ -277,7 +281,7 @@
             // button2
             // 
             this.button2.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button2.Location = new System.Drawing.Point(964, 20);
+            this.button2.Location = new System.Drawing.Point(956, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 44);
             this.button2.TabIndex = 8;
@@ -291,7 +295,7 @@
             this.cmbEstados.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstados.Location = new System.Drawing.Point(90, 27);
+            this.cmbEstados.Location = new System.Drawing.Point(90, 45);
             this.cmbEstados.Name = "cmbEstados";
             this.cmbEstados.Size = new System.Drawing.Size(195, 26);
             this.cmbEstados.TabIndex = 6;
@@ -301,7 +305,7 @@
             // 
             this.cmbGrupos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGrupos.FormattingEnabled = true;
-            this.cmbGrupos.Location = new System.Drawing.Point(361, 27);
+            this.cmbGrupos.Location = new System.Drawing.Point(353, 43);
             this.cmbGrupos.Name = "cmbGrupos";
             this.cmbGrupos.Size = new System.Drawing.Size(597, 26);
             this.cmbGrupos.TabIndex = 1;
@@ -311,7 +315,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 32);
+            this.label5.Location = new System.Drawing.Point(11, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
             this.label5.TabIndex = 5;
@@ -322,7 +326,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(291, 33);
+            this.label2.Location = new System.Drawing.Point(289, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 18);
             this.label2.TabIndex = 2;
@@ -346,7 +350,7 @@
             this.tabModulos.Location = new System.Drawing.Point(4, 22);
             this.tabModulos.Name = "tabModulos";
             this.tabModulos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModulos.Size = new System.Drawing.Size(1061, 605);
+            this.tabModulos.Size = new System.Drawing.Size(1049, 605);
             this.tabModulos.TabIndex = 2;
             this.tabModulos.Text = "ModulosCurso";
             this.tabModulos.UseVisualStyleBackColor = true;
@@ -397,7 +401,7 @@
             this.tabEstudiante.Location = new System.Drawing.Point(4, 22);
             this.tabEstudiante.Name = "tabEstudiante";
             this.tabEstudiante.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstudiante.Size = new System.Drawing.Size(1056, 605);
+            this.tabEstudiante.Size = new System.Drawing.Size(1049, 605);
             this.tabEstudiante.TabIndex = 3;
             this.tabEstudiante.Text = "Estudiantes";
             this.tabEstudiante.UseVisualStyleBackColor = true;
@@ -532,6 +536,26 @@
             this.pictureBox1.TabIndex = 10002;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Docente";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(90, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(467, 26);
+            this.comboBox1.TabIndex = 10;
+            // 
             // Frm_Docente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +569,7 @@
             this.MinimumSize = new System.Drawing.Size(1092, 694);
             this.Name = "Frm_Docente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Portal Docente";
+            this.Text = "Registro de Notas";
             this.Load += new System.EventHandler(this.Frm_Docente_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabNotas.ResumeLayout(false);
@@ -609,5 +633,7 @@
         private System.Windows.Forms.TextBox txtbusqueda;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

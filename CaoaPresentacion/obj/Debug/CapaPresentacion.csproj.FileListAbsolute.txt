@@ -14658,3 +14658,4 @@ H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.WinForms.
 H:\Proyectos\CECSoft\CaoaPresentacion\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_LibrosRegistro.resources
 H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_TiposDocumentos.resources
+H:\Proyectos\CECSoft\CaoaPresentacion\obj\Debug\CaoaPresentacion.Frm_RegistroAcademico.resources

@@ -13,7 +13,7 @@ namespace CapaDatos
         private CD_Conexion conexion = new CD_Conexion();
         public void InsertarLibro(string NombreLibro,
                             int Tomo,
-                            string Observaciones)
+                            string Observaciones,int IdTipoDocumento)
         {
             try
             {
@@ -27,6 +27,7 @@ namespace CapaDatos
                         string.IsNullOrWhiteSpace(Observaciones)
                         ? (object)DBNull.Value
                         : Observaciones);
+                    comando.Parameters.AddWithValue("@IdTipoDocumento", IdTipoDocumento);
 
                     comando.ExecuteNonQuery();
                 }
@@ -127,6 +128,52 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+
+        public DataTable CargarLibrosPorTipoDocumento(int IdTipoDocumento)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_CargarLibrosPorTipoDocumento", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdTipoDocumento", IdTipoDocumento);
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+
+        public DataTable ObtenerSiguienteRegistro(int idLibro, int idTipoDocumento)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("SP_ObtenerSiguienteRegistro", conexion.AbrirConexion()))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.AddWithValue("@IdLibro", idLibro);
+                    comando.Parameters.AddWithValue("@IdTipoDocumento", idTipoDocumento);
+
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(tabla);
+                }
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return tabla;
+        }
 
 
 

@@ -1282,6 +1282,19 @@ namespace CaoaPresentacion
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void registroEnLibrosAcademicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_RegistroAcademico frm = new Frm_RegistroAcademico();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
     }
 
