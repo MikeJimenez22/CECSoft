@@ -123,6 +123,7 @@
             this.label37 = new System.Windows.Forms.Label();
             this.dataGrupos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -207,9 +208,9 @@
             this.groupBox1.Controls.Add(this.cmbBusquedas);
             this.groupBox1.Controls.Add(this.txtbusqueda);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Location = new System.Drawing.Point(4, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1238, 814);
+            this.groupBox1.Size = new System.Drawing.Size(1260, 582);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  ";
@@ -351,9 +352,9 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox5.Controls.Add(this.dataEstudiantes);
-            this.groupBox5.Location = new System.Drawing.Point(10, 187);
+            this.groupBox5.Location = new System.Drawing.Point(11, 193);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1225, 605);
+            this.groupBox5.Size = new System.Drawing.Size(1225, 383);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             // 
@@ -368,7 +369,7 @@
             this.dataEstudiantes.Location = new System.Drawing.Point(7, 19);
             this.dataEstudiantes.Name = "dataEstudiantes";
             this.dataEstudiantes.ReadOnly = true;
-            this.dataEstudiantes.Size = new System.Drawing.Size(1208, 512);
+            this.dataEstudiantes.Size = new System.Drawing.Size(1208, 356);
             this.dataEstudiantes.TabIndex = 4;
             this.dataEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEstudiantes_CellClick_1);
             this.dataEstudiantes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataEstudiantes_CellPainting);
@@ -415,7 +416,7 @@
             this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox1.Location = new System.Drawing.Point(3, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1232, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(1254, 30);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -452,10 +453,10 @@
             this.cmbBusquedas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBusquedas.FormattingEnabled = true;
             this.cmbBusquedas.Items.AddRange(new object[] {
-            "Apellidos",
-            "Nombres",
-            "Carnet",
-            "Codigo Matricula"});
+            "APELLIDOS",
+            "NOMBRES",
+            "CARNET",
+            "MATRICULA"});
             this.cmbBusquedas.Location = new System.Drawing.Point(353, 64);
             this.cmbBusquedas.Name = "cmbBusquedas";
             this.cmbBusquedas.Size = new System.Drawing.Size(164, 26);
@@ -498,10 +499,10 @@
             this.tabControl1.Controls.Add(this.TabGraficoMatriculas);
             this.tabControl1.Controls.Add(this.TabCarnet);
             this.tabControl1.Controls.Add(this.TabBajas);
-            this.tabControl1.Location = new System.Drawing.Point(4, 26);
+            this.tabControl1.Location = new System.Drawing.Point(5, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1260, 845);
+            this.tabControl1.Size = new System.Drawing.Size(1278, 624);
             this.tabControl1.TabIndex = 1;
             // 
             // TabUniverso
@@ -511,7 +512,7 @@
             this.TabUniverso.Location = new System.Drawing.Point(4, 22);
             this.TabUniverso.Name = "TabUniverso";
             this.TabUniverso.Padding = new System.Windows.Forms.Padding(3);
-            this.TabUniverso.Size = new System.Drawing.Size(1252, 819);
+            this.TabUniverso.Size = new System.Drawing.Size(1270, 598);
             this.TabUniverso.TabIndex = 0;
             this.TabUniverso.Text = "TabUniverso";
             this.TabUniverso.UseVisualStyleBackColor = true;
@@ -577,7 +578,7 @@
             this.TabMatricula.Font = new System.Drawing.Font("Symbol", 8.25F);
             this.TabMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabMatricula.Name = "TabMatricula";
-            this.TabMatricula.Size = new System.Drawing.Size(1252, 819);
+            this.TabMatricula.Size = new System.Drawing.Size(1270, 598);
             this.TabMatricula.TabIndex = 2;
             this.TabMatricula.Text = "TabMatricula";
             this.TabMatricula.UseVisualStyleBackColor = true;
@@ -588,7 +589,7 @@
             this.txtIdMatricula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdMatricula.Location = new System.Drawing.Point(1172, 57);
             this.txtIdMatricula.Name = "txtIdMatricula";
-            this.txtIdMatricula.Size = new System.Drawing.Size(73, 26);
+            this.txtIdMatricula.Size = new System.Drawing.Size(54, 26);
             this.txtIdMatricula.TabIndex = 55;
             this.txtIdMatricula.Visible = false;
             // 
@@ -597,7 +598,7 @@
             this.button17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.Image = global::CaoaPresentacion.Properties.Resources._728898_page_folder_add_plus_file_icon;
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(1035, 495);
+            this.button17.Location = new System.Drawing.Point(1000, 510);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(211, 41);
             this.button17.TabIndex = 54;
@@ -611,7 +612,7 @@
             this.button10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Image = global::CaoaPresentacion.Properties.Resources._39263_print_printer_icon;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1035, 450);
+            this.button10.Location = new System.Drawing.Point(1000, 465);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(211, 41);
             this.button10.TabIndex = 53;
@@ -625,7 +626,7 @@
             this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::CaoaPresentacion.Properties.Resources._118801_view_refresh;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1035, 540);
+            this.button6.Location = new System.Drawing.Point(1000, 555);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(211, 48);
             this.button6.TabIndex = 52;
@@ -640,7 +641,7 @@
             this.txtcodigopersona.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigopersona.Location = new System.Drawing.Point(1052, 89);
             this.txtcodigopersona.Name = "txtcodigopersona";
-            this.txtcodigopersona.Size = new System.Drawing.Size(194, 26);
+            this.txtcodigopersona.Size = new System.Drawing.Size(174, 26);
             this.txtcodigopersona.TabIndex = 51;
             // 
             // label35
@@ -716,7 +717,7 @@
             this.txtHorario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHorario.Location = new System.Drawing.Point(755, 413);
             this.txtHorario.Name = "txtHorario";
-            this.txtHorario.Size = new System.Drawing.Size(491, 26);
+            this.txtHorario.Size = new System.Drawing.Size(471, 26);
             this.txtHorario.TabIndex = 43;
             // 
             // label31
@@ -735,7 +736,7 @@
             this.txtTurno.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTurno.Location = new System.Drawing.Point(755, 379);
             this.txtTurno.Name = "txtTurno";
-            this.txtTurno.Size = new System.Drawing.Size(491, 26);
+            this.txtTurno.Size = new System.Drawing.Size(471, 26);
             this.txtTurno.TabIndex = 41;
             // 
             // label30
@@ -754,7 +755,7 @@
             this.txtCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurso.Location = new System.Drawing.Point(755, 348);
             this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(491, 26);
+            this.txtCurso.Size = new System.Drawing.Size(471, 26);
             this.txtCurso.TabIndex = 39;
             // 
             // label29
@@ -898,7 +899,7 @@
             this.txtDireccionEstudiante.Location = new System.Drawing.Point(595, 227);
             this.txtDireccionEstudiante.Multiline = true;
             this.txtDireccionEstudiante.Name = "txtDireccionEstudiante";
-            this.txtDireccionEstudiante.Size = new System.Drawing.Size(648, 86);
+            this.txtDireccionEstudiante.Size = new System.Drawing.Size(631, 86);
             this.txtDireccionEstudiante.TabIndex = 24;
             // 
             // label21
@@ -927,7 +928,7 @@
             this.txtCiudad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiudad.Location = new System.Drawing.Point(755, 318);
             this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(491, 26);
+            this.txtCiudad.Size = new System.Drawing.Size(471, 26);
             this.txtCiudad.TabIndex = 21;
             // 
             // label19
@@ -1013,7 +1014,7 @@
             this.txthoraregistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthoraregistro.Location = new System.Drawing.Point(1052, 174);
             this.txthoraregistro.Name = "txthoraregistro";
-            this.txthoraregistro.Size = new System.Drawing.Size(194, 26);
+            this.txthoraregistro.Size = new System.Drawing.Size(174, 26);
             this.txthoraregistro.TabIndex = 12;
             // 
             // label14
@@ -1032,7 +1033,7 @@
             this.txtfecharegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfecharegistro.Location = new System.Drawing.Point(1052, 147);
             this.txtfecharegistro.Name = "txtfecharegistro";
-            this.txtfecharegistro.Size = new System.Drawing.Size(194, 26);
+            this.txtfecharegistro.Size = new System.Drawing.Size(174, 26);
             this.txtfecharegistro.TabIndex = 10;
             // 
             // label13
@@ -1051,7 +1052,7 @@
             this.txtfechainicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfechainicio.Location = new System.Drawing.Point(1052, 120);
             this.txtfechainicio.Name = "txtfechainicio";
-            this.txtfechainicio.Size = new System.Drawing.Size(194, 26);
+            this.txtfechainicio.Size = new System.Drawing.Size(174, 26);
             this.txtfechainicio.TabIndex = 8;
             // 
             // label12
@@ -1127,7 +1128,7 @@
             this.pictureBox2.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1252, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(1270, 50);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -1140,7 +1141,7 @@
             this.TabGrupo.Location = new System.Drawing.Point(4, 22);
             this.TabGrupo.Name = "TabGrupo";
             this.TabGrupo.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGrupo.Size = new System.Drawing.Size(1252, 819);
+            this.TabGrupo.Size = new System.Drawing.Size(1270, 598);
             this.TabGrupo.TabIndex = 3;
             this.TabGrupo.Text = "TabGrupo";
             this.TabGrupo.UseVisualStyleBackColor = true;
@@ -1176,13 +1177,14 @@
             this.dataGrupos.Location = new System.Drawing.Point(12, 116);
             this.dataGrupos.Name = "dataGrupos";
             this.dataGrupos.ReadOnly = true;
-            this.dataGrupos.Size = new System.Drawing.Size(1405, 422);
+            this.dataGrupos.Size = new System.Drawing.Size(1222, 422);
             this.dataGrupos.TabIndex = 3;
             this.dataGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrupos_CellClick);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button13);
             this.panel3.Controls.Add(this.cmbEstados);
             this.panel3.Controls.Add(this.label10);
@@ -1190,8 +1192,23 @@
             this.panel3.Controls.Add(this.label36);
             this.panel3.Location = new System.Drawing.Point(12, 53);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1405, 57);
+            this.panel3.Size = new System.Drawing.Size(1219, 57);
             this.panel3.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.SteelBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1071, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 36);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Regresar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button13
             // 
@@ -1246,6 +1263,7 @@
             // 
             // TabHistorialMatricula
             // 
+            this.TabHistorialMatricula.BackColor = System.Drawing.Color.AliceBlue;
             this.TabHistorialMatricula.Controls.Add(this.button12);
             this.TabHistorialMatricula.Controls.Add(this.label39);
             this.TabHistorialMatricula.Controls.Add(this.button11);
@@ -1254,30 +1272,31 @@
             this.TabHistorialMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabHistorialMatricula.Name = "TabHistorialMatricula";
             this.TabHistorialMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabHistorialMatricula.Size = new System.Drawing.Size(1252, 819);
+            this.TabHistorialMatricula.Size = new System.Drawing.Size(1270, 598);
             this.TabHistorialMatricula.TabIndex = 4;
             this.TabHistorialMatricula.Text = "TabHistorialMatricula";
-            this.TabHistorialMatricula.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
+            this.button12.BackColor = System.Drawing.Color.Gray;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::CaoaPresentacion.Properties.Resources._60181_back_go_icon;
+            this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(186, 190);
+            this.button12.Location = new System.Drawing.Point(505, 322);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(139, 37);
             this.button12.TabIndex = 53;
             this.button12.Text = "Regresar";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = true;
+            this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(162, 63);
+            this.label39.Location = new System.Drawing.Point(481, 210);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(189, 18);
             this.label39.TabIndex = 17;
@@ -1285,31 +1304,39 @@
             // 
             // button11
             // 
+            this.button11.BackColor = System.Drawing.Color.Green;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(279, 97);
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(598, 244);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(149, 46);
             this.button11.TabIndex = 16;
             this.button11.Text = "Bajas";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.SteelBlue;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(76, 97);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(395, 244);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(149, 46);
             this.button5.TabIndex = 15;
             this.button5.Text = "Reingresos";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(183, 27);
+            this.label38.Location = new System.Drawing.Point(502, 174);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(154, 18);
             this.label38.TabIndex = 14;
@@ -1328,7 +1355,7 @@
             this.TabGraficoMatriculas.Location = new System.Drawing.Point(4, 22);
             this.TabGraficoMatriculas.Name = "TabGraficoMatriculas";
             this.TabGraficoMatriculas.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGraficoMatriculas.Size = new System.Drawing.Size(1252, 819);
+            this.TabGraficoMatriculas.Size = new System.Drawing.Size(1270, 598);
             this.TabGraficoMatriculas.TabIndex = 5;
             this.TabGraficoMatriculas.Text = "TabGraficoMatriculas";
             this.TabGraficoMatriculas.UseVisualStyleBackColor = true;
@@ -1411,13 +1438,13 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(15, 77);
+            this.chart1.Location = new System.Drawing.Point(6, 70);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1294, 572);
+            this.chart1.Size = new System.Drawing.Size(1200, 463);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -1427,7 +1454,7 @@
             this.TabCarnet.Location = new System.Drawing.Point(4, 22);
             this.TabCarnet.Name = "TabCarnet";
             this.TabCarnet.Padding = new System.Windows.Forms.Padding(3);
-            this.TabCarnet.Size = new System.Drawing.Size(1252, 819);
+            this.TabCarnet.Size = new System.Drawing.Size(1270, 708);
             this.TabCarnet.TabIndex = 6;
             this.TabCarnet.Text = "TabCarnet";
             this.TabCarnet.UseVisualStyleBackColor = true;
@@ -1579,7 +1606,7 @@
             this.TabBajas.Location = new System.Drawing.Point(4, 22);
             this.TabBajas.Name = "TabBajas";
             this.TabBajas.Padding = new System.Windows.Forms.Padding(3);
-            this.TabBajas.Size = new System.Drawing.Size(1252, 819);
+            this.TabBajas.Size = new System.Drawing.Size(1270, 708);
             this.TabBajas.TabIndex = 7;
             this.TabBajas.Text = "TabBajas";
             this.TabBajas.UseVisualStyleBackColor = true;
@@ -1647,7 +1674,7 @@
             this.pictureBox4.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox4.Location = new System.Drawing.Point(3, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1246, 30);
+            this.pictureBox4.Size = new System.Drawing.Size(1264, 30);
             this.pictureBox4.TabIndex = 11;
             this.pictureBox4.TabStop = false;
             // 
@@ -1665,7 +1692,7 @@
             this.pictureBox3.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1262, 47);
+            this.pictureBox3.Size = new System.Drawing.Size(1292, 24);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
@@ -1673,13 +1700,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 881);
+            this.ClientSize = new System.Drawing.Size(1292, 637);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1278, 920);
-            this.MinimumSize = new System.Drawing.Size(1278, 920);
+            this.MaximumSize = new System.Drawing.Size(1308, 676);
+            this.MinimumSize = new System.Drawing.Size(1308, 676);
             this.Name = "Frm_BusquedaEstudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LISTADO GENERAL DE MATRICULAS";
@@ -1737,7 +1764,6 @@
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCodMatricula;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -1860,5 +1886,7 @@
         private System.Windows.Forms.TextBox txtmotivo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtIdMatricula;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

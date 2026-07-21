@@ -76,15 +76,7 @@ namespace CapaNegocio
         }
 
 
-        public DataTable MostrarUniversoPorDia(DateTime FechaInicial, DateTime fechafinal, string IdEstado)
-        {
-            CD_VistaUniverso objetoCD = new CD_VistaUniverso();
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarUniversoPorFecha(FechaInicial.ToString("yyyy-MM-dd"), fechafinal.ToString("yyyy-MM-dd"), Convert.ToInt32(IdEstado));
-            return tabla;
-        }
-
-
+      
       
 
 

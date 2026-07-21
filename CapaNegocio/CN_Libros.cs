@@ -64,6 +64,98 @@ namespace CapaNegocio
             return ObjetoCD.ObtenerSiguienteRegistro(idLibro, idTipoDocumento);
         }
 
+        public void InsertarRegistroAcademico(
+     string CodigoDocumento,
+     int IdTipoDocumento,
+     int IdLibro,
+     int Folio,
+     DateTime FechaDocumento,
+     int IdMatricula,
+     string NumFactura,
+     string NombreCompleto,
+     string Cedula,
+     string CodigoMatricula,
+     string NombreCurso,
+     string NombreSucursal,
+     DateTime? FechaFinalizacionCurso,
+     string Observaciones,
+     int IdUsuario,
+     out int IdRegistro,
+     out int NumeroRegistro,
+     out string CodigoDocumentoGenerado,
+     out string NombreEstudiante,
+     out int FolioGenerado,
+     out DateTime FechaDocumentoGenerada,
+     out string LibroTomo)
+        {
+            ObjetoCD.InsertarRegistroAcademico(
+                CodigoDocumento,
+                IdTipoDocumento,
+                IdLibro,
+                Folio,
+                FechaDocumento,
+                IdMatricula,
+                NumFactura,
+                NombreCompleto,
+                Cedula,
+                CodigoMatricula,
+                NombreCurso,
+                NombreSucursal,
+                FechaFinalizacionCurso,
+                Observaciones,
+                IdUsuario,
+                out IdRegistro,
+                out NumeroRegistro,
+                out CodigoDocumentoGenerado,
+                out NombreEstudiante,
+                out FolioGenerado,
+                out FechaDocumentoGenerada,
+                out LibroTomo);
+        }
+
+
+        public DataTable ConsultaGeneralRegistroAcademico(string tipoBusqueda, string valorBusqueda)
+        {
+            return ObjetoCD.ConsultaGeneralRegistroAcademico(tipoBusqueda, valorBusqueda);
+        }
+
+        public DataTable ConsultaPorLibroRegistro(int? IdLibro, int? Folio, DateTime? FechaDocumento)
+        {
+            return ObjetoCD.ConsultaPorLibroRegistro(
+                IdLibro,
+                Folio,
+                FechaDocumento);
+        }
+
+
+        public DataTable CargarLibros()
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObjetoCD.CargarLibros();
+            return tabla;
+        }
+
+        public void ActualizarRegistroAcademico(
+    int IdRegistro,
+    string NumFactura,
+    string Observaciones)
+        {
+            ObjetoCD.ActualizarRegistroAcademico(
+                IdRegistro,
+                NumFactura,
+                Observaciones);
+        }
+
+        public void AnularRegistroAcademico(
+    int IdRegistro,
+    string MotivoAnulacion,
+    int IdUsuarioAnulacion)
+        {
+            ObjetoCD.AnularRegistroAcademico(
+                IdRegistro,
+                MotivoAnulacion,
+                IdUsuarioAnulacion);
+        }
 
     }
 }

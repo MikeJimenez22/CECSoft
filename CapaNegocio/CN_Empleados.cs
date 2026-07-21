@@ -52,6 +52,13 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable MostrarDocentes(int IdEstado)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarDocente(IdEstado);
+            return tabla;
+        }
+
 
     }
 }

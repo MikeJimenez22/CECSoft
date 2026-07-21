@@ -17,9 +17,14 @@ namespace CapaNegocio
             return tabla;
         }
 
+        public DataTable MostrarMatriculas(string textoBusqueda, int idEstado, string tipoBusqueda)
+        {
+            return objetoCD.MostrarMatriculas(textoBusqueda, idEstado, tipoBusqueda);
+        }
 
 
-      
+
+
 
 
         public void Insertar(string CodMatricula, string Fecha, string IdEstudiante, string OrigenMatricula, string IdEmpleado, string IdGrupo, string IdUsuario, string FechaRegistro, string IdEstado, string observacion, string HoraRegistro, string TipoIngreso, string EstadoGrupo)
@@ -85,6 +90,11 @@ namespace CapaNegocio
             DataTable tabla = new DataTable();
             tabla = objetoCD.ObtenerInformacionMatricula(CodMatricula);
             return tabla;
+        }
+
+        public DataTable MostrarMatriculasPorFecha(DateTime fechaInicial, DateTime fechaFinal, int idEstado)
+        {
+            return objetoCD.MostrarMatriculasPorFecha(fechaInicial, fechaFinal, idEstado);
         }
 
 

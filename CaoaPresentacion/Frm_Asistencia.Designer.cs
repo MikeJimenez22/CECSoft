@@ -106,10 +106,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(7, 66);
+            this.tabControl1.Location = new System.Drawing.Point(7, 57);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1153, 596);
+            this.tabControl1.Size = new System.Drawing.Size(1153, 581);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -124,7 +124,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1145, 570);
+            this.tabPage1.Size = new System.Drawing.Size(1145, 555);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Asistencia";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.button17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.Image = global::CaoaPresentacion.Properties.Resources._118801_view_refresh;
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(758, 513);
+            this.button17.Location = new System.Drawing.Point(758, 502);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(122, 39);
             this.button17.TabIndex = 64;
@@ -148,7 +148,7 @@
             this.button8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = global::CaoaPresentacion.Properties.Resources._46795_clear_delete_remove_icon;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(1010, 513);
+            this.button8.Location = new System.Drawing.Point(1010, 502);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(122, 39);
             this.button8.TabIndex = 12;
@@ -162,7 +162,7 @@
             this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::CaoaPresentacion.Properties.Resources._285657_floppy_guardar_save_icon;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(884, 513);
+            this.button6.Location = new System.Drawing.Point(884, 502);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(122, 39);
             this.button6.TabIndex = 11;
@@ -429,7 +429,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1145, 570);
+            this.tabPage2.Size = new System.Drawing.Size(1145, 555);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Grupos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -529,7 +529,7 @@
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1145, 570);
+            this.tabPage3.Size = new System.Drawing.Size(1145, 555);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estudiantes";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -551,7 +551,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel4.BackColor = System.Drawing.Color.AliceBlue;
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.groupBox4);
             this.panel4.Controls.Add(this.button7);
@@ -726,7 +726,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1174, 695);
+            this.ClientSize = new System.Drawing.Size(1174, 651);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -734,11 +734,11 @@
             this.Controls.Add(this.dataAusentesRegular);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1190, 734);
-            this.MinimumSize = new System.Drawing.Size(962, 734);
+            this.MaximumSize = new System.Drawing.Size(1190, 690);
+            this.MinimumSize = new System.Drawing.Size(1190, 690);
             this.Name = "Frm_Asistencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asistencia";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Asistencia_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

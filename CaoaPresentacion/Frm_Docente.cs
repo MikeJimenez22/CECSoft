@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using CapaNegocio;
 using System.Net;
 using System.Drawing.Printing;
+using Utils;
 
 namespace CaoaPresentacion
 {
@@ -25,6 +26,10 @@ namespace CaoaPresentacion
             this.cmbGrupos.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbBusquedas.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbEstadoDocente.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cbDocente.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataGridViewConfigurator.Configure(dataEstudiantes,dataModulosCurso,dataMatriculas);
+            CargarDocentes(3);
             // Configurar controles de búsqueda
             SetupSearchControls();
 
@@ -35,7 +40,6 @@ namespace CaoaPresentacion
         string Id_usuario;
         string NombreUsuario;
         string IdEmpleado;
-        int IdEstadoBusqueda = 3;
         string CodigoActa;
         string IdGrupoSeleccionado;
         string Estado;
@@ -48,23 +52,43 @@ namespace CaoaPresentacion
 
 
         }
+        public void CargarDocentes(int IdEstado)
+        {
+            try
+            {
+                CN_Empleados objetoCN = new CN_Empleados();
+
+                DataTable dt = objetoCN.MostrarDocentes(IdEstado);
+
+                cbDocente.ValueMember = "Id_empleado";
+                cbDocente.DisplayMember = "Docente";
+                cbDocente.DataSource = dt;
+
+                // Seleccionar automáticamente el primer docente
+                if (dt.Rows.Count > 0)
+                {
+                    cbDocente.SelectedIndex = 0;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void Frm_Docente_Load(object sender, EventArgs e)
         {
             try
             {
+                
+                this.cmbEstados.Text = "Activo";
+                this.cmbEstadoDocente.Text = "Activo";
 
                 this.generarcodigoActa();
-               
 
-                this.cmbEstados.Text = "Activo";
-                this.tabControl1.SelectedIndex = 0;
-                Id_usuario = CacheUsuario.IdUsuario;
-                NombreUsuario = CacheUsuario.Nombres + " " + CacheUsuario.Apellidos;
-                IdEmpleado = CacheUsuario.IdEmpleado;
-                this.Cargar_GruposPorDocente(Convert.ToInt32(IdEmpleado), IdEstadoBusqueda);
 
-       
+
                 this.tabControl1.SelectedTab = tabNotas;
                 
             }
@@ -188,13 +212,13 @@ namespace CaoaPresentacion
         {
             if (this.cmbEstados.Text == "Activo")
             {
-                IdEstadoBusqueda = 3;
-                this.Cargar_GruposPorDocente(Convert.ToInt32(IdEmpleado), IdEstadoBusqueda);
+                
+                this.Cargar_GruposPorDocente(Convert.ToInt32(cbDocente.SelectedValue), 3);
             }
             else if (this.cmbEstados.Text == "Inactivo")
             {
-                IdEstadoBusqueda = 4;
-                this.Cargar_GruposPorDocente(Convert.ToInt32(IdEmpleado), IdEstadoBusqueda);
+               
+                this.Cargar_GruposPorDocente(Convert.ToInt32(cbDocente.SelectedValue), 4);
             }
         }
 
@@ -414,7 +438,7 @@ namespace CaoaPresentacion
                 CN_ModulosCurso objetoCN = new CN_ModulosCurso();
                 this.dataModulosCurso.DataSource = objetoCN.MostrarModulosPorGrupo(IdGrupoSeleccionado);
 
-                this.tabControl1.SelectedIndex = 2;
+                this.tabControl1.SelectedTab = tabModulos;
 
             }
             catch (Exception)
@@ -425,6 +449,8 @@ namespace CaoaPresentacion
 
         private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            toolTip1.SetToolTip(cmbGrupos, cmbGrupos.Text);
+
             if (cmbGrupos.SelectedIndex > 0) // Evita la opción "Selecciona un Grupo"
             {
                 IdGrupoSeleccionado = cmbGrupos.SelectedValue.ToString();
@@ -443,10 +469,7 @@ namespace CaoaPresentacion
                 {
                     this.txtNombreModulo.Text = this.dataModulosCurso.CurrentRow.Cells["Descripcion"].Value.ToString(); ;
 
-
-
-
-                    this.tabControl1.SelectedIndex = 1;
+                    this.tabControl1.SelectedTab = tabNotas;
                 }
             }
             catch (Exception)
@@ -457,7 +480,7 @@ namespace CaoaPresentacion
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedTab = tabNotas;
         }
 
 
@@ -555,7 +578,7 @@ namespace CaoaPresentacion
         {
             try
             {
-                this.tabControl1.SelectedIndex = 3;
+                this.tabControl1.SelectedTab = tabEstudiante;
                 this.txtbusqueda.Focus();
             }
             catch (Exception)
@@ -653,7 +676,7 @@ namespace CaoaPresentacion
                                 dataEstudiantes.Rows[lastRowIndex].Cells["Estado"].Value = "Reprobado";
                             }
 
-                            this.tabControl1.SelectedIndex = 1;
+                            this.tabControl1.SelectedTab = tabNotas;
                         }
                         else
                         {
@@ -670,86 +693,193 @@ namespace CaoaPresentacion
 
         private void button4_Click(object sender, EventArgs e)
         {
+         GuardarActaNotas();
+        }
+
+        private void GuardarActaNotas()
+        {
             try
             {
-                if (this.txtNombreModulo.Text == string.Empty)
+                // 1. Validaciones generales
+                if (string.IsNullOrWhiteSpace(txtNombreModulo.Text))
                 {
-                    MessageBox.Show("(*) Nombre de Modulo - Campo obligatorio", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        "Debe ingresar el nombre del módulo.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    txtNombreModulo.Focus();
+                    return;
                 }
-                else if (this.txtNombreModulo.Text != string.Empty)
+
+                if (cmbGrupos.SelectedIndex < 0 ||
+                    cmbGrupos.SelectedValue == null ||
+                    cmbGrupos.Text == "Selecciona un Grupo")
                 {
-                    if (this.cmbGrupos.Text == "Selecciona un Grupo")
+                    MessageBox.Show(
+                        "Debe seleccionar un grupo.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    cmbGrupos.Focus();
+                    return;
+                }
+
+                int cantidadEstudiantes = dataEstudiantes.Rows
+                    .Cast<DataGridViewRow>()
+                    .Count(fila => !fila.IsNewRow);
+
+                if (cantidadEstudiantes == 0)
+                {
+                    MessageBox.Show(
+                        "Debe agregar al menos un estudiante al acta de notas.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                // 2. Validar todas las filas antes de guardar
+                foreach (DataGridViewRow fila in dataEstudiantes.Rows)
+                {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    string idMatricula =
+                        Convert.ToString(fila.Cells["Id_Matricula"].Value)?.Trim();
+
+                    if (string.IsNullOrWhiteSpace(idMatricula))
                     {
-                        MessageBox.Show("Ningun grupo seleccionado", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }else
+                        MessageBox.Show(
+                            $"No se encontró la matrícula del estudiante en la fila {fila.Index + 1}.",
+                            "SISTEMA CECNIC",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+
+                        dataEstudiantes.CurrentCell = fila.Cells["Id_Matricula"];
+                        return;
+                    }
+
+                    string valorNota =
+                        Convert.ToString(fila.Cells["Nota"].Value)?.Trim();
+
+                    if (!int.TryParse(valorNota, out int nota))
                     {
+                        MessageBox.Show(
+                            $"La nota de la fila {fila.Index + 1} está vacía o no es válida.",
+                            "SISTEMA CECNIC",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
 
-                        if (this.dataEstudiantes.Rows.Count == 0)
-                        {
-                            MessageBox.Show("Ningun estudiante se ha agregado", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }else
-                        {
-                            string ip = ObtenerIPLocal();
-                            string nombrePC = Environment.MachineName;
-                            string FechaActual = DateTime.Now.ToShortDateString();
-                            string HoraActual = DateTime.Now.ToShortTimeString();
+                        dataEstudiantes.CurrentCell = fila.Cells["Nota"];
+                        dataEstudiantes.BeginEdit(true);
+                        return;
+                    }
 
-                            CN_NotaModulos objetoCN = new CN_NotaModulos();
-                           // objetoCN.InsertarActaNota(this.txtCodigoActa.Text, FechaActual, HoraActual, CacheUsuario.IdUsuario, ip, nombrePC, this.label3.Text, this.txtObservaciones.Text);
+                    if (nota < 0 || nota > 100)
+                    {
+                        MessageBox.Show(
+                            $"La nota de la fila {fila.Index + 1} debe estar entre 0 y 100.",
+                            "SISTEMA CECNIC",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
 
-                            CN_NotaModulos objetoCN2 = new CN_NotaModulos();
-
-                            foreach (DataGridViewRow fila in dataEstudiantes.Rows)
-                            {
-                                if (!fila.IsNewRow) // Evita procesar la fila vacía al final
-                                {
-                                    string idMatricula = fila.Cells["Id_Matricula"]?.Value?.ToString();
-                                    string observacion = fila.Cells["Observacion"]?.Value?.ToString() ?? ""; // Si es null, asigna una cadena vacía
-                                    string estado = fila.Cells["Estado"]?.Value?.ToString() ?? "Reprobado"; // Si es null, asigna "Reprobado"
-
-                                    // Validar que la nota sea un número entero válido
-                                    int nota = 0;
-                                    if (fila.Cells["Nota"]?.Value == null || !int.TryParse(fila.Cells["Nota"].Value.ToString(), out nota))
-                                    {
-                                        MessageBox.Show($"La nota en la fila {fila.Index + 1} no es válida o está vacía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                    }
-
-                                    // Insertar en la base de datos
-                                    objetoCN2.InsertarNotasEstudiante(idMatricula, this.txtNombreModulo.Text, this.cmbGrupos.Text, nota.ToString(), FechaActual, HoraActual, observacion, this.txtCodigoActa.Text, estado);
-                                }
-                            }
-
-
-                            MessageBox.Show("Registrado correctamente", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            CacheDatosImpresion.CodigoActa = this.txtCodigoActa.Text;
-                            //Frm_ReporteActaNotas frm = new Frm_ReporteActaNotas();
-                            //frm.Show();
-
-                            Reporte_ActaNota frm = new Reporte_ActaNota();
-                            frm.Show();
-                            this.Hide();
-                           
-
-                        }
-
-
-
-
-
+                        dataEstudiantes.CurrentCell = fila.Cells["Nota"];
+                        dataEstudiantes.BeginEdit(true);
+                        return;
                     }
                 }
 
-                }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // 3. Datos generales
+                string codigoActa = txtCodigoActa.Text.Trim();
+                string nombreModulo = txtNombreModulo.Text.Trim();
+                string nombreGrupo = cmbGrupos.Text.Trim();
+                string nombreDocente = cbDocente.Text.Trim();
+                string observacionesActa = txtObservaciones.Text.Trim();
 
+                string ip = ObtenerIPLocal();
+                string nombrePC = Environment.MachineName;
+
+                DateTime fechaHoraActual = DateTime.Now;
+                string fechaActual = fechaHoraActual.ToShortDateString();
+                string horaActual = fechaHoraActual.ToShortTimeString();
+
+                CN_NotaModulos objetoCN = new CN_NotaModulos();
+
+                // 4. Guardar encabezado del acta
+                objetoCN.InsertarActaNota(
+                    codigoActa,
+                    fechaActual,
+                    horaActual,
+                    CacheUsuario.IdUsuario,
+                    ip,
+                    nombrePC,
+                    nombreDocente,
+                    observacionesActa);
+
+                // 5. Guardar notas
+                foreach (DataGridViewRow fila in dataEstudiantes.Rows)
+                {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    string idMatricula =
+                        Convert.ToString(fila.Cells["Id_Matricula"].Value).Trim();
+
+                    int nota = Convert.ToInt32(fila.Cells["Nota"].Value);
+
+                    string observacion =
+                        Convert.ToString(fila.Cells["Observacion"].Value)?.Trim()
+                        ?? string.Empty;
+
+                    string estado =
+                        Convert.ToString(fila.Cells["Estado"].Value)?.Trim();
+
+                    if (string.IsNullOrWhiteSpace(estado))
+                    {
+                        estado = nota >= 60
+                            ? "Aprobado"
+                            : "Reprobado";
+                    }
+
+                    objetoCN.InsertarNotasEstudiante(
+                        idMatricula,
+                        nombreModulo,
+                        nombreGrupo,
+                        nota.ToString(),
+                        fechaActual,
+                        horaActual,
+                        observacion,
+                        codigoActa,
+                        estado);
+                }
+
+                MessageBox.Show(
+                    "El acta de notas fue registrada correctamente.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                Frm_Docente formulario = new Frm_Docente();
+                formulario.Show();
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocurrió un error al registrar el acta de notas.\n\n" +
+                    "Detalle: " + ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
-       
+
         static string ObtenerIPLocal()
         {
             string ipAddress = "No encontrada";
@@ -764,15 +894,50 @@ namespace CaoaPresentacion
             return ipAddress;
         }
 
-        
-    
-     
-        
+        private void cmbEstadoDocente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbEstadoDocente.Text == "Activo")
+                {
+                    CargarDocentes(3);
+                }else if (cmbEstadoDocente.Text == "Inactivo")
+                {
+                    CargarDocentes(4);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-     
+        private void cbDocente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                toolTip1.SetToolTip(cbDocente, cbDocente.Text);
 
+                if (cmbEstadoDocente.Text == "Activo")
+                {
+                    this.Cargar_GruposPorDocente(Convert.ToInt32(cbDocente.SelectedValue),3);
+                }else
+                {
+                    this.Cargar_GruposPorDocente(Convert.ToInt32(cbDocente.SelectedValue), 4);
+                }
 
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabNotas;
+        }
     }
 }
 

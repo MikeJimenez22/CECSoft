@@ -109,27 +109,7 @@ namespace CapaDatos
 
         }
 
-        public DataTable MostrarUniversoPorFecha(string FechaInicial, string FechaFinal, int IdEstado)
-        {
-            DataTable tabla = new DataTable();
-
-
-
-            using (SqlCommand comando = new SqlCommand("MostrarMatriculasPorFecha", conexion.Conexion()))
-            {
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@fechaInicial", FechaInicial);
-                comando.Parameters.AddWithValue("@fechaFinal", FechaFinal);
-                comando.Parameters.AddWithValue("@IdEstado", IdEstado);
-
-                conexion.AbrirConexion();
-                tabla.Load(comando.ExecuteReader());
-            }
-
-
-            return tabla;
-
-        }
+      
 
 
 

@@ -15,7 +15,6 @@ namespace CapaDatos
         SqlCommand comando = new SqlCommand();
 
        
-    
 
         public DataTable ObtenerNumMatricula()
         {
@@ -204,6 +203,49 @@ namespace CapaDatos
         }
 
 
+        public DataTable MostrarMatriculas(string textoBusqueda, int idEstado, string tipoBusqueda)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("MostrarMatriculas", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@TextoBusqueda", textoBusqueda);
+                    command.Parameters.AddWithValue("@IdEstado", idEstado);
+                    command.Parameters.AddWithValue("@TipoBusqueda", tipoBusqueda);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        DataTable table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+        public DataTable MostrarMatriculasPorFecha(DateTime fechaInicial, DateTime fechaFinal, int idEstado)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("MostrarMatriculasPorFecha", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@FechaInicial", fechaInicial.Date);
+                    command.Parameters.AddWithValue("@FechaFinal", fechaFinal.Date);
+                    command.Parameters.AddWithValue("@IdEstado", idEstado);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        DataTable table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
 
     }
 }

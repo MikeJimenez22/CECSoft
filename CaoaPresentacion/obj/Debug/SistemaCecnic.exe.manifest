@@ -55,26 +55,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="122880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="128000">
       <assemblyIdentity name="CapaDatos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Einf/H8fnQQzFJfExnkp06LrFYAzd+jOhm0OExDmY4k=</dsig:DigestValue>
+        <dsig:DigestValue>02Egc10uNB6IBy4vFl1mY18Gx+w90+9bORR+eD59wTQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="38912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="39936">
       <assemblyIdentity name="CapaNegocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vWppOM8CgAzecSQ4unrSbNEhOkXd0eyvfTMg4MbpIWI=</dsig:DigestValue>
+        <dsig:DigestValue>QtEur1ovtDQb1qw2WaJlYSQU7IEY2uqngIhnhLRILFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -343,14 +343,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Extensions.Logging.Abstractions.dll" size="67880">
-      <assemblyIdentity name="Microsoft.Extensions.Logging.Abstractions" version="8.0.0.2" publicKeyToken="ADB9793829DDAE60" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Extensions.Logging.Abstractions.dll" size="67856">
+      <assemblyIdentity name="Microsoft.Extensions.Logging.Abstractions" version="8.0.0.3" publicKeyToken="ADB9793829DDAE60" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QBBtlRffKDtnxOXKG4YRVpA7fmvyDMzbFmSVRDFdQu4=</dsig:DigestValue>
+        <dsig:DigestValue>tODneK/cdkA3kjkLBW9o3gztdC0WxbA0fZzKaTD0dhs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1051,6 +1051,114 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.dll" size="799232">
+      <assemblyIdentity name="PdfSharp" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>s6auJS68nxagSUT6ZsgngmBOmnc7lz2f+KQ/jKsm5xk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.BarCodes.dll" size="32256">
+      <assemblyIdentity name="PdfSharp.BarCodes" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jNzsvCl8ozzLoi/iXLiXUK9NvXKJzgHqriyY6DcAhok=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.Charting.dll" size="88576">
+      <assemblyIdentity name="PdfSharp.Charting" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3ugRYirzlkUMWR+VlZXNb9FBX50gu00SpsokCCpckiU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.Cryptography.dll" size="13312">
+      <assemblyIdentity name="PdfSharp.Cryptography" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Gmn0Bnu1UaOLiwOCHI15Yl3HKu25EG7NNo8YuHSGFDo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.Quality.dll" size="40960">
+      <assemblyIdentity name="PdfSharp.Quality" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>zZwz7HGm5wLuwG+uf+uOhyo7gDQI1zlWavg6u9xhAJo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.Shared.dll" size="26112">
+      <assemblyIdentity name="PdfSharp.Shared" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rTCvZ9E/UyNyo1DNg7HGTQT9iq1kxGlcqvLkMiYJ8jU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.Snippets.dll" size="154624">
+      <assemblyIdentity name="PdfSharp.Snippets" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>v4NZ160SktBqrbitD5lqM/0WP6e/NblijlDXJ9N+EL0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.System.dll" size="10240">
+      <assemblyIdentity name="PdfSharp.System" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Nht1rk2ofNY/S0UbvCI5dw2RddnPqkZsQab7SVmR8iE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfSharp.WPFonts.dll" size="421888">
+      <assemblyIdentity name="PdfSharp.WPFonts" version="6.2.4.0" publicKeyToken="F94615AA0424F9EB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>XbiRs65irofe2j4De1BDNjFgA+TlxNyVdDEdpkgk1xI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QRCoder.dll" size="154112">
       <assemblyIdentity name="QRCoder" version="1.6.0.0" publicKeyToken="C4ED5B9AE8358A28" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -1075,14 +1183,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="41561600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="51564544">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>miGaAip3cLxXP3yKDw4yS/xojW2IAvmdUrnMaZQ0apc=</dsig:DigestValue>
+        <dsig:DigestValue>Uy4i4nrFwTJ5elIMsuA9vYrkzYpv5USDLhuTwtcR3VA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1227,6 +1335,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>/xTF9ii5pnmNFzrvu6CkPWHmb3FRCOJXasDT36uQcdA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Security.Cryptography.Pkcs.dll" size="22176">
+      <assemblyIdentity name="System.Security.Cryptography.Pkcs" version="8.0.0.1" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iUNoNuOaa7QnVhPORSJv+hDlkBUSljQ1YCIUQdenlnA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1443,13 +1563,13 @@
       <dsig:DigestValue>nd6IHQywaFBT2p8uv3onc3iCaC0vkH1CrxwCncYDoNw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SistemaCecnic.exe.config" size="6780">
+  <file name="SistemaCecnic.exe.config" size="7302">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8nM49UOotYW/pX7WCFO+bKSADarRU0rNbTZ1mpbcZoA=</dsig:DigestValue>
+      <dsig:DigestValue>o6VUP8m/4UBLHHele12THHgDAd25hJnluysxNYCQhN8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SqlServerTypes\readme.htm" size="2369">

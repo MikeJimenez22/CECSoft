@@ -74,7 +74,7 @@ namespace CaoaPresentacion
         {
             // Configurar controles de búsqueda
             radioButton2.Checked = true; // Puedes considerar si este valor por defecto es necesario
-            cmbBusquedas.Text = "Carnet";
+            cmbBusquedas.Text = "CARNET";
             radioButton1.Checked = true; // Igual aquí, verifica si es necesario
         }
 
@@ -94,71 +94,36 @@ namespace CaoaPresentacion
         {
             if (this.txtbusqueda.Text == string.Empty)
             {
-                MessageBox.Show("opps!, No hay nada que buscar", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                  "Por favor, ingrese un criterio de búsqueda antes de continuar.",
+                  "SISTEMA CECNIC",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning);
+                return;
             }
-            else if (this.txtbusqueda.Text != string.Empty)
+
+            this.MostrarMatriculas();
+            
+
+
+        }
+
+        private void MostrarMatriculas()
+        {
+            try
             {
-                if (this.cmbBusquedas.Text == "Carnet")
-                {
-                    ObtenerUniversoTotal();
-                    this.MostrarPorCarnet();
-
-                }
-                else if (this.cmbBusquedas.Text == "Nombres")
-                {
-                    ObtenerUniversoTotal();
-                    this.MostrarPorNombre();
-
-                }
-                else if (this.cmbBusquedas.Text == "Apellidos")
-                {
-                    ObtenerUniversoTotal();
-                    this.MostrarPorApellidos();
-
-                }
-                else if (this.cmbBusquedas.Text == "Codigo Matricula")
-                {
-                    ObtenerUniversoTotal();
-                    this.MostrarPorCodigoMatricula();
-                }
+                CN_Matriculas objetoCN = new CN_Matriculas();
+                dataEstudiantes.DataSource = objetoCN.MostrarMatriculas(this.txtbusqueda.Text,Convert.ToInt32(Estado),cmbBusquedas.Text);
+                OcultarColumnas();
+                ContarFilas();
             }
-
-
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK);
+            }
         }
 
-        public void MostrarPorCarnet()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorCarnet(this.txtbusqueda.Text, Estado);
-            this.OcultarColumnas();
-            this.ContarFilas();
-        }
-        private void MostrarPorNombre()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorNombre(this.txtbusqueda.Text, Estado);
-            this.OcultarColumnas();
-            this.ContarFilas();
-        }
-
-        private void MostrarPorCodigoMatricula()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorCodMatricula(this.txtbusqueda.Text, Estado);
-            this.OcultarColumnas();
-            this.ContarFilas();
-        }
-
-
-        private void MostrarPorApellidos()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorApellidos(this.txtbusqueda.Text, Estado);
-            this.OcultarColumnas();
-            this.ContarFilas();
-        }
-
-
+       
         private void OcultarColumnas()
         {
             this.dataEstudiantes.Columns["Fecha"].Visible = false;
@@ -207,7 +172,6 @@ namespace CaoaPresentacion
 
                 this.BuscarPorFecha();
               
-                this.ContarFilas();
             }
             catch (Exception)
             {
@@ -221,17 +185,41 @@ namespace CaoaPresentacion
         {
             try
             {
-                DateTime fecha1 = DateTime.ParseExact(dateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                DateTime fecha2 = DateTime.ParseExact(dateTimePicker2.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                CN_Matriculas objetoCN = new CN_Matriculas();
 
-                this.dataEstudiantes.DataSource = objetoCN.MostrarUniversoPorDia(fecha1, fecha2, Estado);
+                DateTime fechaInicial = dateTimePicker1.Value.Date;
+                DateTime fechaFinal = dateTimePicker2.Value.Date;
+
+                if (fechaInicial > fechaFinal)
+                {
+                    MessageBox.Show(
+                        "La fecha inicial no puede ser mayor que la fecha final.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    dateTimePicker1.Focus();
+                    return;
+                }
+
+                this.dataEstudiantes.DataSource =
+                    objetoCN.MostrarMatriculasPorFecha(
+                        fechaInicial,
+                        fechaFinal,
+                        Convert.ToInt32(Estado));
+
                 this.OcultarColumnas();
+                ContarFilas();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Ocurrió un error al consultar las matrículas por fecha.\n\n" +
+                    "Detalle: " + ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-
         }
 
 
@@ -825,33 +813,9 @@ namespace CaoaPresentacion
 
                     CN_Matriculas objetoCN = new CN_Matriculas();
                     objetoCN.ActualizarMatriculaGrupo(IdGrupo, this.txtCodMatriculaEstudiante.Text);
-                    
-                  
 
-                    if (this.cmbBusquedas.Text == "Carnet")
-                    {
-                        ObtenerUniversoTotal();
-                        this.MostrarPorCarnet();
+                    MostrarMatriculas();
 
-                    }
-                    else if (this.cmbBusquedas.Text == "Nombres")
-                    {
-                        ObtenerUniversoTotal();
-                        this.MostrarPorNombre();
-
-                    }
-                    else if (this.cmbBusquedas.Text == "Apellidos")
-                    {
-                        ObtenerUniversoTotal();
-                        this.MostrarPorApellidos();
-
-                    }
-                    else if (this.cmbBusquedas.Text == "Codigo Matricula")
-                    {
-                        ObtenerUniversoTotal();
-                        this.MostrarPorCodigoMatricula();
-                    }
-                    
                     MessageBox.Show("Matricula Actualizada Correctamente", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.tabControl1.SelectedIndex = 0;
 
@@ -1244,13 +1208,12 @@ namespace CaoaPresentacion
         {
             try
             {
-                this.cmbBusquedas.Text = "Carnet";
+                this.cmbBusquedas.Text = "CARNET";
 
                 this.txtbusqueda.Text = string.Empty;
-                if (this.cmbBusquedas.Text == "Carnet")
+                if (this.cmbBusquedas.Text == "CARNET")
                 {
-                    this.MostrarPorCarnet();
-
+                    MostrarMatriculas();
                 }
             }
             catch (Exception)
@@ -1302,74 +1265,64 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (e.ColumnIndex == dataEstudiantes.Columns["Movimientos"].Index && e.RowIndex >= 0)
+                if (e.RowIndex >= 0)
                 {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                    Color fondo = Color.White;
+                    Bitmap icon = null;
 
-                    // Cargar el ícono desde recursos (recomendado) o archivo
-                    Bitmap icon = Properties.Resources.historial_de_pedidos; // Usa tu recurso de imagen
-                    int iconWidth = 16;
-                    int iconHeight = 16;
+                    if (e.ColumnIndex == dataEstudiantes.Columns["Movimientos"].Index)
+                    {
+                        fondo = Color.FromArgb(225, 242, 255); // Azul hielo
+                        icon = Properties.Resources.historial_de_pedidos;
+                    }
+                    else if (e.ColumnIndex == dataEstudiantes.Columns["Detalle"].Index)
+                    {
+                        fondo = Color.FromArgb(239, 232, 255); // Lavanda suave
+                        icon = Properties.Resources.archivo;
+                    }
+                    else if (e.ColumnIndex == dataEstudiantes.Columns["Actualizar"].Index)
+                    {
+                        fondo = Color.FromArgb(220, 250, 245); // Turquesa suave
+                        icon = Properties.Resources.archivo__1_;
+                    }
+                    else if (e.ColumnIndex == dataEstudiantes.Columns["Cambiar"].Index)
+                    {
+                        fondo = Color.FromArgb(255, 235, 220); // Melocotón suave
+                        icon = Properties.Resources.actualizar_accion;
+                    }
 
-                    // Posición centrada en la celda
-                    int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
-                    int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
+                    if (icon != null)
+                    {
+                        // Pintar fondo personalizado
+                        using (SolidBrush brush = new SolidBrush(fondo))
+                        {
+                            e.Graphics.FillRectangle(brush, e.CellBounds);
+                        }
 
-                    e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
-                    e.Handled = true; // Indica que la celda está completamente pintada
-                }
-                else if (e.ColumnIndex == dataEstudiantes.Columns["Detalle"].Index && e.RowIndex >= 0)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                        // Dibujar bordes normales de la celda
+                        e.Paint(e.CellBounds, DataGridViewPaintParts.Border);
 
-                    // Cargar el ícono desde recursos (recomendado) o archivo
-                    Bitmap icon = Properties.Resources.archivo; // Usa tu recurso de imagen
-                    int iconWidth = 16;
-                    int iconHeight = 16;
+                        // Tamaño del icono
+                        int iconWidth = 16;
+                        int iconHeight = 16;
 
-                    // Posición centrada en la celda
-                    int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
-                    int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
+                        // Centrar icono
+                        int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
+                        int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
 
-                    e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
-                    e.Handled = true; // Indica que la celda está completamente pintada
-                }
-                else if (e.ColumnIndex == dataEstudiantes.Columns["Actualizar"].Index && e.RowIndex >= 0)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                        e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
 
-                    // Cargar el ícono desde recursos (recomendado) o archivo
-                    Bitmap icon = Properties.Resources.archivo__1_; // Usa tu recurso de imagen
-                    int iconWidth = 16;
-                    int iconHeight = 16;
-
-                    // Posición centrada en la celda
-                    int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
-                    int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
-
-                    e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
-                    e.Handled = true; // Indica que la celda está completamente pintada
-                }
-                else if (e.ColumnIndex == dataEstudiantes.Columns["Cambiar"].Index && e.RowIndex >= 0)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                    // Cargar el ícono desde recursos (recomendado) o archivo
-                    Bitmap icon = Properties.Resources.actualizar_accion; // Usa tu recurso de imagen
-                    int iconWidth = 16;
-                    int iconHeight = 16;
-
-                    // Posición centrada en la celda
-                    int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
-                    int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
-
-                    e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
-                    e.Handled = true; // Indica que la celda está completamente pintada
+                        e.Handled = true;
+                    }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Error de Sistema",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -1407,6 +1360,10 @@ namespace CaoaPresentacion
             IdMatriculaEst = string.Empty;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = TabUniverso;
+        }
     }
 
 }

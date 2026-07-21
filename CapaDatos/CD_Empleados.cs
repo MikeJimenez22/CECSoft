@@ -121,7 +121,24 @@ namespace CapaDatos
         }
 
 
-      
+        public DataTable MostrarDocente(int IdEstado)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_BuscarDocente", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdEstado", IdEstado);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
 
 
 

@@ -50,8 +50,9 @@
             this.registroAcademicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeNotasAcademicasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNotasActasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.librosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroEnLibrosAcademicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloCuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carteraYCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionesDeCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -180,7 +181,6 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.lblJustificados = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.registroEnLibrosAcademicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -372,8 +372,8 @@
             this.registroAcademicoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDeNotasAcademicasToolStripMenuItem1,
             this.registroDeNotasActasToolStripMenuItem,
-            this.librosToolStripMenuItem1,
             this.tiposDeDocumentosToolStripMenuItem,
+            this.librosToolStripMenuItem1,
             this.registroEnLibrosAcademicosToolStripMenuItem});
             this.registroAcademicoToolStripMenuItem.Name = "registroAcademicoToolStripMenuItem";
             this.registroAcademicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -393,6 +393,13 @@
             this.registroDeNotasActasToolStripMenuItem.Text = "Registro de Notas - Actas";
             this.registroDeNotasActasToolStripMenuItem.Click += new System.EventHandler(this.registroDeNotasActasToolStripMenuItem_Click);
             // 
+            // tiposDeDocumentosToolStripMenuItem
+            // 
+            this.tiposDeDocumentosToolStripMenuItem.Name = "tiposDeDocumentosToolStripMenuItem";
+            this.tiposDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.tiposDeDocumentosToolStripMenuItem.Text = "Tipos de Documentos";
+            this.tiposDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeDocumentosToolStripMenuItem_Click);
+            // 
             // librosToolStripMenuItem1
             // 
             this.librosToolStripMenuItem1.Name = "librosToolStripMenuItem1";
@@ -400,12 +407,12 @@
             this.librosToolStripMenuItem1.Text = "Libros";
             this.librosToolStripMenuItem1.Click += new System.EventHandler(this.librosToolStripMenuItem1_Click);
             // 
-            // tiposDeDocumentosToolStripMenuItem
+            // registroEnLibrosAcademicosToolStripMenuItem
             // 
-            this.tiposDeDocumentosToolStripMenuItem.Name = "tiposDeDocumentosToolStripMenuItem";
-            this.tiposDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.tiposDeDocumentosToolStripMenuItem.Text = "Tipos de Documentos";
-            this.tiposDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.tiposDeDocumentosToolStripMenuItem_Click);
+            this.registroEnLibrosAcademicosToolStripMenuItem.Name = "registroEnLibrosAcademicosToolStripMenuItem";
+            this.registroEnLibrosAcademicosToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.registroEnLibrosAcademicosToolStripMenuItem.Text = "Registro en Libros Academicos";
+            this.registroEnLibrosAcademicosToolStripMenuItem.Click += new System.EventHandler(this.registroEnLibrosAcademicosToolStripMenuItem_Click);
             // 
             // moduloCuentasPorCobrarToolStripMenuItem
             // 
@@ -653,6 +660,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // VerificarEstado
@@ -1909,13 +1917,6 @@
             this.label28.Size = new System.Drawing.Size(102, 19);
             this.label28.TabIndex = 15;
             this.label28.Text = "Justificados";
-            // 
-            // registroEnLibrosAcademicosToolStripMenuItem
-            // 
-            this.registroEnLibrosAcademicosToolStripMenuItem.Name = "registroEnLibrosAcademicosToolStripMenuItem";
-            this.registroEnLibrosAcademicosToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.registroEnLibrosAcademicosToolStripMenuItem.Text = "Registro en Libros Academicos";
-            this.registroEnLibrosAcademicosToolStripMenuItem.Click += new System.EventHandler(this.registroEnLibrosAcademicosToolStripMenuItem_Click);
             // 
             // Frm_Principal
             // 

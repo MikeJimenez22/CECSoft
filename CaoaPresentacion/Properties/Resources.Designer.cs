@@ -1123,6 +1123,46 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DiplomaCECNIC {
+            get {
+                object obj = ResourceManager.GetObject("DiplomaCECNIC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DiplomaCECNIC1 {
+            get {
+                object obj = ResourceManager.GetObject("DiplomaCECNIC1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DiplomaCECNIC2 {
+            get {
+                object obj = ResourceManager.GetObject("DiplomaCECNIC2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DiplomaCECNIC3 {
+            get {
+                object obj = ResourceManager.GetObject("DiplomaCECNIC3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap discount {
             get {
                 object obj = ResourceManager.GetObject("discount", resourceCulture);
@@ -1274,6 +1314,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ganador {
+            get {
+                object obj = ResourceManager.GetObject("ganador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap geometric_gc4e25bd3d_1920 {
             get {
                 object obj = ResourceManager.GetObject("geometric-gc4e25bd3d_1920", resourceCulture);
@@ -1377,6 +1427,16 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagen {
+            get {
+                object obj = ResourceManager.GetObject("imagen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1588,6 +1648,16 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap PantallaLogin {
             get {
                 object obj = ResourceManager.GetObject("PantallaLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdf {
+            get {
+                object obj = ResourceManager.GetObject("pdf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

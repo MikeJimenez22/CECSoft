@@ -201,18 +201,23 @@ namespace CaoaPresentacion
         }
 
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private async void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToLongDateString() + " " +
                    DateTime.Now.ToLongTimeString();
 
+
             tiempoActual++;
+
 
             progressBarDashboard.Value = Math.Min(tiempoActual, tiempoMaximo);
 
+
             int restante = Math.Max(0, tiempoMaximo - tiempoActual);
 
+
             lblActualizacion.Text = $"Actualización en: {restante} s";
+
 
             if (tiempoActual >= tiempoMaximo)
             {
@@ -222,13 +227,20 @@ namespace CaoaPresentacion
                 {
                     lblActualizacion.Text = "Actualizando dashboard...";
 
-                    DatosDashboard();
+
+                    await Task.Run(() =>
+                    {
+                        DatosDashboard();
+                    });
+
 
                     panel14.BackColor = Color.FromArgb(212, 237, 218);
                     label21.ForeColor = Color.FromArgb(40, 167, 69);
                     label21.Text = "Sistema Conectado";
 
+
                     MostrarBotonEstado();
+
                 }
                 catch
                 {
@@ -236,13 +248,22 @@ namespace CaoaPresentacion
                     label21.ForeColor = Color.White;
                     label21.Text = "Sistema Desconectado";
 
+
                     MostrarBotonEstado();
+
                     menuStrip.Enabled = false;
                 }
 
+
                 tiempoActual = 0;
+
+
                 progressBarDashboard.Value = 0;
-                lblActualizacion.Text = $"Actualización en: {tiempoMaximo} s";
+
+
+                lblActualizacion.Text =
+                    $"Actualización en: {tiempoMaximo} s";
+
 
                 timer1.Start();
             }
@@ -259,9 +280,9 @@ namespace CaoaPresentacion
                 CargarGestiones();
                 CargarAsistenciaDia();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message , "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -270,37 +291,35 @@ namespace CaoaPresentacion
             try
             {
                 CN_Dashboard objetoCN = new CN_Dashboard();
-
-
-
-                // Dashboard General
                 DataTable dtGeneral = objetoCN.MostrarDashboard();
 
-                if (dtGeneral.Rows.Count > 0)
+                EjecutarEnUI(() =>
                 {
-                    DataRow fila = dtGeneral.Rows[0];
+                    if (dtGeneral != null && dtGeneral.Rows.Count > 0)
+                    {
+                        DataRow fila = dtGeneral.Rows[0];
 
-                    lblEstudiantes.Text = fila[0].ToString();
-                    lblMatriculasHoy.Text = fila[1].ToString();
-                    lblMatriculasRegistradas.Text = fila[1].ToString();
-                    lblCursos.Text = fila[2].ToString();
-                    lblGrupos.Text = fila[3].ToString();
-                    lblDocentes.Text = fila[4].ToString();
-                }
-                else
-                {
-                    lblEstudiantes.Text = "0";
-                    lblMatriculasHoy.Text = "0";
-                    lblMatriculasRegistradas.Text = "0";
-                    lblCursos.Text = "0";
-                    lblGrupos.Text = "0";
-                    lblDocentes.Text = "0";
-                }
-
+                        lblEstudiantes.Text = fila[0].ToString();
+                        lblMatriculasHoy.Text = fila[1].ToString();
+                        lblMatriculasRegistradas.Text = fila[1].ToString();
+                        lblCursos.Text = fila[2].ToString();
+                        lblGrupos.Text = fila[3].ToString();
+                        lblDocentes.Text = fila[4].ToString();
+                    }
+                    else
+                    {
+                        lblEstudiantes.Text = "0";
+                        lblMatriculasHoy.Text = "0";
+                        lblMatriculasRegistradas.Text = "0";
+                        lblCursos.Text = "0";
+                        lblGrupos.Text = "0";
+                        lblDocentes.Text = "0";
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
             }
         }
 
@@ -308,38 +327,38 @@ namespace CaoaPresentacion
         {
             try
             {
-                CN_Dashboard objetoCN  = new CN_Dashboard();
-
-                // Dashboard Diario
+                CN_Dashboard objetoCN = new CN_Dashboard();
                 DataTable dtDiario = objetoCN.MostrarDashboardDiario();
 
-                if (dtDiario.Rows.Count > 0)
+                EjecutarEnUI(() =>
                 {
-                    DataRow fila = dtDiario.Rows[0];
+                    if (dtDiario != null && dtDiario.Rows.Count > 0)
+                    {
+                        DataRow fila = dtDiario.Rows[0];
 
-                    lblCarnetEstudiantil.Text = fila[0].ToString();
-                    lblCertificadoGeneral.Text = fila[1].ToString();
-                    lblMensualidades.Text = fila[2].ToString();
-                    lblDiplomasCECNIC.Text = fila[3].ToString();
-                    lblDiplomasINATEC.Text = fila[4].ToString();
-                    lblGestiones.Text = fila[5].ToString();
-                    lblFacturas.Text = fila[6].ToString();
-                }
-                else
-                {
-                    lblCarnetEstudiantil.Text = "0";
-                    lblCertificadoGeneral.Text = "0";
-                    lblMensualidades.Text = "0";
-                    lblDiplomasCECNIC.Text = "0";
-                    lblDiplomasINATEC.Text = "0";
-                    lblGestiones.Text = "0";
-                    lblFacturas.Text = "0";
-                }
-
+                        lblCarnetEstudiantil.Text = fila[0].ToString();
+                        lblCertificadoGeneral.Text = fila[1].ToString();
+                        lblMensualidades.Text = fila[2].ToString();
+                        lblDiplomasCECNIC.Text = fila[3].ToString();
+                        lblDiplomasINATEC.Text = fila[4].ToString();
+                        lblGestiones.Text = fila[5].ToString();
+                        lblFacturas.Text = fila[6].ToString();
+                    }
+                    else
+                    {
+                        lblCarnetEstudiantil.Text = "0";
+                        lblCertificadoGeneral.Text = "0";
+                        lblMensualidades.Text = "0";
+                        lblDiplomasCECNIC.Text = "0";
+                        lblDiplomasINATEC.Text = "0";
+                        lblGestiones.Text = "0";
+                        lblFacturas.Text = "0";
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
             }
         }
 
@@ -347,22 +366,27 @@ namespace CaoaPresentacion
         {
             try
             {
-                CN_Dashboard objetoCN  = new CN_Dashboard();
+                CN_Dashboard objetoCN = new CN_Dashboard();
                 DataTable dtBackup = objetoCN.UltimoBackup();
-                if (dtBackup.Rows.Count > 0)
-                {
-                    DataRow fila = dtBackup.Rows[0];
-                    this.lblBackup.Text = "Ultima copia de seguridad: " + fila[0].ToString();
-                }
-                else
-                {
-                    this.lblBackup.Text = "Ultima copia de seguridad: --- ";
-                }
 
+                EjecutarEnUI(() =>
+                {
+                    if (dtBackup != null && dtBackup.Rows.Count > 0)
+                    {
+                        DataRow fila = dtBackup.Rows[0];
+
+                        lblBackup.Text =
+                            "Última copia de seguridad: " + fila[0].ToString();
+                    }
+                    else
+                    {
+                        lblBackup.Text = "Última copia de seguridad: ---";
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
             }
         }
 
@@ -372,21 +396,26 @@ namespace CaoaPresentacion
             {
                 CN_Dashboard objetoCN = new CN_Dashboard();
                 DataTable dtCartera = objetoCN.ObtenerCarteraTurnoActual();
-                if (dtCartera.Rows.Count > 0)
+
+                EjecutarEnUI(() =>
                 {
-                    DataRow fila = dtCartera.Rows[0];
-                    this.lblinsolventes.Text = fila[0].ToString();
-                    this.lblsolventes.Text = fila[1].ToString();
-                }
-                else
-                {
-                    this.lblinsolventes.Text = "0";
-                    this.lblsolventes.Text = "0";
-                }
+                    if (dtCartera != null && dtCartera.Rows.Count > 0)
+                    {
+                        DataRow fila = dtCartera.Rows[0];
+
+                        lblinsolventes.Text = fila[0].ToString();
+                        lblsolventes.Text = fila[1].ToString();
+                    }
+                    else
+                    {
+                        lblinsolventes.Text = "0";
+                        lblsolventes.Text = "0";
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
             }
         }
 
@@ -405,16 +434,21 @@ namespace CaoaPresentacion
                     dt.Rows.Add("No hay registros");
                 }
 
-                dataGestiones.DataSource = dt;
-
-                if (dt.Columns.Contains("Mensaje"))
+                EjecutarEnUI(() =>
                 {
-                    dataGestiones.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                }
+                    dataGestiones.DataSource = dt;
+
+                    if (dt.Columns.Contains("Mensaje") &&
+                        dataGestiones.Columns.Count > 0)
+                    {
+                        dataGestiones.Columns[0].DefaultCellStyle.Alignment =
+                            DataGridViewContentAlignment.MiddleCenter;
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
             }
         }
 
@@ -422,29 +456,61 @@ namespace CaoaPresentacion
         {
             try
             {
-                CN_Dashboard ObjetoCN = new CN_Dashboard();
-                DataTable tabla = new DataTable();
-                tabla = ObjetoCN.AsistenciaGeneralDia();
-                if (tabla.Rows.Count > 0)
-                {
-                    DataRow fila = tabla.Rows[0];
-                    this.lblPresentes.Text = fila[0].ToString();
-                    this.lblAusentes.Text = fila[1].ToString();
-                    this.lblTardes.Text = fila[2].ToString();
-                    this.lblJustificados.Text = fila[3].ToString();
+                CN_Dashboard objetoCN = new CN_Dashboard();
+                DataTable tabla = objetoCN.AsistenciaGeneralDia();
 
-                }else
+                EjecutarEnUI(() =>
                 {
-                    this.lblPresentes.Text = "0";
-                    this.lblAusentes.Text = "0";
-                    this.lblTardes.Text = "0";
-                    this.lblJustificados.Text = "0";
-                }
+                    if (tabla != null && tabla.Rows.Count > 0)
+                    {
+                        DataRow fila = tabla.Rows[0];
 
+                        lblPresentes.Text = fila[0].ToString();
+                        lblAusentes.Text = fila[1].ToString();
+                        lblTardes.Text = fila[2].ToString();
+                        lblJustificados.Text = fila[3].ToString();
+                    }
+                    else
+                    {
+                        lblPresentes.Text = "0";
+                        lblAusentes.Text = "0";
+                        lblTardes.Text = "0";
+                        lblJustificados.Text = "0";
+                    }
+                });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MostrarError(ex);
+            }
+        }
+
+        private void MostrarError(Exception ex)
+        {
+            EjecutarEnUI(() =>
+            {
+                MessageBox.Show(
+                    "Ocurrió un error al cargar la información.\n\n" +
+                    ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            });
+        }
+
+        private void EjecutarEnUI(Action accion)
+        {
+            if (IsDisposed || Disposing)
+                return;
+
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+            }
+            else
+            {
+                accion();
             }
         }
 
