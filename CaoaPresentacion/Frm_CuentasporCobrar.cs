@@ -13,17 +13,9 @@ namespace CaoaPresentacion
     public partial class Frm_CuentasporCobrar : Form
     {
         CN_CarterayCobro objetoCN = new CN_CarterayCobro();
-        string Estado;
-        string date1;
-        string date2;
         DataTable TablCelulares = new DataTable();
 
-
-
-
-
-
-
+        
         public Frm_CuentasporCobrar()
         {
             InitializeComponent();
@@ -32,7 +24,8 @@ namespace CaoaPresentacion
             this.cmbbusquedaMes.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbbusquedaAño.DropDownStyle = ComboBoxStyle.DropDownList;
             this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataGridViewConfigurator.Configure(this.dataCartera, this.dataEstadisticasCartera);
+            this.cbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataGridViewConfigurator.Configure(this.dataCartera);
         }
 
 
@@ -43,17 +36,13 @@ namespace CaoaPresentacion
 
                 this.CargarCombos();
                 ObtenerMesyAño();
-
-                this.radioButton2.Checked = true;
+                this.cbEstado.Text = "Completado";
                 this.comboBox1.Text = "Regular";
                 this.lbltotal.Text = dataCartera.Rows.Count.ToString();
                 ContarEstudiantesConAbonos();
                 ContarEstudiantesSinAbonos();
                 AgregarColumnaConIcono();
-
-
-
-
+                
 
             }
             catch (Exception)
@@ -127,61 +116,9 @@ namespace CaoaPresentacion
 
             lblEstudiantesSinAbono.Text = totalConAbonos.ToString();
         }
+       
 
-
-
-
-        private void BuscarEntre_fechas(DateTime fecha1, DateTime fecha2)
-        {
-            CN_CarterayCobro objetoCN = new CN_CarterayCobro();
-            string Turno = this.comboBox1.Text;
-
-            this.dataCartera.DataSource = objetoCN.MostrarPorFechas(fecha1.ToShortDateString(), fecha2.ToShortDateString(), this.Estado, Turno);
-            this.lbltotal.Text = Convert.ToString(dataCartera.Rows.Count);
-            ContarEstudiantesConAbonos();
-            ContarEstudiantesSinAbonos();
-
-        }
-
-
-        private void BuscarEntre_fechasgeneral(DateTime fecha1, DateTime fecha2)
-        {
-            CN_CarterayCobro objetoCN = new CN_CarterayCobro();
-
-            this.dataCartera.DataSource = objetoCN.MostrarCarteraGeneral(fecha1.ToShortDateString(), fecha2.ToShortDateString(), this.Estado);
-            this.lbltotal.Text = Convert.ToString(dataCartera.Rows.Count);
-            ContarEstudiantesConAbonos();
-            ContarEstudiantesSinAbonos();
-
-        }
-
-
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            this.Estado = "Completado";
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            this.Estado = "Pendiente";
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            date1 = dateTimePicker1.Text;
-        }
-
-
-        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
-        {
-            date2 = dateTimePicker2.Text;
-        }
-
-
-
-
-
+        
         private void CargarCombos()
         {
             string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
@@ -200,24 +137,35 @@ namespace CaoaPresentacion
 
         private void ActualizarFechaSeleccionada()
         {
-            if (cmbbusquedaMes.SelectedIndex != -1 && cmbbusquedaAño.SelectedIndex != -1)
+            if (cmbbusquedaMes.SelectedIndex != -1 &&
+                cmbbusquedaAño.SelectedIndex != -1)
             {
                 string mesSeleccionado = cmbbusquedaMes.SelectedItem.ToString();
-                int numeroMes = DateTime.ParseExact(mesSeleccionado, "MMMM", System.Globalization.CultureInfo.CurrentCulture).Month;
-                int añoSeleccionado = int.Parse(cmbbusquedaAño.SelectedItem.ToString());
 
-                // Obtener el primer día del mes
-                DateTime primerDiaMes = new DateTime(añoSeleccionado, numeroMes, 1);
+                int numeroMes = DateTime.ParseExact(
+                    mesSeleccionado,
+                    "MMMM",
+                    System.Globalization.CultureInfo.CurrentCulture).Month;
 
-                // Obtener el último día del mes
-                DateTime ultimoDiaMes = primerDiaMes.AddMonths(1).AddDays(-1);
+                int añoSeleccionado =
+                    Convert.ToInt32(cmbbusquedaAño.SelectedItem);
 
-                // Pasamos directamente los objetos DateTime al método BusquedaCartera
-                this.BusquedaCartera(primerDiaMes, ultimoDiaMes);
-                this.dataCartera.Columns["Id_Detalle_Programacion"].Visible = false;
-                this.dataCartera.Columns["Total Abonos"].Visible = false;
-                this.dataCartera.Columns["EstadoCartera"].Visible = false;
-                // this.MostrarEstadisticas(primerDiaMes.ToShortDateString(),ultimoDiaMes.ToShortDateString());
+                // Primer día del mes
+                DateTime primerDiaMes = new DateTime(
+                    añoSeleccionado,
+                    numeroMes,
+                    1);
+
+                // Último día del mes
+                DateTime ultimoDiaMes =
+                    primerDiaMes.AddMonths(1).AddDays(-1);
+
+                // Consulta la cartera
+                BusquedaCartera(primerDiaMes, ultimoDiaMes);
+
+                dataCartera.Columns["Id_Detalle_Programacion"].Visible = false;
+                dataCartera.Columns["Total Abonos"].Visible = false;
+                dataCartera.Columns["EstadoCartera"].Visible = false;
             }
         }
 
@@ -227,32 +175,35 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (this.comboBox1.Text == "Todos")
-                {
-                    this.BuscarEntre_fechasgeneral(fechaInicial, fechaFinal);
-                }
-                else if (this.comboBox1.Text != "Todos")
-                {
-                    this.BuscarEntre_fechas(fechaInicial, fechaFinal);
-                }
+                CN_CarterayCobro objetoCN = new CN_CarterayCobro();
+
+                dataCartera.DataSource =
+                    objetoCN.ConsultarCarteraAcademica(
+                        fechaInicial,
+                        fechaFinal,
+                        cbEstado.Text,
+                        comboBox1.Text);
+
+                this.lbltotal.Text = Convert.ToString(dataCartera.Rows.Count);
+                ContarEstudiantesConAbonos();
+                ContarEstudiantesSinAbonos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Ocurrió un error al consultar la cartera académica.\n\n" +
+                    ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-
         }
 
         private void dataCartera_Paint(object sender, PaintEventArgs e)
         {
             this.dataCartera.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-
-
-
-
-
-
+        
         private void dataCartera_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             try
@@ -358,61 +309,9 @@ namespace CaoaPresentacion
                     break;
 
             }
-
-
+            
         }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-
-                ActualizarFechaSeleccionada();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void MostrarEstadisticas(string FechaInicio, string FechaFinal)
-        {
-            try
-            {
-                CN_CarterayCobro objetoCN = new CN_CarterayCobro();
-                this.dataEstadisticasCartera.DataSource = objetoCN.MostrarCarteraEstadisticas(FechaInicio, FechaFinal);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tabControl1.SelectedTab = TabEstadisticas;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tabControl1.SelectedTab = TabBusqueda;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         private void dataCartera_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == dataCartera.Columns["Gestion"].Index && e.RowIndex >= 0)
@@ -496,6 +395,12 @@ namespace CaoaPresentacion
                 MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarFechaSeleccionada();
+        }
+
     }
 }
 

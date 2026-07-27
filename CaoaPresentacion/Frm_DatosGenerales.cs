@@ -18,8 +18,6 @@ namespace CaoaPresentacion
         CD_Conexion conexion = new CD_Conexion();
         string connectionString = "Server=82.180.172.52;Database=u625629450_register45;User ID=u625629450_tchsp435;Password=3Z|H4Ef]Qj!3;Pooling=true;Max Pool Size=100;";
 
-        string IdPersona;
-        string VariableCarnet;
         bool Edicion = false;
 
         public Frm_DatosGenerales()

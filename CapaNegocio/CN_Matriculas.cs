@@ -97,6 +97,11 @@ namespace CapaNegocio
             return objetoCD.MostrarMatriculasPorFecha(fechaInicial, fechaFinal, idEstado);
         }
 
+        public DataTable MostrarInformacion_Matricula(string numeroMatricula)
+        {
+            return objetoCD.MostrarInformacion_Matricula(numeroMatricula);
+        }
+
 
 
     }

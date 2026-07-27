@@ -5,7 +5,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Globalization;
+using System.Diagnostics;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using Utils;
 using ZXing;
@@ -30,8 +35,9 @@ namespace CaoaPresentacion
         DataTable tablaFactura = new DataTable();
         DataTable tablaDetalle = new DataTable();
         string IdMatriculaHistorial;
-        string IdMatriculaEst;
-    
+
+        private PrintDocument documentoCarnet;
+        private Bitmap imagenCarnetImprimir;
 
 
         public Frm_BusquedaEstudiantes()
@@ -48,18 +54,22 @@ namespace CaoaPresentacion
                 this.cmbBusquedas.DropDownStyle = ComboBoxStyle.DropDownList;
                 this.cmbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
                 this.cmbConceptoBaja.DropDownStyle = ComboBoxStyle.DropDownList;
-                DataGridViewConfigurator.Configure(this.dataEstudiantes,this.dataGrupos);
-               
+                DataGridViewConfigurator.Configure(this.dataEstudiantes, this.dataGrupos);
+
 
                 // Configurar controles de búsqueda
                 SetupSearchControls();
 
-            
+
 
                 // Configurar el estado del combo box
                 cmbEstados.Text = "Activo";
 
-  
+                documentoCarnet = new PrintDocument();
+
+                documentoCarnet.PrintPage += DocumentoCarnet_PrintPage;
+                documentoCarnet.EndPrint += DocumentoCarnet_EndPrint;
+
             }
             catch (Exception)
             {
@@ -69,6 +79,7 @@ namespace CaoaPresentacion
 
 
         }
+        
 
         private void SetupSearchControls()
         {
@@ -78,7 +89,7 @@ namespace CaoaPresentacion
             radioButton1.Checked = true; // Igual aquí, verifica si es necesario
         }
 
-       
+
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -103,7 +114,7 @@ namespace CaoaPresentacion
             }
 
             this.MostrarMatriculas();
-            
+
 
 
         }
@@ -113,7 +124,7 @@ namespace CaoaPresentacion
             try
             {
                 CN_Matriculas objetoCN = new CN_Matriculas();
-                dataEstudiantes.DataSource = objetoCN.MostrarMatriculas(this.txtbusqueda.Text,Convert.ToInt32(Estado),cmbBusquedas.Text);
+                dataEstudiantes.DataSource = objetoCN.MostrarMatriculas(this.txtbusqueda.Text, Convert.ToInt32(Estado), cmbBusquedas.Text);
                 OcultarColumnas();
                 ContarFilas();
             }
@@ -123,7 +134,7 @@ namespace CaoaPresentacion
             }
         }
 
-       
+
         private void OcultarColumnas()
         {
             this.dataEstudiantes.Columns["Fecha"].Visible = false;
@@ -136,13 +147,13 @@ namespace CaoaPresentacion
             this.dataEstudiantes.Columns["Estado"].Visible = false;
 
         }
-        
+
         private void Frm_BusquedaEstudiantes_Load(object sender, EventArgs e)
         {
-            this.ConfigurarGrafico();
+          
             string TipoUsuario = CacheUsuario.TipoUsuario;
 
-           
+
 
             // Agregar botones a DataGridView
             this.AgregarColumnaConIcono();
@@ -151,9 +162,9 @@ namespace CaoaPresentacion
 
             this.BuscarPorFecha();
             this.OcultarColumnas();
-          
+
             ContarFilas();
-            this.cmbConceptoBaja.Text = "OTRO";
+            this.cmbConceptoBaja.Text = "BAJA";
 
 
             this.tabControl1.SelectedTab = TabUniverso; ;
@@ -163,15 +174,15 @@ namespace CaoaPresentacion
         {
             this.lbltotal.Text = Convert.ToString(this.dataEstudiantes.Rows.Count);
         }
-        
-      
+
+
         private void button7_Click_1(object sender, EventArgs e)
         {
             try
             {
 
                 this.BuscarPorFecha();
-              
+
             }
             catch (Exception)
             {
@@ -272,13 +283,13 @@ namespace CaoaPresentacion
             }
         }
 
-       
+
 
 
         private void RealizarImpresionExpediente(string CodigoMatricula)
         {
             CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            
+
             tabla = objetoCN.GenerarExpediente(CodigoMatricula);
             tablaFactura = objetoCN.ObtenerFacturaInicio(CodigoMatricula);
 
@@ -310,175 +321,841 @@ namespace CaoaPresentacion
         {
             Graphics g = e.Graphics;
 
-            // ===== FUENTES =====
-            Font titulo = new Font("Arial", 18, FontStyle.Bold);
-            Font subtitulo = new Font("Arial", 11, FontStyle.Bold);
-            Font texto = new Font("Arial", 10);
-            Font textoItalic = new Font("Arial", 10, FontStyle.Italic);
-            Font footerFont = new Font("Arial", 8, FontStyle.Italic);
+            // Mejora la calidad de impresión
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            g.TextRenderingHint =
+                System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 
-            // ===== MEDIDAS =====
-            int margenX = 50;
-            int ancho = 750;
-            int y = 40;
+            // =========================================================
+            // FUENTES
+            // =========================================================
+            using (Font fuenteInstitucion =
+                   new Font("Arial", 19, FontStyle.Bold))
+            using (Font fuenteTitulo =
+                   new Font("Arial", 12, FontStyle.Bold))
+            using (Font fuenteSeccion =
+                   new Font("Arial", 9, FontStyle.Bold))
+            using (Font fuenteEtiqueta =
+                   new Font("Arial", 8.5f, FontStyle.Bold))
+            using (Font fuenteTexto =
+                   new Font("Arial", 8.5f, FontStyle.Regular))
+            using (Font fuenteObservacion =
+                   new Font("Arial", 8.5f, FontStyle.Italic))
+            using (Font fuentePie =
+                   new Font("Arial", 7.5f, FontStyle.Italic))
+            {
+                // =====================================================
+                // CONFIGURACIÓN GENERAL
+                // =====================================================
+                int margenX = 45;
+                int anchoPagina = e.PageBounds.Width - (margenX * 2);
+                int y = 35;
 
-            // ===== ENCABEZADO =====
-            Rectangle header = new Rectangle(margenX, y, ancho, 80);
-            DibujarCaja(g, header, Color.Gainsboro);
+                Pen bordePrincipal = new Pen(Color.Black, 1.2f);
+                Pen bordeSecundario = new Pen(Color.Black, 0.7f);
+                Pen lineaDelgada = new Pen(Color.Black, 0.5f);
 
-            StringFormat center = new StringFormat { Alignment = StringAlignment.Center };
+                StringFormat centrado = new StringFormat
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
 
-            g.DrawString("CECNIC", titulo, Brushes.Black, margenX + ancho / 2, y + 10, center);
-            g.DrawString("EXPEDIENTE ESTUDIANTIL", subtitulo, Brushes.Black, margenX + ancho / 2, y + 45, center);
+                StringFormat izquierdaCentro = new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center,
+                    Trimming = StringTrimming.EllipsisCharacter
+                };
 
-            y += 100;
+                // =====================================================
+                // ENCABEZADO INSTITUCIONAL
+                // =====================================================
+                Rectangle encabezado = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    88);
 
-            // ===== DETALLE DE REGISTRO =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 90), Color.White);
-            g.DrawString("DETALLE DE REGISTRO", subtitulo, Brushes.Black, margenX + 10, y + 8);
+                g.DrawRectangle(bordePrincipal, encabezado);
 
-            DibujarTextoEnCaja(g, $"Código Matrícula: {tabla.Rows[0][1]}", texto,
-                new Rectangle(margenX + 10, y + 35, 350, 20));
+                // Línea decorativa superior
+                g.FillRectangle(
+                    Brushes.Black,
+                    margenX,
+                    y,
+                    anchoPagina,
+                    5);
 
-            DibujarTextoEnCaja(g, $"Fecha Inicio: {Convert.ToDateTime(tabla.Rows[0][3]).ToShortDateString()}", texto,
-                new Rectangle(margenX + 400, y + 35, 300, 20));
+                g.DrawString(
+                    "CECNIC",
+                    fuenteInstitucion,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX,
+                        y + 12,
+                        anchoPagina,
+                        30),
+                    centrado);
 
-            DibujarTextoEnCaja(g, $"Registrado por: {tabla.Rows[0][2]}", texto,
-                new Rectangle(margenX + 10, y + 60, 350, 20));
+                g.DrawString(
+                    "CENTRO DE ESTUDIOS COMPUTARIZADOS NICARAGÜENSES",
+                    fuenteSeccion,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX,
+                        y + 42,
+                        anchoPagina,
+                        18),
+                    centrado);
 
-            DibujarTextoEnCaja(g, $"Fecha Registro: {Convert.ToDateTime(tabla.Rows[0][4]).ToShortDateString()}", texto,
-                new Rectangle(margenX + 400, y + 60, 300, 20));
+                g.DrawLine(
+                    bordeSecundario,
+                    margenX + 120,
+                    y + 63,
+                    margenX + anchoPagina - 120,
+                    y + 63);
 
-            y += 110;
+                g.DrawString(
+                    "EXPEDIENTE ESTUDIANTIL",
+                    fuenteTitulo,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX,
+                        y + 64,
+                        anchoPagina,
+                        20),
+                    centrado);
 
-            // ===== DATOS PERSONALES =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
-            g.DrawString("DATOS PERSONALES", subtitulo, Brushes.Black, margenX + 10, y + 8);
+                y += 100;
 
-            DibujarTextoEnCaja(g,
-                $"Estudiante: {tabla.Rows[0][6]} {tabla.Rows[0][7]}",
-                texto,
-                new Rectangle(margenX + 10, y + 35, 350, 40));
+                // =====================================================
+                // NÚMERO DE MATRÍCULA Y ESTADO
+                // =====================================================
+                Rectangle barraIdentificacion = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    34);
 
-            DibujarTextoEnCaja(g,
-                $"Nacimiento: {Convert.ToDateTime(tabla.Rows[0][8]).ToShortDateString()}",
-                texto,
-                new Rectangle(margenX + 400, y + 35, 300, 20));
+                g.DrawRectangle(bordePrincipal, barraIdentificacion);
 
-            DibujarTextoEnCaja(g,
-                $"Celular: {tabla.Rows[0][9]}",
-                texto,
-                new Rectangle(margenX + 10, y + 75, 350, 20));
+                int mitadBarra = anchoPagina / 2;
 
-            DibujarTextoEnCaja(g,
-                $"Tutor: {tabla.Rows[0][10]} ({tabla.Rows[0][11]})",
-                texto,
-                new Rectangle(margenX + 400, y + 75, 300, 40));
+                g.DrawLine(
+                    bordeSecundario,
+                    margenX + mitadBarra,
+                    y,
+                    margenX + mitadBarra,
+                    y + barraIdentificacion.Height);
 
-            y += 140;
+                DibujarDatoHorizontal(
+                    g,
+                    "MATRÍCULA:",
+                    tabla.Rows[0][1].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 10,
+                        y + 1,
+                        mitadBarra - 20,
+                        32));
 
-            // ===== DETALLE ACADÉMICO =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
-            g.DrawString("DETALLE ACADÉMICO", subtitulo, Brushes.Black, margenX + 10, y + 8);
+                DibujarDatoHorizontal(
+                    g,
+                    "ESTADO:",
+                    tabla.Rows[0][16].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + mitadBarra + 10,
+                        y + 1,
+                        mitadBarra - 20,
+                        32));
 
-            DibujarTextoEnCaja(g,
-                $"Carnet: {tabla.Rows[0][5]}",
-                texto,
-                new Rectangle(margenX + 10, y + 35, 350, 20));
+                y += 46;
 
-            DibujarTextoEnCaja(g,
-                $"Curso: {tabla.Rows[0][12]}",
-                texto,
-                new Rectangle(margenX + 400, y + 35, 300, 40));
+                // =====================================================
+                // INFORMACIÓN DE REGISTRO
+                // =====================================================
+                y = DibujarTituloSeccion(
+                    g,
+                    "INFORMACIÓN DE REGISTRO",
+                    margenX,
+                    y,
+                    anchoPagina,
+                    fuenteSeccion);
 
-            DibujarTextoEnCaja(g,
-                $"Turno: {tabla.Rows[0][14]}",
-                texto,
-                new Rectangle(margenX + 10, y + 75, 350, 20));
+                Rectangle detalleRegistro = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    76);
 
-            DibujarTextoEnCaja(g,
-                $"Horario: {tabla.Rows[0][15]}",
-                texto,
-                new Rectangle(margenX + 400, y + 75, 300, 20));
+                g.DrawRectangle(bordeSecundario, detalleRegistro);
 
-            y += 140;
+                int anchoColumna = anchoPagina / 2;
 
-            // ===== OBSERVACIONES =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 80), Color.White);
-            g.DrawString("OBSERVACIONES", subtitulo, Brushes.Black, margenX + 10, y + 8);
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX + anchoColumna,
+                    y,
+                    margenX + anchoColumna,
+                    y + detalleRegistro.Height);
 
-            DibujarTextoEnCaja(g,
-                tabla.Rows[0][17].ToString(),
-                textoItalic,
-                new Rectangle(margenX + 10, y + 35, ancho - 20, 40));
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX,
+                    y + 38,
+                    margenX + anchoPagina,
+                    y + 38);
 
-            y += 100;
+                DibujarCampo(
+                    g,
+                    "Código de matrícula",
+                    tabla.Rows[0][1].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 3,
+                        anchoColumna - 16,
+                        32));
 
-            // ===== FIRMAS =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 70), Color.White);
-            g.DrawString("Firma Estudiante: ____________________________", texto, Brushes.Black, margenX + 40, y + 30);
-            g.DrawString("Firma Cajero: ____________________________", texto, Brushes.Black, margenX + 420, y + 30);
+                DibujarCampo(
+                    g,
+                    "Fecha de inicio",
+                    FormatearFecha(tabla.Rows[0][3]),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 3,
+                        anchoColumna - 16,
+                        32));
 
-            y += 90;
+                DibujarCampo(
+                    g,
+                    "Matriculado por",
+                    tabla.Rows[0][2].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 41,
+                        anchoColumna - 16,
+                        32));
 
-            // ===== DETALLE DE PAGOS =====
-            DibujarCaja(g, new Rectangle(margenX, y, ancho, 120), Color.White);
-            g.DrawString("DETALLE DE PAGOS", subtitulo, Brushes.Black, margenX + 10, y + 8);
+                DibujarCampo(
+                    g,
+                    "Fecha de registro",
+                    FormatearFecha(tabla.Rows[0][4]),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 41,
+                        anchoColumna - 16,
+                        32));
 
-            string facturas = tablaFactura.Rows.Count > 0
-                ? string.Join(", ", tablaFactura.AsEnumerable().Select(r => r[0].ToString()))
-                : "No hay registros";
+                y += 90;
 
-            DibujarTextoEnCaja(g, facturas, texto,
-                new Rectangle(margenX + 10, y + 35, ancho - 260, 40));
+                // =====================================================
+                // DATOS DEL ESTUDIANTE
+                // =====================================================
+                y = DibujarTituloSeccion(
+                    g,
+                    "DATOS PERSONALES DEL ESTUDIANTE",
+                    margenX,
+                    y,
+                    anchoPagina,
+                    fuenteSeccion);
 
-            // ===== CÓDIGO DE BARRAS =====
-            Bitmap codigo = GenerarCodigoDeBarras(tabla.Rows[0][1].ToString());
-            Rectangle rectCodigo = new Rectangle(margenX + ancho - 230, y + 35, 200, 70);
-            g.DrawRectangle(Pens.Black, rectCodigo);
-            g.DrawImage(codigo, rectCodigo);
+                Rectangle datosPersonales = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    118);
 
-            y += 150;
+                g.DrawRectangle(bordeSecundario, datosPersonales);
 
-            // ===== PIE DE PÁGINA =====
-            string fechaImpresion = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX,
+                    y + 40,
+                    margenX + anchoPagina,
+                    y + 40);
 
-            g.DrawLine(Pens.Gray, margenX, e.MarginBounds.Bottom - 30, margenX + ancho, e.MarginBounds.Bottom - 30);
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX,
+                    y + 79,
+                    margenX + anchoPagina,
+                    y + 79);
+
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX + anchoColumna,
+                    y + 40,
+                    margenX + anchoColumna,
+                    y + 118);
+
+                DibujarCampo(
+                    g,
+                    "Nombre completo",
+                    $"{tabla.Rows[0][6]} {tabla.Rows[0][7]}",
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 4,
+                        anchoPagina - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Fecha de nacimiento",
+                    FormatearFecha(tabla.Rows[0][8]),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 43,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Número celular",
+                    tabla.Rows[0][9].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 43,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Nombre del tutor",
+                    ObtenerTextoSeguro(tabla.Rows[0][10], "No registrado"),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 82,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Celular del tutor",
+                    ObtenerTextoSeguro(tabla.Rows[0][11], "----------"),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 82,
+                        anchoColumna - 16,
+                        32));
+
+                y += 132;
+
+                // =====================================================
+                // INFORMACIÓN ACADÉMICA
+                // =====================================================
+                y = DibujarTituloSeccion(
+                    g,
+                    "INFORMACIÓN ACADÉMICA",
+                    margenX,
+                    y,
+                    anchoPagina,
+                    fuenteSeccion);
+
+                Rectangle datosAcademicos = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    118);
+
+                g.DrawRectangle(bordeSecundario, datosAcademicos);
+
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX,
+                    y + 40,
+                    margenX + anchoPagina,
+                    y + 40);
+
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX,
+                    y + 79,
+                    margenX + anchoPagina,
+                    y + 79);
+
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX + anchoColumna,
+                    y,
+                    margenX + anchoColumna,
+                    y + 118);
+
+                DibujarCampo(
+                    g,
+                    "Carnet estudiantil",
+                    tabla.Rows[0][5].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 4,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Tipo de curso",
+                    tabla.Rows[0][13].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 4,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Curso",
+                    tabla.Rows[0][12].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 43,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Docente",
+                    tabla.Rows[0][18].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 43,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Turno",
+                    tabla.Rows[0][14].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + 8,
+                        y + 82,
+                        anchoColumna - 16,
+                        32));
+
+                DibujarCampo(
+                    g,
+                    "Horario",
+                    tabla.Rows[0][15].ToString(),
+                    fuenteEtiqueta,
+                    fuenteTexto,
+                    new Rectangle(
+                        margenX + anchoColumna + 8,
+                        y + 82,
+                        anchoColumna - 16,
+                        32));
+
+                y += 132;
+
+                // =====================================================
+                // OBSERVACIONES
+                // =====================================================
+                y = DibujarTituloSeccion(
+                    g,
+                    "OBSERVACIONES",
+                    margenX,
+                    y,
+                    anchoPagina,
+                    fuenteSeccion);
+
+                Rectangle observaciones = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    62);
+
+                g.DrawRectangle(bordeSecundario, observaciones);
+
+                string textoObservacion =
+                    ObtenerTextoSeguro(
+                        tabla.Rows[0][17],
+                        "Sin observaciones registradas.");
+
+                g.DrawString(
+                    textoObservacion,
+                    fuenteObservacion,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + 10,
+                        y + 9,
+                        anchoPagina - 20,
+                        45));
+
+                y += 76;
+
+                // =====================================================
+                // DETALLE DE PAGOS
+                // =====================================================
+                y = DibujarTituloSeccion(
+                    g,
+                    "DETALLE DE PAGOS",
+                    margenX,
+                    y,
+                    anchoPagina,
+                    fuenteSeccion);
+
+                Rectangle pagos = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    100);
+
+                g.DrawRectangle(bordeSecundario, pagos);
+
+                int anchoCodigo = 220;
+                int anchoFacturas = anchoPagina - anchoCodigo;
+
+                g.DrawLine(
+                    lineaDelgada,
+                    margenX + anchoFacturas,
+                    y,
+                    margenX + anchoFacturas,
+                    y + pagos.Height);
+
+                g.DrawString(
+                    "FACTURAS REGISTRADAS",
+                    fuenteEtiqueta,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + 10,
+                        y + 8,
+                        anchoFacturas - 20,
+                        18));
+
+                string facturas = tablaFactura.Rows.Count > 0
+                    ? string.Join(
+                        ", ",
+                        tablaFactura.AsEnumerable()
+                            .Select(r => r[0].ToString()))
+                    : "No hay registros";
+
+                g.DrawString(
+                    facturas,
+                    fuenteTexto,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + 10,
+                        y + 30,
+                        anchoFacturas - 20,
+                        58));
+
+                g.DrawString(
+                    "CÓDIGO DE MATRÍCULA",
+                    fuenteEtiqueta,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + anchoFacturas,
+                        y + 6,
+                        anchoCodigo,
+                        18),
+                    centrado);
+
+                using (Bitmap codigo =
+                       GenerarCodigoDeBarras(
+                           tabla.Rows[0][1].ToString()))
+                {
+                    Rectangle rectCodigo = new Rectangle(
+                        margenX + anchoFacturas + 15,
+                        y + 27,
+                        anchoCodigo - 30,
+                        55);
+
+                    g.DrawImage(codigo, rectCodigo);
+                }
+
+                g.DrawString(
+                    tabla.Rows[0][1].ToString(),
+                    fuentePie,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + anchoFacturas,
+                        y + 82,
+                        anchoCodigo,
+                        15),
+                    centrado);
+
+                y += 114;
+
+                // =====================================================
+                // FIRMAS
+                // =====================================================
+                Rectangle firmas = new Rectangle(
+                    margenX,
+                    y,
+                    anchoPagina,
+                    72);
+
+                g.DrawRectangle(bordeSecundario, firmas);
+
+                int centroFirmaIzquierda =
+                    margenX + (anchoColumna / 2);
+
+                int centroFirmaDerecha =
+                    margenX + anchoColumna + (anchoColumna / 2);
+
+                int anchoLineaFirma = 230;
+                int yLineaFirma = y + 39;
+
+                g.DrawLine(
+                    bordeSecundario,
+                    centroFirmaIzquierda - (anchoLineaFirma / 2),
+                    yLineaFirma,
+                    centroFirmaIzquierda + (anchoLineaFirma / 2),
+                    yLineaFirma);
+
+                g.DrawLine(
+                    bordeSecundario,
+                    centroFirmaDerecha - (anchoLineaFirma / 2),
+                    yLineaFirma,
+                    centroFirmaDerecha + (anchoLineaFirma / 2),
+                    yLineaFirma);
+
+                g.DrawString(
+                    "Firma del estudiante",
+                    fuenteTexto,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX,
+                        y + 43,
+                        anchoColumna,
+                        20),
+                    centrado);
+
+                g.DrawString(
+                    "Firma y sello autorizado",
+                    fuenteTexto,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX + anchoColumna,
+                        y + 43,
+                        anchoColumna,
+                        20),
+                    centrado);
+
+                // =====================================================
+                // PIE DE PÁGINA
+                // =====================================================
+                int pieY = e.PageBounds.Bottom - 55;
+
+                g.DrawLine(
+                    bordeSecundario,
+                    margenX,
+                    pieY,
+                    margenX + anchoPagina,
+                    pieY);
+
+                string fechaImpresion =
+                    DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
+
+                g.DrawString(
+                    $"Documento generado el {fechaImpresion}",
+                    fuentePie,
+                    Brushes.Black,
+                    margenX,
+                    pieY + 7);
+
+                StringFormat alineacionDerecha = new StringFormat
+                {
+                    Alignment = StringAlignment.Far
+                };
+
+                g.DrawString(
+                    "Sistema Académico CECNIC",
+                    fuentePie,
+                    Brushes.Black,
+                    new Rectangle(
+                        margenX,
+                        pieY + 7,
+                        anchoPagina,
+                        16),
+                    alineacionDerecha);
+
+                bordePrincipal.Dispose();
+                bordeSecundario.Dispose();
+                lineaDelgada.Dispose();
+                centrado.Dispose();
+                izquierdaCentro.Dispose();
+                alineacionDerecha.Dispose();
+            }
+
+            e.HasMorePages = false;
+        }
+
+        private int DibujarTituloSeccion(
+    Graphics g,
+    string titulo,
+    int x,
+    int y,
+    int ancho,
+    Font fuente)
+        {
+            Rectangle encabezado = new Rectangle(x, y, ancho, 24);
+
+            g.FillRectangle(Brushes.Black, encabezado);
 
             g.DrawString(
-                $"Documento impreso el {fechaImpresion}",
-                footerFont,
-                Brushes.Gray,
-                margenX,
-                e.MarginBounds.Bottom - 25
-            );
+                titulo,
+                fuente,
+                Brushes.White,
+                new Rectangle(
+                    x + 8,
+                    y,
+                    ancho - 16,
+                    24),
+                new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center
+                });
 
-
+            return y + 24;
         }
 
-        void DibujarCaja(Graphics g, Rectangle rect, Color fondo)
+        private void DibujarCampo(
+    Graphics g,
+    string etiqueta,
+    string valor,
+    Font fuenteEtiqueta,
+    Font fuenteValor,
+    Rectangle rectangulo)
         {
-            using (SolidBrush brush = new SolidBrush(fondo))
-                g.FillRectangle(brush, rect);
+            string textoEtiqueta = etiqueta.ToUpper() + ":";
 
-            g.DrawRectangle(Pens.Black, rect);
-        }
+            SizeF medidaEtiqueta = g.MeasureString(
+                textoEtiqueta,
+                fuenteEtiqueta);
 
-        void DibujarTextoEnCaja(Graphics g, string texto, Font font, Rectangle rect)
-        {
+            g.DrawString(
+                textoEtiqueta,
+                fuenteEtiqueta,
+                Brushes.Black,
+                rectangulo.X,
+                rectangulo.Y);
+
+            Rectangle rectValor = new Rectangle(
+                rectangulo.X,
+                rectangulo.Y + 14,
+                rectangulo.Width,
+                rectangulo.Height - 14);
+
             StringFormat formato = new StringFormat
             {
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Near,
-                Trimming = StringTrimming.Word,
+                Trimming = StringTrimming.EllipsisCharacter,
                 FormatFlags = StringFormatFlags.LineLimit
             };
 
-            g.DrawString(texto, font, Brushes.Black, rect, formato);
+            g.DrawString(
+                valor ?? string.Empty,
+                fuenteValor,
+                Brushes.Black,
+                rectValor,
+                formato);
+
+            formato.Dispose();
         }
-     
 
+        private void DibujarDatoHorizontal(
+    Graphics g,
+    string etiqueta,
+    string valor,
+    Font fuenteEtiqueta,
+    Font fuenteValor,
+    Rectangle rectangulo)
+        {
+            float anchoEtiqueta = g.MeasureString(
+                etiqueta,
+                fuenteEtiqueta).Width;
 
+            g.DrawString(
+                etiqueta,
+                fuenteEtiqueta,
+                Brushes.Black,
+                new RectangleF(
+                    rectangulo.X,
+                    rectangulo.Y,
+                    anchoEtiqueta + 5,
+                    rectangulo.Height),
+                new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center
+                });
+
+            g.DrawString(
+                valor ?? string.Empty,
+                fuenteValor,
+                Brushes.Black,
+                new RectangleF(
+                    rectangulo.X + anchoEtiqueta + 8,
+                    rectangulo.Y,
+                    rectangulo.Width - anchoEtiqueta - 8,
+                    rectangulo.Height),
+                new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center,
+                    Trimming = StringTrimming.EllipsisCharacter
+                });
+        }
+
+        private string FormatearFecha(object valor)
+        {
+            if (valor == null || valor == DBNull.Value)
+                return "No registrada";
+
+            DateTime fecha;
+
+            if (DateTime.TryParse(valor.ToString(), out fecha))
+                return fecha.ToString("dd/MM/yyyy");
+
+            return valor.ToString();
+        }
+
+        private string ObtenerTextoSeguro(
+    object valor,
+    string textoPredeterminado)
+        {
+            if (valor == null || valor == DBNull.Value)
+                return textoPredeterminado;
+
+            string texto = valor.ToString().Trim();
+
+            return string.IsNullOrWhiteSpace(texto)
+                ? textoPredeterminado
+                : texto;
+        }
+        
         public Bitmap GenerarCodigoDeBarras(string contenido)
         {
             BarcodeWriter writer = new BarcodeWriter
@@ -495,69 +1172,14 @@ namespace CaoaPresentacion
         }
 
 
-
-        private void ObtenerUniversoTotal()
-        {
-            string CantidadUniverso;
-            string CantidadUniversoHoy;
-
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            DataTable tabla = new DataTable();
-
-            tabla = objetoCN.CalcularCantidadActualUniverso();
-            if (tabla.Rows.Count == 0)
-            {
-                CantidadUniverso = "0".ToString();
-            }
-            else
-            {
-                CantidadUniverso = tabla.Rows[0][0].ToString();
-            }
-
-            CN_VistaUniverso objetoCN2 = new CN_VistaUniverso();
-            DataTable tabla2 = new DataTable();
-
-            string FechaActual = DateTime.Now.ToShortDateString();
-
-            tabla2 = objetoCN.CalcularCantidadActualUniversoHoy(Convert.ToDateTime(FechaActual));
-            if (tabla2.Rows.Count == 0)
-            {
-                CantidadUniversoHoy = "0".ToString();
-            }
-            else
-            {
-                CantidadUniversoHoy = tabla2.Rows[0][0].ToString();
-            }
-
-
-            CN_VistaUniverso objetoCN3 = new CN_VistaUniverso();
-            DataTable tabla3 = new DataTable();
-
-            string FechaHoy = DateTime.Now.ToShortDateString();
-
-            tabla3 = objetoCN.VERIFICARREGISTRO_MATRICULAS(Convert.ToDateTime(FechaActual));
-            if (tabla.Rows.Count == 0)
-            {
-                CN_VistaUniverso objetoUniverso = new CN_VistaUniverso();
-                objetoUniverso.InsertarREGISTROFECHA(Convert.ToDateTime(FechaActual), CantidadUniverso);
-            }
-            else
-            {
-                CN_VistaUniverso objetoUniversoHoy = new CN_VistaUniverso();
-                objetoUniversoHoy.ActualizarREGISTROFECHA(Convert.ToDateTime(FechaActual), CantidadUniversoHoy);
-            }
-
-        }
-
-
         private void MostrarDatosMatriculasPorCodigo(string CodigoMAT)
         {
             try
             {
                 DataTable tablaMat = new DataTable();
-                CN_VistaUniverso objetoUniverso = new CN_VistaUniverso();
+                CN_Matriculas objetoUniverso = new CN_Matriculas();
 
-                tablaMat = objetoUniverso.MostrarMatriculasPorCodigo(CodigoMAT);
+                tablaMat = objetoUniverso.MostrarInformacion_Matricula(CodigoMAT);
                 if (tablaMat.Rows.Count == 1)
                 {
                     this.txtNombres.Text = tablaMat.Rows[0][0].ToString();
@@ -584,6 +1206,7 @@ namespace CaoaPresentacion
                     this.txtNivelAcademico.Text = tablaMat.Rows[0][21].ToString();
                     this.txtOcupacion.Text = tablaMat.Rows[0][22].ToString();
                     this.txtTurno.Text = tablaMat.Rows[0][23].ToString();
+                    this.txtDocente.Text = tablaMat.Rows[0][24].ToString();
 
                 }
             }
@@ -613,14 +1236,14 @@ namespace CaoaPresentacion
         {
             try
             {
-             
+
 
                 if (this.dataEstudiantes.Columns[e.ColumnIndex].Name == "Movimientos")
                 {
 
                     this.IdMatriculaHistorial = this.dataEstudiantes.CurrentRow.Cells["Id_Matricula"].Value.ToString();
                     this.tabControl1.SelectedTab = TabHistorialMatricula;
-                  
+
                 }
                 else if (this.dataEstudiantes.Columns[e.ColumnIndex].Name == "Detalle")
                 {
@@ -645,7 +1268,7 @@ namespace CaoaPresentacion
                         string IdMatricula = this.dataEstudiantes.CurrentRow.Cells["Id_Matricula"].Value.ToString();
                         if (Estado == "Activo")
                         {
-                            IdMatriculaEst = IdMatricula;
+                           this.txtIdMatricula_Baja.Text = IdMatricula;
                             this.tabControl1.SelectedTab = TabBajas;
 
                         }
@@ -838,7 +1461,7 @@ namespace CaoaPresentacion
             }
             catch (Exception)
             {
-                MessageBox.Show("Error de Sistema","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -866,338 +1489,112 @@ namespace CaoaPresentacion
             this.tabControl1.SelectedIndex = 0;
         }
 
-        private void button15_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string FechaInicio = Convert.ToDateTime(this.dateTimePicker3.Text).ToShortDateString();
-                string FechaFinal = Convert.ToDateTime(this.dateTimePicker4.Text).ToShortDateString();
-
-                TimeSpan diferencia = Convert.ToDateTime(FechaFinal) - Convert.ToDateTime(FechaInicio);
-                // Obtén los días de diferencia
-                int diasDiferencia = diferencia.Days;
-
-                if (diasDiferencia < 0)
-                {
-                    MessageBox.Show("La fecha Inicio es mayor que la fecha final", "Aviso de Restricción",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                }
-                else if (diasDiferencia > 30) 
-                {
-                    MessageBox.Show("Por motivos de visibilidad, solo se pueden mostrar un máximo de 30 fechas. Por favor, ajuste el rango de fechas seleccionado.",
-                 "Aviso de Restricción",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
-
-                }else if ((diasDiferencia >= 1 && diasDiferencia <= 30) || (diasDiferencia == 0))
-                {
-                    CN_Matriculas objetoCN = new CN_Matriculas();
-                    DataTable dt = new DataTable();
-                    dt = objetoCN.MostrarUniversoPorfechas(FechaInicio, FechaFinal);
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("No hay Registros", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        // Limpia series previas en caso de actualizaciones
-                        chart1.Series.Clear();
-
-                        // Crea una nueva serie
-                        Series serie = new Series("Historial de Matrículas");
-                        serie.ChartType = SeriesChartType.Column; // Tipo de gráfico (puedes usar Line, Bar, etc.)
-
-                        // Añade datos al eje X (Fecha) y Y (Total)
-                        int? totalAnterior = null; // Variable para guardar el total del punto anterior
-                        Color colorAnterior = Color.Blue; // Color inicial para manejar totales iguales
-
-                        foreach (DataRow fila in dt.Rows)
-                        {
-                            string fecha = Convert.ToDateTime(fila["Fecha"]).ToShortDateString(); // Obtén la fecha en formato corto
-                            int total = Convert.ToInt32(fila["Total"]); // Obtén el total desde el DataTable
-
-                            // Crea un punto de datos
-                            DataPoint punto = new DataPoint();
-                            punto.SetValueXY(fecha, total); // Establece X como fecha y Y como total
-                            punto.Label = total.ToString(); // Configura la etiqueta que se mostrará encima
-
-                            // Determinar el color del punto
-                            if (totalAnterior != null) // Si hay un valor anterior para comparar
-                            {
-                                if (total > totalAnterior) // Si aumenta, color verde
-                                {
-                                    punto.Color = Color.Green;
-                                    colorAnterior = Color.Green; // Actualiza el color para manejar totales iguales
-                                }
-                                else if (total < totalAnterior) // Si disminuye, color rojo
-                                {
-                                    punto.Color = Color.Red;
-                                    colorAnterior = Color.Red; // Actualiza el color para manejar totales iguales
-                                }
-                                else // Si son iguales
-                                {
-                                    punto.Color = colorAnterior; // Usa el mismo color que el anterior
-                                }
-                            }
-                            else
-                            {
-                                // Si no hay un valor anterior (primer punto), compara con el segundo
-                                if (dt.Rows.Count > 1)
-                                {
-                                    int segundoTotal = Convert.ToInt32(dt.Rows[1]["Total"]);
-                                    if (total < segundoTotal) // Primer registro menor que el segundo
-                                    {
-                                        punto.Color = Color.Red;
-                                        colorAnterior = Color.Red;
-                                    }
-                                    else // Primer registro mayor o igual que el segundo
-                                    {
-                                        punto.Color = Color.Green;
-                                        colorAnterior = Color.Green;
-                                    }
-                                }
-                                else
-                                {
-                                    punto.Color = Color.Blue; // Color por defecto si es el único registro
-                                    colorAnterior = Color.Blue;
-                                }
-                            }
-
-                            totalAnterior = total; // Actualiza el total anterior para la siguiente iteración
-
-                            // Agrega el punto a la serie
-                            serie.Points.Add(punto);
-                        }
-
-
-                        // Añade la serie al Chart
-                        chart1.Series.Add(serie);
-
-                        // Configuración opcional de ejes
-                        chart1.ChartAreas[0].AxisX.Title = "Fecha";
-                        chart1.ChartAreas[0].AxisY.Title = "Total";
-                        chart1.ChartAreas[0].AxisX.Interval = 1; // Opcional: controla el espaciado de etiquetas en el eje X
-                        chart1.ChartAreas[0].RecalculateAxesScale(); // Ajusta los valores automáticamente
-
-
-                    }
-
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ConfigurarGrafico()
-        {
-            // Código de configuración del gráfico
-            chart1.Series.Clear();
-            chart1.Titles.Clear();
-            chart1.ChartAreas.Clear();
-            chart1.Legends.Clear();
-
-            // Configuración del área del gráfico
-            ChartArea area = new ChartArea("Principal");
-            area.BackColor = Color.WhiteSmoke;
-            area.BorderColor = Color.Gray;
-            area.BorderWidth = 1;
-            area.ShadowColor = Color.LightGray;
-            area.ShadowOffset = 2;
-
-            area.AxisX.MajorGrid.LineColor = Color.LightGray;
-            area.AxisY.MajorGrid.LineColor = Color.LightGray;
-            area.AxisX.LabelStyle.ForeColor = Color.Black;
-            area.AxisY.LabelStyle.ForeColor = Color.Black;
-            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            chart1.ChartAreas.Add(area);
-
-            // Configuración de la serie
-            Series serie = new Series("Historial de Matrículas");
-            serie.ChartType = SeriesChartType.Column;
-            serie.Color = Color.DodgerBlue;
-            serie.BorderWidth = 1;
-            serie.BackGradientStyle = GradientStyle.TopBottom;
-            serie.BackSecondaryColor = Color.LightSkyBlue;
-            serie.ShadowOffset = 2;
-            serie.IsValueShownAsLabel = true;
-            serie.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            serie.LabelForeColor = Color.DarkBlue;
-
-          
-
-            // Configuración del título
-            Title titulo = new Title();
-            titulo.Text = "Historial de Matrículas por Fecha";
-            titulo.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            titulo.ForeColor = Color.DarkSlateGray;
-            titulo.Alignment = ContentAlignment.TopCenter;
-            chart1.Titles.Add(titulo);
-
-            // Configuración de la leyenda
-            Legend leyenda = new Legend("Leyenda");
-            leyenda.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            leyenda.ForeColor = Color.DarkSlateGray;
-            leyenda.Docking = Docking.Top;
-            chart1.Legends.Add(leyenda);
-        }
-
-        
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            this.tabControl1.SelectedIndex = 0;
-        }
-
+      
         private void button17_Click(object sender, EventArgs e)
         {
+            GenerarCarnetEstudiante();
+        }
+
+        private void GenerarCarnetEstudiante()
+        {
             try
             {
-                string Cursos = this.txtCurso.Text;
-                string Turnos = this.txtTurno.Text;
-                string Horarios = this.txtHorario.Text;
+                string[] nombres = txtNombres.Text.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] apellidos = txtApellidos.Text.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                this.lblNombres.Text = this.txtNombres.Text;
-                this.lblApellidos.Text = this.txtApellidos.Text;
-                this.lblcurso.Text =   string.Join(Environment.NewLine, Enumerable.Range(0, (Cursos.Length + 59) / 60).Select(i => Cursos.Substring(i * 60, Math.Min(60, Cursos.Length - i * 60))));
-                this.lblTurno.Text = string.Join(Environment.NewLine, Enumerable.Range(0, (Turnos.Length + 24) / 25).Select(i => Turnos.Substring(i * 20, Math.Min(20, Turnos.Length - i * 25))));
-                this.lblCodigoCarnet.Text = this.txtCarnetEstudiante.Text;
-                this.labelHorario.Text = string.Join(Environment.NewLine, Enumerable.Range(0, (Horarios.Length + 24) / 25).Select(i => Horarios.Substring(i * 20, Math.Min(20, Horarios.Length - i * 25))));
-                this.labelSucursal.Text = this.txtSucursal.Text;
+                string nombreMostrar = "";
+
+                // Primer nombre
+                if (nombres.Length > 0)
+                {
+                    nombreMostrar = nombres[0];
+                }
+
+                // Inicial del segundo nombre
+                if (nombres.Length > 1)
+                {
+                    nombreMostrar += " " + nombres[1].Substring(0, 1).ToUpper() + ".";
+                }
+
+                // Primer apellido
+                if (apellidos.Length > 0)
+                {
+                    nombreMostrar += " " + apellidos[0];
+                }
+
+                this.lblEstudiante_Carnet.Text = nombreMostrar;
+
+                this.lblSucursal_Carnet.Text = this.txtSucursal.Text;
+                this.lblCarnet_Carnet.Text = this.txtCarnetEstudiante.Text;
+                this.txtCurso_Carnet.Text = this.txtCurso.Text;
+                this.lblTurno_Carnet.Text = this.txtTurno.Text;
+                this.lblHorario_Carnet.Text = this.txtHorario.Text;
+
                 DateTime fechaActual = DateTime.Now;
 
                 // Sumarle 1 año a la fecha actual
                 DateTime fechaVencimiento = fechaActual.AddYears(1);
 
-                this.lblFechaEmision.Text = fechaActual.ToShortDateString();
-                this.lblFechaVencimiento.Text = fechaVencimiento.ToShortDateString();
-
-               
+                this.lblFechaEmision_Carnet.Text = fechaActual.ToShortDateString();
+                this.lblFechaVencimiento_Carnet.Text = fechaVencimiento.ToShortDateString();
                 this.GenerarCodigoBarraEstudiante(this.txtCarnetEstudiante.Text);
-                // Obtener la fecha actual
+                this.tabControl1.SelectedTab = tabCarnetEstudiante;
 
-                this.GenerarCodigoImpresionCarnet();
             }
             catch (Exception)
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        private void GenerarCodigoBarraEstudiante(string CodigoCarnet)
+
+        private void GenerarCodigoBarraEstudiante(string codigoCarnet)
         {
-            // Crear un generador de código de barras
-            BarcodeWriter barcodeWriter = new BarcodeWriter
-            {
-                Format = BarcodeFormat.CODE_128, // Formato de código de barras
-                Options = new ZXing.Common.EncodingOptions
-                {
-                    Width = 300,  // Ancho del código de barras
-                    Height = 150, // Altura del código de barras
-                    PureBarcode = true // ❗ Esta línea elimina el texto debajo del código de barras
-                }
-            };
-
-            // Generar el código de barras y convertirlo en una imagen
-            Bitmap barcodeBitmap = barcodeWriter.Write(CodigoCarnet);
-
-            // Mostrar la imagen del código de barras en el PictureBox
-            pictureBoxBarcode.Image = barcodeBitmap;
-        }
-
-
-
-        private void GenerarCodigoImpresionCarnet()
-        {
-
             try
             {
-                // Crear un Bitmap del tamaño especificado
-                int ancho = 638;
-                int alto = 1013;
-                Bitmap imagenGuardada = new Bitmap(ancho, alto);
-                string fecha = DateTime.Now.ToString("ddMMyyyy");
-
-                // Crear un objeto Graphics para dibujar los controles en el Bitmap
-
-                using (Graphics g = Graphics.FromImage(imagenGuardada))
+                if (string.IsNullOrWhiteSpace(codigoCarnet))
                 {
-                    // Fondo blanco
-                    g.Clear(Color.White);
-
-                    // Dibujar el PictureBox principal (asumiendo que su imagen está asignada)
-                    if (PictureBoxCarnet.Image != null)
-                    {
-                        g.DrawImage(PictureBoxCarnet.Image, 0, 0, PictureBoxCarnet.Width, PictureBoxCarnet.Height);
-                    }
-
-                    // Dibujar los otros PictureBox (debes posicionarlos como se muestra en el formulario)
-                   
-
                     if (pictureBoxBarcode.Image != null)
                     {
-                        g.DrawImage(pictureBoxBarcode.Image, pictureBoxBarcode.Location.X, pictureBoxBarcode.Location.Y, pictureBoxBarcode.Width, pictureBoxBarcode.Height);
+                        pictureBoxBarcode.Image.Dispose();
+                        pictureBoxBarcode.Image = null;
                     }
 
-
-                    // Dibujar los Labels (puedes agregar más labels si es necesario)
-                    g.DrawString(lblNombres.Text, lblNombres.Font, Brushes.Navy, lblNombres.Location);
-                    g.DrawString(lblApellidos.Text, lblApellidos.Font, Brushes.Navy, lblApellidos.Location);
-                    g.DrawString(lblcurso.Text, lblcurso.Font, Brushes.Navy, lblcurso.Location);
-                    g.DrawString(lblCodigoCarnet.Text, lblCodigoCarnet.Font, Brushes.Navy, lblCodigoCarnet.Location);
-                    g.DrawString(lblFechaEmision.Text, lblFechaEmision.Font, Brushes.Navy, lblFechaEmision.Location);
-                    g.DrawString(labelHorario.Text,labelHorario.Font,Brushes.Navy,labelHorario.Location);
-                    g.DrawString(lblFechaVencimiento.Text, lblFechaVencimiento.Font, Brushes.Navy, lblFechaVencimiento.Location);
-                    g.DrawString(lblTurno.Text, lblTurno.Font, Brushes.Navy, lblTurno.Location);
-                    g.DrawString(labelSucursal.Text,labelSucursal.Font,Brushes.Navy,labelSucursal.Location);
-                    // Añadir más labels según sea necesario
+                    return;
                 }
 
-                string NombreImagen = "Carnet_" + txtNombres.Text + "_" + this.txtApellidos.Text + "_" + fecha;
+                codigoCarnet = codigoCarnet.Trim().ToUpper();
 
-                // Mostrar un cuadro de diálogo para seleccionar el lugar de guardado
-                SaveFileDialog saveFileDialog = new SaveFileDialog
+                BarcodeWriter barcodeWriter = new BarcodeWriter
                 {
-                    Filter = "Archivos PNG|*.png|Archivos JPG|*.jpg|Archivos JPEG|*.jpeg",
-                    FileName = NombreImagen,
-                    Title = "Guardar imagen como"
+                    Format = BarcodeFormat.CODE_128,
+                    Options = new EncodingOptions
+                    {
+                        Width = 200,
+                        Height = 40,
+                        Margin = 2,
+                        PureBarcode = true
+                    }
                 };
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Guardar la imagen en el formato seleccionado
-                    string archivoGuardado = saveFileDialog.FileName;
+                Bitmap barcode = barcodeWriter.Write(codigoCarnet);
 
-                    // Guardar la imagen como PNG, JPG o JPEG
-                    string extension = System.IO.Path.GetExtension(archivoGuardado).ToLower();
-                    switch (extension)
-                    {
-                        case ".png":
-                            imagenGuardada.Save(archivoGuardado, System.Drawing.Imaging.ImageFormat.Png);
-                            break;
-                        case ".jpg":
-                        case ".jpeg":
-                            imagenGuardada.Save(archivoGuardado, System.Drawing.Imaging.ImageFormat.Jpeg);
-                            break;
-                        default:
-                            MessageBox.Show("Formato no soportado","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                            break;
-                    }
+                if (pictureBoxBarcode.Image != null)
+                    pictureBoxBarcode.Image.Dispose();
 
-                    MessageBox.Show("Imagen guardada correctamente", "SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-
-                }
+                pictureBoxBarcode.Image = barcode;
+                pictureBoxBarcode.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBoxBarcode.BackColor = Color.White;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No fue posible generar el código de barras.\n\n" + ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
 
         private void mostrarTodosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1226,16 +1623,16 @@ namespace CaoaPresentacion
         {
             try
             {
-                
-                    CacheIncentivo.FechaInicial = this.dateTimePicker1.Text;
-                    CacheIncentivo.FechaFinal = this.dateTimePicker2.Text;
-                    CacheIncentivo.Estado = Estado.ToString();
 
-                    Frm_PagoIncentivo frm = new Frm_PagoIncentivo();
-                    frm.Show();
+                CacheIncentivo.FechaInicial = this.dateTimePicker1.Text;
+                CacheIncentivo.FechaFinal = this.dateTimePicker2.Text;
+                CacheIncentivo.Estado = Estado.ToString();
 
-              
-             }
+                Frm_PagoIncentivo frm = new Frm_PagoIncentivo();
+                frm.Show();
+
+
+            }
             catch (Exception)
             {
                 MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1332,8 +1729,8 @@ namespace CaoaPresentacion
             {
                 CN_Bajas objetoCN = new CN_Bajas();
                 string nombrePC = Environment.MachineName;
-                objetoCN.Insertar(this.cmbConceptoBaja.Text, this.txtmotivo.Text, FechaActual,IdMatriculaEst, CacheUsuario.IdUsuario, nombrePC);
-                objetoCN.DarBaja(IdMatriculaEst);
+                objetoCN.Insertar(this.cmbConceptoBaja.Text, this.txtmotivo.Text,this.txtIdMatricula_Baja.Text, CacheUsuario.IdUsuario, nombrePC);
+                objetoCN.DarBaja(this.txtIdMatricula_Baja.Text);
 
                 MessageBox.Show(
                   "El estudiante ha sido dado de baja de forma exitosa en el sistema.",
@@ -1355,14 +1752,710 @@ namespace CaoaPresentacion
 
         private void Limpiar()
         {
+            this.txtIdMatricula_Baja.Clear();
             this.txtmotivo.Text = string.Empty;
             this.cmbConceptoBaja.Text = string.Empty;
-            IdMatriculaEst = string.Empty;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = TabUniverso;
+        }
+
+        private void btnCopiarCedula_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                Clipboard.SetText(txtCedula.Text.Trim());
+
+                MessageBox.Show(
+                    "La cédula se copió al portapapeles correctamente.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No hay ninguna cédula para copiar.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnGenerarCarnet_Click(object sender, EventArgs e)
+        {
+            GenerarImagenCarnet();
+        }
+
+        private void GenerarImagenCarnet()
+        {
+            try
+            {
+                if (pbcarnet.Image == null)
+                {
+                    MessageBox.Show(
+                        "No se encontró el diseño del carnet.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(lblEstudiante_Carnet.Text))
+                {
+                    MessageBox.Show(
+                        "Debe seleccionar un estudiante antes de generar el carnet.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                // Actualizar los controles antes de generar la imagen.
+                panelCarnet.PerformLayout();
+                panelCarnet.Refresh();
+                Application.DoEvents();
+
+                using (Bitmap carnet = CrearBitmapCarnet())
+                using (SaveFileDialog guardar = new SaveFileDialog())
+                {
+                    string estudiante = LimpiarNombreArchivo(
+                        lblEstudiante_Carnet.Text.Trim());
+
+                    guardar.Title = "Guardar carnet estudiantil";
+                    guardar.Filter = "Imagen PNG (*.png)|*.png";
+                    guardar.DefaultExt = "png";
+                    guardar.AddExtension = true;
+                    guardar.RestoreDirectory = true;
+
+                    guardar.FileName =
+                        estudiante + "_" +
+                        DateTime.Now.ToString("yyyy-MM-dd_HH-mm");
+
+                    if (guardar.ShowDialog() != DialogResult.OK)
+                        return;
+
+                    carnet.Save(
+                        guardar.FileName,
+                        ImageFormat.Png);
+
+                    DialogResult resultado = MessageBox.Show(
+                        "El carnet estudiantil fue generado correctamente.\n\n" +
+                        "¿Desea abrir la imagen?",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = guardar.FileName,
+                            UseShellExecute = true
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No fue posible generar el carnet.\n\n" + ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private Bitmap CrearBitmapCarnet()
+        {
+            const int anchoFinal = 996;
+            const int altoFinal = 1580;
+
+            if (panelCarnet.ClientSize.Width <= 0 ||
+                panelCarnet.ClientSize.Height <= 0)
+            {
+                throw new Exception(
+                    "El panel del carnet no tiene un tamaño válido.");
+            }
+
+            if (pbcarnet.Image == null)
+            {
+                throw new Exception(
+                    "No se encontró la imagen del diseño del carnet.");
+            }
+
+            float escalaX =
+                (float)anchoFinal / panelCarnet.ClientSize.Width;
+
+            float escalaY =
+                (float)altoFinal / panelCarnet.ClientSize.Height;
+
+            // Para las fuentes se usa una escala promedio.
+            float escalaFuente =
+                Math.Min(escalaX, escalaY);
+
+            Bitmap imagenFinal = new Bitmap(
+                anchoFinal,
+                altoFinal,
+                PixelFormat.Format32bppArgb);
+
+            imagenFinal.SetResolution(600, 600);
+
+            using (Graphics g = Graphics.FromImage(imagenFinal))
+            {
+                g.Clear(Color.White);
+
+                g.SmoothingMode =
+                    SmoothingMode.HighQuality;
+
+                g.InterpolationMode =
+                    InterpolationMode.HighQualityBicubic;
+
+                g.PixelOffsetMode =
+                    PixelOffsetMode.HighQuality;
+
+                g.CompositingQuality =
+                    CompositingQuality.HighQuality;
+
+                g.TextRenderingHint =
+                    TextRenderingHint.ClearTypeGridFit;
+
+                // Dibujar la plantilla del carnet.
+                g.DrawImage(
+                    pbcarnet.Image,
+                    new Rectangle(
+                        0,
+                        0,
+                        anchoFinal,
+                        altoFinal));
+
+                // Dibujar los Label.
+                Label[] etiquetas =
+                {
+            lblSucursal_Carnet,
+            lblCarnet_Carnet,
+            lblEstudiante_Carnet,
+            lblTurno_Carnet,
+            lblHorario_Carnet,
+            lblFechaEmision_Carnet,
+            lblFechaVencimiento_Carnet
+        };
+
+                foreach (Label etiqueta in etiquetas)
+                {
+                    DibujarControlTexto(
+                        g,
+                        etiqueta,
+                        etiqueta.Text,
+                        etiqueta.TextAlign,
+                        escalaX,
+                        escalaY,
+                        escalaFuente);
+                }
+
+                // Dibujar el contenido del TextBox del curso.
+                ContentAlignment alineacionCurso =
+                    ContentAlignment.MiddleLeft;
+
+                switch (txtCurso_Carnet.TextAlign)
+                {
+                    case HorizontalAlignment.Center:
+                        alineacionCurso =
+                            ContentAlignment.MiddleCenter;
+                        break;
+
+                    case HorizontalAlignment.Right:
+                        alineacionCurso =
+                            ContentAlignment.MiddleRight;
+                        break;
+                }
+
+                DibujarControlTexto(
+                    g,
+                    txtCurso_Carnet,
+                    txtCurso_Carnet.Text,
+                    alineacionCurso,
+                    escalaX,
+                    escalaY,
+                    escalaFuente);
+
+                // Dibujar el código de barras.
+                if (pictureBoxBarcode.Visible &&
+                    pictureBoxBarcode.Image != null)
+                {
+                    Rectangle destinoBarcode = new Rectangle(
+                        (int)Math.Round(
+                            pictureBoxBarcode.Left * escalaX),
+
+                        (int)Math.Round(
+                            pictureBoxBarcode.Top * escalaY),
+
+                        (int)Math.Round(
+                            pictureBoxBarcode.Width * escalaX),
+
+                        (int)Math.Round(
+                            pictureBoxBarcode.Height * escalaY));
+
+                    // Fondo blanco para facilitar la lectura.
+                    using (Brush fondo = new SolidBrush(Color.White))
+                    {
+                        g.FillRectangle(
+                            fondo,
+                            destinoBarcode);
+                    }
+
+                    InterpolationMode interpolacionAnterior =
+                        g.InterpolationMode;
+
+                    PixelOffsetMode pixelAnterior =
+                        g.PixelOffsetMode;
+
+                    // Evita que las barras queden borrosas.
+                    g.InterpolationMode =
+                        InterpolationMode.NearestNeighbor;
+
+                    g.PixelOffsetMode =
+                        PixelOffsetMode.Half;
+
+                    g.DrawImage(
+                        pictureBoxBarcode.Image,
+                        destinoBarcode);
+
+                    g.InterpolationMode =
+                        interpolacionAnterior;
+
+                    g.PixelOffsetMode =
+                        pixelAnterior;
+                }
+            }
+
+            return imagenFinal;
+        }
+
+        private void DibujarControlTexto(
+     Graphics g,
+     Control control,
+     string texto,
+     ContentAlignment alineacion,
+     float escalaX,
+     float escalaY,
+     float escalaFuente)
+        {
+            if (control == null ||
+                !control.Visible ||
+                string.IsNullOrWhiteSpace(texto))
+            {
+                return;
+            }
+
+            Rectangle rectangulo = new Rectangle(
+                (int)Math.Round(control.Left * escalaX),
+                (int)Math.Round(control.Top * escalaY),
+                (int)Math.Round(control.Width * escalaX),
+                (int)Math.Round(control.Height * escalaY));
+
+            // Convierte el tamaño original de puntos a píxeles.
+            float fuentePixeles =
+                control.Font.SizeInPoints *
+                96f / 72f *
+                escalaFuente;
+
+            using (Font fuente = new Font(
+                control.Font.FontFamily,
+                fuentePixeles,
+                control.Font.Style,
+                GraphicsUnit.Pixel))
+            {
+                /*
+                 * Si es un TextBox Multiline, se utiliza DrawString
+                 * para permitir que el texto continúe en otra línea.
+                 */
+                TextBox textBox = control as TextBox;
+
+                if (textBox != null && textBox.Multiline)
+                {
+                    using (Brush brocha = new SolidBrush(control.ForeColor))
+                    using (StringFormat formato = new StringFormat())
+                    {
+                        // Alineación horizontal.
+                        switch (alineacion)
+                        {
+                            case ContentAlignment.TopCenter:
+                            case ContentAlignment.MiddleCenter:
+                            case ContentAlignment.BottomCenter:
+                                formato.Alignment = StringAlignment.Center;
+                                break;
+
+                            case ContentAlignment.TopRight:
+                            case ContentAlignment.MiddleRight:
+                            case ContentAlignment.BottomRight:
+                                formato.Alignment = StringAlignment.Far;
+                                break;
+
+                            default:
+                                formato.Alignment = StringAlignment.Near;
+                                break;
+                        }
+
+                        // Alineación vertical.
+                        switch (alineacion)
+                        {
+                            case ContentAlignment.MiddleLeft:
+                            case ContentAlignment.MiddleCenter:
+                            case ContentAlignment.MiddleRight:
+                                formato.LineAlignment = StringAlignment.Center;
+                                break;
+
+                            case ContentAlignment.BottomLeft:
+                            case ContentAlignment.BottomCenter:
+                            case ContentAlignment.BottomRight:
+                                formato.LineAlignment = StringAlignment.Far;
+                                break;
+
+                            default:
+                                formato.LineAlignment = StringAlignment.Near;
+                                break;
+                        }
+
+                        // Permite el salto automático entre palabras.
+                        formato.Trimming = StringTrimming.EllipsisWord;
+
+                        // No colocar NoWrap, porque impediría las múltiples líneas.
+                        formato.FormatFlags = StringFormatFlags.LineLimit;
+
+                        RectangleF areaTexto = new RectangleF(
+                            rectangulo.X,
+                            rectangulo.Y,
+                            rectangulo.Width,
+                            rectangulo.Height);
+
+                        g.DrawString(
+                            texto,
+                            fuente,
+                            brocha,
+                            areaTexto,
+                            formato);
+                    }
+
+                    return;
+                }
+
+                /*
+                 * Para Label y controles de una sola línea,
+                 * se mantiene TextRenderer.
+                 */
+                TextFormatFlags flags =
+                    TextFormatFlags.NoPadding |
+                    TextFormatFlags.EndEllipsis;
+
+                switch (alineacion)
+                {
+                    case ContentAlignment.TopLeft:
+                        flags |= TextFormatFlags.Left |
+                                 TextFormatFlags.Top;
+                        break;
+
+                    case ContentAlignment.TopCenter:
+                        flags |= TextFormatFlags.HorizontalCenter |
+                                 TextFormatFlags.Top;
+                        break;
+
+                    case ContentAlignment.TopRight:
+                        flags |= TextFormatFlags.Right |
+                                 TextFormatFlags.Top;
+                        break;
+
+                    case ContentAlignment.MiddleLeft:
+                        flags |= TextFormatFlags.Left |
+                                 TextFormatFlags.VerticalCenter;
+                        break;
+
+                    case ContentAlignment.MiddleCenter:
+                        flags |= TextFormatFlags.HorizontalCenter |
+                                 TextFormatFlags.VerticalCenter;
+                        break;
+
+                    case ContentAlignment.MiddleRight:
+                        flags |= TextFormatFlags.Right |
+                                 TextFormatFlags.VerticalCenter;
+                        break;
+
+                    case ContentAlignment.BottomLeft:
+                        flags |= TextFormatFlags.Left |
+                                 TextFormatFlags.Bottom;
+                        break;
+
+                    case ContentAlignment.BottomCenter:
+                        flags |= TextFormatFlags.HorizontalCenter |
+                                 TextFormatFlags.Bottom;
+                        break;
+
+                    case ContentAlignment.BottomRight:
+                        flags |= TextFormatFlags.Right |
+                                 TextFormatFlags.Bottom;
+                        break;
+                }
+
+                TextRenderer.DrawText(
+                    g,
+                    texto,
+                    fuente,
+                    rectangulo,
+                    control.ForeColor,
+                    Color.Transparent,
+                    flags);
+            }
+        }
+
+
+
+
+        private string LimpiarNombreArchivo(string texto)
+        {
+            if (string.IsNullOrWhiteSpace(texto))
+                return "Carnet_Estudiante";
+
+            texto = texto.Trim();
+
+            foreach (char caracter in
+                Path.GetInvalidFileNameChars())
+            {
+                texto = texto.Replace(
+                    caracter,
+                    '_');
+            }
+
+            texto = texto.Replace(" ", "_");
+
+            while (texto.Contains("__"))
+            {
+                texto = texto.Replace(
+                    "__",
+                    "_");
+            }
+
+            return texto;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = TabUniverso;
+            LimpiarControlesCarnet();
+        }
+
+       private void LimpiarControlesCarnet()
+        {
+            this.lblSucursal_Carnet.Text = string.Empty;
+            this.lblCarnet_Carnet.Text = string.Empty;
+            this.lblEstudiante_Carnet.Text = string.Empty;
+            this.lblTurno_Carnet.Text = string.Empty;
+            this.lblHorario_Carnet.Text = string.Empty;
+            this.txtCurso_Carnet.Clear();
+            this.lblFechaEmision_Carnet.Text = string.Empty;
+            this.lblFechaVencimiento_Carnet.Text = string.Empty;
+            pictureBoxBarcode.Image?.Dispose();
+            pictureBoxBarcode.Image = null;
+            pictureBoxBarcode.Refresh();
+
+        }
+
+        private void btnImprimirCarnet_Click(object sender, EventArgs e)
+        {
+            ImprimirCarnet();
+        }
+
+        private void ImprimirCarnet()
+        {
+            try
+            {
+                if (pbcarnet.Image == null)
+                {
+                    MessageBox.Show(
+                        "No se encontró el diseño del carnet.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(lblEstudiante_Carnet.Text))
+                {
+                    MessageBox.Show(
+                        "Debe seleccionar un estudiante antes de imprimir el carnet.",
+                        "SISTEMA CECNIC",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                // Actualizar los controles.
+                panelCarnet.PerformLayout();
+                panelCarnet.Refresh();
+                Application.DoEvents();
+
+                // Liberar cualquier imagen anterior.
+                if (imagenCarnetImprimir != null)
+                {
+                    imagenCarnetImprimir.Dispose();
+                    imagenCarnetImprimir = null;
+                }
+
+                // Crear el carnet mediante tu método actual.
+                imagenCarnetImprimir = CrearBitmapCarnet();
+
+                documentoCarnet.DocumentName =
+                    "Carnet - " + lblEstudiante_Carnet.Text.Trim();
+
+                documentoCarnet.DefaultPageSettings.Margins =
+               new System.Drawing.Printing.Margins(0, 0, 0, 0);
+
+                documentoCarnet.DefaultPageSettings.Color = true;
+
+                using (PrintDialog dialogoImpresion = new PrintDialog())
+                {
+                    dialogoImpresion.Document = documentoCarnet;
+                    dialogoImpresion.AllowCurrentPage = false;
+                 
+                    dialogoImpresion.AllowSelection = false;
+                    dialogoImpresion.UseEXDialog = true;
+
+                    if (dialogoImpresion.ShowDialog() != DialogResult.OK)
+                    {
+                        imagenCarnetImprimir.Dispose();
+                        imagenCarnetImprimir = null;
+                        return;
+                    }
+
+                    documentoCarnet.PrinterSettings =
+                        dialogoImpresion.PrinterSettings;
+
+                    documentoCarnet.Print();
+                }
+            }
+            catch (InvalidPrinterException)
+            {
+                LiberarImagenImpresion();
+
+                MessageBox.Show(
+                    "La impresora seleccionada no está disponible o no está configurada correctamente.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                LiberarImagenImpresion();
+
+                MessageBox.Show(
+                    "No fue posible imprimir el carnet.\n\n" +
+                    ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void DocumentoCarnet_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            if (imagenCarnetImprimir == null)
+                return;
+
+            // Área imprimible real de la impresora seleccionada
+            Rectangle area = e.MarginBounds;
+
+            // Si no hay márgenes, usa toda la página
+            if (area.Width <= 0 || area.Height <= 0)
+                area = e.PageBounds;
+
+            // Escala para ocupar el mayor espacio posible
+            float escalaX = (float)area.Width / imagenCarnetImprimir.Width;
+            float escalaY = (float)area.Height / imagenCarnetImprimir.Height;
+
+            float escala = Math.Min(escalaX, escalaY);
+
+            int ancho = (int)(imagenCarnetImprimir.Width * escala);
+            int alto = (int)(imagenCarnetImprimir.Height * escala);
+
+            // Centrar
+            int x = area.Left + (area.Width - ancho) / 2;
+            int y = area.Top + (area.Height - alto) / 2;
+
+            e.Graphics.InterpolationMode =
+                System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+            e.Graphics.DrawImage(
+                imagenCarnetImprimir,
+                x,
+                y,
+                ancho,
+                alto);
+
+            e.HasMorePages = false;
+        }
+
+        private Rectangle CalcularRectanguloProporcional(
+    Size tamañoImagen,
+    Rectangle areaDisponible)
+        {
+            if (tamañoImagen.Width <= 0 ||
+                tamañoImagen.Height <= 0)
+            {
+                return areaDisponible;
+            }
+
+            float escalaAncho =
+                (float)areaDisponible.Width /
+                tamañoImagen.Width;
+
+            float escalaAlto =
+                (float)areaDisponible.Height /
+                tamañoImagen.Height;
+
+            float escala =
+                Math.Min(escalaAncho, escalaAlto);
+
+            int nuevoAncho =
+                (int)Math.Round(tamañoImagen.Width * escala);
+
+            int nuevoAlto =
+                (int)Math.Round(tamañoImagen.Height * escala);
+
+            int posicionX =
+                areaDisponible.Left +
+                (areaDisponible.Width - nuevoAncho) / 2;
+
+            int posicionY =
+                areaDisponible.Top +
+                (areaDisponible.Height - nuevoAlto) / 2;
+
+            return new Rectangle(
+                posicionX,
+                posicionY,
+                nuevoAncho,
+                nuevoAlto);
+        }
+
+
+        private void DocumentoCarnet_EndPrint(
+    object sender,
+    PrintEventArgs e)
+        {
+            LiberarImagenImpresion();
+        }
+
+        private void LiberarImagenImpresion()
+        {
+            if (imagenCarnetImprimir != null)
+            {
+                imagenCarnetImprimir.Dispose();
+                imagenCarnetImprimir = null;
+            }
         }
     }
 

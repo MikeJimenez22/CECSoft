@@ -124,12 +124,7 @@ namespace CapaNegocio
        
 
 
-        public DataTable MostrarMatriculasPorCodigo(string CodigoMat)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.BuscarMatriculasPorCodigo(CodigoMat);
-            return tabla;
-        }
+        
 
         public DataTable ObtenerFacturaInicio(string CodMatricula)
         {

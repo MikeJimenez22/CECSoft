@@ -9,7 +9,7 @@ namespace CapaDatos
 
         private CD_Conexion conexion = new CD_Conexion();
 
-        SqlDataReader leer;
+    
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
@@ -39,14 +39,13 @@ namespace CapaDatos
 
 
 
-        public void Insertar(string Motivo, string Descripcion, DateTime FechaBaja, int IdmMatricula, int IdUsuario, string NombrePC)
+        public void Insertar(string Motivo, string Descripcion, int IdmMatricula, int IdUsuario, string NombrePC)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarBaja";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@motivoBaja", Motivo);
             comando.Parameters.AddWithValue("@Descripcion", Descripcion);
-            comando.Parameters.AddWithValue("@fecha_Baja", FechaBaja);
             comando.Parameters.AddWithValue("@IdMatricula", IdmMatricula);
             comando.Parameters.AddWithValue("@IdUsuario", IdUsuario);
             comando.Parameters.AddWithValue("@NombrePC", NombrePC);
@@ -71,6 +70,29 @@ namespace CapaDatos
 
         }
 
+
+        public DataTable ConsultarEgresadosPorFecha(DateTime FechaInicial, DateTime FechaFinal)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ConsultarEgresadosPorFecha", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@FechaInicio", FechaInicial.Date);
+                    command.Parameters.AddWithValue("@FechaFinal", FechaFinal.Date);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+      
 
 
     }

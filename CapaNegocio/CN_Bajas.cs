@@ -20,14 +20,20 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public void Insertar(string MotivoBaja, string Descripcion, string FechaBaja, string idMatricula, string IdUsuario, string NombrePC)
+        public void Insertar(string MotivoBaja, string Descripcion, string idMatricula, string IdUsuario, string NombrePC)
         {
-            objetoCD.Insertar(MotivoBaja, Descripcion, Convert.ToDateTime(FechaBaja), Convert.ToInt32(idMatricula), Convert.ToInt32(IdUsuario), NombrePC);
+            objetoCD.Insertar(MotivoBaja, Descripcion, Convert.ToInt32(idMatricula), Convert.ToInt32(IdUsuario), NombrePC);
         }
 
         public void DarBaja(string IdMatricula)
         {
             objetoCD.DardeBaja(Convert.ToInt32(IdMatricula));
+        }
+
+        public DataTable ConsultarEgresadosPorFecha(DateTime FechaInicial, DateTime FechaFinal)
+        {
+            CD_Bajas objetoCD = new CD_Bajas();
+            return objetoCD.ConsultarEgresadosPorFecha(FechaInicial, FechaFinal);
         }
 
 

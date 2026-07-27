@@ -280,15 +280,9 @@ FROM
         }
 
 
-        public DataTable BuscarMatriculasPorCodigo(string Codigo)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "exec MostrarInformacion_Matricula '" + Codigo + "'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
+     
+
+     
 
         public DataTable ObtenerFacturaRegistro(string CodMatricula)
         {

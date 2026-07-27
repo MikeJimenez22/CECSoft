@@ -137,10 +137,9 @@ namespace CaoaPresentacion
                         {
                             string nombrePC = Environment.MachineName;
                             CN_Bajas objetoCN = new CN_Bajas();
-                            string FechaActual = DateTime.Now.ToShortDateString();
                             string IdMatricula = this.dtaAusentes.CurrentRow.Cells["Id_Matricula"].Value.ToString();
 
-                            objetoCN.Insertar("BAJA", "Baja por Ausencias", FechaActual, IdMatricula, CacheUsuario.IdUsuario, nombrePC);
+                            objetoCN.Insertar("BAJA", "INASISTENCIA",IdMatricula, CacheUsuario.IdUsuario, nombrePC);
                             objetoCN.DarBaja(IdMatricula);
                             MessageBox.Show("Se le ha dado de Baja al estudiante Correctamente", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.MostrarListadoAusentes();

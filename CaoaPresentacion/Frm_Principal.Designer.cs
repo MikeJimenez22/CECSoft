@@ -47,6 +47,7 @@
             this.controlDeAsistenciaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudDeCarnetEstudiantilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.generarCarnetAdministracionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.egresadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroAcademicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeNotasAcademicasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNotasActasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -341,7 +342,8 @@
             this.gestionAcademicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.controlDeAsistenciaToolStripMenuItem1,
             this.solicitudDeCarnetEstudiantilToolStripMenuItem1,
-            this.generarCarnetAdministracionToolStripMenuItem1});
+            this.generarCarnetAdministracionToolStripMenuItem1,
+            this.egresadosToolStripMenuItem});
             this.gestionAcademicaToolStripMenuItem.Name = "gestionAcademicaToolStripMenuItem";
             this.gestionAcademicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionAcademicaToolStripMenuItem.Text = "Gestion Academica";
@@ -366,6 +368,13 @@
             this.generarCarnetAdministracionToolStripMenuItem1.Size = new System.Drawing.Size(237, 22);
             this.generarCarnetAdministracionToolStripMenuItem1.Text = "Generar Carnet Administracion";
             this.generarCarnetAdministracionToolStripMenuItem1.Click += new System.EventHandler(this.generarCarnetAdministracionToolStripMenuItem1_Click);
+            // 
+            // egresadosToolStripMenuItem
+            // 
+            this.egresadosToolStripMenuItem.Name = "egresadosToolStripMenuItem";
+            this.egresadosToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.egresadosToolStripMenuItem.Text = "Egresados";
+            this.egresadosToolStripMenuItem.Click += new System.EventHandler(this.egresadosToolStripMenuItem_Click);
             // 
             // registroAcademicoToolStripMenuItem
             // 
@@ -1386,7 +1395,7 @@
             this.lblFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFacturas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacturas.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblFacturas.Location = new System.Drawing.Point(463, 154);
+            this.lblFacturas.Location = new System.Drawing.Point(459, 154);
             this.lblFacturas.Name = "lblFacturas";
             this.lblFacturas.Size = new System.Drawing.Size(63, 19);
             this.lblFacturas.TabIndex = 27;
@@ -2150,6 +2159,7 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDeDocumentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeNotasActasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroEnLibrosAcademicosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem egresadosToolStripMenuItem;
     }
 }
 

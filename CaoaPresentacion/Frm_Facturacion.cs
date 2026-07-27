@@ -31,8 +31,7 @@ namespace CaoaPresentacion
         string CodigoFactura;
         string Nombres, Apellidos, Cedula, Carnet, Cod_Matricula, NombreCurso, Turno, Horario;
         string FechaProgramada_, Concepto_, Monto_, Descripcion_, Estado_, FechaVencimiento_, Mora_, NumProgramacion_, Id_Detalle_Programacion_, IdMoneda_, TasaCambio_;
-        string VariableFactura;
-        bool MensualidadEncontrada;
+       
         string TipoOrigenMatricula;
         string IdActivacionMatricula;
         string CodigoComparacion;

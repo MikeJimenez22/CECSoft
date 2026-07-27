@@ -501,12 +501,6 @@
     <Compile Include="Frm_Cambio.Designer.cs">
       <DependentUpon>Frm_Cambio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Bajas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Bajas.Designer.cs">
-      <DependentUpon>Frm_Bajas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_BusquedaEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +548,12 @@
     </Compile>
     <Compile Include="Frm_Docente.Designer.cs">
       <DependentUpon>Frm_Docente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Egresados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Egresados.Designer.cs">
+      <DependentUpon>Frm_Egresados.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Empleados.cs">
       <SubType>Form</SubType>
@@ -786,9 +786,6 @@
     <EmbeddedResource Include="Frm_Cambio.resx">
       <DependentUpon>Frm_Cambio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Bajas.resx">
-      <DependentUpon>Frm_Bajas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_BusquedaEstudiante.resx">
       <DependentUpon>Frm_BusquedaEstudiante.cs</DependentUpon>
     </EmbeddedResource>
@@ -812,6 +809,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Docente.resx">
       <DependentUpon>Frm_Docente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Egresados.resx">
+      <DependentUpon>Frm_Egresados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Empleados.resx">
       <DependentUpon>Frm_Empleados.cs</DependentUpon>
@@ -1177,6 +1177,21 @@
     <None Include="Resources\DiplomaCECNIC3.jpg" />
     <None Include="Resources\imagen.png" />
     <None Include="Resources\pdf.png" />
+    <None Include="Resources\copiar-el-simbolo-de-interfaz-de-dos-hojas-de-papel.png" />
+    <None Include="Resources\copiar-el-simbolo-de-interfaz-de-dos-hojas-de-papel %281%29.png" />
+    <None Include="Resources\CarnetEstudiante.png" />
+    <None Include="Resources\CarnetEstudiante1.png" />
+    <None Include="Resources\CarnetEstudiante2.png" />
+    <None Include="Resources\Pnel.png" />
+    <None Include="Resources\panel.png" />
+    <None Include="Resources\perfil-del-usuario.png" />
+    <None Include="Resources\perfil-del-usuario %281%29.png" />
+    <None Include="Resources\perfil-del-usuario %282%29.png" />
+    <None Include="Resources\contrasena.png" />
+    <None Include="Resources\servidores.png" />
+    <None Include="Resources\esquema-del-boton-de-flecha-cuadrada-de-inicio-de-sesion.png" />
+    <None Include="Resources\boton-x.png" />
+    <None Include="Resources\x1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

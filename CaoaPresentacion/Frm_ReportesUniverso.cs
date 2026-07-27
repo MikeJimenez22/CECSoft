@@ -19,7 +19,7 @@ namespace CaoaPresentacion
         public Frm_ReportesUniverso()
         {
             InitializeComponent();
-            DataGridViewConfigurator.Configure(this.dataAsistencia);
+            DataGridViewConfigurator.Configure(this.dataAsistencia,this.dataUniversoPorGrupo,this.dataEstudiantesCurso,this.dataEstudiantesCategorias,this.dataEstudiantesTurnos,this.dataGruposActivos,this.DataAsistenciaPorGrupo);
             this.cmbTurno.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
@@ -166,27 +166,27 @@ namespace CaoaPresentacion
 
         private void asistenciaDiaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedTab = tabAsistenciaDia;
         }
 
         private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 2;
+            this.tabControl1.SelectedTab = tabGrupos;
         }
 
         private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 3;
+            this.tabControl1.SelectedTab = tabCursos;
         }
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 4;
+            this.tabControl1.SelectedTab = tabCategoria;
         }
 
         private void turnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 5;
+            this.tabControl1.SelectedTab = tabTurnos;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace CaoaPresentacion
 
         private void asistenciaPorGrupoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 6;
+            this.tabControl1.SelectedTab = tabAsistenciaPorGrupo;
         }
 
         private void AgregarBtnDatagridView()
@@ -286,7 +286,7 @@ namespace CaoaPresentacion
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedIndex = 6;
+            this.tabControl1.SelectedTab = tabAsistenciaPorGrupo;
         }
 
         private void dataGruposActivos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -299,7 +299,7 @@ namespace CaoaPresentacion
                     string IdGrupo = this.dataGruposActivos.CurrentRow.Cells["Id_Grupo"].Value.ToString();
                     string Fecha = this.dtpFecha.Text;
                     this.MostrarAsistenciaPorGrupo(Fecha,IdGrupo);
-                    this.tabControl1.SelectedIndex = 7;
+                    this.tabControl1.SelectedTab = tabAsistenciaEstudiante;
 
                 }
             }

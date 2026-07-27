@@ -247,5 +247,25 @@ namespace CapaDatos
             }
         }
 
+        public DataTable MostrarInformacion_Matricula(string numeroMatricula)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("MostrarInformacion_Matricula", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@NumeroMatricula", numeroMatricula);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        DataTable table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
     }
 }

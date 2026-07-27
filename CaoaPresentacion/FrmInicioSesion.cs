@@ -21,8 +21,12 @@ namespace CaoaPresentacion
 {
     public partial class FrmInicioSesion : Form
     {
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
 
-      
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
 
         CD_Conexion conexion = new CD_Conexion();
         string localIP;
@@ -41,22 +45,20 @@ namespace CaoaPresentacion
         string Concepto = "";
 
 
-
-
-
-
-
+        
 
         public FrmInicioSesion()
         {
             InitializeComponent();
             this.comboBoxServidores.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.MouseDown += FrmInicioSesion_MouseDown;
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void FrmInicioSesion_MouseDown(object sender, MouseEventArgs e)
         {
-
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xF012, 0);
         }
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)
@@ -103,17 +105,7 @@ namespace CaoaPresentacion
 
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Application.Exit();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+    
 
       
 
@@ -966,6 +958,24 @@ namespace CaoaPresentacion
 
                 this.tabControl1.SelectedIndex = 0;
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tabPage1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xF012, 0);
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Exit();
             }
             catch (Exception)
             {

@@ -557,14 +557,14 @@ namespace CaoaPresentacion
                     if (string.IsNullOrWhiteSpace(motivoBaja))
                         motivoBaja = "Baja";
                     asistenciaEstudianteService.InsertarAsistenciaEstudiante(idMatricula,fechaActual,horaActual,estado,motivoBaja,CacheUsuario.IdUsuario);
-                    objetoCN.Insertar("BAJA", motivoBaja, fechaActual, idMatricula, usuario, nombrePC);
+                    objetoCN.Insertar("BAJA", motivoBaja, idMatricula, usuario, nombrePC);
                     objetoCN.DarBaja(idMatricula);
                     break;
 
                 case "EGRESADO":
                     motivoBaja = "Egresado";
                     asistenciaEstudianteService.InsertarAsistenciaEstudiante(idMatricula, fechaActual, horaActual, estado, motivoBaja, CacheUsuario.IdUsuario);
-                    objetoCN.Insertar("EGRESADO", "EGRESADO", fechaActual, idMatricula, usuario, nombrePC);
+                    objetoCN.Insertar("EGRESADO","", idMatricula, usuario, nombrePC);
                     objetoCN.DarBaja(idMatricula);
                     break;
             }
@@ -626,7 +626,7 @@ namespace CaoaPresentacion
 
                     if (!string.IsNullOrEmpty(idMatricula))
                     {
-                        gestorBajas.Insertar("OTRO", "AUSENCIAS (SISTEMA AUTOMATICO)", fecha, idMatricula, usuario, pc);
+                        gestorBajas.Insertar("BAJA", "INASISTENCIA", idMatricula, usuario, pc);
                         gestorBajas.DarBaja(idMatricula);
                     }
                 }

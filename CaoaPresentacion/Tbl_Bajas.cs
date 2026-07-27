@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Windows.Forms;
+using Utils;
 
 namespace CaoaPresentacion
 {
@@ -10,6 +11,7 @@ namespace CaoaPresentacion
         public Tbl_Bajas()
         {
             InitializeComponent();
+            DataGridViewConfigurator.Configure(dataBajas);
         }
 
         private void Tbl_Bajas_Load(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace CaoaPresentacion
             try
             {
                 this.BuscarEntre_fechas();
-                this.txtTotal.Text = dataGridView1.Rows.Count.ToString();
+                this.txtTotal.Text = dataBajas.Rows.Count.ToString();
                 // this.CalcularTipos();
             }
             catch (Exception)
@@ -48,7 +50,7 @@ namespace CaoaPresentacion
             DateTime fecha1 = DateTime.ParseExact(dateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime fecha2 = DateTime.ParseExact(dateTimePicker2.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-            this.dataGridView1.DataSource = objetoCN.MostrarBajas(fecha1, fecha2);
+            this.dataBajas.DataSource = objetoCN.MostrarBajas(fecha1, fecha2);
 
         }
 
@@ -61,7 +63,7 @@ namespace CaoaPresentacion
             int otro = 0;
 
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataBajas.Rows)
             {
                 if (row.Cells["Motivo_baja"].Value.ToString() == "Motivos Economico")
                 {

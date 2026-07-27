@@ -55,26 +55,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="128000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaDatos.dll" size="128512">
       <assemblyIdentity name="CapaDatos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>02Egc10uNB6IBy4vFl1mY18Gx+w90+9bORR+eD59wTQ=</dsig:DigestValue>
+        <dsig:DigestValue>xgTgej+h12UjwmLBQ9ujXw6Gymrkn9setQ/CLG3HsJs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="39936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CapaNegocio.dll" size="40448">
       <assemblyIdentity name="CapaNegocio" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QtEur1ovtDQb1qw2WaJlYSQU7IEY2uqngIhnhLRILFo=</dsig:DigestValue>
+        <dsig:DigestValue>oBNBFOpqn8FL6E1bj5yE4U1+VRr/6eRr4MH3rnF/go8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1183,14 +1183,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="51564544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaCecnic.exe" size="59813888">
       <assemblyIdentity name="SistemaCecnic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Uy4i4nrFwTJ5elIMsuA9vYrkzYpv5USDLhuTwtcR3VA=</dsig:DigestValue>
+        <dsig:DigestValue>tnihXBcwR9BZOvAnmMpKixgHw1oGzmcwRnS0DI5fhPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

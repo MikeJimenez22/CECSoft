@@ -37,9 +37,6 @@ namespace CaoaPresentacion
 
         }
 
-        string Id_usuario;
-        string NombreUsuario;
-        string IdEmpleado;
         string CodigoActa;
         string IdGrupoSeleccionado;
         string Estado;

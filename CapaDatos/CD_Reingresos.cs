@@ -9,7 +9,6 @@ namespace CapaDatos
 
         private CD_Conexion conexion = new CD_Conexion();
 
-        SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 

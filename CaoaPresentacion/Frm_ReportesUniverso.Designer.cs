@@ -38,38 +38,38 @@
             this.turnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaPorGrupoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabAsistenciaPorGrupo = new System.Windows.Forms.TabPage();
             this.dataGruposActivos = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabTurnos = new System.Windows.Forms.TabPage();
             this.dataEstudiantesTurnos = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabCategoria = new System.Windows.Forms.TabPage();
             this.dataEstudiantesCategorias = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabCursos = new System.Windows.Forms.TabPage();
             this.dataEstudiantesCurso = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabGrupos = new System.Windows.Forms.TabPage();
             this.dataUniversoPorGrupo = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabAsistenciaDia = new System.Windows.Forms.TabPage();
             this.dataAsistencia = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -77,33 +77,32 @@
             this.label17 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabAsistenciaEstudiante = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.DataAsistenciaPorGrupo = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabPage7.SuspendLayout();
+            this.tabAsistenciaPorGrupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGruposActivos)).BeginInit();
             this.panel6.SuspendLayout();
-            this.tabPage5.SuspendLayout();
+            this.tabTurnos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesTurnos)).BeginInit();
             this.panel5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesCategorias)).BeginInit();
             this.panel4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabCursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesCurso)).BeginInit();
             this.panel3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabGrupos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUniversoPorGrupo)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabAsistenciaDia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataAsistencia)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage8.SuspendLayout();
+            this.tabAsistenciaEstudiante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataAsistenciaPorGrupo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,18 +183,18 @@
             this.pictureBox2.TabIndex = 58;
             this.pictureBox2.TabStop = false;
             // 
-            // tabPage7
+            // tabAsistenciaPorGrupo
             // 
-            this.tabPage7.Controls.Add(this.dataGruposActivos);
-            this.tabPage7.Controls.Add(this.panel6);
-            this.tabPage7.Controls.Add(this.label5);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(985, 505);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Buscar Asistencia Gnral por Grupo";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabAsistenciaPorGrupo.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabAsistenciaPorGrupo.Controls.Add(this.dataGruposActivos);
+            this.tabAsistenciaPorGrupo.Controls.Add(this.panel6);
+            this.tabAsistenciaPorGrupo.Controls.Add(this.label5);
+            this.tabAsistenciaPorGrupo.Location = new System.Drawing.Point(4, 22);
+            this.tabAsistenciaPorGrupo.Name = "tabAsistenciaPorGrupo";
+            this.tabAsistenciaPorGrupo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsistenciaPorGrupo.Size = new System.Drawing.Size(997, 505);
+            this.tabAsistenciaPorGrupo.TabIndex = 6;
+            this.tabAsistenciaPorGrupo.Text = "tabAsistenciaPorGrupo";
             // 
             // dataGruposActivos
             // 
@@ -268,17 +267,17 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Reporte Asistencia por Grupo";
             // 
-            // tabPage5
+            // tabTurnos
             // 
-            this.tabPage5.Controls.Add(this.dataEstudiantesTurnos);
-            this.tabPage5.Controls.Add(this.label4);
-            this.tabPage5.Controls.Add(this.panel5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(985, 505);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Turnos";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabTurnos.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabTurnos.Controls.Add(this.dataEstudiantesTurnos);
+            this.tabTurnos.Controls.Add(this.label4);
+            this.tabTurnos.Controls.Add(this.panel5);
+            this.tabTurnos.Location = new System.Drawing.Point(4, 22);
+            this.tabTurnos.Name = "tabTurnos";
+            this.tabTurnos.Size = new System.Drawing.Size(997, 505);
+            this.tabTurnos.TabIndex = 4;
+            this.tabTurnos.Text = "tabTurnos";
             // 
             // dataEstudiantesTurnos
             // 
@@ -333,17 +332,17 @@
             this.label30.TabIndex = 68;
             this.label30.Text = "Reporte Estudiantes por Turnos";
             // 
-            // tabPage4
+            // tabCategoria
             // 
-            this.tabPage4.Controls.Add(this.dataEstudiantesCategorias);
-            this.tabPage4.Controls.Add(this.label3);
-            this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(985, 505);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Categoria";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabCategoria.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabCategoria.Controls.Add(this.dataEstudiantesCategorias);
+            this.tabCategoria.Controls.Add(this.label3);
+            this.tabCategoria.Controls.Add(this.panel4);
+            this.tabCategoria.Location = new System.Drawing.Point(4, 22);
+            this.tabCategoria.Name = "tabCategoria";
+            this.tabCategoria.Size = new System.Drawing.Size(997, 505);
+            this.tabCategoria.TabIndex = 3;
+            this.tabCategoria.Text = "tabCategoria";
             // 
             // dataEstudiantesCategorias
             // 
@@ -398,17 +397,17 @@
             this.label29.TabIndex = 66;
             this.label29.Text = "Reporte Estudiantes por Categorias";
             // 
-            // tabPage3
+            // tabCursos
             // 
-            this.tabPage3.Controls.Add(this.dataEstudiantesCurso);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(985, 505);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Cursos";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabCursos.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabCursos.Controls.Add(this.dataEstudiantesCurso);
+            this.tabCursos.Controls.Add(this.panel3);
+            this.tabCursos.Controls.Add(this.label2);
+            this.tabCursos.Location = new System.Drawing.Point(4, 22);
+            this.tabCursos.Name = "tabCursos";
+            this.tabCursos.Size = new System.Drawing.Size(997, 505);
+            this.tabCursos.TabIndex = 2;
+            this.tabCursos.Text = "tabCursos";
             // 
             // dataEstudiantesCurso
             // 
@@ -463,18 +462,18 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Reporte de Cursos";
             // 
-            // tabPage2
+            // tabGrupos
             // 
-            this.tabPage2.Controls.Add(this.dataUniversoPorGrupo);
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(985, 505);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Grupos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabGrupos.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabGrupos.Controls.Add(this.dataUniversoPorGrupo);
+            this.tabGrupos.Controls.Add(this.panel2);
+            this.tabGrupos.Controls.Add(this.label1);
+            this.tabGrupos.Location = new System.Drawing.Point(4, 22);
+            this.tabGrupos.Name = "tabGrupos";
+            this.tabGrupos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGrupos.Size = new System.Drawing.Size(997, 505);
+            this.tabGrupos.TabIndex = 1;
+            this.tabGrupos.Text = "tabGrupos";
             // 
             // dataUniversoPorGrupo
             // 
@@ -529,18 +528,18 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Reporte de Grupos";
             // 
-            // tabPage1
+            // tabAsistenciaDia
             // 
-            this.tabPage1.Controls.Add(this.dataAsistencia);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(985, 505);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Asistencia dia";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabAsistenciaDia.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabAsistenciaDia.Controls.Add(this.dataAsistencia);
+            this.tabAsistenciaDia.Controls.Add(this.panel1);
+            this.tabAsistenciaDia.Controls.Add(this.label16);
+            this.tabAsistenciaDia.Location = new System.Drawing.Point(4, 22);
+            this.tabAsistenciaDia.Name = "tabAsistenciaDia";
+            this.tabAsistenciaDia.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsistenciaDia.Size = new System.Drawing.Size(985, 505);
+            this.tabAsistenciaDia.TabIndex = 0;
+            this.tabAsistenciaDia.Text = "tabAsistenciaDia";
             // 
             // dataAsistencia
             // 
@@ -621,43 +620,32 @@
             this.label16.TabIndex = 8;
             this.label16.Text = "Reporte de Asistencia";
             // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(985, 505);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Inicio";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabAsistenciaDia);
+            this.tabControl1.Controls.Add(this.tabGrupos);
+            this.tabControl1.Controls.Add(this.tabCursos);
+            this.tabControl1.Controls.Add(this.tabCategoria);
+            this.tabControl1.Controls.Add(this.tabTurnos);
+            this.tabControl1.Controls.Add(this.tabAsistenciaPorGrupo);
+            this.tabControl1.Controls.Add(this.tabAsistenciaEstudiante);
             this.tabControl1.Location = new System.Drawing.Point(12, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(993, 531);
             this.tabControl1.TabIndex = 59;
             // 
-            // tabPage8
+            // tabAsistenciaEstudiante
             // 
-            this.tabPage8.Controls.Add(this.button2);
-            this.tabPage8.Controls.Add(this.DataAsistenciaPorGrupo);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(985, 505);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Asistencia Estudiantes";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.tabAsistenciaEstudiante.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabAsistenciaEstudiante.Controls.Add(this.button2);
+            this.tabAsistenciaEstudiante.Controls.Add(this.DataAsistenciaPorGrupo);
+            this.tabAsistenciaEstudiante.Location = new System.Drawing.Point(4, 22);
+            this.tabAsistenciaEstudiante.Name = "tabAsistenciaEstudiante";
+            this.tabAsistenciaEstudiante.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsistenciaEstudiante.Size = new System.Drawing.Size(997, 505);
+            this.tabAsistenciaEstudiante.TabIndex = 7;
+            this.tabAsistenciaEstudiante.Text = "tabAsistenciaEstudiante";
             // 
             // button2
             // 
@@ -687,13 +675,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1015, 623);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1031, 662);
+            this.MinimumSize = new System.Drawing.Size(1031, 662);
             this.Name = "Frm_ReportesUniverso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes";
@@ -701,37 +691,37 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
+            this.tabAsistenciaPorGrupo.ResumeLayout(false);
+            this.tabAsistenciaPorGrupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGruposActivos)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.tabTurnos.ResumeLayout(false);
+            this.tabTurnos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesTurnos)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabCategoria.ResumeLayout(false);
+            this.tabCategoria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesCategorias)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabCursos.ResumeLayout(false);
+            this.tabCursos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantesCurso)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabGrupos.ResumeLayout(false);
+            this.tabGrupos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUniversoPorGrupo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabAsistenciaDia.ResumeLayout(false);
+            this.tabAsistenciaDia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataAsistencia)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
+            this.tabAsistenciaEstudiante.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataAsistenciaPorGrupo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -749,47 +739,46 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asistenciaPorGrupoToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabAsistenciaPorGrupo;
         private System.Windows.Forms.DataGridView dataGruposActivos;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabTurnos;
         private System.Windows.Forms.DataGridView dataEstudiantesTurnos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabCategoria;
         private System.Windows.Forms.DataGridView dataEstudiantesCategorias;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabCursos;
         private System.Windows.Forms.DataGridView dataEstudiantesCurso;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabGrupos;
         private System.Windows.Forms.DataGridView dataUniversoPorGrupo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabAsistenciaDia;
         private System.Windows.Forms.DataGridView dataAsistencia;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabAsistenciaEstudiante;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView DataAsistenciaPorGrupo;
         private System.Windows.Forms.Button button3;

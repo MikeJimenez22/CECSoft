@@ -49,6 +49,20 @@ namespace CapaNegocio
 
         }
 
+        public DataTable ConsultarCarteraAcademica(DateTime fechaInicial,
+                                           DateTime fechaFinal,
+                                           string estado,
+                                           string turno)
+        {
+            CD_CarterayCobro objetoCD = new CD_CarterayCobro();
+
+            return objetoCD.ConsultarCarteraAcademica(
+                fechaInicial,
+                fechaFinal,
+                estado,
+                turno);
+        }
+
 
 
     }

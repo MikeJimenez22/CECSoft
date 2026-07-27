@@ -1361,6 +1361,19 @@ namespace CaoaPresentacion
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void egresadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_Egresados frm = new Frm_Egresados();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
     }
 

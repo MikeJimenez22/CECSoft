@@ -52,6 +52,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
@@ -92,6 +93,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.txtCodMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabFactura = new System.Windows.Forms.TabPage();
@@ -105,6 +107,7 @@
             this.dataConsultaInformacionAcademica = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtBusquedaConsultaAcademica = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.cmbBusqueda = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -118,6 +121,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtFolioBusqueda = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.cbLibroRegistro2 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -166,27 +170,23 @@
             this.label51 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label50 = new System.Windows.Forms.Label();
+            this.tabDiploma = new System.Windows.Forms.TabPage();
+            this.button13 = new System.Windows.Forms.Button();
+            this.panelDiploma = new System.Windows.Forms.Panel();
             this.lblEstudiante_Diploma = new System.Windows.Forms.Label();
             this.lblCurso_Diploma = new System.Windows.Forms.Label();
-            this.lblDias_Diploma = new System.Windows.Forms.Label();
             this.lblAño_Diploma = new System.Windows.Forms.Label();
+            this.lblDias_Diploma = new System.Windows.Forms.Label();
             this.lblMes_Diploma = new System.Windows.Forms.Label();
+            this.lblCodigoDocumento_Diploma = new System.Windows.Forms.Label();
             this.lblRegistro_Diploma = new System.Windows.Forms.Label();
+            this.lblLibro_Diploma = new System.Windows.Forms.Label();
             this.lblFolio_Diploma = new System.Windows.Forms.Label();
             this.lblTomo_Diploma = new System.Windows.Forms.Label();
-            this.lblLibro_Diploma = new System.Windows.Forms.Label();
-            this.lblCodigoDocumento_Diploma = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.tabDiploma = new System.Windows.Forms.TabPage();
-            this.panelDiploma = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.pbDiseñoDiploma = new System.Windows.Forms.PictureBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabRegistro.SuspendLayout();
@@ -216,8 +216,8 @@
             this.panel10.SuspendLayout();
             this.tabDiploma.SuspendLayout();
             this.panelDiploma.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiseñoDiploma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -270,7 +270,7 @@
             this.tabControl1.Controls.Add(this.tabEditar);
             this.tabControl1.Controls.Add(this.tabAnulacion);
             this.tabControl1.Controls.Add(this.tabDiploma);
-            this.tabControl1.Location = new System.Drawing.Point(4, 23);
+            this.tabControl1.Location = new System.Drawing.Point(4, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1279, 626);
@@ -488,6 +488,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Documento";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
+            this.button1.Location = new System.Drawing.Point(529, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 32);
+            this.button1.TabIndex = 23;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -952,6 +962,16 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Completo:";
             // 
+            // button5
+            // 
+            this.button5.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
+            this.button5.Location = new System.Drawing.Point(338, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(33, 32);
+            this.button5.TabIndex = 21;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // txtCodMatricula
             // 
             this.txtCodMatricula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1108,6 +1128,16 @@
             this.txtBusquedaConsultaAcademica.Size = new System.Drawing.Size(308, 26);
             this.txtBusquedaConsultaAcademica.TabIndex = 23;
             // 
+            // button2
+            // 
+            this.button2.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
+            this.button2.Location = new System.Drawing.Point(655, 43);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 32);
+            this.button2.TabIndex = 22;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // cmbBusqueda
             // 
             this.cmbBusqueda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1263,6 +1293,16 @@
             this.txtFolioBusqueda.Size = new System.Drawing.Size(81, 26);
             this.txtFolioBusqueda.TabIndex = 23;
             this.txtFolioBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // button6
+            // 
+            this.button6.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
+            this.button6.Location = new System.Drawing.Point(1000, 49);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(33, 32);
+            this.button6.TabIndex = 22;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // cbLibroRegistro2
             // 
@@ -1808,6 +1848,56 @@
             this.label50.TabIndex = 9;
             this.label50.Text = "Anulacion de Registro";
             // 
+            // tabDiploma
+            // 
+            this.tabDiploma.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabDiploma.Controls.Add(this.button13);
+            this.tabDiploma.Controls.Add(this.panelDiploma);
+            this.tabDiploma.Controls.Add(this.button11);
+            this.tabDiploma.Controls.Add(this.button12);
+            this.tabDiploma.Location = new System.Drawing.Point(4, 22);
+            this.tabDiploma.Name = "tabDiploma";
+            this.tabDiploma.Size = new System.Drawing.Size(1271, 600);
+            this.tabDiploma.TabIndex = 6;
+            this.tabDiploma.Text = "tabDiploma";
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Image = global::CaoaPresentacion.Properties.Resources.pdf;
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(524, 527);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(139, 38);
+            this.button13.TabIndex = 40;
+            this.button13.Text = "Generar PDF";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // panelDiploma
+            // 
+            this.panelDiploma.BackColor = System.Drawing.Color.White;
+            this.panelDiploma.Controls.Add(this.lblEstudiante_Diploma);
+            this.panelDiploma.Controls.Add(this.lblCurso_Diploma);
+            this.panelDiploma.Controls.Add(this.lblAño_Diploma);
+            this.panelDiploma.Controls.Add(this.lblDias_Diploma);
+            this.panelDiploma.Controls.Add(this.lblMes_Diploma);
+            this.panelDiploma.Controls.Add(this.lblCodigoDocumento_Diploma);
+            this.panelDiploma.Controls.Add(this.lblRegistro_Diploma);
+            this.panelDiploma.Controls.Add(this.lblLibro_Diploma);
+            this.panelDiploma.Controls.Add(this.lblFolio_Diploma);
+            this.panelDiploma.Controls.Add(this.lblTomo_Diploma);
+            this.panelDiploma.Controls.Add(this.pbDiseñoDiploma);
+            this.panelDiploma.Location = new System.Drawing.Point(244, 8);
+            this.panelDiploma.Name = "panelDiploma";
+            this.panelDiploma.Size = new System.Drawing.Size(660, 510);
+            this.panelDiploma.TabIndex = 39;
+            // 
             // lblEstudiante_Diploma
             // 
             this.lblEstudiante_Diploma.BackColor = System.Drawing.Color.White;
@@ -1834,20 +1924,6 @@
             this.lblCurso_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCurso_Diploma.UseMnemonic = false;
             // 
-            // lblDias_Diploma
-            // 
-            this.lblDias_Diploma.AutoSize = true;
-            this.lblDias_Diploma.BackColor = System.Drawing.Color.Transparent;
-            this.lblDias_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDias_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
-            this.lblDias_Diploma.Location = new System.Drawing.Point(386, 319);
-            this.lblDias_Diploma.Name = "lblDias_Diploma";
-            this.lblDias_Diploma.Size = new System.Drawing.Size(18, 14);
-            this.lblDias_Diploma.TabIndex = 3;
-            this.lblDias_Diploma.Text = "19";
-            this.lblDias_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDias_Diploma.UseMnemonic = false;
-            // 
             // lblAño_Diploma
             // 
             this.lblAño_Diploma.AutoSize = true;
@@ -1862,6 +1938,20 @@
             this.lblAño_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAño_Diploma.UseMnemonic = false;
             // 
+            // lblDias_Diploma
+            // 
+            this.lblDias_Diploma.AutoSize = true;
+            this.lblDias_Diploma.BackColor = System.Drawing.Color.Transparent;
+            this.lblDias_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDias_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.lblDias_Diploma.Location = new System.Drawing.Point(386, 319);
+            this.lblDias_Diploma.Name = "lblDias_Diploma";
+            this.lblDias_Diploma.Size = new System.Drawing.Size(18, 14);
+            this.lblDias_Diploma.TabIndex = 3;
+            this.lblDias_Diploma.Text = "19";
+            this.lblDias_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDias_Diploma.UseMnemonic = false;
+            // 
             // lblMes_Diploma
             // 
             this.lblMes_Diploma.BackColor = System.Drawing.Color.Transparent;
@@ -1874,6 +1964,19 @@
             this.lblMes_Diploma.Text = "Diciembre";
             this.lblMes_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMes_Diploma.UseMnemonic = false;
+            // 
+            // lblCodigoDocumento_Diploma
+            // 
+            this.lblCodigoDocumento_Diploma.BackColor = System.Drawing.Color.Transparent;
+            this.lblCodigoDocumento_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoDocumento_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.lblCodigoDocumento_Diploma.Location = new System.Drawing.Point(406, 371);
+            this.lblCodigoDocumento_Diploma.Name = "lblCodigoDocumento_Diploma";
+            this.lblCodigoDocumento_Diploma.Size = new System.Drawing.Size(126, 14);
+            this.lblCodigoDocumento_Diploma.TabIndex = 10;
+            this.lblCodigoDocumento_Diploma.Text = "DIC-00000001";
+            this.lblCodigoDocumento_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCodigoDocumento_Diploma.UseMnemonic = false;
             // 
             // lblRegistro_Diploma
             // 
@@ -1888,6 +1991,19 @@
             this.lblRegistro_Diploma.Text = "1";
             this.lblRegistro_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblRegistro_Diploma.UseMnemonic = false;
+            // 
+            // lblLibro_Diploma
+            // 
+            this.lblLibro_Diploma.BackColor = System.Drawing.Color.Transparent;
+            this.lblLibro_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibro_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.lblLibro_Diploma.Location = new System.Drawing.Point(180, 373);
+            this.lblLibro_Diploma.Name = "lblLibro_Diploma";
+            this.lblLibro_Diploma.Size = new System.Drawing.Size(175, 14);
+            this.lblLibro_Diploma.TabIndex = 9;
+            this.lblLibro_Diploma.Text = "DIPLOMAS CECNIC";
+            this.lblLibro_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLibro_Diploma.UseMnemonic = false;
             // 
             // lblFolio_Diploma
             // 
@@ -1917,31 +2033,16 @@
             this.lblTomo_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTomo_Diploma.UseMnemonic = false;
             // 
-            // lblLibro_Diploma
+            // pbDiseñoDiploma
             // 
-            this.lblLibro_Diploma.BackColor = System.Drawing.Color.Transparent;
-            this.lblLibro_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibro_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
-            this.lblLibro_Diploma.Location = new System.Drawing.Point(180, 373);
-            this.lblLibro_Diploma.Name = "lblLibro_Diploma";
-            this.lblLibro_Diploma.Size = new System.Drawing.Size(175, 14);
-            this.lblLibro_Diploma.TabIndex = 9;
-            this.lblLibro_Diploma.Text = "DIPLOMAS CECNIC";
-            this.lblLibro_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLibro_Diploma.UseMnemonic = false;
-            // 
-            // lblCodigoDocumento_Diploma
-            // 
-            this.lblCodigoDocumento_Diploma.BackColor = System.Drawing.Color.Transparent;
-            this.lblCodigoDocumento_Diploma.Font = new System.Drawing.Font("Garamond", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoDocumento_Diploma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
-            this.lblCodigoDocumento_Diploma.Location = new System.Drawing.Point(406, 371);
-            this.lblCodigoDocumento_Diploma.Name = "lblCodigoDocumento_Diploma";
-            this.lblCodigoDocumento_Diploma.Size = new System.Drawing.Size(126, 14);
-            this.lblCodigoDocumento_Diploma.TabIndex = 10;
-            this.lblCodigoDocumento_Diploma.Text = "DIC-00000001";
-            this.lblCodigoDocumento_Diploma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCodigoDocumento_Diploma.UseMnemonic = false;
+            this.pbDiseñoDiploma.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbDiseñoDiploma.Image = global::CaoaPresentacion.Properties.Resources.DiplomaCECNIC3;
+            this.pbDiseñoDiploma.Location = new System.Drawing.Point(0, 0);
+            this.pbDiseñoDiploma.Name = "pbDiseñoDiploma";
+            this.pbDiseñoDiploma.Size = new System.Drawing.Size(660, 510);
+            this.pbDiseñoDiploma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDiseñoDiploma.TabIndex = 0;
+            this.pbDiseñoDiploma.TabStop = false;
             // 
             // button11
             // 
@@ -1957,117 +2058,6 @@
             this.button11.Text = "Cancelar";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // tabDiploma
-            // 
-            this.tabDiploma.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabDiploma.Controls.Add(this.button13);
-            this.tabDiploma.Controls.Add(this.panelDiploma);
-            this.tabDiploma.Controls.Add(this.button11);
-            this.tabDiploma.Controls.Add(this.button12);
-            this.tabDiploma.Location = new System.Drawing.Point(4, 22);
-            this.tabDiploma.Name = "tabDiploma";
-            this.tabDiploma.Size = new System.Drawing.Size(1271, 600);
-            this.tabDiploma.TabIndex = 6;
-            this.tabDiploma.Text = "tabDiploma";
-            // 
-            // panelDiploma
-            // 
-            this.panelDiploma.BackColor = System.Drawing.Color.White;
-            this.panelDiploma.Controls.Add(this.lblEstudiante_Diploma);
-            this.panelDiploma.Controls.Add(this.lblCurso_Diploma);
-            this.panelDiploma.Controls.Add(this.lblAño_Diploma);
-            this.panelDiploma.Controls.Add(this.lblDias_Diploma);
-            this.panelDiploma.Controls.Add(this.lblMes_Diploma);
-            this.panelDiploma.Controls.Add(this.lblCodigoDocumento_Diploma);
-            this.panelDiploma.Controls.Add(this.lblRegistro_Diploma);
-            this.panelDiploma.Controls.Add(this.lblLibro_Diploma);
-            this.panelDiploma.Controls.Add(this.lblFolio_Diploma);
-            this.panelDiploma.Controls.Add(this.lblTomo_Diploma);
-            this.panelDiploma.Controls.Add(this.pbDiseñoDiploma);
-            this.panelDiploma.Location = new System.Drawing.Point(244, 8);
-            this.panelDiploma.Name = "panelDiploma";
-            this.panelDiploma.Size = new System.Drawing.Size(660, 510);
-            this.panelDiploma.TabIndex = 39;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1283, 20);
-            this.pictureBox1.TabIndex = 10003;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button1.Location = new System.Drawing.Point(529, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 32);
-            this.button1.TabIndex = 23;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button5.Location = new System.Drawing.Point(338, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(33, 32);
-            this.button5.TabIndex = 21;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button2.Location = new System.Drawing.Point(655, 43);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 32);
-            this.button2.TabIndex = 22;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button6.Location = new System.Drawing.Point(1000, 49);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(33, 32);
-            this.button6.TabIndex = 22;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = global::CaoaPresentacion.Properties.Resources.pdf;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(524, 527);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(139, 38);
-            this.button13.TabIndex = 40;
-            this.button13.Text = "Generar PDF";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // pbDiseñoDiploma
-            // 
-            this.pbDiseñoDiploma.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbDiseñoDiploma.Image = global::CaoaPresentacion.Properties.Resources.DiplomaCECNIC3;
-            this.pbDiseñoDiploma.Location = new System.Drawing.Point(0, 0);
-            this.pbDiseñoDiploma.Name = "pbDiseñoDiploma";
-            this.pbDiseñoDiploma.Size = new System.Drawing.Size(660, 510);
-            this.pbDiseñoDiploma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDiseñoDiploma.TabIndex = 0;
-            this.pbDiseñoDiploma.TabStop = false;
             // 
             // button12
             // 
@@ -2086,6 +2076,16 @@
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1283, 20);
+            this.pictureBox1.TabIndex = 10003;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_RegistroAcademico
             // 
@@ -2152,8 +2152,8 @@
             this.tabDiploma.ResumeLayout(false);
             this.panelDiploma.ResumeLayout(false);
             this.panelDiploma.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiseñoDiploma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

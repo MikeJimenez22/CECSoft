@@ -6,9 +6,7 @@ namespace CapaDatos
     public class CD_ProcesosFactura
     {
         private CD_Conexion conexion = new CD_Conexion();
-
-
-        SqlDataReader leer;
+        
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
