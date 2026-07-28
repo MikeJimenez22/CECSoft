@@ -33,6 +33,7 @@ namespace CaoaPresentacion
         string FechaActual, HoraActual;
         private const int MaxIntentos = 3;
         private int intentosFallidos = 0;
+        private bool mostrarContrasena = false;
 
 
         //Credenciales cuenta de Google para enviar Notificaciones del sistema
@@ -55,6 +56,49 @@ namespace CaoaPresentacion
 
         }
 
+        private bool ValidarCampos()
+        {
+            bool valido = true;
+
+            if (txtusuario.Text == "Ingresa tu usuario" ||
+                string.IsNullOrWhiteSpace(txtusuario.Text))
+            {
+                valido = false;
+                txtusuario.BackColor = Color.MistyRose;
+            }
+            else
+            {
+                txtusuario.BackColor = Color.White;
+            }
+
+            if (txtcontraseña.Text == "Ingresa tu contraseña" ||
+                string.IsNullOrWhiteSpace(txtcontraseña.Text))
+            {
+                valido = false;
+                txtcontraseña.BackColor = Color.MistyRose;
+            }
+            else
+            {
+                txtcontraseña.BackColor = Color.White;
+            }
+
+            if (!valido)
+            {
+                MessageBox.Show(
+                    "Complete los campos requeridos para iniciar sesión.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                if (txtusuario.Text == "Ingresa tu usuario")
+                    txtusuario.Focus();
+                else
+                    txtcontraseña.Focus();
+            }
+
+            return valido;
+        }
+
         private void FrmInicioSesion_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -66,8 +110,17 @@ namespace CaoaPresentacion
             try
             {
                 this.FormClosed += new FormClosedEventHandler(cerrarform);
-                this.txtusuario.Focus();
-                this.checkBox1.Checked = true;
+
+                txtusuario.ForeColor = Color.Gray;
+                txtusuario.Text = "Ingresa tu usuario";
+
+                txtcontraseña.UseSystemPasswordChar = false;
+                txtcontraseña.ForeColor = Color.Gray;
+                txtcontraseña.Text = "Ingresa tu contraseña";
+
+                pictureBox2.Image = Properties.Resources.ojoCerrado;
+
+
 
                 this.panel2.Visible = false;      // Oculta el formulario
                 this.panel2.Enabled = false; // Deshabilita el panel
@@ -113,13 +166,17 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (this.checkBox1.Checked == false)
-                {
-                    this.checkBox1.Checked = true;
-                }else if (this.checkBox1.Checked == true)
-                {
-                    this.checkBox1.Checked = false;
-                }
+                // Si está mostrando el placeholder, no hacer nada
+                if (txtcontraseña.Text == "Ingresa tu contraseña")
+                    return;
+
+                mostrarContrasena = !mostrarContrasena;
+
+                txtcontraseña.UseSystemPasswordChar = !mostrarContrasena;
+
+                pictureBox2.Image = mostrarContrasena
+                    ? Properties.Resources.ojo_abierto
+                    : Properties.Resources.ojoCerrado;
             }
             catch (Exception)
             {
@@ -127,24 +184,7 @@ namespace CaoaPresentacion
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.checkBox1.Checked == false)
-                {
-                    txtcontraseña.UseSystemPasswordChar = false;
-                }
-                else if (this.checkBox1.Checked == true)
-                {
-                    txtcontraseña.UseSystemPasswordChar = true;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -157,13 +197,15 @@ namespace CaoaPresentacion
 
             try
             {
+                if (!ValidarCampos())
+                    return;
 
                 conexion.AbrirConexion();
                 this.GuardarSesion(this.txtusuario.Text,this.txtcontraseña.Text); 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -226,7 +268,7 @@ namespace CaoaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema " +ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,7 +343,8 @@ namespace CaoaPresentacion
                                      idUsuario
                                  );
 
-                              
+                                //valida que matriculas tienen mas de 30 dias ausentes apartir de la ultima vez que estaba ausente y valida si la mensualidad del mes actual este pendiente
+                                EjecutarProcesoBajasAutomaticas();
 
                                 Frm_Principal frm = new Frm_Principal();
                                 frm.Show();
@@ -318,116 +361,35 @@ namespace CaoaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema " + ex, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        private void AgregarNuevoPagoExtra()
+        private void EjecutarProcesoBajasAutomaticas()
         {
             try
             {
-                DateTime hoy = DateTime.Today;
+                CN_Bajas objetoCN = new CN_Bajas();
 
-
-                DateTime primerDiaDelMes = new DateTime(hoy.Year, hoy.Month, 1);
-                DateTime ultimoDiaDelMes = primerDiaDelMes.AddMonths(1).AddDays(-1);
-                DateTime fechaFija = new DateTime(hoy.Year, hoy.Month, 7);
-
-                this.ObtenerConcepto();
-
-                CN_ProgramacionPagos objetoCN = new CN_ProgramacionPagos();
-                CN_Detalle_Programacion objetoDetalle = new CN_Detalle_Programacion();
-
-                DataTable tabla = objetoCN.VerPendientes(primerDiaDelMes, ultimoDiaDelMes);
-
-                foreach (DataRow row in tabla.Rows)
-                {
-                    objetoDetalle.Insertar(
-                        row["Num_programacion"].ToString(),
-                        fechaFija.ToString(),
-                        Concepto,
-                        row["Monto"].ToString(),
-                        row["IdMoneda"].ToString(),
-                        fechaFija.ToString(),
-                        "0",
-                        "10"
-                    );
-                }
+                objetoCN.EjecutarBajaAutomaticaInasistencia(
+                    Convert.ToInt32(CacheUsuario.IdUsuario),
+                    Environment.MachineName);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error de Sistema: " + ex.Message,
+                    "No fue posible ejecutar la revisión automática de bajas.\n\n" +
+                    ex.Message,
                     "SISTEMA CECNIC",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                    MessageBoxIcon.Warning);
             }
         }
 
 
 
-        private void ObtenerConcepto()
-        {
-            int mes = DateTime.Now.Month;
-            int año = DateTime.Now.Year;
-            
-
-            if (mes == 1)
-            {
-                MesLetra = "ENERO";
-            }
-            else if (mes == 2)
-            {
-                MesLetra = "FEBRERO";
-            }
-            else if (mes == 3)
-            {
-                MesLetra = "MARZO";
-            }
-            else if (mes == 4)
-            {
-                MesLetra = "ABRIL";
-            }
-            else if (mes == 5)
-            {
-                MesLetra = "MAYO";
-            }
-            else if (mes == 6)
-            {
-                MesLetra = "JUNIO";
-            }
-            else if (mes == 7)
-            {
-                MesLetra = "JULIO";
-            }
-            else if (mes == 8)
-            {
-                MesLetra = "AGOSTO";
-            }
-            else if (mes == 9)
-            {
-                MesLetra = "SEPTIEMBRE";
-            }
-            else if (mes == 10)
-            {
-                MesLetra = "OCTUBRE";
-            }
-            else if (mes == 11)
-            {
-                MesLetra = "NOVIEMBRE";
-            }
-            else if (mes == 12)
-            {
-                MesLetra = "DICIEMBRE";
-            }
-
-             Concepto = "MENSUALIDAD, " + MesLetra + " " + año;
-           
 
 
-        }
 
 
         private void Cargar_EstadoPermisos(string TEXTO)
@@ -484,15 +446,13 @@ namespace CaoaPresentacion
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show("Error de Sistema","SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
-
-
-
+        
         private void ObtenerIp()
         {
             IPHostEntry host;
@@ -980,6 +940,44 @@ namespace CaoaPresentacion
             catch (Exception)
             {
                 MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtusuario_Enter(object sender, EventArgs e)
+        {
+            if (txtusuario.Text == "Ingresa tu usuario")
+            {
+                txtusuario.Text = "";
+                txtusuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtusuario_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtusuario.Text))
+            {
+                txtusuario.Text = "Ingresa tu usuario";
+                txtusuario.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtcontraseña_Enter(object sender, EventArgs e)
+        {
+            if (txtcontraseña.Text == "Ingresa tu contraseña")
+            {
+                txtcontraseña.Text = "";
+                txtcontraseña.ForeColor = Color.Black;
+                txtcontraseña.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtcontraseña_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcontraseña.Text))
+            {
+                txtcontraseña.UseSystemPasswordChar = false;
+                txtcontraseña.ForeColor = Color.Gray;
+                txtcontraseña.Text = "Ingresa tu contraseña";
             }
         }
 

@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicioSesion));
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.txtcontraseña = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtRol = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -91,33 +91,25 @@
             // 
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusuario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(404, 146);
+            this.txtusuario.Location = new System.Drawing.Point(401, 110);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(305, 29);
             this.txtusuario.TabIndex = 15;
+            this.txtusuario.Enter += new System.EventHandler(this.txtusuario_Enter);
+            this.txtusuario.Leave += new System.EventHandler(this.txtusuario_Leave);
             // 
             // txtcontraseña
             // 
             this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcontraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.ForeColor = System.Drawing.Color.DarkRed;
-            this.txtcontraseña.Location = new System.Drawing.Point(404, 200);
+            this.txtcontraseña.Location = new System.Drawing.Point(401, 168);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(305, 29);
             this.txtcontraseña.TabIndex = 16;
+            this.txtcontraseña.Enter += new System.EventHandler(this.txtcontraseña_Enter);
             this.txtcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontraseña_KeyPress);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(820, 259);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 35;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.txtcontraseña.Leave += new System.EventHandler(this.txtcontraseña_Leave);
             // 
             // txtRol
             // 
@@ -141,7 +133,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.label1.Location = new System.Drawing.Point(480, 356);
+            this.label1.Location = new System.Drawing.Point(486, 334);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 38;
@@ -161,6 +153,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.txtusuario);
             this.tabPage1.Controls.Add(this.pictureBox7);
             this.tabPage1.Controls.Add(this.pictureBox6);
             this.tabPage1.Controls.Add(this.pictureBox5);
@@ -175,16 +169,26 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.txtusuario);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.txtcontraseña);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(771, 394);
+            this.tabPage1.Size = new System.Drawing.Size(592, 394);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseDown);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Gray;
+            this.label11.Location = new System.Drawing.Point(432, 371);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(253, 13);
+            this.label11.TabIndex = 51;
+            this.label11.Text = "© 2026 CECSoft. Todos los derechos reservados.";
             // 
             // pictureBox7
             // 
@@ -200,7 +204,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::CaoaPresentacion.Properties.Resources.servidores;
-            this.pictureBox6.Location = new System.Drawing.Point(412, 232);
+            this.pictureBox6.Location = new System.Drawing.Point(409, 200);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(21, 21);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,7 +214,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::CaoaPresentacion.Properties.Resources.contrasena;
-            this.pictureBox5.Location = new System.Drawing.Point(411, 177);
+            this.pictureBox5.Location = new System.Drawing.Point(408, 145);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 21);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -220,7 +224,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CaoaPresentacion.Properties.Resources.perfil_del_usuario__2_;
-            this.pictureBox4.Location = new System.Drawing.Point(412, 124);
+            this.pictureBox4.Location = new System.Drawing.Point(409, 84);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +236,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.label10.Location = new System.Drawing.Point(439, 234);
+            this.label10.Location = new System.Drawing.Point(436, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 17);
             this.label10.TabIndex = 46;
@@ -243,7 +247,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.label9.Location = new System.Drawing.Point(438, 178);
+            this.label9.Location = new System.Drawing.Point(435, 146);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 17);
             this.label9.TabIndex = 45;
@@ -254,7 +258,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.label8.Location = new System.Drawing.Point(438, 126);
+            this.label8.Location = new System.Drawing.Point(435, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 44;
@@ -264,7 +268,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(467, 71);
+            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.Location = new System.Drawing.Point(464, 57);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 17);
             this.label7.TabIndex = 43;
@@ -275,7 +280,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.label6.Location = new System.Drawing.Point(477, 39);
+            this.label6.Location = new System.Drawing.Point(476, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 32);
             this.label6.TabIndex = 42;
@@ -287,7 +292,7 @@
             this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources.panel;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(363, 388);
+            this.pictureBox1.Size = new System.Drawing.Size(359, 388);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
@@ -297,7 +302,7 @@
             this.comboBoxServidores.BackColor = System.Drawing.Color.White;
             this.comboBoxServidores.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxServidores.FormattingEnabled = true;
-            this.comboBoxServidores.Location = new System.Drawing.Point(404, 258);
+            this.comboBoxServidores.Location = new System.Drawing.Point(401, 226);
             this.comboBoxServidores.Name = "comboBoxServidores";
             this.comboBoxServidores.Size = new System.Drawing.Size(305, 26);
             this.comboBoxServidores.TabIndex = 39;
@@ -305,10 +310,10 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::CaoaPresentacion.Properties.Resources.view;
-            this.pictureBox2.Location = new System.Drawing.Point(715, 203);
+            this.pictureBox2.Image = global::CaoaPresentacion.Properties.Resources.ojoCerrado;
+            this.pictureBox2.Location = new System.Drawing.Point(709, 171);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 22);
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
@@ -322,11 +327,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::CaoaPresentacion.Properties.Resources._118801_view_refresh;
+            this.button3.Image = global::CaoaPresentacion.Properties.Resources.actualizar;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(712, 302);
+            this.button3.Location = new System.Drawing.Point(543, 300);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 36);
+            this.button3.Size = new System.Drawing.Size(28, 25);
             this.button3.TabIndex = 32;
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
@@ -341,7 +346,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::CaoaPresentacion.Properties.Resources.esquema_del_boton_de_flecha_cuadrada_de_inicio_de_sesion;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(396, 302);
+            this.button1.Location = new System.Drawing.Point(401, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(313, 34);
             this.button1.TabIndex = 27;
@@ -358,7 +363,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(750, 394);
+            this.tabPage2.Size = new System.Drawing.Size(592, 394);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -554,15 +559,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(766, 392);
+            this.ClientSize = new System.Drawing.Size(767, 392);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.txtRol);
-            this.Controls.Add(this.checkBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(766, 392);
-            this.MinimumSize = new System.Drawing.Size(766, 392);
+            this.MaximumSize = new System.Drawing.Size(767, 392);
+            this.MinimumSize = new System.Drawing.Size(767, 392);
             this.Name = "FrmInicioSesion";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -598,7 +602,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.Label label1;
@@ -634,5 +637,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label11;
     }
 }

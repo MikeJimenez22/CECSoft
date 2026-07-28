@@ -92,7 +92,39 @@ namespace CapaDatos
             }
         }
 
-      
+
+        public void EjecutarBajaAutomaticaInasistencia(
+        int idUsuario,
+        string nombrePC)
+        {
+            CD_Conexion objetoConexion = new CD_Conexion();
+
+            using (SqlConnection conexion =
+                objetoConexion.AbrirConexion())
+            {
+                using (SqlCommand comando =
+                    new SqlCommand(
+                        "SP_BajaAutomaticaInasistencia",
+                        conexion))
+                {
+                    comando.CommandType =
+                        CommandType.StoredProcedure;
+
+                    comando.Parameters.Add(
+                        "@Id_usuario",
+                        SqlDbType.Int).Value = idUsuario;
+
+                    comando.Parameters.Add(
+                        "@NombrePC",
+                        SqlDbType.VarChar,
+                        50).Value = nombrePC;
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+        }
+
+
 
 
     }

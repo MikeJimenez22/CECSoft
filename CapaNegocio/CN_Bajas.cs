@@ -37,7 +37,16 @@ namespace CapaNegocio
         }
 
 
+        public void EjecutarBajaAutomaticaInasistencia(
+        int idUsuario,
+        string nombrePC)
+        {
+            CD_Bajas objetoCD = new CD_Bajas();
 
+            objetoCD.EjecutarBajaAutomaticaInasistencia(
+                idUsuario,
+                nombrePC);
+        }
 
 
 

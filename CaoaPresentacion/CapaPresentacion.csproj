@@ -1192,6 +1192,9 @@
     <None Include="Resources\esquema-del-boton-de-flecha-cuadrada-de-inicio-de-sesion.png" />
     <None Include="Resources\boton-x.png" />
     <None Include="Resources\x1.png" />
+    <None Include="Resources\ojo-abierto.png" />
+    <None Include="Resources\ojoCerrado.png" />
+    <None Include="Resources\actualizar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
