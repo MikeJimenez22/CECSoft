@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
+using Utils;
+using System.Drawing;
 
 
 namespace CaoaPresentacion
@@ -13,20 +15,14 @@ namespace CaoaPresentacion
     {
 
         CD_Conexion conexion = new CD_Conexion();
-        CN_Matriculas objetoCN = new CN_Matriculas();
-        CN_NotaModulos objetoCN2 = new CN_NotaModulos();
-        CN_ProgramacionPagos objetoCN3 = new CN_ProgramacionPagos();
-        CN_Detalle_Programacion objetoCN4 = new CN_Detalle_Programacion();
-        CN_Factura_Matricula objetoCN5 = new CN_Factura_Matricula();
         string VariableCarnet;
         string NuevaModificacionCarnet;
         bool Continuar = false;
         string TipoMatricula;
-        string IdEstadoMatricula;
-        string MES_EN_LETRAS;
 
 
-        DataTable tablaTotal = new DataTable();
+
+
 
         /*Obetnemos el Valor de la Moneda*/
         string ValorMoneda;
@@ -37,7 +33,6 @@ namespace CaoaPresentacion
         string Fecha = Convert.ToString(DateTime.Now.ToShortDateString());
         double ProporcionalCancelar;
 
-        int Cancelado;
         int numero;
 
         public Frm_Nueva_Matricula()
@@ -47,11 +42,11 @@ namespace CaoaPresentacion
             this.comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbTipoMatricula.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // this.comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            //    this.txtempleado.DropDownStyle = ComboBoxStyle.DropDownList;
+
             this.Cargar_ComboEjecutivo();
             this.Cargar_ComboDocente();
             this.Cargar_ComboMoneda();
+            DataGridViewConfigurator.Configure(dataEstudiantes);
         }
 
         private void Frm_Nueva_Matricula_Load(object sender, EventArgs e)
@@ -63,11 +58,14 @@ namespace CaoaPresentacion
                 this.MostrarPagosAbonados();
                 this.label8.Visible = false;
                 this.cmbTipoMatricula.Text = "NUEVO INGRESO";
-
-
                 this.comboBox1.Text = "Recepcion";
+                this.AgregarColumnaConIcono();
+                this.checkBox1.Checked = false;
+                this.dpFechaEstudiante.Text = DateTime.Now.ToShortDateString();
+               
+
                 this.FormClosed += new FormClosedEventHandler(cerrarform);
-                this.Limpiar();
+                //this.Limpiar();
             }
             catch (Exception ex)
             {
@@ -75,6 +73,48 @@ namespace CaoaPresentacion
 
             }
             
+        }
+
+
+      
+
+
+        private void MostrarEstudiante()
+        {
+            CN_Estudiantes objetoCN = new CN_Estudiantes();
+            this.dataEstudiantes.DataSource = objetoCN.MostrarEstudiantes(this.txtbusqueda.Text, this.dpFechaEstudiante.Value);
+
+        }
+
+        private void MostrarEstudianteEspecifico()
+        {
+            CN_Estudiantes objetoCN = new CN_Estudiantes();
+            this.dataEstudiantes.DataSource = objetoCN.MostrarEstudiantesEspecifico(this.txtbusqueda.Text);
+
+        }
+
+        private void AgregarColumnaConIcono()
+        {
+            try
+            {
+                // Movimientos
+                DataGridViewButtonColumn btnColumna = new DataGridViewButtonColumn();
+                btnColumna.HeaderText = "Seleccionar";
+                btnColumna.Name = "Seleccionar";
+                btnColumna.UseColumnTextForButtonValue = false;
+                btnColumna.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                btnColumna.Width = 70; // 👈 ancho fijo
+                dataEstudiantes.Columns.Add(btnColumna);
+
+
+                // Evento para dibujar iconos
+                dataEstudiantes.CellPainting += dataEstudiantes_CellPainting;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void MostrarPagosAbonados()
@@ -126,9 +166,8 @@ namespace CaoaPresentacion
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            Frm_VistaEstudiantes frm = new Frm_VistaEstudiantes();
-            frm.Show();
+            this.MostrarEstudiante();
+            this.tabControl1.SelectedTab = tabEstudiante;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -252,31 +291,33 @@ namespace CaoaPresentacion
                     GenerarCarnetEstudiante();
                     CacheValoresCodigos.NuevoCambioCarnet = NuevaModificacionCarnet;
                     objetoEstudiante.ModificarCarnet(this.txtidestudiante.Text, NuevaModificacionCarnet);
+                    CN_Matriculas ObjetoCN = new CN_Matriculas();
 
-                    objetoCN.Insertar(VariableCarnet, this.dateTimePicker1.Text, this.txtidestudiante.Text,
-                        this.comboBox1.Text, this.txtempleado.Text, CacheDatos.Id_Grupo, CacheUsuario.IdUsuario,
-                        this.dateTimePicker2.Text, "3", this.txtObservaciones.Text, HoraRegistro,
+                   int IdMatricula = ObjetoCN.InsertarMatricula(VariableCarnet, this.dateTimePicker1.Value,Convert.ToInt32(this.txtidestudiante.Text),
+                        this.comboBox1.Text, this.txtempleado.Text,Convert.ToInt32(CacheDatos.Id_Grupo),Convert.ToInt32(CacheUsuario.IdUsuario),3,
+                        this.txtObservaciones.Text,
                         this.cmbTipoMatricula.Text, "Confirmado");
 
+                   
                     MessageBox.Show("Matrícula guardada correctamente.",
                         "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.RealizarProcesoMatricula();
+                    this.RealizarProcesoMatricula(IdMatricula);
                 }
                 else
                 {
                     // Nuevo estudiante
                     this.GenerarCarnet();
-
-                    objetoCN.Insertar(VariableCarnet, this.dateTimePicker1.Text, this.txtidestudiante.Text,
-                        this.comboBox1.Text, this.txtempleado.Text, CacheDatos.Id_Grupo, CacheUsuario.IdUsuario,
-                        this.dateTimePicker2.Text, "3", this.txtObservaciones.Text, HoraRegistro,
+                    CN_Matriculas ObjetoCN = new CN_Matriculas();
+                    int IdMatricula = ObjetoCN.InsertarMatricula(VariableCarnet, this.dateTimePicker1.Value, Convert.ToInt32(this.txtidestudiante.Text),
+                        this.comboBox1.Text, this.txtempleado.Text, Convert.ToInt32(CacheDatos.Id_Grupo), Convert.ToInt32(CacheUsuario.IdUsuario), 3,
+                        this.txtObservaciones.Text,
                         this.cmbTipoMatricula.Text, "Pendiente");
 
                     MessageBox.Show("Matrícula guardada correctamente.",
                         "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.RealizarProcesoMatricula();
+                    this.RealizarProcesoMatricula(IdMatricula);
                 }
 
                
@@ -293,12 +334,13 @@ namespace CaoaPresentacion
 
         private void GenerarProgramaciondePago()
         {
+            CN_ProgramacionPagos objetoCN = new CN_ProgramacionPagos();
             this.GenerarNumProgramacion();
             int Dia = DateTime.Now.Day;
             double TotalMonto = Convert.ToDouble(this.txtduracion.Text) * Convert.ToDouble(this.txtMensualidad.Text) * Convert.ToDouble(this.ValorMoneda);
 
             this.IdMoneda = this.txtidmoneda.Text;
-            objetoCN3.Insertar(VariableProgramacion, VariableCarnet, "11", Dia.ToString(), TotalMonto.ToString(), this.IdMoneda, "17", "0", "10", TotalMonto.ToString());
+            objetoCN.Insertar(VariableProgramacion, VariableCarnet, "11", Dia.ToString(), TotalMonto.ToString(), this.IdMoneda, "17", "0", "10", TotalMonto.ToString());
 
         }
 
@@ -315,10 +357,11 @@ namespace CaoaPresentacion
         {
             try
             {
+                CN_Factura_Matricula objetoCN = new CN_Factura_Matricula();
                 this.generarcodigo();
                 DateTime fecha1 = DateTime.ParseExact(DateTime.Now.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 CacheDatos.CodigoMatricula_VentanaFactura = numero.ToString();
-                objetoCN5.Insertar(fecha1, VariableCarnet, numero.ToString());
+                objetoCN.Insertar(fecha1, VariableCarnet, numero.ToString());
             }
             catch (Exception)
             {
@@ -380,9 +423,9 @@ namespace CaoaPresentacion
             {
                 ProporcionalCancelar = MontoEnCordobas - (PropSem * 3);
             }
-
+            CN_Detalle_Programacion objetoCN = new CN_Detalle_Programacion();
             // Insertar el pago proporcional
-            objetoCN4.Insertar(
+            objetoCN.Insertar(
                 VariableProgramacion,
                 Convert.ToDateTime(this.dateTimePicker1.Text).ToShortDateString(),
                 "PROPORCIONAL, " + ObtenerNombreMes(MesActual).ToUpper() + " " + AñoActual,
@@ -412,9 +455,9 @@ namespace CaoaPresentacion
                     MesSiguiente = 1; // Volver a enero
                     Año++; // Aumentar el año
                 }
-
+             
                 // Insertar los detalles de mensualidad
-                objetoCN4.Insertar(
+                objetoCN.Insertar(
                     VariableProgramacion,
                     $"{Año}-{MesSiguiente.ToString("D2")}-{Dia_Limite}",
                     $"MENSUALIDAD, {this.ObtenerNombreMes(MesSiguiente).ToUpper()} {Año}",
@@ -632,7 +675,7 @@ namespace CaoaPresentacion
 
                 CN_Aranceles objetoArancel = new CN_Aranceles();
                 DataTable tabla = new DataTable();
-                tabla = objetoArancel.MostrarInformacionArancel("8");
+                tabla = objetoArancel.MostrarInformacionArancel(8);
                 if (tabla.Rows.Count != 0)
                 {
                     CacheDatos.IdArancel = tabla.Rows[0][0].ToString();
@@ -669,7 +712,7 @@ namespace CaoaPresentacion
 
                 CN_Aranceles objetoArancel = new CN_Aranceles();
                 DataTable tabla = new DataTable();
-                tabla = objetoArancel.MostrarInformacionArancel("20");
+                tabla = objetoArancel.MostrarInformacionArancel(20);
                 if (tabla.Rows.Count != 0)
                 {
                     CacheDatos.IdArancel = tabla.Rows[0][0].ToString();
@@ -843,7 +886,7 @@ namespace CaoaPresentacion
             conexion.CerrarConexion();
         }
 
-        private void RealizarProcesoMatricula()
+        private void RealizarProcesoMatricula(int IdMatricula)
         {
             try
             {
@@ -854,7 +897,7 @@ namespace CaoaPresentacion
                 {
                     // Nuevo ingreso según tipo
                     estado = ObtenerEstadoMatricula(origen);
-                    ProcesarMatricula(origen, estado, true);
+                    ProcesarMatricula(origen, estado, true,IdMatricula);
                 }
                 else
                 {
@@ -867,7 +910,7 @@ namespace CaoaPresentacion
                     estado = ObtenerEstadoMatricula(origen);
 
                     // Cancelado == 0 -> proceso normal, Cancelado != 0 -> proceso con cancelación
-                    ProcesarMatricula(origen, estado, cancelado == 0);
+                    ProcesarMatricula(origen, estado, cancelado == 0,IdMatricula);
                 }
             }
             catch (Exception)
@@ -894,7 +937,7 @@ namespace CaoaPresentacion
             return id;
         }
 
-        private void ProcesarMatricula(string origen, string estado, bool guardarEnCache)
+        private void ProcesarMatricula(string origen, string estado, bool guardarEnCache,int IdMatricula)
         {
             // Generar programaciones y factura
             this.GenerarProgramaciondePago();
@@ -907,6 +950,7 @@ namespace CaoaPresentacion
                 CacheDatos.IdEstadoMatriculaActivacion = estado;
             }
 
+            CacheDatos.Id_Matricula = IdMatricula.ToString();
             //Obtenemos la Ultima Matricula
             CN_Matriculas objetoCN = new CN_Matriculas();
             DataTable tabla = new DataTable();
@@ -965,6 +1009,120 @@ namespace CaoaPresentacion
 
         private void txtidmoneda_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void dataEstudiantes_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    Color fondo = Color.White;
+                    Bitmap icon = null;
+
+                    if (e.ColumnIndex == dataEstudiantes.Columns["Seleccionar"].Index)
+                    {
+                        fondo = Color.DodgerBlue; // Azul hielo
+                        icon = Properties.Resources.edit_button;
+                    }
+                    
+
+                    if (icon != null)
+                    {
+                        // Pintar fondo personalizado
+                        using (SolidBrush brush = new SolidBrush(fondo))
+                        {
+                            e.Graphics.FillRectangle(brush, e.CellBounds);
+                        }
+
+                        // Dibujar bordes normales de la celda
+                        e.Paint(e.CellBounds, DataGridViewPaintParts.Border);
+
+                        // Tamaño del icono
+                        int iconWidth = 16;
+                        int iconHeight = 16;
+
+                        // Centrar icono
+                        int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
+                        int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
+
+                        e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
+
+                        e.Handled = true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Error de Sistema",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+
+                if (this.dataEstudiantes.Columns[e.ColumnIndex].Name == "Seleccionar")
+                {
+
+                   this.txtidestudiante.Text = this.dataEstudiantes.CurrentRow.Cells["Id_estudiante"].Value.ToString();
+                    MessageBox.Show("Estudiante Seleccionado Correctamente");
+
+                    this.tabControl1.SelectedTab = tabNuevaMatricula;
+
+                }
+              
+                
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1.Checked == false)
+            {
+               
+                this.MostrarEstudiante();
+            }
+            else if (this.checkBox1.Checked == true)
+            {
+              
+                this.dpFechaEstudiante.Enabled = false;
+                this.MostrarEstudianteEspecifico();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.txtbusqueda.Text == string.Empty)
+            {
+                MessageBox.Show("Por Favor Ingresa el Nombre a Buscar", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (this.checkBox1.Checked == false)
+                {
+
+                    this.MostrarEstudiante();
+                }
+                else if (this.checkBox1.Checked == true)
+                {
+
+                    this.dpFechaEstudiante.Enabled = false;
+                    this.MostrarEstudianteEspecifico();
+                }
+            }
 
         }
     }

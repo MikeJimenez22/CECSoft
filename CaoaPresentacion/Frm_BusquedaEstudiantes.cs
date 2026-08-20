@@ -15,10 +15,11 @@ using System.Windows.Forms;
 using Utils;
 using ZXing;
 using ZXing.Common;
-using System.Windows.Forms.DataVisualization.Charting;
+
 using QRCoder;
 using System.IO;
 using System.Linq;
+using ClosedXML.Excel;
 
 
 namespace CaoaPresentacion
@@ -28,7 +29,7 @@ namespace CaoaPresentacion
         string Estado;
         CN_VistaUniverso objetoCN = new CN_VistaUniverso();
         string FechaActual = DateTime.Now.ToShortDateString();
-        CN_Reingreso objetoCN1 = new CN_Reingreso();
+        //CN_Reingreso objetoCN1 = new CN_Reingreso();
 
         CD_Conexion conexion = new CD_Conexion();
         DataTable tabla = new DataTable();
@@ -128,9 +129,9 @@ namespace CaoaPresentacion
                 OcultarColumnas();
                 ContarFilas();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK);
+                MessageBox.Show("Error de Sistema" + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK);
             }
         }
 
@@ -1274,10 +1275,19 @@ namespace CaoaPresentacion
                         }
                         else if (Estado == "Inactivo")
                         {
+                            CN_Reingreso ObjetoCN = new CN_Reingreso();
+                            CN_AsistenciaEstudiante ObjAsistencia = new CN_AsistenciaEstudiante();
+
                             //Aca guardamos el Reingreso en la Tabla de Reingreso
                             string nombrePC = Environment.MachineName;
-                            objetoCN1.Insertar(FechaActual, IdMatricula, CacheUsuario.IdUsuario, nombrePC);
-                            objetoCN1.ActivarEstudiante(IdMatricula);
+                            int IdUsuario = Convert.ToInt32(CacheUsuario.IdUsuario); 
+
+                            ObjetoCN.InsertarReingreso(FechaActual, IdMatricula, IdUsuario.ToString(), nombrePC);
+                            ObjetoCN.ActivarEstudiante(IdMatricula);
+                            ObjAsistencia.InsertarAsistenciaEstudiante(Convert.ToInt32(IdMatricula),"REINGRESO","",IdUsuario);
+
+
+
                             MessageBox.Show("Reingreso Correctamente", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.radioButton1.Checked = true;
                             this.MostrarUniverso();
@@ -1613,9 +1623,9 @@ namespace CaoaPresentacion
                     MostrarMatriculas();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema" + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2455,6 +2465,89 @@ namespace CaoaPresentacion
             {
                 imagenCarnetImprimir.Dispose();
                 imagenCarnetImprimir = null;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportarExcel(dataEstudiantes);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ExportarExcel(DataGridView data)
+        {
+            if (data.Rows.Count == 0)
+            {
+                MessageBox.Show(
+                    "No hay información para exportar.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            SaveFileDialog guardar = new SaveFileDialog();
+
+            guardar.Filter = "Archivo de Excel (*.xlsx)|*.xlsx";
+            guardar.FileName = "Reporte_Universo.xlsx";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                DataTable tabla = new DataTable();
+
+                // Columnas visibles
+                foreach (DataGridViewColumn columna in data.Columns)
+                {
+                    if (columna.Visible)
+                    {
+                        tabla.Columns.Add(columna.HeaderText);
+                    }
+                }
+
+                // Filas
+                foreach (DataGridViewRow fila in data.Rows)
+                {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    DataRow nuevaFila = tabla.NewRow();
+
+                    int indice = 0;
+
+                    foreach (DataGridViewColumn columna in data.Columns)
+                    {
+                        if (columna.Visible)
+                        {
+                            nuevaFila[indice] =
+                                fila.Cells[columna.Index].Value ?? "";
+
+                            indice++;
+                        }
+                    }
+
+                    tabla.Rows.Add(nuevaFila);
+                }
+
+                using (XLWorkbook libro = new XLWorkbook())
+                {
+                    libro.Worksheets.Add(tabla, "universo");
+
+                    libro.SaveAs(guardar.FileName);
+                }
+
+                MessageBox.Show(
+                    "El reporte se exportó correctamente.",
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
         }
     }

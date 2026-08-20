@@ -40,10 +40,10 @@ namespace CapaNegocio
         }
 
        
-        public DataTable MostrarEstudiantes(string textobuscar, string Fecha)
+        public DataTable MostrarEstudiantes(string textobuscar, DateTime Fecha)
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarEstudiante(textobuscar, Convert.ToDateTime(Fecha));
+            tabla = objetoCD.MostrarEstudiante(textobuscar,Fecha);
             return tabla;
         }
 
@@ -62,8 +62,6 @@ namespace CapaNegocio
         }
 
       
-
-
 
         public void InsertarEstudiante(string IdPersona, string CodigoCarnet, string FechaIngreso, string FechaFinalizacion, string IdPadreTutor, string IdSucursal, string IdEstado)
         {

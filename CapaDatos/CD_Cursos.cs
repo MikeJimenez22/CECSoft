@@ -14,39 +14,49 @@ namespace CapaDatos
         SqlCommand comando = new SqlCommand();
 
         //Metodo Mostrar Persona
-        public DataTable Mostrar()
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select a.Id_curso,a.Nombre_curso,a.Duracion as [Duracion Meses],b.Estado,b.Id_estado,a.TipoCurso from Tbl_Cursos a join Tbl_Estados b on a.id_estado = b.Id_estado";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
+    
 
-        //Metodo Insertar Persona
-        public void Insertar(string NombreCurso, int Duracion, int IdEstado, string TipoCurso)
+    
+     
+
+        public void Insertar(string NombreCurso,int Duracion,string TipoCurso,string Acreditacion,string Modalidad)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insert into Tbl_Cursos values('" + NombreCurso + "','" + Duracion + "','" + IdEstado + "','" + TipoCurso + "')";
+            comando.CommandText = "SP_InsertarCurso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NombreCurso", NombreCurso);
+            comando.Parameters.AddWithValue("@Duracion", Duracion);
+            comando.Parameters.AddWithValue("@TipoCurso", TipoCurso);
+            comando.Parameters.AddWithValue("@Acreditacion", Acreditacion);
+            comando.Parameters.AddWithValue("@Modalidad", Modalidad);
+
+
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
 
         }
 
-        public void Editar(int IdCurso, string NombreCurso, int Duracion, int IdEstado, string TipoCurso)
+       
+
+        public void Editar(string NombreCurso, int Duracion, string TipoCurso, string Acreditacion,string Modalidad,int IdCurso)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Update  Tbl_Cursos set Nombre_curso='" + NombreCurso + "',Duracion='" + Duracion + "',id_estado='" + IdEstado + "',TipoCurso = '" + TipoCurso + "' where Id_curso ='" + IdCurso + "'";
+            comando.CommandText = "SP_EditarCurso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NombreCurso", NombreCurso);
+            comando.Parameters.AddWithValue("@Duracion", Duracion);
+            comando.Parameters.AddWithValue("@TipoCurso", TipoCurso);
+            comando.Parameters.AddWithValue("@Acreditacion", Acreditacion);
+            comando.Parameters.AddWithValue("@Modalidad", Modalidad);
+            comando.Parameters.AddWithValue("@IdCurso", IdCurso);
+
+
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
 
         }
 
-        public void Eliminar(int CodigoCargo)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = " Delete Tbl_Cursos where Id_curso = '" + CodigoCargo + "'";
-            comando.ExecuteNonQuery();
-        }
+    
 
 
         public DataTable MostrarCursosPorEstado(int IdEstado)
@@ -82,25 +92,6 @@ namespace CapaDatos
             comando.Parameters.Clear();
 
         }
-
-
-        public DataTable VerificarCurso(string NombreCurso)
-        {
-            using (var connection = conexion.AbrirConexion())
-            {
-                using (var command = new SqlCommand("SPVerificarCurso", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@Curso", NombreCurso);
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        var table = new DataTable();
-                        table.Load(reader);
-                        return table;
-                    }
-                }
-            }
-        }
+        
     }
 }

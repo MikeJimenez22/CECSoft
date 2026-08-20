@@ -11,14 +11,12 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public void InsertarAsistencia(int IdMatricula, DateTime Fecha, DateTime Hora, string Estado, string Comentarios, int IdUsuario)
+        public void InsertarAsistencia(int IdMatricula, string Estado, string Comentarios, int IdUsuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarAsistenciaEstudiantil";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@IdMatricula", IdMatricula);
-            comando.Parameters.AddWithValue("@Fecha", Fecha);
-            comando.Parameters.AddWithValue("@Hora", Hora);
             comando.Parameters.AddWithValue("@Estado", Estado);
             comando.Parameters.AddWithValue("@Comentarios", Comentarios);
             comando.Parameters.AddWithValue("@Id_usuario", IdUsuario);
@@ -129,37 +127,7 @@ namespace CapaDatos
             return tabla;
         }
 
-
-
-    
-
-
-
-        public DataTable MostrarAusentesRegular()
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "exec DarBajaPorAusenciaRegular";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-
-        public DataTable MostrarAusentesEncuentro()
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "exec VerAusentesPorEncuentro";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-       
-
-       
-
+        
         public DataTable MostrarGruposActivosPorTurno(string Turno)
         {
             using (var connection = conexion.AbrirConexion())

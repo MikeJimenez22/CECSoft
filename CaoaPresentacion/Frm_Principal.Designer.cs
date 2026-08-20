@@ -54,13 +54,13 @@
             this.tiposDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registroEnLibrosAcademicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matriculasParaINATECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloCuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carteraYCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionesDeCobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteUniversoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCajaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inasistenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matriculasNoAsignadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloFinanzasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arqueoDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -309,22 +309,22 @@
             // realizarPagosToolStripMenuItem
             // 
             this.realizarPagosToolStripMenuItem.Name = "realizarPagosToolStripMenuItem";
-            this.realizarPagosToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.realizarPagosToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
             this.realizarPagosToolStripMenuItem.Text = "(F1) Realizar Pagos";
             this.realizarPagosToolStripMenuItem.Click += new System.EventHandler(this.realizarPagosToolStripMenuItem_Click);
             // 
             // consultaDeFacturasToolStripMenuItem
             // 
             this.consultaDeFacturasToolStripMenuItem.Name = "consultaDeFacturasToolStripMenuItem";
-            this.consultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.consultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
             this.consultaDeFacturasToolStripMenuItem.Text = "Consulta de Facturas";
             this.consultaDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeFacturasToolStripMenuItem_Click);
             // 
             // historialPagosEstudianteToolStripMenuItem
             // 
             this.historialPagosEstudianteToolStripMenuItem.Name = "historialPagosEstudianteToolStripMenuItem";
-            this.historialPagosEstudianteToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.historialPagosEstudianteToolStripMenuItem.Text = "(F3) Historial Pagos Estudiante";
+            this.historialPagosEstudianteToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.historialPagosEstudianteToolStripMenuItem.Text = "(F3) Historial de Facturas del Estudiante";
             this.historialPagosEstudianteToolStripMenuItem.Click += new System.EventHandler(this.historialPagosEstudianteToolStripMenuItem_Click);
             // 
             // moduloAcademicoToolStripMenuItem
@@ -383,7 +383,8 @@
             this.registroDeNotasActasToolStripMenuItem,
             this.tiposDeDocumentosToolStripMenuItem,
             this.librosToolStripMenuItem1,
-            this.registroEnLibrosAcademicosToolStripMenuItem});
+            this.registroEnLibrosAcademicosToolStripMenuItem,
+            this.matriculasParaINATECToolStripMenuItem});
             this.registroAcademicoToolStripMenuItem.Name = "registroAcademicoToolStripMenuItem";
             this.registroAcademicoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registroAcademicoToolStripMenuItem.Text = "Registro Academico";
@@ -423,6 +424,13 @@
             this.registroEnLibrosAcademicosToolStripMenuItem.Text = "Registro en Libros Academicos";
             this.registroEnLibrosAcademicosToolStripMenuItem.Click += new System.EventHandler(this.registroEnLibrosAcademicosToolStripMenuItem_Click);
             // 
+            // matriculasParaINATECToolStripMenuItem
+            // 
+            this.matriculasParaINATECToolStripMenuItem.Name = "matriculasParaINATECToolStripMenuItem";
+            this.matriculasParaINATECToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.matriculasParaINATECToolStripMenuItem.Text = "Matriculas para INATEC";
+            this.matriculasParaINATECToolStripMenuItem.Click += new System.EventHandler(this.matriculasParaINATECToolStripMenuItem_Click);
+            // 
             // moduloCuentasPorCobrarToolStripMenuItem
             // 
             this.moduloCuentasPorCobrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -452,7 +460,6 @@
             this.moduloReportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteUniversoToolStripMenuItem,
             this.reporteCajaDiariaToolStripMenuItem,
-            this.inasistenciasToolStripMenuItem,
             this.matriculasNoAsignadosToolStripMenuItem});
             this.moduloReportesToolStripMenuItem.Image = global::CaoaPresentacion.Properties.Resources.report;
             this.moduloReportesToolStripMenuItem.Name = "moduloReportesToolStripMenuItem";
@@ -473,13 +480,6 @@
             this.reporteCajaDiariaToolStripMenuItem.Text = "(ESC) Reporte Caja Diaria";
             this.reporteCajaDiariaToolStripMenuItem.Click += new System.EventHandler(this.reporteCajaDiariaToolStripMenuItem_Click);
             // 
-            // inasistenciasToolStripMenuItem
-            // 
-            this.inasistenciasToolStripMenuItem.Name = "inasistenciasToolStripMenuItem";
-            this.inasistenciasToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.inasistenciasToolStripMenuItem.Text = "Inasistencias";
-            this.inasistenciasToolStripMenuItem.Click += new System.EventHandler(this.inasistenciasToolStripMenuItem_Click);
-            // 
             // matriculasNoAsignadosToolStripMenuItem
             // 
             this.matriculasNoAsignadosToolStripMenuItem.Name = "matriculasNoAsignadosToolStripMenuItem";
@@ -499,8 +499,8 @@
             // arqueoDeCajaToolStripMenuItem
             // 
             this.arqueoDeCajaToolStripMenuItem.Name = "arqueoDeCajaToolStripMenuItem";
-            this.arqueoDeCajaToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.arqueoDeCajaToolStripMenuItem.Text = "Arqueo de Caja";
+            this.arqueoDeCajaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.arqueoDeCajaToolStripMenuItem.Text = "Consulta de Facturacion";
             this.arqueoDeCajaToolStripMenuItem.Click += new System.EventHandler(this.arqueoDeCajaToolStripMenuItem_Click);
             // 
             // moduloConfiguracionToolStripMenuItem
@@ -2055,7 +2055,6 @@
         private System.Windows.Forms.ToolStripMenuItem rolesDeUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialPagosEstudianteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteCajaDiariaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inasistenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matriculasNoAsignadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.Panel panel14;
@@ -2160,6 +2159,7 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeNotasActasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroEnLibrosAcademicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem egresadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matriculasParaINATECToolStripMenuItem;
     }
 }
 

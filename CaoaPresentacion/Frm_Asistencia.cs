@@ -477,8 +477,8 @@ namespace CaoaPresentacion
             try
             {
                 // Obtener valores generales
-                string fechaActual = dateFechaActual.Text;
-                string horaActual = DateTime.Now.ToShortTimeString();
+                
+               
                 string idUsuario = CacheUsuario.IdUsuario;
 
                 // Instancia de lógica de negocio
@@ -504,7 +504,7 @@ namespace CaoaPresentacion
                         comentarios = string.IsNullOrWhiteSpace(comentarios) ? "-" : comentarios;
 
                         asistenciaEstudianteService.InsertarAsistenciaEstudiante(
-                            idMatricula, fechaActual, horaActual, estado, comentarios, idUsuario
+                           Convert.ToInt32(idMatricula), estado, comentarios,Convert.ToInt32(idUsuario)
                         );
                     }
                     else if (estado == "EGRESADO" || estado == "BAJA")
@@ -538,11 +538,10 @@ namespace CaoaPresentacion
             string idMatricula = row.Cells["Id_Matricula"].Value?.ToString();
             string motivoBaja = row.Cells["Comentarios"].Value?.ToString()?.Trim();
             string estado = row.Cells["Estado"].Value?.ToString();
-            string fechaActual = DateTime.Now.ToShortDateString();
-            string horaActual = DateTime.Now.ToShortTimeString();
+         
 
             string nombrePC = Environment.MachineName;
-            string usuario = CacheUsuario.IdUsuario;
+            int Idusuario = Convert.ToInt32(CacheUsuario.IdUsuario);
 
             CN_Bajas objetoCN = new CN_Bajas();
             CN_AsistenciaEstudiante asistenciaEstudianteService = new CN_AsistenciaEstudiante();
@@ -556,15 +555,15 @@ namespace CaoaPresentacion
                     // Si no se escribió nada, usamos "Baja" como comentario por defecto
                     if (string.IsNullOrWhiteSpace(motivoBaja))
                         motivoBaja = "Baja";
-                    asistenciaEstudianteService.InsertarAsistenciaEstudiante(idMatricula,fechaActual,horaActual,estado,motivoBaja,CacheUsuario.IdUsuario);
-                    objetoCN.Insertar("BAJA", motivoBaja, idMatricula, usuario, nombrePC);
+                    asistenciaEstudianteService.InsertarAsistenciaEstudiante(Convert.ToInt32(idMatricula),estado,motivoBaja,Idusuario);
+                    objetoCN.Insertar("BAJA", motivoBaja, idMatricula, Idusuario.ToString(), nombrePC);
                     objetoCN.DarBaja(idMatricula);
                     break;
 
                 case "EGRESADO":
                     motivoBaja = "Egresado";
-                    asistenciaEstudianteService.InsertarAsistenciaEstudiante(idMatricula, fechaActual, horaActual, estado, motivoBaja, CacheUsuario.IdUsuario);
-                    objetoCN.Insertar("EGRESADO","", idMatricula, usuario, nombrePC);
+                    asistenciaEstudianteService.InsertarAsistenciaEstudiante(Convert.ToInt32(idMatricula), estado, motivoBaja,Idusuario);
+                    objetoCN.Insertar("EGRESADO", "", idMatricula, Idusuario.ToString(), nombrePC);
                     objetoCN.DarBaja(idMatricula);
                     break;
             }
@@ -584,61 +583,8 @@ namespace CaoaPresentacion
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.DarDeBaja();
-               
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
-        private void DarDeBaja()
-        {
-            string nombrePC = Environment.MachineName;
-            string fechaActual = DateTime.Now.ToShortDateString();
-            string usuario = CacheUsuario.IdUsuario;
-
-            CN_Bajas gestorBajas = new CN_Bajas();
-            CN_AsistenciaEstudiante gestorAsistencia = new CN_AsistenciaEstudiante();
-
-            // Procesar ausentes por regular
-            ProcesarAusentes(dataAusentesRegular, gestorAsistencia.MostrarAusentesPorRegular(), gestorBajas, fechaActual, usuario, nombrePC);
-
-            // Procesar ausentes por encuentro
-            ProcesarAusentes(dataAusentesPorEncuentro, gestorAsistencia.MostrarAusentesPorEncuentro(), gestorBajas, fechaActual, usuario, nombrePC);
-            MessageBox.Show("Asistencia Actualizada", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void ProcesarAusentes(DataGridView dataGrid, DataTable fuenteDatos, CN_Bajas gestorBajas, string fecha, string usuario, string pc)
-        {
-            dataGrid.DataSource = fuenteDatos;
-
-            foreach (DataGridViewRow row in dataGrid.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    string idMatricula = row.Cells["Id_Matricula"].Value?.ToString();
-
-                    if (!string.IsNullOrEmpty(idMatricula))
-                    {
-                        gestorBajas.Insertar("BAJA", "INASISTENCIA", idMatricula, usuario, pc);
-                        gestorBajas.DarBaja(idMatricula);
-                    }
-                }
-            }
-
-       }
-
-
-
-
-
-        // Aquí puedes agregar más lógica según tus necesidades.
     }
 }
 

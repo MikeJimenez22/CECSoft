@@ -8,28 +8,49 @@ namespace CapaNegocio
     {
         private CD_Factura objetoCD = new CD_Factura();
 
-        public void Insertar(string NumFactura, string FormaPago, string subtotal, string Iva, string Total, string Idmoneda, string IdEstado,string IdUsuario, string NombreEquipo, string fechaFactura, string NombreCompleto, string Carnet, string Nidentificacion)
+        public void Insertar(
+     string NumFactura,
+     string FormaPago,
+     string subtotal,
+     string Iva,
+     string Total,
+     string Idmoneda,
+     string IdEstado,
+     string IdUsuario,
+     string NombreEquipo,
+     string fechaFactura,
+     string NombreCompleto,
+     string Carnet,
+     string Nidentificacion,
+     int? IdMatricula)
         {
-            objetoCD.Insertar(NumFactura, FormaPago, Convert.ToDouble(subtotal), Convert.ToDouble(Iva), Convert.ToDouble(Total), Convert.ToInt32(Idmoneda), Convert.ToInt32(IdEstado), Convert.ToInt32(IdUsuario), NombreEquipo,Convert.ToDateTime(fechaFactura), NombreCompleto, Carnet, Nidentificacion);
-        }
-        
-        public void ModificarDatos_Factura(string NombreCompleto, string Carnet, string NIdentificacion, string Num_Factura)
-        {
-            objetoCD.ModificarDatos_Factura(NombreCompleto, Carnet, NIdentificacion, Num_Factura);
+            objetoCD.Insertar(
+                NumFactura,
+                FormaPago,
+                Convert.ToDouble(subtotal),
+                Convert.ToDouble(Iva),
+                Convert.ToDouble(Total),
+                Convert.ToInt32(Idmoneda),
+                Convert.ToInt32(IdEstado),
+                Convert.ToInt32(IdUsuario),
+                NombreEquipo,
+                Convert.ToDateTime(fechaFactura),
+                NombreCompleto,
+                Carnet,
+                Nidentificacion,
+                IdMatricula
+            );
         }
 
-        public DataTable MostrarFacturasCompletadasestudiante(string Carnet)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarfACTURAScompletadasEstudiante(Carnet);
-            return tabla;
-        }
 
-        public DataTable MostrarFacturaDetalle(string NumFactura)
+        public DataTable MostrarFacturasEstudiante(
+     string CarnetEstudiantil,
+     int? IdMatricula)
         {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarfACTURASDetalle(NumFactura);
-            return tabla;
+            return objetoCD.MostrarFacturasEstudiante(
+                CarnetEstudiantil,
+                IdMatricula
+            );
         }
 
 
@@ -37,14 +58,6 @@ namespace CapaNegocio
         //                                  GENERAR NUMERO DE FACTURA Y CONSECUTIVO CON RESPECTO A LA CAJA                                               //
       
 
-        public DataTable MostrarPorFechasFacturas(DateTime FechaInicial, DateTime fechafinal, string IdCaja)
-        {
-            CD_Factura objetoCD = new CD_Factura();
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.BuscarPorFechasFacturas(FechaInicial.ToString("yyyy-MM-dd"), fechafinal.ToString("yyyy-MM-dd"), Convert.ToInt32(IdCaja));
-            return tabla;
-
-        }
 
 
 
@@ -84,6 +97,18 @@ namespace CapaNegocio
             DataTable tabla = new DataTable();
             tabla = objetoCD.MostrarPagosEstudiante(CodMatricula);
             return tabla;
+        }
+
+        public DataSet ObtenerFacturasPorFechaYCaja(
+      string FechaDesde,
+      string FechaHasta,
+      string IdCaja)
+        {
+            return objetoCD.ObtenerFacturasPorFechaYCaja(
+                Convert.ToDateTime(FechaDesde),
+                Convert.ToDateTime(FechaHasta),
+                Convert.ToInt32(IdCaja)
+            );
         }
 
 

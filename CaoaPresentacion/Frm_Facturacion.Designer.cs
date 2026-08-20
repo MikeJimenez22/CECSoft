@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Facturacion));
             this.TabBusquedaEstudiante = new System.Windows.Forms.TabPage();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -43,17 +45,14 @@
             this.label18 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.TabFacturacion = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtIdMatricula = new System.Windows.Forms.TextBox();
+            this.txtCodMatricula = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbtipobusqueda = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.txtBusquedaEstudiante = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TablaDetalleFactura = new System.Windows.Forms.DataGridView();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -81,30 +80,21 @@
             this.TxtEncordobas = new System.Windows.Forms.TextBox();
             this.btnContinuarProceso = new System.Windows.Forms.Button();
             this.cmbAranceles = new System.Windows.Forms.ComboBox();
-            this.txtCedulaRuc = new System.Windows.Forms.TextBox();
-            this.Habilitar = new System.Windows.Forms.CheckBox();
-            this.txtNombreFactura = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtcodigocarnet = new System.Windows.Forms.TextBox();
             this.txtestudiante = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFactTemporal = new System.Windows.Forms.TextBox();
-            this.txtIdMoneda = new System.Windows.Forms.TextBox();
-            this.txtValorMoneda = new System.Windows.Forms.TextBox();
-            this.txtcarnetEstudiante = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtCodigoFactura = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMensualidades = new System.Windows.Forms.TabPage();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.txtHorarioEstudiante = new System.Windows.Forms.TextBox();
             this.label104 = new System.Windows.Forms.Label();
             this.txtTurnoEstudiante = new System.Windows.Forms.TextBox();
             this.label103 = new System.Windows.Forms.Label();
             this.txtNombreCursoEstudiante = new System.Windows.Forms.TextBox();
+            this.button17 = new System.Windows.Forms.Button();
             this.label102 = new System.Windows.Forms.Label();
             this.txtCodMatEstudiante = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
@@ -118,8 +108,6 @@
             this.label51 = new System.Windows.Forms.Label();
             this.txtNombreEstudiante = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtMensualidadFactura = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.txtIDDETALLEPROGRAMACION = new System.Windows.Forms.TextBox();
@@ -152,6 +140,8 @@
             this.anularMoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarMontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarMensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitarArregloDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaMensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.TabAnularMora = new System.Windows.Forms.TabPage();
@@ -169,7 +159,6 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.dataMensualidadesEstudiante = new System.Windows.Forms.DataGridView();
             this.dataAbonos = new System.Windows.Forms.DataGridView();
-            this.button17 = new System.Windows.Forms.Button();
             this.TabAbonos = new System.Windows.Forms.TabPage();
             this.button18 = new System.Windows.Forms.Button();
             this.txtIdDetalleProgramacionAbono = new System.Windows.Forms.TextBox();
@@ -223,24 +212,20 @@
             this.label71 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.TabPago = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label90 = new System.Windows.Forms.Label();
-            this.txtSubtotalPago = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtCambioPago = new System.Windows.Forms.TextBox();
             this.label95 = new System.Windows.Forms.Label();
-            this.txtDescuentoPago = new System.Windows.Forms.TextBox();
-            this.txtPagoCon = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
             this.txttotalPago = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
+            this.txtPagoCon = new System.Windows.Forms.TextBox();
+            this.txtSubtotalPago = new System.Windows.Forms.TextBox();
+            this.txtDescuentoPago = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
             this.txtIvaPago = new System.Windows.Forms.TextBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label81 = new System.Windows.Forms.Label();
-            this.dataDetalles = new System.Windows.Forms.DataGridView();
+            this.label92 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
@@ -266,8 +251,9 @@
             this.label83 = new System.Windows.Forms.Label();
             this.txtReferenciaPago = new System.Windows.Forms.TextBox();
             this.btnVerificarReferencia = new System.Windows.Forms.Button();
-            this.dataMensualidadesPago = new System.Windows.Forms.DataGridView();
-            this.dataAbonosPago = new System.Windows.Forms.DataGridView();
+            this.button14 = new System.Windows.Forms.Button();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dataDetalles = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtCarnetPago = new System.Windows.Forms.TextBox();
             this.label76 = new System.Windows.Forms.Label();
@@ -275,7 +261,6 @@
             this.label77 = new System.Windows.Forms.Label();
             this.txtHorarioPago = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
-            this.txtCedulaPago = new System.Windows.Forms.TextBox();
             this.txtDiasPago = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
@@ -284,10 +269,6 @@
             this.label75 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.txtCajeroPago = new System.Windows.Forms.TextBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.txtFacturaTemporal = new System.Windows.Forms.TextBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.TabNuevaMensualidad = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -340,7 +321,6 @@
             this.cmbDescuentos = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtIdDetalleFct = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TabBusquedaEstudiante.SuspendLayout();
@@ -374,17 +354,14 @@
             this.groupCompletarLibreria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.TabPago.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDetalles)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMensualidadesPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAbonosPago)).BeginInit();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDetalles)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.TabNuevaMensualidad.SuspendLayout();
@@ -401,6 +378,9 @@
             // 
             // TabBusquedaEstudiante
             // 
+            this.TabBusquedaEstudiante.BackColor = System.Drawing.Color.AliceBlue;
+            this.TabBusquedaEstudiante.Controls.Add(this.lbltotal);
+            this.TabBusquedaEstudiante.Controls.Add(this.label10);
             this.TabBusquedaEstudiante.Controls.Add(this.button11);
             this.TabBusquedaEstudiante.Controls.Add(this.pictureBox7);
             this.TabBusquedaEstudiante.Controls.Add(this.label37);
@@ -413,10 +393,29 @@
             this.TabBusquedaEstudiante.Location = new System.Drawing.Point(4, 22);
             this.TabBusquedaEstudiante.Name = "TabBusquedaEstudiante";
             this.TabBusquedaEstudiante.Padding = new System.Windows.Forms.Padding(3);
-            this.TabBusquedaEstudiante.Size = new System.Drawing.Size(1210, 672);
+            this.TabBusquedaEstudiante.Size = new System.Drawing.Size(1212, 635);
             this.TabBusquedaEstudiante.TabIndex = 5;
             this.TabBusquedaEstudiante.Text = "TabBusqueda Estudiante";
-            this.TabBusquedaEstudiante.UseVisualStyleBackColor = true;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(1099, 128);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(50, 18);
+            this.lbltotal.TabIndex = 59;
+            this.lbltotal.Text = "label8";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(852, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(229, 18);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Total de Registros  Encontrados\r\n";
             // 
             // button11
             // 
@@ -440,7 +439,7 @@
             this.pictureBox7.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox7.Location = new System.Drawing.Point(3, 3);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1204, 50);
+            this.pictureBox7.Size = new System.Drawing.Size(1206, 50);
             this.pictureBox7.TabIndex = 56;
             this.pictureBox7.TabStop = false;
             // 
@@ -510,9 +509,10 @@
             this.cmbBusquedas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBusquedas.FormattingEnabled = true;
             this.cmbBusquedas.Items.AddRange(new object[] {
-            "Apellidos",
-            "Nombres",
-            "Carnet"});
+            "APELLIDOS",
+            "NOMBRES",
+            "CARNET",
+            "MATRICULA"});
             this.cmbBusquedas.Location = new System.Drawing.Point(359, 77);
             this.cmbBusquedas.Name = "cmbBusquedas";
             this.cmbBusquedas.Size = new System.Drawing.Size(190, 26);
@@ -548,37 +548,18 @@
             // 
             // TabFacturacion
             // 
-            this.TabFacturacion.Controls.Add(this.button7);
+            this.TabFacturacion.BackColor = System.Drawing.Color.AliceBlue;
             this.TabFacturacion.Controls.Add(this.pictureBox10);
             this.TabFacturacion.Controls.Add(this.groupBox1);
-            this.TabFacturacion.Controls.Add(this.txtFactTemporal);
-            this.TabFacturacion.Controls.Add(this.txtIdMoneda);
-            this.TabFacturacion.Controls.Add(this.txtValorMoneda);
-            this.TabFacturacion.Controls.Add(this.txtcarnetEstudiante);
             this.TabFacturacion.Controls.Add(this.checkBox1);
             this.TabFacturacion.Controls.Add(this.txtCodigoFactura);
             this.TabFacturacion.Controls.Add(this.label7);
             this.TabFacturacion.Location = new System.Drawing.Point(4, 22);
             this.TabFacturacion.Name = "TabFacturacion";
             this.TabFacturacion.Padding = new System.Windows.Forms.Padding(3);
-            this.TabFacturacion.Size = new System.Drawing.Size(1210, 672);
+            this.TabFacturacion.Size = new System.Drawing.Size(1212, 635);
             this.TabFacturacion.TabIndex = 0;
             this.TabFacturacion.Text = "TabFacturacion";
-            this.TabFacturacion.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button7.Location = new System.Drawing.Point(20, 12);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(141, 37);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Nuevo Pago";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox10
             // 
@@ -586,34 +567,59 @@
             this.pictureBox10.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox10.Location = new System.Drawing.Point(3, 3);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(1204, 55);
+            this.pictureBox10.Size = new System.Drawing.Size(1206, 10);
             this.pictureBox10.TabIndex = 56;
             this.pictureBox10.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button21);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtIdMatricula);
+            this.groupBox1.Controls.Add(this.txtCodMatricula);
             this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cmbtipobusqueda);
             this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.txtBusquedaEstudiante);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txtCedulaRuc);
-            this.groupBox1.Controls.Add(this.Habilitar);
-            this.groupBox1.Controls.Add(this.txtNombreFactura);
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtcodigocarnet);
             this.groupBox1.Controls.Add(this.txtestudiante);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(6, 64);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.Location = new System.Drawing.Point(7, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1163, 608);
+            this.groupBox1.Size = new System.Drawing.Size(1194, 530);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Factura";
+            // 
+            // txtIdMatricula
+            // 
+            this.txtIdMatricula.Enabled = false;
+            this.txtIdMatricula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdMatricula.Location = new System.Drawing.Point(476, 84);
+            this.txtIdMatricula.Name = "txtIdMatricula";
+            this.txtIdMatricula.Size = new System.Drawing.Size(44, 26);
+            this.txtIdMatricula.TabIndex = 59;
+            this.txtIdMatricula.Visible = false;
+            // 
+            // txtCodMatricula
+            // 
+            this.txtCodMatricula.Enabled = false;
+            this.txtCodMatricula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodMatricula.Location = new System.Drawing.Point(105, 84);
+            this.txtCodMatricula.Name = "txtCodMatricula";
+            this.txtCodMatricula.Size = new System.Drawing.Size(365, 26);
+            this.txtCodMatricula.TabIndex = 58;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(28, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 18);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Matricula";
             // 
             // button4
             // 
@@ -622,7 +628,7 @@
             this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button4.Image = global::CaoaPresentacion.Properties.Resources.discount;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(948, 14);
+            this.button4.Location = new System.Drawing.Point(988, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 48);
             this.button4.TabIndex = 56;
@@ -631,78 +637,33 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button21
-            // 
-            this.button21.Image = global::CaoaPresentacion.Properties.Resources._1814090_delete_garbage_trash_icon;
-            this.button21.Location = new System.Drawing.Point(486, 22);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(57, 35);
-            this.button21.TabIndex = 50;
-            this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(86, 192);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 36);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Cedula o\r\nRUC";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(86, 147);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 36);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Factura a \r\nNombre de";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(108, 96);
+            this.label6.Location = new System.Drawing.Point(43, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 46;
             this.label6.Text = "Carnet";
             // 
-            // cmbtipobusqueda
-            // 
-            this.cmbtipobusqueda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbtipobusqueda.FormattingEnabled = true;
-            this.cmbtipobusqueda.Items.AddRange(new object[] {
-            "CARNET",
-            "CEDULA"});
-            this.cmbtipobusqueda.Location = new System.Drawing.Point(17, 26);
-            this.cmbtipobusqueda.Name = "cmbtipobusqueda";
-            this.cmbtipobusqueda.Size = new System.Drawing.Size(161, 26);
-            this.cmbtipobusqueda.TabIndex = 39;
-            // 
             // button8
             // 
-            this.button8.Image = global::CaoaPresentacion.Properties.Resources._1622836_checkmark_done_explore_find_magnifier_icon;
-            this.button8.Location = new System.Drawing.Point(545, 22);
+            this.button8.BackColor = System.Drawing.Color.SteelBlue;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::CaoaPresentacion.Properties.Resources.lupa;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(474, 20);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 35);
+            this.button8.Size = new System.Drawing.Size(103, 35);
             this.button8.TabIndex = 38;
+            this.button8.Text = "Buscar";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // txtBusquedaEstudiante
-            // 
-            this.txtBusquedaEstudiante.Enabled = false;
-            this.txtBusquedaEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaEstudiante.Location = new System.Drawing.Point(180, 26);
-            this.txtBusquedaEstudiante.Name = "txtBusquedaEstudiante";
-            this.txtBusquedaEstudiante.Size = new System.Drawing.Size(299, 26);
-            this.txtBusquedaEstudiante.TabIndex = 37;
             // 
             // groupBox2
             // 
@@ -712,9 +673,9 @@
             this.groupBox2.Controls.Add(this.btnMensualidades);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.cmbAranceles);
-            this.groupBox2.Location = new System.Drawing.Point(6, 231);
+            this.groupBox2.Location = new System.Drawing.Point(6, 122);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1137, 363);
+            this.groupBox2.Size = new System.Drawing.Size(1182, 387);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
@@ -726,10 +687,10 @@
             this.TablaDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TablaDetalleFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TablaDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TablaDetalleFactura.Location = new System.Drawing.Point(12, 127);
+            this.TablaDetalleFactura.Location = new System.Drawing.Point(12, 145);
             this.TablaDetalleFactura.Name = "TablaDetalleFactura";
             this.TablaDetalleFactura.ReadOnly = true;
-            this.TablaDetalleFactura.Size = new System.Drawing.Size(1119, 146);
+            this.TablaDetalleFactura.Size = new System.Drawing.Size(1164, 146);
             this.TablaDetalleFactura.TabIndex = 55;
             this.TablaDetalleFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDetalleFactura_CellClick);
             this.TablaDetalleFactura.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.TablaDetalleFactura_CellPainting);
@@ -745,9 +706,9 @@
             this.panel17.Controls.Add(this.label3);
             this.panel17.Controls.Add(this.txtIva);
             this.panel17.Controls.Add(this.txtSubtotal);
-            this.panel17.Location = new System.Drawing.Point(12, 279);
+            this.panel17.Location = new System.Drawing.Point(12, 297);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1119, 66);
+            this.panel17.Size = new System.Drawing.Size(1164, 78);
             this.panel17.TabIndex = 54;
             // 
             // txtTotal
@@ -756,7 +717,7 @@
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Red;
-            this.txtTotal.Location = new System.Drawing.Point(1011, 34);
+            this.txtTotal.Location = new System.Drawing.Point(1059, 34);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(96, 26);
             this.txtTotal.TabIndex = 9;
@@ -765,7 +726,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(934, 37);
+            this.label4.Location = new System.Drawing.Point(982, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 53;
@@ -775,7 +736,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(948, 7);
+            this.label11.Location = new System.Drawing.Point(996, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 18);
             this.label11.TabIndex = 52;
@@ -785,7 +746,7 @@
             // 
             this.txtDescuento.Enabled = false;
             this.txtDescuento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(835, 32);
+            this.txtDescuento.Location = new System.Drawing.Point(883, 32);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(93, 26);
             this.txtDescuento.TabIndex = 34;
@@ -794,7 +755,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(738, 7);
+            this.label1.Location = new System.Drawing.Point(786, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 50;
@@ -804,7 +765,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(719, 36);
+            this.label3.Location = new System.Drawing.Point(767, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 18);
             this.label3.TabIndex = 51;
@@ -814,7 +775,7 @@
             // 
             this.txtIva.Enabled = false;
             this.txtIva.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIva.Location = new System.Drawing.Point(1012, 4);
+            this.txtIva.Location = new System.Drawing.Point(1060, 4);
             this.txtIva.Name = "txtIva";
             this.txtIva.Size = new System.Drawing.Size(95, 26);
             this.txtIva.TabIndex = 7;
@@ -824,7 +785,7 @@
             // 
             this.txtSubtotal.Enabled = false;
             this.txtSubtotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotal.Location = new System.Drawing.Point(835, 3);
+            this.txtSubtotal.Location = new System.Drawing.Point(883, 3);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(93, 26);
             this.txtSubtotal.TabIndex = 5;
@@ -838,9 +799,9 @@
             this.btnRegistroVenta.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnRegistroVenta.Image = global::CaoaPresentacion.Properties.Resources.book;
             this.btnRegistroVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistroVenta.Location = new System.Drawing.Point(11, 85);
+            this.btnRegistroVenta.Location = new System.Drawing.Point(15, 88);
             this.btnRegistroVenta.Name = "btnRegistroVenta";
-            this.btnRegistroVenta.Size = new System.Drawing.Size(230, 35);
+            this.btnRegistroVenta.Size = new System.Drawing.Size(200, 35);
             this.btnRegistroVenta.TabIndex = 17;
             this.btnRegistroVenta.Text = "Venta Libreria";
             this.btnRegistroVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -856,9 +817,9 @@
             this.btnMensualidades.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnMensualidades.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
             this.btnMensualidades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMensualidades.Location = new System.Drawing.Point(11, 46);
+            this.btnMensualidades.Location = new System.Drawing.Point(15, 49);
             this.btnMensualidades.Name = "btnMensualidades";
-            this.btnMensualidades.Size = new System.Drawing.Size(230, 35);
+            this.btnMensualidades.Size = new System.Drawing.Size(200, 35);
             this.btnMensualidades.TabIndex = 5;
             this.btnMensualidades.Text = "Buscar Mensualidad";
             this.btnMensualidades.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -879,9 +840,9 @@
             this.groupBox3.Controls.Add(this.txtMoneda);
             this.groupBox3.Controls.Add(this.TxtEncordobas);
             this.groupBox3.Controls.Add(this.btnContinuarProceso);
-            this.groupBox3.Location = new System.Drawing.Point(247, 5);
+            this.groupBox3.Location = new System.Drawing.Point(223, 13);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(884, 119);
+            this.groupBox3.Size = new System.Drawing.Size(953, 115);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
@@ -890,7 +851,7 @@
             this.txtIdeMoneda.Enabled = false;
             this.txtIdeMoneda.Location = new System.Drawing.Point(191, 81);
             this.txtIdeMoneda.Name = "txtIdeMoneda";
-            this.txtIdeMoneda.Size = new System.Drawing.Size(100, 20);
+            this.txtIdeMoneda.Size = new System.Drawing.Size(100, 22);
             this.txtIdeMoneda.TabIndex = 55;
             this.txtIdeMoneda.Visible = false;
             // 
@@ -899,7 +860,7 @@
             this.txtTasaCambio.Enabled = false;
             this.txtTasaCambio.Location = new System.Drawing.Point(297, 81);
             this.txtTasaCambio.Name = "txtTasaCambio";
-            this.txtTasaCambio.Size = new System.Drawing.Size(100, 20);
+            this.txtTasaCambio.Size = new System.Drawing.Size(100, 22);
             this.txtTasaCambio.TabIndex = 54;
             this.txtTasaCambio.Visible = false;
             // 
@@ -908,7 +869,7 @@
             this.txtIdArancel.Enabled = false;
             this.txtIdArancel.Location = new System.Drawing.Point(402, 81);
             this.txtIdArancel.Name = "txtIdArancel";
-            this.txtIdArancel.Size = new System.Drawing.Size(100, 20);
+            this.txtIdArancel.Size = new System.Drawing.Size(100, 22);
             this.txtIdArancel.TabIndex = 53;
             this.txtIdArancel.Visible = false;
             // 
@@ -944,16 +905,17 @@
             // 
             // btnAgregarArancel
             // 
-            this.btnAgregarArancel.BackColor = System.Drawing.Color.White;
+            this.btnAgregarArancel.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnAgregarArancel.FlatAppearance.BorderSize = 0;
+            this.btnAgregarArancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarArancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarArancel.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregarArancel.Image = global::CaoaPresentacion.Properties.Resources.plus;
             this.btnAgregarArancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarArancel.Location = new System.Drawing.Point(519, 12);
+            this.btnAgregarArancel.Location = new System.Drawing.Point(508, 8);
             this.btnAgregarArancel.Name = "btnAgregarArancel";
-            this.btnAgregarArancel.Size = new System.Drawing.Size(188, 48);
+            this.btnAgregarArancel.Size = new System.Drawing.Size(46, 48);
             this.btnAgregarArancel.TabIndex = 13;
-            this.btnAgregarArancel.Text = "Agregar Arancel";
             this.btnAgregarArancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarArancel.UseVisualStyleBackColor = false;
             this.btnAgregarArancel.Click += new System.EventHandler(this.button1_Click);
@@ -998,16 +960,17 @@
             // 
             // btnContinuarProceso
             // 
-            this.btnContinuarProceso.BackColor = System.Drawing.Color.White;
+            this.btnContinuarProceso.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnContinuarProceso.FlatAppearance.BorderSize = 0;
+            this.btnContinuarProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuarProceso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinuarProceso.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnContinuarProceso.Image = global::CaoaPresentacion.Properties.Resources.shopping;
             this.btnContinuarProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContinuarProceso.Location = new System.Drawing.Point(519, 61);
+            this.btnContinuarProceso.Location = new System.Drawing.Point(508, 57);
             this.btnContinuarProceso.Name = "btnContinuarProceso";
-            this.btnContinuarProceso.Size = new System.Drawing.Size(188, 48);
+            this.btnContinuarProceso.Size = new System.Drawing.Size(46, 48);
             this.btnContinuarProceso.TabIndex = 11;
-            this.btnContinuarProceso.Text = "Continuar";
             this.btnContinuarProceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnContinuarProceso.UseVisualStyleBackColor = false;
             this.btnContinuarProceso.Click += new System.EventHandler(this.button2_Click);
@@ -1018,58 +981,19 @@
             this.cmbAranceles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAranceles.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.cmbAranceles.FormattingEnabled = true;
-            this.cmbAranceles.Location = new System.Drawing.Point(12, 18);
+            this.cmbAranceles.Location = new System.Drawing.Point(16, 21);
             this.cmbAranceles.Name = "cmbAranceles";
-            this.cmbAranceles.Size = new System.Drawing.Size(229, 26);
+            this.cmbAranceles.Size = new System.Drawing.Size(199, 26);
             this.cmbAranceles.TabIndex = 1;
             this.cmbAranceles.SelectedIndexChanged += new System.EventHandler(this.cmbAranceles_SelectedIndexChanged);
-            // 
-            // txtCedulaRuc
-            // 
-            this.txtCedulaRuc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedulaRuc.Location = new System.Drawing.Point(181, 188);
-            this.txtCedulaRuc.Name = "txtCedulaRuc";
-            this.txtCedulaRuc.Size = new System.Drawing.Size(439, 26);
-            this.txtCedulaRuc.TabIndex = 27;
-            // 
-            // Habilitar
-            // 
-            this.Habilitar.AutoSize = true;
-            this.Habilitar.BackColor = System.Drawing.Color.White;
-            this.Habilitar.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.Habilitar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Habilitar.Location = new System.Drawing.Point(535, 129);
-            this.Habilitar.Name = "Habilitar";
-            this.Habilitar.Size = new System.Drawing.Size(85, 22);
-            this.Habilitar.TabIndex = 25;
-            this.Habilitar.Text = "Habilitar";
-            this.Habilitar.UseVisualStyleBackColor = false;
-            this.Habilitar.CheckedChanged += new System.EventHandler(this.Habilitar_CheckedChanged);
-            // 
-            // txtNombreFactura
-            // 
-            this.txtNombreFactura.BackColor = System.Drawing.Color.White;
-            this.txtNombreFactura.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFactura.Location = new System.Drawing.Point(181, 155);
-            this.txtNombreFactura.Name = "txtNombreFactura";
-            this.txtNombreFactura.Size = new System.Drawing.Size(439, 26);
-            this.txtNombreFactura.TabIndex = 24;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(29, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(593, 1);
-            this.panel1.TabIndex = 23;
             // 
             // txtcodigocarnet
             // 
             this.txtcodigocarnet.Enabled = false;
             this.txtcodigocarnet.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigocarnet.Location = new System.Drawing.Point(181, 91);
+            this.txtcodigocarnet.Location = new System.Drawing.Point(104, 53);
             this.txtcodigocarnet.Name = "txtcodigocarnet";
-            this.txtcodigocarnet.Size = new System.Drawing.Size(439, 26);
+            this.txtcodigocarnet.Size = new System.Drawing.Size(365, 26);
             this.txtcodigocarnet.TabIndex = 19;
             // 
             // txtestudiante
@@ -1077,58 +1001,20 @@
             this.txtestudiante.BackColor = System.Drawing.Color.White;
             this.txtestudiante.Enabled = false;
             this.txtestudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtestudiante.Location = new System.Drawing.Point(180, 61);
+            this.txtestudiante.Location = new System.Drawing.Point(105, 21);
             this.txtestudiante.Name = "txtestudiante";
-            this.txtestudiante.Size = new System.Drawing.Size(440, 26);
+            this.txtestudiante.Size = new System.Drawing.Size(364, 26);
             this.txtestudiante.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 64);
+            this.label2.Location = new System.Drawing.Point(17, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 16;
             this.label2.Text = "Estudiante";
-            // 
-            // txtFactTemporal
-            // 
-            this.txtFactTemporal.Enabled = false;
-            this.txtFactTemporal.Location = new System.Drawing.Point(400, 11);
-            this.txtFactTemporal.Name = "txtFactTemporal";
-            this.txtFactTemporal.Size = new System.Drawing.Size(75, 20);
-            this.txtFactTemporal.TabIndex = 13;
-            this.txtFactTemporal.Visible = false;
-            // 
-            // txtIdMoneda
-            // 
-            this.txtIdMoneda.Enabled = false;
-            this.txtIdMoneda.Location = new System.Drawing.Point(563, 12);
-            this.txtIdMoneda.Name = "txtIdMoneda";
-            this.txtIdMoneda.Size = new System.Drawing.Size(76, 20);
-            this.txtIdMoneda.TabIndex = 14;
-            this.txtIdMoneda.Visible = false;
-            this.txtIdMoneda.TextChanged += new System.EventHandler(this.txtIdMoneda_TextChanged);
-            // 
-            // txtValorMoneda
-            // 
-            this.txtValorMoneda.Enabled = false;
-            this.txtValorMoneda.Location = new System.Drawing.Point(480, 12);
-            this.txtValorMoneda.Name = "txtValorMoneda";
-            this.txtValorMoneda.Size = new System.Drawing.Size(77, 20);
-            this.txtValorMoneda.TabIndex = 15;
-            this.txtValorMoneda.Visible = false;
-            // 
-            // txtcarnetEstudiante
-            // 
-            this.txtcarnetEstudiante.Enabled = false;
-            this.txtcarnetEstudiante.Location = new System.Drawing.Point(295, 11);
-            this.txtcarnetEstudiante.Name = "txtcarnetEstudiante";
-            this.txtcarnetEstudiante.Size = new System.Drawing.Size(100, 20);
-            this.txtcarnetEstudiante.TabIndex = 31;
-            this.txtcarnetEstudiante.Visible = false;
-            this.txtcarnetEstudiante.TextChanged += new System.EventHandler(this.txtcarnetEstudiante_TextChanged);
             // 
             // checkBox1
             // 
@@ -1176,64 +1062,26 @@
             this.tabControl1.Controls.Add(this.TabNuevaMensualidad);
             this.tabControl1.Controls.Add(this.TabAnulacionMatricula);
             this.tabControl1.Controls.Add(this.TabDescuentoMatricula);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(2, 33);
+            this.tabControl1.Location = new System.Drawing.Point(3, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1218, 698);
+            this.tabControl1.Size = new System.Drawing.Size(1220, 661);
             this.tabControl1.TabIndex = 4;
             // 
             // TabMensualidades
             // 
-            this.TabMensualidades.Controls.Add(this.button24);
-            this.TabMensualidades.Controls.Add(this.button23);
+            this.TabMensualidades.BackColor = System.Drawing.Color.AliceBlue;
             this.TabMensualidades.Controls.Add(this.groupBox12);
-            this.TabMensualidades.Controls.Add(this.label54);
-            this.TabMensualidades.Controls.Add(this.txtMensualidadFactura);
             this.TabMensualidades.Controls.Add(this.groupBox4);
             this.TabMensualidades.Controls.Add(this.textBox11);
             this.TabMensualidades.Controls.Add(this.dataMensualidadesEstudiante);
             this.TabMensualidades.Controls.Add(this.dataAbonos);
-            this.TabMensualidades.Controls.Add(this.button17);
             this.TabMensualidades.Location = new System.Drawing.Point(4, 22);
             this.TabMensualidades.Name = "TabMensualidades";
             this.TabMensualidades.Padding = new System.Windows.Forms.Padding(3);
-            this.TabMensualidades.Size = new System.Drawing.Size(1210, 672);
+            this.TabMensualidades.Size = new System.Drawing.Size(1212, 635);
             this.TabMensualidades.TabIndex = 9;
             this.TabMensualidades.Text = "TabMensualidades";
-            this.TabMensualidades.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.BackColor = System.Drawing.Color.White;
-            this.button24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button24.Image = global::CaoaPresentacion.Properties.Resources._118805_accessories_text_editor_editor_accessories_text;
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(746, 6);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(161, 48);
-            this.button24.TabIndex = 63;
-            this.button24.Text = "Solicitar Arreglo\r\n de Pago";
-            this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // button23
-            // 
-            this.button23.BackColor = System.Drawing.Color.White;
-            this.button23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button23.Image = global::CaoaPresentacion.Properties.Resources._728898_page_folder_add_plus_file_icon;
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(912, 6);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(144, 48);
-            this.button23.TabIndex = 62;
-            this.button23.Text = "Nueva Mensualidad";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // groupBox12
             // 
@@ -1242,6 +1090,7 @@
             this.groupBox12.Controls.Add(this.txtTurnoEstudiante);
             this.groupBox12.Controls.Add(this.label103);
             this.groupBox12.Controls.Add(this.txtNombreCursoEstudiante);
+            this.groupBox12.Controls.Add(this.button17);
             this.groupBox12.Controls.Add(this.label102);
             this.groupBox12.Controls.Add(this.txtCodMatEstudiante);
             this.groupBox12.Controls.Add(this.label101);
@@ -1255,9 +1104,9 @@
             this.groupBox12.Controls.Add(this.label51);
             this.groupBox12.Controls.Add(this.txtNombreEstudiante);
             this.groupBox12.Controls.Add(this.label42);
-            this.groupBox12.Location = new System.Drawing.Point(12, 54);
+            this.groupBox12.Location = new System.Drawing.Point(12, 9);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(1166, 141);
+            this.groupBox12.Size = new System.Drawing.Size(1191, 141);
             this.groupBox12.TabIndex = 61;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Estudiante";
@@ -1267,7 +1116,7 @@
             this.txtHorarioEstudiante.BackColor = System.Drawing.Color.White;
             this.txtHorarioEstudiante.Enabled = false;
             this.txtHorarioEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHorarioEstudiante.Location = new System.Drawing.Point(904, 77);
+            this.txtHorarioEstudiante.Location = new System.Drawing.Point(897, 78);
             this.txtHorarioEstudiante.Name = "txtHorarioEstudiante";
             this.txtHorarioEstudiante.Size = new System.Drawing.Size(174, 26);
             this.txtHorarioEstudiante.TabIndex = 77;
@@ -1276,7 +1125,7 @@
             // 
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label104.Location = new System.Drawing.Point(835, 83);
+            this.label104.Location = new System.Drawing.Point(828, 84);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(60, 18);
             this.label104.TabIndex = 76;
@@ -1287,7 +1136,7 @@
             this.txtTurnoEstudiante.BackColor = System.Drawing.Color.White;
             this.txtTurnoEstudiante.Enabled = false;
             this.txtTurnoEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTurnoEstudiante.Location = new System.Drawing.Point(625, 77);
+            this.txtTurnoEstudiante.Location = new System.Drawing.Point(618, 78);
             this.txtTurnoEstudiante.Name = "txtTurnoEstudiante";
             this.txtTurnoEstudiante.Size = new System.Drawing.Size(174, 26);
             this.txtTurnoEstudiante.TabIndex = 75;
@@ -1296,7 +1145,7 @@
             // 
             this.label103.AutoSize = true;
             this.label103.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(569, 83);
+            this.label103.Location = new System.Drawing.Point(562, 84);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(46, 18);
             this.label103.TabIndex = 74;
@@ -1307,16 +1156,32 @@
             this.txtNombreCursoEstudiante.BackColor = System.Drawing.Color.White;
             this.txtNombreCursoEstudiante.Enabled = false;
             this.txtNombreCursoEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCursoEstudiante.Location = new System.Drawing.Point(625, 46);
+            this.txtNombreCursoEstudiante.Location = new System.Drawing.Point(618, 47);
             this.txtNombreCursoEstudiante.Name = "txtNombreCursoEstudiante";
             this.txtNombreCursoEstudiante.Size = new System.Drawing.Size(453, 26);
             this.txtNombreCursoEstudiante.TabIndex = 73;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.White;
+            this.button17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button17.Image = global::CaoaPresentacion.Properties.Resources._60181_back_go_icon;
+            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button17.Location = new System.Drawing.Point(1079, 15);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(106, 38);
+            this.button17.TabIndex = 59;
+            this.button17.Text = " Menu";
+            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click_1);
             // 
             // label102
             // 
             this.label102.AutoSize = true;
             this.label102.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.Location = new System.Drawing.Point(562, 50);
+            this.label102.Location = new System.Drawing.Point(555, 51);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(50, 18);
             this.label102.TabIndex = 72;
@@ -1327,7 +1192,7 @@
             this.txtCodMatEstudiante.BackColor = System.Drawing.Color.White;
             this.txtCodMatEstudiante.Enabled = false;
             this.txtCodMatEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodMatEstudiante.Location = new System.Drawing.Point(904, 15);
+            this.txtCodMatEstudiante.Location = new System.Drawing.Point(897, 16);
             this.txtCodMatEstudiante.Name = "txtCodMatEstudiante";
             this.txtCodMatEstudiante.Size = new System.Drawing.Size(174, 26);
             this.txtCodMatEstudiante.TabIndex = 71;
@@ -1336,7 +1201,7 @@
             // 
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.Location = new System.Drawing.Point(819, 17);
+            this.label101.Location = new System.Drawing.Point(812, 18);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(76, 18);
             this.label101.TabIndex = 70;
@@ -1347,7 +1212,7 @@
             this.txtNumProgramacionEstudiante.BackColor = System.Drawing.Color.White;
             this.txtNumProgramacionEstudiante.Enabled = false;
             this.txtNumProgramacionEstudiante.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumProgramacionEstudiante.Location = new System.Drawing.Point(625, 16);
+            this.txtNumProgramacionEstudiante.Location = new System.Drawing.Point(618, 17);
             this.txtNumProgramacionEstudiante.Name = "txtNumProgramacionEstudiante";
             this.txtNumProgramacionEstudiante.Size = new System.Drawing.Size(174, 26);
             this.txtNumProgramacionEstudiante.TabIndex = 69;
@@ -1356,7 +1221,7 @@
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label100.Location = new System.Drawing.Point(492, 21);
+            this.label100.Location = new System.Drawing.Point(485, 22);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(127, 18);
             this.label100.TabIndex = 68;
@@ -1442,34 +1307,14 @@
             this.label42.TabIndex = 60;
             this.label42.Text = "Nombres";
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(24, 9);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(61, 18);
-            this.label54.TabIndex = 51;
-            this.label54.Text = "Factura";
-            // 
-            // txtMensualidadFactura
-            // 
-            this.txtMensualidadFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtMensualidadFactura.Enabled = false;
-            this.txtMensualidadFactura.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMensualidadFactura.Location = new System.Drawing.Point(91, 6);
-            this.txtMensualidadFactura.Name = "txtMensualidadFactura";
-            this.txtMensualidadFactura.Size = new System.Drawing.Size(122, 26);
-            this.txtMensualidadFactura.TabIndex = 50;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.panel16);
             this.groupBox4.Controls.Add(this.menuStrip1);
             this.groupBox4.Controls.Add(this.panel2);
-            this.groupBox4.Location = new System.Drawing.Point(11, 339);
+            this.groupBox4.Location = new System.Drawing.Point(11, 306);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1172, 320);
+            this.groupBox4.Size = new System.Drawing.Size(1192, 314);
             this.groupBox4.TabIndex = 36;
             this.groupBox4.TabStop = false;
             // 
@@ -1701,7 +1546,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(19, 85);
+            this.label43.Location = new System.Drawing.Point(14, 85);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(97, 18);
             this.label43.TabIndex = 48;
@@ -1744,7 +1589,7 @@
             // txtConcepto
             // 
             this.txtConcepto.Enabled = false;
-            this.txtConcepto.Location = new System.Drawing.Point(110, 91);
+            this.txtConcepto.Location = new System.Drawing.Point(115, 85);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(397, 20);
             this.txtConcepto.TabIndex = 23;
@@ -1755,10 +1600,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.anularMoraToolStripMenuItem,
             this.modificarMontoToolStripMenuItem,
-            this.modificarMensualidadToolStripMenuItem});
+            this.modificarMensualidadToolStripMenuItem,
+            this.solicitarArregloDePagoToolStripMenuItem,
+            this.nuevaMensualidadToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 16);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1166, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1186, 24);
             this.menuStrip1.TabIndex = 61;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1789,11 +1636,27 @@
             this.modificarMensualidadToolStripMenuItem.Text = "Modificar Mensualidad";
             this.modificarMensualidadToolStripMenuItem.Click += new System.EventHandler(this.modificarMensualidadToolStripMenuItem_Click);
             // 
+            // solicitarArregloDePagoToolStripMenuItem
+            // 
+            this.solicitarArregloDePagoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.solicitarArregloDePagoToolStripMenuItem.Name = "solicitarArregloDePagoToolStripMenuItem";
+            this.solicitarArregloDePagoToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+            this.solicitarArregloDePagoToolStripMenuItem.Text = "Solicitar Arreglo de Pago";
+            this.solicitarArregloDePagoToolStripMenuItem.Click += new System.EventHandler(this.solicitarArregloDePagoToolStripMenuItem_Click);
+            // 
+            // nuevaMensualidadToolStripMenuItem
+            // 
+            this.nuevaMensualidadToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.nuevaMensualidadToolStripMenuItem.Name = "nuevaMensualidadToolStripMenuItem";
+            this.nuevaMensualidadToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.nuevaMensualidadToolStripMenuItem.Text = "Nueva Mensualidad";
+            this.nuevaMensualidadToolStripMenuItem.Click += new System.EventHandler(this.nuevaMensualidadToolStripMenuItem_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.tabControl2);
-            this.panel2.Location = new System.Drawing.Point(544, 40);
+            this.panel2.Location = new System.Drawing.Point(565, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(622, 260);
             this.panel2.TabIndex = 60;
@@ -1958,10 +1821,10 @@
             this.dataMensualidadesEstudiante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataMensualidadesEstudiante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataMensualidadesEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMensualidadesEstudiante.Location = new System.Drawing.Point(12, 198);
+            this.dataMensualidadesEstudiante.Location = new System.Drawing.Point(13, 151);
             this.dataMensualidadesEstudiante.Name = "dataMensualidadesEstudiante";
             this.dataMensualidadesEstudiante.ReadOnly = true;
-            this.dataMensualidadesEstudiante.Size = new System.Drawing.Size(1166, 146);
+            this.dataMensualidadesEstudiante.Size = new System.Drawing.Size(1190, 149);
             this.dataMensualidadesEstudiante.TabIndex = 32;
             this.dataMensualidadesEstudiante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMensualidadesEstudiante_CellClick);
             this.dataMensualidadesEstudiante.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataNotas_CellFormatting);
@@ -1979,24 +1842,9 @@
             this.dataAbonos.Size = new System.Drawing.Size(216, 207);
             this.dataAbonos.TabIndex = 35;
             // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.Color.White;
-            this.button17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button17.Image = global::CaoaPresentacion.Properties.Resources._60181_back_go_icon;
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(1059, 6);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(118, 48);
-            this.button17.TabIndex = 59;
-            this.button17.Text = " Menu";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click_1);
-            // 
             // TabAbonos
             // 
+            this.TabAbonos.BackColor = System.Drawing.Color.AliceBlue;
             this.TabAbonos.Controls.Add(this.button18);
             this.TabAbonos.Controls.Add(this.txtIdDetalleProgramacionAbono);
             this.TabAbonos.Controls.Add(this.txtNumProgramacionAbono);
@@ -2030,10 +1878,9 @@
             this.TabAbonos.Controls.Add(this.btnAgregarAbono);
             this.TabAbonos.Location = new System.Drawing.Point(4, 22);
             this.TabAbonos.Name = "TabAbonos";
-            this.TabAbonos.Size = new System.Drawing.Size(1210, 672);
+            this.TabAbonos.Size = new System.Drawing.Size(1212, 635);
             this.TabAbonos.TabIndex = 14;
             this.TabAbonos.Text = "TabAbonos";
-            this.TabAbonos.UseVisualStyleBackColor = true;
             // 
             // button18
             // 
@@ -2323,7 +2170,7 @@
             this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1210, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(1212, 47);
             this.pictureBox1.TabIndex = 113;
             this.pictureBox1.TabStop = false;
             // 
@@ -2343,6 +2190,7 @@
             // 
             // TabLibreria
             // 
+            this.TabLibreria.BackColor = System.Drawing.Color.AliceBlue;
             this.TabLibreria.Controls.Add(this.button20);
             this.TabLibreria.Controls.Add(this.button3);
             this.TabLibreria.Controls.Add(this.groupCompletarLibreria);
@@ -2361,10 +2209,9 @@
             this.TabLibreria.Location = new System.Drawing.Point(4, 22);
             this.TabLibreria.Name = "TabLibreria";
             this.TabLibreria.Padding = new System.Windows.Forms.Padding(3);
-            this.TabLibreria.Size = new System.Drawing.Size(1210, 672);
+            this.TabLibreria.Size = new System.Drawing.Size(1212, 635);
             this.TabLibreria.TabIndex = 12;
             this.TabLibreria.Text = "TabLibreria";
-            this.TabLibreria.UseVisualStyleBackColor = true;
             // 
             // button20
             // 
@@ -2559,238 +2406,191 @@
             this.pictureBox11.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox11.Location = new System.Drawing.Point(3, 3);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(1204, 50);
+            this.pictureBox11.Size = new System.Drawing.Size(1206, 50);
             this.pictureBox11.TabIndex = 57;
             this.pictureBox11.TabStop = false;
             // 
             // TabPago
             // 
-            this.TabPago.Controls.Add(this.button14);
-            this.TabPago.Controls.Add(this.panel15);
-            this.TabPago.Controls.Add(this.groupBox13);
+            this.TabPago.BackColor = System.Drawing.Color.AliceBlue;
+            this.TabPago.Controls.Add(this.groupBox7);
             this.TabPago.Controls.Add(this.panel4);
-            this.TabPago.Controls.Add(this.dataMensualidadesPago);
-            this.TabPago.Controls.Add(this.dataAbonosPago);
+            this.TabPago.Controls.Add(this.button14);
+            this.TabPago.Controls.Add(this.groupBox13);
             this.TabPago.Controls.Add(this.groupBox5);
             this.TabPago.Controls.Add(this.txtCaja);
             this.TabPago.Controls.Add(this.label75);
             this.TabPago.Controls.Add(this.label73);
             this.TabPago.Controls.Add(this.txtCajeroPago);
-            this.TabPago.Controls.Add(this.label74);
-            this.TabPago.Controls.Add(this.txtFacturaTemporal);
-            this.TabPago.Controls.Add(this.button22);
-            this.TabPago.Controls.Add(this.button6);
             this.TabPago.Controls.Add(this.pictureBox12);
             this.TabPago.Location = new System.Drawing.Point(4, 22);
             this.TabPago.Name = "TabPago";
             this.TabPago.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPago.Size = new System.Drawing.Size(1210, 672);
+            this.TabPago.Size = new System.Drawing.Size(1212, 635);
             this.TabPago.TabIndex = 13;
             this.TabPago.Text = "TabPago";
-            this.TabPago.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // groupBox7
             // 
-            this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button14.Image = global::CaoaPresentacion.Properties.Resources._473629_configure_options_preferences_repair_settings_icon;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(800, 51);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(181, 49);
-            this.button14.TabIndex = 107;
-            this.button14.Text = "Editar Factura";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // panel15
-            // 
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel15.Controls.Add(this.label90);
-            this.panel15.Controls.Add(this.txtSubtotalPago);
-            this.panel15.Controls.Add(this.label91);
-            this.panel15.Controls.Add(this.txtCambioPago);
-            this.panel15.Controls.Add(this.label95);
-            this.panel15.Controls.Add(this.txtDescuentoPago);
-            this.panel15.Controls.Add(this.txtPagoCon);
-            this.panel15.Controls.Add(this.txttotalPago);
-            this.panel15.Controls.Add(this.label93);
-            this.panel15.Controls.Add(this.label94);
-            this.panel15.Controls.Add(this.label92);
-            this.panel15.Controls.Add(this.txtIvaPago);
-            this.panel15.Location = new System.Drawing.Point(16, 519);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1153, 54);
-            this.panel15.TabIndex = 106;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(4, 12);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(93, 18);
-            this.label90.TabIndex = 90;
-            this.label90.Text = "SubTotal C$";
-            // 
-            // txtSubtotalPago
-            // 
-            this.txtSubtotalPago.Enabled = false;
-            this.txtSubtotalPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotalPago.Location = new System.Drawing.Point(98, 8);
-            this.txtSubtotalPago.Name = "txtSubtotalPago";
-            this.txtSubtotalPago.Size = new System.Drawing.Size(87, 26);
-            this.txtSubtotalPago.TabIndex = 89;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(187, 12);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(108, 18);
-            this.label91.TabIndex = 92;
-            this.label91.Text = "Descuento C$";
+            this.groupBox7.Controls.Add(this.txtCambioPago);
+            this.groupBox7.Controls.Add(this.label95);
+            this.groupBox7.Controls.Add(this.label91);
+            this.groupBox7.Controls.Add(this.label90);
+            this.groupBox7.Controls.Add(this.txttotalPago);
+            this.groupBox7.Controls.Add(this.label93);
+            this.groupBox7.Controls.Add(this.txtPagoCon);
+            this.groupBox7.Controls.Add(this.txtSubtotalPago);
+            this.groupBox7.Controls.Add(this.txtDescuentoPago);
+            this.groupBox7.Controls.Add(this.button6);
+            this.groupBox7.Controls.Add(this.label94);
+            this.groupBox7.Controls.Add(this.txtIvaPago);
+            this.groupBox7.Controls.Add(this.label92);
+            this.groupBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox7.Location = new System.Drawing.Point(667, 433);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(534, 164);
+            this.groupBox7.TabIndex = 108;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Resumen";
             // 
             // txtCambioPago
             // 
             this.txtCambioPago.Enabled = false;
             this.txtCambioPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCambioPago.Location = new System.Drawing.Point(1033, 9);
+            this.txtCambioPago.Location = new System.Drawing.Point(121, 113);
             this.txtCambioPago.Name = "txtCambioPago";
-            this.txtCambioPago.Size = new System.Drawing.Size(111, 26);
+            this.txtCambioPago.Size = new System.Drawing.Size(147, 26);
             this.txtCambioPago.TabIndex = 99;
             // 
             // label95
             // 
             this.label95.AutoSize = true;
             this.label95.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(924, 13);
+            this.label95.Location = new System.Drawing.Point(7, 119);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(112, 18);
             this.label95.TabIndex = 100;
             this.label95.Text = "Su Cambio C$";
             // 
-            // txtDescuentoPago
+            // label91
             // 
-            this.txtDescuentoPago.Enabled = false;
-            this.txtDescuentoPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuentoPago.Location = new System.Drawing.Point(295, 8);
-            this.txtDescuentoPago.Name = "txtDescuentoPago";
-            this.txtDescuentoPago.Size = new System.Drawing.Size(96, 26);
-            this.txtDescuentoPago.TabIndex = 91;
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(274, 25);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(108, 18);
+            this.label91.TabIndex = 92;
+            this.label91.Text = "Descuento C$";
             // 
-            // txtPagoCon
+            // label90
             // 
-            this.txtPagoCon.Enabled = false;
-            this.txtPagoCon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPagoCon.Location = new System.Drawing.Point(652, 9);
-            this.txtPagoCon.Name = "txtPagoCon";
-            this.txtPagoCon.Size = new System.Drawing.Size(93, 26);
-            this.txtPagoCon.TabIndex = 97;
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(17, 25);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(93, 18);
+            this.label90.TabIndex = 90;
+            this.label90.Text = "SubTotal C$";
             // 
             // txttotalPago
             // 
             this.txttotalPago.Enabled = false;
             this.txttotalPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalPago.Location = new System.Drawing.Point(817, 9);
+            this.txttotalPago.Location = new System.Drawing.Point(121, 83);
             this.txttotalPago.Name = "txttotalPago";
-            this.txttotalPago.Size = new System.Drawing.Size(102, 26);
+            this.txttotalPago.Size = new System.Drawing.Size(147, 26);
             this.txttotalPago.TabIndex = 95;
             // 
             // label93
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(751, 13);
+            this.label93.Location = new System.Drawing.Point(50, 87);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(65, 18);
             this.label93.TabIndex = 96;
             this.label93.Text = "Total C$";
             // 
+            // txtPagoCon
+            // 
+            this.txtPagoCon.Enabled = false;
+            this.txtPagoCon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPagoCon.Location = new System.Drawing.Point(121, 53);
+            this.txtPagoCon.Name = "txtPagoCon";
+            this.txtPagoCon.Size = new System.Drawing.Size(147, 26);
+            this.txtPagoCon.TabIndex = 97;
+            // 
+            // txtSubtotalPago
+            // 
+            this.txtSubtotalPago.Enabled = false;
+            this.txtSubtotalPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotalPago.Location = new System.Drawing.Point(121, 21);
+            this.txtSubtotalPago.Name = "txtSubtotalPago";
+            this.txtSubtotalPago.Size = new System.Drawing.Size(147, 26);
+            this.txtSubtotalPago.TabIndex = 89;
+            // 
+            // txtDescuentoPago
+            // 
+            this.txtDescuentoPago.Enabled = false;
+            this.txtDescuentoPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescuentoPago.Location = new System.Drawing.Point(382, 21);
+            this.txtDescuentoPago.Name = "txtDescuentoPago";
+            this.txtDescuentoPago.Size = new System.Drawing.Size(131, 26);
+            this.txtDescuentoPago.TabIndex = 91;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.SteelBlue;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(375, 97);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(138, 42);
+            this.button6.TabIndex = 102;
+            this.button6.Text = "Guardar";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click_2);
+            // 
             // label94
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(549, 12);
+            this.label94.Location = new System.Drawing.Point(9, 59);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(104, 18);
             this.label94.TabIndex = 98;
             this.label94.Text = "Pago con  C$";
             // 
+            // txtIvaPago
+            // 
+            this.txtIvaPago.Enabled = false;
+            this.txtIvaPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIvaPago.Location = new System.Drawing.Point(382, 54);
+            this.txtIvaPago.Name = "txtIvaPago";
+            this.txtIvaPago.Size = new System.Drawing.Size(131, 26);
+            this.txtIvaPago.TabIndex = 93;
+            // 
             // label92
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(395, 12);
+            this.label92.Location = new System.Drawing.Point(326, 58);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(56, 18);
             this.label92.TabIndex = 94;
             this.label92.Text = "IVA C$";
             // 
-            // txtIvaPago
-            // 
-            this.txtIvaPago.Enabled = false;
-            this.txtIvaPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIvaPago.Location = new System.Drawing.Point(451, 8);
-            this.txtIvaPago.Name = "txtIvaPago";
-            this.txtIvaPago.Size = new System.Drawing.Size(94, 26);
-            this.txtIvaPago.TabIndex = 93;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.panel10);
-            this.groupBox13.Controls.Add(this.dataDetalles);
-            this.groupBox13.Location = new System.Drawing.Point(15, 272);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(1154, 241);
-            this.groupBox13.TabIndex = 70;
-            this.groupBox13.TabStop = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel10.Controls.Add(this.label81);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(3, 16);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1148, 27);
-            this.panel10.TabIndex = 17;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.ForeColor = System.Drawing.Color.White;
-            this.label81.Location = new System.Drawing.Point(9, 4);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(158, 20);
-            this.label81.TabIndex = 5;
-            this.label81.Text = "Detalle de Factura";
-            // 
-            // dataDetalles
-            // 
-            this.dataDetalles.AllowUserToAddRows = false;
-            this.dataDetalles.AllowUserToDeleteRows = false;
-            this.dataDetalles.AllowUserToOrderColumns = true;
-            this.dataDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataDetalles.Location = new System.Drawing.Point(7, 49);
-            this.dataDetalles.Name = "dataDetalles";
-            this.dataDetalles.ReadOnly = true;
-            this.dataDetalles.Size = new System.Drawing.Size(1137, 183);
-            this.dataDetalles.TabIndex = 16;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.tabControl3);
-            this.panel4.Location = new System.Drawing.Point(517, 108);
+            this.panel4.Location = new System.Drawing.Point(8, 432);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(652, 160);
+            this.panel4.Size = new System.Drawing.Size(652, 165);
             this.panel4.TabIndex = 69;
             // 
             // panel9
@@ -2813,7 +2613,7 @@
             "TARJETA",
             "CHEQUE",
             "TRANSFERENCIA"});
-            this.cmbTipoPago.Location = new System.Drawing.Point(113, 6);
+            this.cmbTipoPago.Location = new System.Drawing.Point(141, 6);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(204, 26);
             this.cmbTipoPago.TabIndex = 72;
@@ -2823,7 +2623,7 @@
             // 
             this.label82.AutoSize = true;
             this.label82.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(16, 9);
+            this.label82.Location = new System.Drawing.Point(51, 9);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(84, 18);
             this.label82.TabIndex = 71;
@@ -2836,7 +2636,7 @@
             this.tabControl3.Location = new System.Drawing.Point(3, 16);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(643, 142);
+            this.tabControl3.Size = new System.Drawing.Size(642, 141);
             this.tabControl3.TabIndex = 74;
             // 
             // tabPage15
@@ -2853,7 +2653,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(635, 116);
+            this.tabPage15.Size = new System.Drawing.Size(634, 115);
             this.tabPage15.TabIndex = 0;
             this.tabPage15.Text = "Efectivo";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -2958,7 +2758,7 @@
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(635, 116);
+            this.tabPage16.Size = new System.Drawing.Size(634, 115);
             this.tabPage16.TabIndex = 1;
             this.tabPage16.Text = "Otro";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -3049,33 +2849,49 @@
             this.btnVerificarReferencia.UseVisualStyleBackColor = true;
             this.btnVerificarReferencia.Click += new System.EventHandler(this.button5_Click_2);
             // 
-            // dataMensualidadesPago
+            // button14
             // 
-            this.dataMensualidadesPago.AllowUserToAddRows = false;
-            this.dataMensualidadesPago.AllowUserToDeleteRows = false;
-            this.dataMensualidadesPago.AllowUserToOrderColumns = true;
-            this.dataMensualidadesPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataMensualidadesPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataMensualidadesPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMensualidadesPago.Location = new System.Drawing.Point(645, 118);
-            this.dataMensualidadesPago.Name = "dataMensualidadesPago";
-            this.dataMensualidadesPago.ReadOnly = true;
-            this.dataMensualidadesPago.Size = new System.Drawing.Size(82, 122);
-            this.dataMensualidadesPago.TabIndex = 68;
+            this.button14.BackColor = System.Drawing.Color.SteelBlue;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Image = global::CaoaPresentacion.Properties.Resources.edit_button;
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.Location = new System.Drawing.Point(1042, 48);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(160, 40);
+            this.button14.TabIndex = 107;
+            this.button14.Text = "Editar Factura";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // dataAbonosPago
+            // groupBox13
             // 
-            this.dataAbonosPago.AllowUserToAddRows = false;
-            this.dataAbonosPago.AllowUserToDeleteRows = false;
-            this.dataAbonosPago.AllowUserToOrderColumns = true;
-            this.dataAbonosPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataAbonosPago.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataAbonosPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataAbonosPago.Location = new System.Drawing.Point(543, 118);
-            this.dataAbonosPago.Name = "dataAbonosPago";
-            this.dataAbonosPago.ReadOnly = true;
-            this.dataAbonosPago.Size = new System.Drawing.Size(85, 122);
-            this.dataAbonosPago.TabIndex = 67;
+            this.groupBox13.Controls.Add(this.dataDetalles);
+            this.groupBox13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.ForeColor = System.Drawing.Color.SteelBlue;
+            this.groupBox13.Location = new System.Drawing.Point(7, 203);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(1195, 225);
+            this.groupBox13.TabIndex = 70;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Detalle Factura";
+            // 
+            // dataDetalles
+            // 
+            this.dataDetalles.AllowUserToAddRows = false;
+            this.dataDetalles.AllowUserToDeleteRows = false;
+            this.dataDetalles.AllowUserToOrderColumns = true;
+            this.dataDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataDetalles.Location = new System.Drawing.Point(7, 25);
+            this.dataDetalles.Name = "dataDetalles";
+            this.dataDetalles.ReadOnly = true;
+            this.dataDetalles.Size = new System.Drawing.Size(1174, 186);
+            this.dataDetalles.TabIndex = 16;
             // 
             // groupBox5
             // 
@@ -3085,120 +2901,116 @@
             this.groupBox5.Controls.Add(this.label77);
             this.groupBox5.Controls.Add(this.txtHorarioPago);
             this.groupBox5.Controls.Add(this.label78);
-            this.groupBox5.Controls.Add(this.txtCedulaPago);
             this.groupBox5.Controls.Add(this.txtDiasPago);
             this.groupBox5.Controls.Add(this.label79);
             this.groupBox5.Controls.Add(this.label80);
             this.groupBox5.Controls.Add(this.txtCursoPago);
-            this.groupBox5.Location = new System.Drawing.Point(15, 101);
+            this.groupBox5.Location = new System.Drawing.Point(11, 92);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(497, 165);
+            this.groupBox5.Size = new System.Drawing.Size(1192, 105);
             this.groupBox5.TabIndex = 66;
             this.groupBox5.TabStop = false;
             // 
             // txtCarnetPago
             // 
             this.txtCarnetPago.Enabled = false;
-            this.txtCarnetPago.Location = new System.Drawing.Point(136, 41);
+            this.txtCarnetPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarnetPago.Location = new System.Drawing.Point(760, 19);
             this.txtCarnetPago.Name = "txtCarnetPago";
-            this.txtCarnetPago.Size = new System.Drawing.Size(177, 20);
+            this.txtCarnetPago.Size = new System.Drawing.Size(282, 26);
             this.txtCarnetPago.TabIndex = 29;
             // 
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label76.Location = new System.Drawing.Point(14, 16);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(120, 16);
+            this.label76.Size = new System.Drawing.Size(82, 18);
             this.label76.TabIndex = 7;
-            this.label76.Text = "Nombre a Facturar";
+            this.label76.Text = "Estudiante";
             // 
             // txtNombredeFacturaPago
             // 
             this.txtNombredeFacturaPago.Enabled = false;
+            this.txtNombredeFacturaPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombredeFacturaPago.Location = new System.Drawing.Point(136, 14);
             this.txtNombredeFacturaPago.Name = "txtNombredeFacturaPago";
-            this.txtNombredeFacturaPago.Size = new System.Drawing.Size(348, 20);
+            this.txtNombredeFacturaPago.Size = new System.Drawing.Size(488, 26);
             this.txtNombredeFacturaPago.TabIndex = 8;
             // 
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(13, 40);
+            this.label77.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(637, 23);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(94, 16);
+            this.label77.Size = new System.Drawing.Size(111, 18);
             this.label77.TabIndex = 22;
             this.label77.Text = "Codigo Carnet";
             // 
             // txtHorarioPago
             // 
             this.txtHorarioPago.Enabled = false;
-            this.txtHorarioPago.Location = new System.Drawing.Point(355, 91);
+            this.txtHorarioPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorarioPago.Location = new System.Drawing.Point(913, 55);
             this.txtHorarioPago.Name = "txtHorarioPago";
-            this.txtHorarioPago.Size = new System.Drawing.Size(129, 20);
+            this.txtHorarioPago.Size = new System.Drawing.Size(129, 26);
             this.txtHorarioPago.TabIndex = 23;
             // 
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(294, 93);
+            this.label78.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.Location = new System.Drawing.Point(847, 60);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(53, 16);
+            this.label78.Size = new System.Drawing.Size(60, 18);
             this.label78.TabIndex = 28;
             this.label78.Text = "Horario";
-            // 
-            // txtCedulaPago
-            // 
-            this.txtCedulaPago.Enabled = false;
-            this.txtCedulaPago.Location = new System.Drawing.Point(318, 41);
-            this.txtCedulaPago.Name = "txtCedulaPago";
-            this.txtCedulaPago.Size = new System.Drawing.Size(166, 20);
-            this.txtCedulaPago.TabIndex = 23;
             // 
             // txtDiasPago
             // 
             this.txtDiasPago.Enabled = false;
-            this.txtDiasPago.Location = new System.Drawing.Point(136, 91);
+            this.txtDiasPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiasPago.Location = new System.Drawing.Point(681, 57);
             this.txtDiasPago.Name = "txtDiasPago";
-            this.txtDiasPago.Size = new System.Drawing.Size(154, 20);
+            this.txtDiasPago.Size = new System.Drawing.Size(154, 26);
             this.txtDiasPago.TabIndex = 23;
             // 
             // label79
             // 
             this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(26, 90);
+            this.label79.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(634, 60);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(36, 16);
+            this.label79.Size = new System.Drawing.Size(41, 18);
             this.label79.TabIndex = 27;
             this.label79.Text = "Dias";
             // 
             // label80
             // 
             this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(17, 62);
+            this.label80.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(66, 60);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(43, 16);
+            this.label80.Size = new System.Drawing.Size(50, 18);
             this.label80.TabIndex = 25;
             this.label80.Text = "Curso";
             // 
             // txtCursoPago
             // 
             this.txtCursoPago.Enabled = false;
-            this.txtCursoPago.Location = new System.Drawing.Point(136, 67);
+            this.txtCursoPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCursoPago.Location = new System.Drawing.Point(136, 55);
             this.txtCursoPago.Name = "txtCursoPago";
-            this.txtCursoPago.Size = new System.Drawing.Size(348, 20);
+            this.txtCursoPago.Size = new System.Drawing.Size(488, 26);
             this.txtCursoPago.TabIndex = 26;
             // 
             // txtCaja
             // 
             this.txtCaja.Enabled = false;
             this.txtCaja.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCaja.Location = new System.Drawing.Point(438, 46);
+            this.txtCaja.Location = new System.Drawing.Point(438, 51);
             this.txtCaja.Name = "txtCaja";
             this.txtCaja.Size = new System.Drawing.Size(117, 26);
             this.txtCaja.TabIndex = 65;
@@ -3207,7 +3019,7 @@
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(319, 47);
+            this.label75.Location = new System.Drawing.Point(379, 58);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(43, 19);
             this.label75.TabIndex = 64;
@@ -3217,7 +3029,7 @@
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(15, 49);
+            this.label73.Location = new System.Drawing.Point(15, 54);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(59, 19);
             this.label73.TabIndex = 63;
@@ -3227,59 +3039,10 @@
             // 
             this.txtCajeroPago.Enabled = false;
             this.txtCajeroPago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCajeroPago.Location = new System.Drawing.Point(15, 73);
+            this.txtCajeroPago.Location = new System.Drawing.Point(80, 51);
             this.txtCajeroPago.Name = "txtCajeroPago";
             this.txtCajeroPago.Size = new System.Drawing.Size(293, 26);
             this.txtCajeroPago.TabIndex = 62;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(320, 74);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(111, 18);
-            this.label74.TabIndex = 61;
-            this.label74.Text = "Fact. Temporal";
-            // 
-            // txtFacturaTemporal
-            // 
-            this.txtFacturaTemporal.Enabled = false;
-            this.txtFacturaTemporal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacturaTemporal.Location = new System.Drawing.Point(437, 74);
-            this.txtFacturaTemporal.Name = "txtFacturaTemporal";
-            this.txtFacturaTemporal.Size = new System.Drawing.Size(118, 26);
-            this.txtFacturaTemporal.TabIndex = 60;
-            // 
-            // button22
-            // 
-            this.button22.BackColor = System.Drawing.Color.White;
-            this.button22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button22.Image = global::CaoaPresentacion.Properties.Resources._134213_home_house_building_main_icon;
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(985, 51);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(181, 48);
-            this.button22.TabIndex = 105;
-            this.button22.Text = "Regresar al Menu";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::CaoaPresentacion.Properties.Resources._29252_true_icon;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1041, 579);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 42);
-            this.button6.TabIndex = 102;
-            this.button6.Text = "Guardar";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_2);
             // 
             // pictureBox12
             // 
@@ -3287,20 +3050,20 @@
             this.pictureBox12.Image = global::CaoaPresentacion.Properties.Resources._4882066;
             this.pictureBox12.Location = new System.Drawing.Point(3, 3);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(1204, 41);
+            this.pictureBox12.Size = new System.Drawing.Size(1206, 41);
             this.pictureBox12.TabIndex = 58;
             this.pictureBox12.TabStop = false;
             // 
             // TabNuevaMensualidad
             // 
+            this.TabNuevaMensualidad.BackColor = System.Drawing.Color.AliceBlue;
             this.TabNuevaMensualidad.Controls.Add(this.panel12);
             this.TabNuevaMensualidad.Location = new System.Drawing.Point(4, 22);
             this.TabNuevaMensualidad.Name = "TabNuevaMensualidad";
             this.TabNuevaMensualidad.Padding = new System.Windows.Forms.Padding(3);
-            this.TabNuevaMensualidad.Size = new System.Drawing.Size(1210, 672);
+            this.TabNuevaMensualidad.Size = new System.Drawing.Size(1212, 635);
             this.TabNuevaMensualidad.TabIndex = 15;
             this.TabNuevaMensualidad.Text = "NuevaMensualidad";
-            this.TabNuevaMensualidad.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
@@ -3581,13 +3344,14 @@
             this.TabAnulacionMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabAnulacionMatricula.Name = "TabAnulacionMatricula";
             this.TabAnulacionMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabAnulacionMatricula.Size = new System.Drawing.Size(1210, 672);
+            this.TabAnulacionMatricula.Size = new System.Drawing.Size(1212, 635);
             this.TabAnulacionMatricula.TabIndex = 16;
             this.TabAnulacionMatricula.Text = "TabAnulacionMatricula";
             this.TabAnulacionMatricula.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnSolicitudAnulacionMatricula);
             this.panel3.Controls.Add(this.label15);
@@ -3654,14 +3418,14 @@
             // 
             // TabDescuentoMatricula
             // 
+            this.TabDescuentoMatricula.BackColor = System.Drawing.Color.AliceBlue;
             this.TabDescuentoMatricula.Controls.Add(this.panel7);
             this.TabDescuentoMatricula.Location = new System.Drawing.Point(4, 22);
             this.TabDescuentoMatricula.Name = "TabDescuentoMatricula";
             this.TabDescuentoMatricula.Padding = new System.Windows.Forms.Padding(3);
-            this.TabDescuentoMatricula.Size = new System.Drawing.Size(1210, 672);
+            this.TabDescuentoMatricula.Size = new System.Drawing.Size(1212, 635);
             this.TabDescuentoMatricula.TabIndex = 17;
             this.TabDescuentoMatricula.Text = "TabDescuentoMatricula";
-            this.TabDescuentoMatricula.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
@@ -3676,7 +3440,7 @@
             this.panel7.Controls.Add(this.txtIdDetalleFct);
             this.panel7.Location = new System.Drawing.Point(6, 6);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(808, 436);
+            this.panel7.Size = new System.Drawing.Size(816, 436);
             this.panel7.TabIndex = 1;
             // 
             // panel18
@@ -3859,16 +3623,6 @@
             this.txtIdDetalleFct.TabIndex = 0;
             this.txtIdDetalleFct.Visible = false;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1210, 672);
-            this.tabPage1.TabIndex = 18;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -3879,7 +3633,7 @@
             this.pictureBox2.Image = global::CaoaPresentacion.Properties.Resources.geometric_gc4e25bd3d_1920;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1220, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(1220, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -3888,12 +3642,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 746);
+            this.ClientSize = new System.Drawing.Size(1220, 678);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1236, 785);
-            this.MinimumSize = new System.Drawing.Size(1236, 785);
+            this.MaximumSize = new System.Drawing.Size(1236, 717);
+            this.MinimumSize = new System.Drawing.Size(1236, 717);
             this.Name = "Frm_Facturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " FACTURACION";
@@ -3948,12 +3702,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.TabPago.ResumeLayout(false);
             this.TabPago.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDetalles)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -3962,8 +3712,8 @@
             this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMensualidadesPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAbonosPago)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataDetalles)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -4001,11 +3751,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TabPage TabFacturacion;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbtipobusqueda;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox txtBusquedaEstudiante;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRegistroVenta;
         private System.Windows.Forms.Button btnMensualidades;
@@ -4018,10 +3765,6 @@
         private System.Windows.Forms.Button btnContinuarProceso;
         private System.Windows.Forms.ComboBox cmbAranceles;
         private System.Windows.Forms.TextBox txtDescuento;
-        private System.Windows.Forms.TextBox txtCedulaRuc;
-        private System.Windows.Forms.CheckBox Habilitar;
-        private System.Windows.Forms.TextBox txtNombreFactura;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtcodigocarnet;
         private System.Windows.Forms.TextBox txtestudiante;
         private System.Windows.Forms.Label label2;
@@ -4029,14 +3772,8 @@
         private System.Windows.Forms.TextBox txtIva;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.TextBox txtCodigoFactura;
-        private System.Windows.Forms.TextBox txtFactTemporal;
-        private System.Windows.Forms.TextBox txtIdMoneda;
-        private System.Windows.Forms.TextBox txtValorMoneda;
-        private System.Windows.Forms.TextBox txtcarnetEstudiante;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -4064,8 +3801,6 @@
         private System.Windows.Forms.DataGridView dataAbonos;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.DataGridView dataMensualidadesEstudiante;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox txtMensualidadFactura;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -4099,8 +3834,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage TabPago;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.TextBox txtFacturaTemporal;
-        private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.TextBox txtCajeroPago;
         private System.Windows.Forms.TextBox txtCaja;
@@ -4111,17 +3844,12 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.TextBox txtHorarioPago;
         private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.TextBox txtCedulaPago;
         private System.Windows.Forms.TextBox txtDiasPago;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TextBox txtCursoPago;
-        private System.Windows.Forms.DataGridView dataAbonosPago;
-        private System.Windows.Forms.DataGridView dataMensualidadesPago;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label81;
         private System.Windows.Forms.DataGridView dataDetalles;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.ComboBox cmbTipoPago;
@@ -4163,7 +3891,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button22;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txtNombreEstudiante;
@@ -4183,7 +3910,6 @@
         private System.Windows.Forms.Label label103;
         private System.Windows.Forms.TextBox txtHorarioEstudiante;
         private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Button button21;
         private System.Windows.Forms.TabPage TabAbonos;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.TextBox txtIdDetalleProgramacionAbono;
@@ -4216,7 +3942,6 @@
         private System.Windows.Forms.TextBox txtHorariosAbono;
         private System.Windows.Forms.TextBox txtDiasAbono;
         private System.Windows.Forms.TextBox txtmontototalAbonar;
-        private System.Windows.Forms.Button button23;
         private System.Windows.Forms.TabPage TabNuevaMensualidad;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Panel panel12;
@@ -4242,11 +3967,9 @@
         private System.Windows.Forms.Button btnAceptarMensualidad;
         private System.Windows.Forms.Button btnCancelarMensualidad;
         private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel2;
@@ -4299,8 +4022,15 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox txtMotivoModificacionMensualidad;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView TablaDetalleFactura;
         private System.Windows.Forms.TextBox txtIDDETALLEPROGRAMACION;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCodMatricula;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.ToolStripMenuItem solicitarArregloDePagoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaMensualidadToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtIdMatricula;
     }
 }

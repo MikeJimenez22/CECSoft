@@ -34,15 +34,6 @@ namespace CapaDatos
         }
 
 
-        public DataTable ObtenerCierreCaja()
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "exec GenerarNumCierre";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
 
 
 

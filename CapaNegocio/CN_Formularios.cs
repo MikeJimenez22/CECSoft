@@ -13,8 +13,6 @@ namespace CapaNegocio
             tabla = objetoCD.MostrarFormularios();
             return tabla;
         }
-
-
-
+        
     }
 }

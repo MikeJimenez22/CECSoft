@@ -41,8 +41,6 @@ namespace CapaNegocio
             objetoCD.DenegegarSolicitud(Convert.ToInt32(IdArreglo));
         }
 
-
-
-
+        
     }
 }

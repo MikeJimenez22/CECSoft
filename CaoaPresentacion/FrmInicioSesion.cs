@@ -41,13 +41,7 @@ namespace CaoaPresentacion
         const string Password = "wxdeymkcmdrpszdx";
         string CodigoTemporal;
         
-
-        string MesLetra;
-        string Concepto = "";
-
-
         
-
         public FrmInicioSesion()
         {
             InitializeComponent();

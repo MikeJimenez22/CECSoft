@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Asistencia));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -81,8 +80,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataAusentesPorEncuentro = new System.Windows.Forms.DataGridView();
-            this.dataAusentesRegular = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataMatriculas)).BeginInit();
@@ -97,8 +94,6 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAusentesPorEncuentro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAusentesRegular)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -106,15 +101,14 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(7, 57);
+            this.tabControl1.Location = new System.Drawing.Point(0, 57);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1153, 581);
+            this.tabControl1.Size = new System.Drawing.Size(1160, 581);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button17);
             this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button1);
@@ -124,24 +118,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1145, 555);
+            this.tabPage1.Size = new System.Drawing.Size(1152, 555);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Asistencia";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Image = global::CaoaPresentacion.Properties.Resources._118801_view_refresh;
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button17.Location = new System.Drawing.Point(758, 502);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(122, 39);
-            this.button17.TabIndex = 64;
-            this.button17.Text = "Actualizar";
-            this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button8
             // 
@@ -399,7 +379,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1139, 47);
+            this.panel1.Size = new System.Drawing.Size(1146, 47);
             this.panel1.TabIndex = 0;
             // 
             // dateFechaActual
@@ -695,32 +675,6 @@
             this.asistenciaToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.asistenciaToolStripMenuItem.Text = "Asistencia";
             // 
-            // dataAusentesPorEncuentro
-            // 
-            this.dataAusentesPorEncuentro.AllowUserToAddRows = false;
-            this.dataAusentesPorEncuentro.AllowUserToDeleteRows = false;
-            this.dataAusentesPorEncuentro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataAusentesPorEncuentro.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataAusentesPorEncuentro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataAusentesPorEncuentro.Location = new System.Drawing.Point(126, 414);
-            this.dataAusentesPorEncuentro.Name = "dataAusentesPorEncuentro";
-            this.dataAusentesPorEncuentro.ReadOnly = true;
-            this.dataAusentesPorEncuentro.Size = new System.Drawing.Size(80, 138);
-            this.dataAusentesPorEncuentro.TabIndex = 61;
-            // 
-            // dataAusentesRegular
-            // 
-            this.dataAusentesRegular.AllowUserToAddRows = false;
-            this.dataAusentesRegular.AllowUserToDeleteRows = false;
-            this.dataAusentesRegular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataAusentesRegular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataAusentesRegular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataAusentesRegular.Location = new System.Drawing.Point(41, 414);
-            this.dataAusentesRegular.Name = "dataAusentesRegular";
-            this.dataAusentesRegular.ReadOnly = true;
-            this.dataAusentesRegular.Size = new System.Drawing.Size(79, 138);
-            this.dataAusentesRegular.TabIndex = 60;
-            // 
             // Frm_Asistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,8 +684,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dataAusentesPorEncuentro);
-            this.Controls.Add(this.dataAusentesRegular);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1190, 690);
@@ -760,8 +712,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAusentesPorEncuentro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataAusentesRegular)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,8 +770,5 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataAusentesPorEncuentro;
-        private System.Windows.Forms.DataGridView dataAusentesRegular;
-        private System.Windows.Forms.Button button17;
     }
 }

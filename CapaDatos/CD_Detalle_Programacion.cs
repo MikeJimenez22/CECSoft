@@ -57,22 +57,7 @@ namespace CapaDatos
             }
         }
 
-
-
-
-        public void Editar(int IdDetalleProgramacion)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update Tbl_Detalle_Programacion set Id_estado = '6' where Id_Detalle_Programacion = '" + IdDetalleProgramacion + "'";
-            comando.ExecuteNonQuery();
-
-        }
-
-  
-
-      
-
-      
+        
 
         public void CambiarFecha(string FechaNueva, int IdDetalle)
         {

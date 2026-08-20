@@ -141,17 +141,14 @@
     <Compile Include="CN_Autorizaciones.cs" />
     <Compile Include="CN_Bajas.cs" />
     <Compile Include="CN_BusquedaFacturas.cs" />
+    <Compile Include="CN_Cajas.cs" />
     <Compile Include="CN_CarterayCobro.cs" />
-    <Compile Include="CN_CierreCaja.cs" />
-    <Compile Include="CN_ClavesAprobacion.cs" />
     <Compile Include="CN_ConexionesUsuarios.cs" />
-    <Compile Include="CN_Configuraciones.cs" />
     <Compile Include="CN_Cursos.cs" />
     <Compile Include="CN_Cursos_Turnos.cs" />
     <Compile Include="CN_Dashboard.cs" />
     <Compile Include="CN_Denominaciones.cs" />
     <Compile Include="CN_Detalle_Programacion.cs" />
-    <Compile Include="CN_egreso.cs" />
     <Compile Include="CN_Emfermedades.cs" />
     <Compile Include="CN_Empleados.cs" />
     <Compile Include="CN_Estados.cs" />
@@ -173,7 +170,6 @@
     <Compile Include="CN_Moneda.cs" />
     <Compile Include="CN_Movimientos.cs" />
     <Compile Include="CN_NotaModulos.cs" />
-    <Compile Include="CN_Padre_Tutor.cs" />
     <Compile Include="CN_Personas.cs" />
     <Compile Include="CN_ProcesosFactura.cs" />
     <Compile Include="CN_ProgramacionPagos.cs" />

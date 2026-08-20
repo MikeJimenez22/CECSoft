@@ -91,8 +91,15 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabNuevaMatricula = new System.Windows.Forms.TabPage();
+            this.tabEstudiante = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dpFechaEstudiante = new System.Windows.Forms.DateTimePicker();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txtbusqueda = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataEstudiantes = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,7 +109,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabNuevaMatricula.SuspendLayout();
+            this.tabEstudiante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +127,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(9, 221);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 290);
+            this.groupBox1.Size = new System.Drawing.Size(597, 185);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -229,7 +238,7 @@
             this.txtidestudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.txtidestudiante.Enabled = false;
             this.txtidestudiante.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtidestudiante.Location = new System.Drawing.Point(527, 7);
+            this.txtidestudiante.Location = new System.Drawing.Point(1072, 3);
             this.txtidestudiante.Name = "txtidestudiante";
             this.txtidestudiante.Size = new System.Drawing.Size(63, 20);
             this.txtidestudiante.TabIndex = 13;
@@ -312,7 +321,7 @@
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Location = new System.Drawing.Point(612, 45);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(523, 466);
+            this.groupBox2.Size = new System.Drawing.Size(523, 361);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             // 
@@ -685,6 +694,7 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F);
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -712,7 +722,7 @@
             // txtcodigoMatricula
             // 
             this.txtcodigoMatricula.Enabled = false;
-            this.txtcodigoMatricula.Location = new System.Drawing.Point(445, 30);
+            this.txtcodigoMatricula.Location = new System.Drawing.Point(989, 24);
             this.txtcodigoMatricula.Name = "txtcodigoMatricula";
             this.txtcodigoMatricula.Size = new System.Drawing.Size(145, 20);
             this.txtcodigoMatricula.TabIndex = 25;
@@ -748,62 +758,148 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 20);
+            this.tabControl1.Controls.Add(this.tabNuevaMatricula);
+            this.tabControl1.Controls.Add(this.tabEstudiante);
+            this.tabControl1.Location = new System.Drawing.Point(3, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1153, 544);
+            this.tabControl1.Size = new System.Drawing.Size(1153, 439);
             this.tabControl1.TabIndex = 30;
             // 
-            // tabPage1
+            // tabNuevaMatricula
             // 
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.txtValorMoneda);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.dataModulos);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.txtidmoneda);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.txtcodigoMat);
-            this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.txtidcurso);
-            this.tabPage1.Controls.Add(this.btnNuevo);
-            this.tabPage1.Controls.Add(this.txtcodigoMatricula);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.txtidestudiante);
-            this.tabPage1.Controls.Add(this.txtMensualidad);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.txtnombreCompleto);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.txtcarnet);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1145, 518);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabNuevaMatricula.Controls.Add(this.groupBox2);
+            this.tabNuevaMatricula.Controls.Add(this.button2);
+            this.tabNuevaMatricula.Controls.Add(this.txtValorMoneda);
+            this.tabNuevaMatricula.Controls.Add(this.groupBox1);
+            this.tabNuevaMatricula.Controls.Add(this.dataModulos);
+            this.tabNuevaMatricula.Controls.Add(this.button1);
+            this.tabNuevaMatricula.Controls.Add(this.txtidmoneda);
+            this.tabNuevaMatricula.Controls.Add(this.panel1);
+            this.tabNuevaMatricula.Controls.Add(this.txtcodigoMat);
+            this.tabNuevaMatricula.Controls.Add(this.comboBox2);
+            this.tabNuevaMatricula.Controls.Add(this.txtidcurso);
+            this.tabNuevaMatricula.Controls.Add(this.btnNuevo);
+            this.tabNuevaMatricula.Controls.Add(this.txtcodigoMatricula);
+            this.tabNuevaMatricula.Controls.Add(this.groupBox3);
+            this.tabNuevaMatricula.Controls.Add(this.txtidestudiante);
+            this.tabNuevaMatricula.Controls.Add(this.txtMensualidad);
+            this.tabNuevaMatricula.Controls.Add(this.label3);
+            this.tabNuevaMatricula.Controls.Add(this.dateTimePicker2);
+            this.tabNuevaMatricula.Controls.Add(this.button3);
+            this.tabNuevaMatricula.Controls.Add(this.label4);
+            this.tabNuevaMatricula.Controls.Add(this.label6);
+            this.tabNuevaMatricula.Controls.Add(this.textBox1);
+            this.tabNuevaMatricula.Controls.Add(this.txtnombreCompleto);
+            this.tabNuevaMatricula.Controls.Add(this.dateTimePicker1);
+            this.tabNuevaMatricula.Controls.Add(this.txtcarnet);
+            this.tabNuevaMatricula.Controls.Add(this.label7);
+            this.tabNuevaMatricula.Controls.Add(this.label5);
+            this.tabNuevaMatricula.Controls.Add(this.dataGridView1);
+            this.tabNuevaMatricula.Controls.Add(this.label18);
+            this.tabNuevaMatricula.Location = new System.Drawing.Point(4, 22);
+            this.tabNuevaMatricula.Name = "tabNuevaMatricula";
+            this.tabNuevaMatricula.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNuevaMatricula.Size = new System.Drawing.Size(1145, 413);
+            this.tabNuevaMatricula.TabIndex = 0;
+            this.tabNuevaMatricula.Text = "tabNuevaMatricula";
+            this.tabNuevaMatricula.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabEstudiante
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1145, 518);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabEstudiante.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabEstudiante.Controls.Add(this.button6);
+            this.tabEstudiante.Controls.Add(this.dpFechaEstudiante);
+            this.tabEstudiante.Controls.Add(this.button5);
+            this.tabEstudiante.Controls.Add(this.txtbusqueda);
+            this.tabEstudiante.Controls.Add(this.label11);
+            this.tabEstudiante.Controls.Add(this.dataEstudiantes);
+            this.tabEstudiante.Controls.Add(this.checkBox1);
+            this.tabEstudiante.Location = new System.Drawing.Point(4, 22);
+            this.tabEstudiante.Name = "tabEstudiante";
+            this.tabEstudiante.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstudiante.Size = new System.Drawing.Size(1145, 413);
+            this.tabEstudiante.TabIndex = 1;
+            this.tabEstudiante.Text = "tabEstudiante";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.SteelBlue;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(1019, 58);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 39);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Regresar";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // dpFechaEstudiante
+            // 
+            this.dpFechaEstudiante.Font = new System.Drawing.Font("Arial", 12F);
+            this.dpFechaEstudiante.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaEstudiante.Location = new System.Drawing.Point(507, 63);
+            this.dpFechaEstudiante.Name = "dpFechaEstudiante";
+            this.dpFechaEstudiante.Size = new System.Drawing.Size(208, 26);
+            this.dpFechaEstudiante.TabIndex = 12;
+            // 
+            // button5
+            // 
+            this.button5.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
+            this.button5.Location = new System.Drawing.Point(721, 58);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(44, 39);
+            this.button5.TabIndex = 11;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // txtbusqueda
+            // 
+            this.txtbusqueda.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtbusqueda.Location = new System.Drawing.Point(102, 64);
+            this.txtbusqueda.Name = "txtbusqueda";
+            this.txtbusqueda.Size = new System.Drawing.Size(394, 26);
+            this.txtbusqueda.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(32, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 18);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Nombre";
+            // 
+            // dataEstudiantes
+            // 
+            this.dataEstudiantes.AllowUserToAddRows = false;
+            this.dataEstudiantes.AllowUserToDeleteRows = false;
+            this.dataEstudiantes.AllowUserToOrderColumns = true;
+            this.dataEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataEstudiantes.Location = new System.Drawing.Point(14, 104);
+            this.dataEstudiantes.Name = "dataEstudiantes";
+            this.dataEstudiantes.ReadOnly = true;
+            this.dataEstudiantes.Size = new System.Drawing.Size(1125, 292);
+            this.dataEstudiantes.TabIndex = 8;
+            this.dataEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEstudiantes_CellClick);
+            this.dataEstudiantes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataEstudiantes_CellPainting);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 12F);
+            this.checkBox1.Location = new System.Drawing.Point(35, 24);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(187, 22);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = " Buscar otro estudiante";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // errorProvider1
             // 
@@ -814,13 +910,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1164, 565);
+            this.ClientSize = new System.Drawing.Size(1164, 471);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1180, 604);
-            this.MinimumSize = new System.Drawing.Size(1180, 604);
             this.Name = "Frm_Nueva_Matricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRO DE MATRICULA";
@@ -837,8 +931,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabNuevaMatricula.ResumeLayout(false);
+            this.tabNuevaMatricula.PerformLayout();
+            this.tabEstudiante.ResumeLayout(false);
+            this.tabEstudiante.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -906,8 +1003,15 @@
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.TextBox txtValorMoneda;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabNuevaMatricula;
+        private System.Windows.Forms.TabPage tabEstudiante;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dpFechaEstudiante;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataEstudiantes;
+        private System.Windows.Forms.Button button6;
     }
 }

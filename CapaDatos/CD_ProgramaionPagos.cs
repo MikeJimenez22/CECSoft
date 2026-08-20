@@ -45,29 +45,6 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;
         }
-
-
-        public DataTable VerPendientes(DateTime FechaInicial, DateTime FechaFinal)
-        {
-            DataTable tabla = new DataTable();
-
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "ObtenerUltimoPagoPorMatricula";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@FechaInicial", FechaInicial);
-            comando.Parameters.AddWithValue("@FechaFinal", FechaFinal);
-
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-
-
-
+        
     }
 }

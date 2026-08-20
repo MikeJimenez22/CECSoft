@@ -8,12 +8,6 @@ namespace CapaNegocio
     {
         private CD_Cursos objetoCD = new CD_Cursos();
 
-        public DataTable Mostrar()
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
-            return tabla;
-        }
 
         public DataTable MostrarCursosPorEstado(string IdEstado)
         {
@@ -22,35 +16,21 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public void InsertarCurso(string NombreCurso, string Duracion, string IdEstado, string TipoCurso)
+        public void InsertarCurso(string NombreCurso, int Duracion, string TipoCurso,string Acreditacion,string Modalidad)
         {
-            objetoCD.Insertar(NombreCurso, Convert.ToInt32(Duracion), Convert.ToInt32(IdEstado), TipoCurso);
+            objetoCD.Insertar(NombreCurso,Duracion, TipoCurso,Acreditacion,Modalidad);
         }
 
-        public void EditarCurso(string IdCurso, string NombreCurso, string Duracion, string IdEstado, string TipoCurso)
+        public void EditarCurso( string NombreCurso,int Duracion, string TipoCurso,string Acreditacion,string Modalidad, int IdCurso)
         {
-            objetoCD.Editar(Convert.ToInt32(IdCurso), NombreCurso, Convert.ToInt32(Duracion), Convert.ToInt32(IdEstado), TipoCurso);
+            objetoCD.Editar(NombreCurso,Duracion, TipoCurso,Acreditacion,Modalidad,IdCurso);
         }
 
         public void ActualizarEstadoCurso(string IdCurso, string IdEstado)
         {
             objetoCD.ModificarEstadoCurso(Convert.ToInt32(IdCurso),Convert.ToInt32(IdEstado));
         }
-
-
-        public void EliminarCargo(string id)
-        {
-            objetoCD.Eliminar(Convert.ToInt32(id));
-        }
-
-
-        public DataTable MostrarCursosPorNombre(string Nombre)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.VerificarCurso(Nombre);
-            return tabla;
-        }
-
+        
 
     }
 }

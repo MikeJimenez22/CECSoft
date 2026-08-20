@@ -270,7 +270,7 @@
             this.tabControl1.Controls.Add(this.tabEditar);
             this.tabControl1.Controls.Add(this.tabAnulacion);
             this.tabControl1.Controls.Add(this.tabDiploma);
-            this.tabControl1.Location = new System.Drawing.Point(4, 22);
+            this.tabControl1.Location = new System.Drawing.Point(4, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1279, 626);

@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCursos));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabCursos = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNuevoRol = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
             this.dataCursos = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabEditar = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
@@ -49,11 +49,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbAcreditacion = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIdCurso = new System.Windows.Forms.TextBox();
+            this.cmbModalidad = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabCursos.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCursos)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabEditar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -61,25 +66,25 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(11, 17);
+            this.tabControl1.Controls.Add(this.tabCursos);
+            this.tabControl1.Controls.Add(this.tabEditar);
+            this.tabControl1.Location = new System.Drawing.Point(11, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(986, 539);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabCursos
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.dataCursos);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(978, 513);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabCursos.Controls.Add(this.panel1);
+            this.tabCursos.Controls.Add(this.dataCursos);
+            this.tabCursos.Location = new System.Drawing.Point(4, 22);
+            this.tabCursos.Name = "tabCursos";
+            this.tabCursos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCursos.Size = new System.Drawing.Size(978, 513);
+            this.tabCursos.TabIndex = 0;
+            this.tabCursos.Text = "tabCursos";
+            this.tabCursos.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -155,20 +160,25 @@
             this.dataCursos.TabIndex = 0;
             this.dataCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCursos_CellClick);
             // 
-            // tabPage2
+            // tabEditar
             // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(978, 513);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabEditar.Controls.Add(this.panel2);
+            this.tabEditar.Location = new System.Drawing.Point(4, 22);
+            this.tabEditar.Name = "tabEditar";
+            this.tabEditar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEditar.Size = new System.Drawing.Size(978, 513);
+            this.tabEditar.TabIndex = 1;
+            this.tabEditar.Text = "tabEditar";
+            this.tabEditar.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.cmbModalidad);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtIdCurso);
+            this.panel2.Controls.Add(this.cmbAcreditacion);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.cmbCategoria);
             this.panel2.Controls.Add(this.label4);
@@ -186,7 +196,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::CaoaPresentacion.Properties.Resources._285657_floppy_guardar_save_icon;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(407, 133);
+            this.button1.Location = new System.Drawing.Point(409, 264);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 34);
             this.button1.TabIndex = 16;
@@ -204,7 +214,7 @@
             "INGLES",
             "INFORMATICA",
             "VOCACIONAL"});
-            this.cmbCategoria.Location = new System.Drawing.Point(191, 101);
+            this.cmbCategoria.Location = new System.Drawing.Point(193, 135);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(335, 26);
             this.cmbCategoria.TabIndex = 15;
@@ -213,16 +223,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(91, 103);
+            this.label4.Location = new System.Drawing.Point(93, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
+            this.label4.Size = new System.Drawing.Size(84, 18);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Categoria";
+            this.label4.Text = "Tipo Curso";
             // 
             // txtDuracionCurso
             // 
             this.txtDuracionCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuracionCurso.Location = new System.Drawing.Point(191, 63);
+            this.txtDuracionCurso.Location = new System.Drawing.Point(193, 97);
             this.txtDuracionCurso.Name = "txtDuracionCurso";
             this.txtDuracionCurso.Size = new System.Drawing.Size(335, 26);
             this.txtDuracionCurso.TabIndex = 13;
@@ -232,7 +242,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 66);
+            this.label3.Location = new System.Drawing.Point(43, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 18);
             this.label3.TabIndex = 12;
@@ -241,7 +251,7 @@
             // txtNombreCurso
             // 
             this.txtNombreCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCurso.Location = new System.Drawing.Point(191, 27);
+            this.txtNombreCurso.Location = new System.Drawing.Point(193, 61);
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(335, 26);
             this.txtNombreCurso.TabIndex = 11;
@@ -251,7 +261,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 30);
+            this.label2.Location = new System.Drawing.Point(43, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 18);
             this.label2.TabIndex = 10;
@@ -271,6 +281,62 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cmbAcreditacion
+            // 
+            this.cmbAcreditacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAcreditacion.FormattingEnabled = true;
+            this.cmbAcreditacion.Items.AddRange(new object[] {
+            "Seleccione",
+            "INATEC",
+            "CENTRO"});
+            this.cmbAcreditacion.Location = new System.Drawing.Point(193, 167);
+            this.cmbAcreditacion.Name = "cmbAcreditacion";
+            this.cmbAcreditacion.Size = new System.Drawing.Size(335, 26);
+            this.cmbAcreditacion.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(75, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 18);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Acreditacion";
+            // 
+            // txtIdCurso
+            // 
+            this.txtIdCurso.Enabled = false;
+            this.txtIdCurso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCurso.Location = new System.Drawing.Point(453, 29);
+            this.txtIdCurso.Name = "txtIdCurso";
+            this.txtIdCurso.Size = new System.Drawing.Size(75, 26);
+            this.txtIdCurso.TabIndex = 19;
+            this.txtIdCurso.Visible = false;
+            // 
+            // cmbModalidad
+            // 
+            this.cmbModalidad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModalidad.FormattingEnabled = true;
+            this.cmbModalidad.Items.AddRange(new object[] {
+            "NINGUNA",
+            "REGULAR",
+            "ENCUENTRO"});
+            this.cmbModalidad.Location = new System.Drawing.Point(193, 199);
+            this.cmbModalidad.Name = "cmbModalidad";
+            this.cmbModalidad.Size = new System.Drawing.Size(335, 26);
+            this.cmbModalidad.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(75, 202);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 18);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Modalidad";
+            // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,11 +352,11 @@
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.FrmCursos_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabCursos.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCursos)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabEditar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -302,8 +368,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabCursos;
+        private System.Windows.Forms.TabPage tabEditar;
         private System.Windows.Forms.DataGridView dataCursos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnNuevoRol;
@@ -320,5 +386,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cmbAcreditacion;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtIdCurso;
+        private System.Windows.Forms.ComboBox cmbModalidad;
+        private System.Windows.Forms.Label label6;
     }
 }

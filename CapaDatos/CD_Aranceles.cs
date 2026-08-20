@@ -79,13 +79,17 @@ namespace CapaDatos
             }
         }
 
-        public DataTable CargarAranceles()
+
+
+        public DataTable MostrarAranceles()
         {
             using (var connection = conexion.AbrirConexion())
             {
-                using (var command = new SqlCommand("SP_CargarAranceles", connection))
+                using (var command = new SqlCommand("SP_MostrarAranceles", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+
+
                     using (var reader = command.ExecuteReader())
                     {
                         var table = new DataTable();

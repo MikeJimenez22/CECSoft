@@ -8,9 +8,9 @@ namespace CapaNegocio
     {
         CD_AsistenciaEstudiante objeto = new CD_AsistenciaEstudiante();
 
-        public void InsertarAsistenciaEstudiante(string IdMatricula, string Fecha, string Hora, string Estado, string Comentarios, string IdUsuario)
+        public void InsertarAsistenciaEstudiante(int IdMatricula, string Estado, string Comentarios, int IdUsuario)
         {
-            objeto.InsertarAsistencia(Convert.ToInt32(IdMatricula), Convert.ToDateTime(Fecha), Convert.ToDateTime(Hora), Estado, Comentarios, Convert.ToInt32(IdUsuario));
+            objeto.InsertarAsistencia(IdMatricula, Estado, Comentarios, IdUsuario);
         }
 
         public void QuitarMatriculaDeGrupo(string IdMatricula)
@@ -39,10 +39,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-
-     
-      
-
+        
 
         public DataTable MostrarUniversoPorGrupo()
         {
@@ -73,26 +70,6 @@ namespace CapaNegocio
         }
 
        
-
-        public DataTable MostrarAusentesPorRegular()
-        {
-            DataTable tabla = new DataTable();
-            tabla = objeto.MostrarAusentesRegular();
-            return tabla;
-        }
-
-
-        public DataTable MostrarAusentesPorEncuentro()
-        {
-            DataTable tabla = new DataTable();
-            tabla = objeto.MostrarAusentesEncuentro();
-            return tabla;
-        }
-
-        
-
-
-     
         public DataTable MostrarAsistenciaPorGrupo(string Fecha,string IdGrupo)
         {
             DataTable tabla = new DataTable();

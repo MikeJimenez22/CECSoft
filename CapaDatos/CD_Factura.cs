@@ -14,13 +14,30 @@ namespace CapaDatos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-  
 
-        public void Insertar(string Num_Factura, string FormaPago, double Subtotal, double Iva, double Total, int IdMoneda, int IdEstado, int IdUsuario, string NombreEquipo, DateTime FechaFacturacion, string NombreCompleto, string Carnet, string Nidentificacion)
+
+        public void Insertar(
+     string Num_Factura,
+     string FormaPago,
+     double Subtotal,
+     double Iva,
+     double Total,
+     int IdMoneda,
+     int IdEstado,
+     int IdUsuario,
+     string NombreEquipo,
+     DateTime FechaFacturacion,
+     string NombreCompleto,
+     string Carnet,
+     string Nidentificacion,
+     int? IdMatricula)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_Insertar_FacturaGnral";
             comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.Clear();
+
             comando.Parameters.AddWithValue("@Num_Factura", Num_Factura);
             comando.Parameters.AddWithValue("@Forma_Pago", FormaPago);
             comando.Parameters.AddWithValue("@SubTotal", Subtotal);
@@ -35,32 +52,25 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@CarnetEstudiantil", Carnet);
             comando.Parameters.AddWithValue("@NIdentificacion", Nidentificacion);
 
+            // Si existe matrícula envía el ID.
+            // Si no existe, envía NULL a SQL Server.
+            comando.Parameters.AddWithValue(
+                "@Id_Matricula",
+                IdMatricula.HasValue
+                    ? (object)IdMatricula.Value
+                    : DBNull.Value
+            );
 
             comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
 
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
 
 
-        public void ModificarDatos_Factura(string Nombre, string Carnet, string Nidentificacion, string Num_Factura)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "ModificarDatos_Factura";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NombreCompleto", Nombre);
-            comando.Parameters.AddWithValue("@Carnet", Carnet);
-            comando.Parameters.AddWithValue("@NIdentificacion", Nidentificacion);
-            comando.Parameters.AddWithValue("@NFactura", Num_Factura);
 
 
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-
-        }
-
-
-     
 
 
         public void InsertarPagoDetalle(string NumeroFactura, string TipoPago, double PagoCon, int IdMoneda, double ValorMoneda, double TotalCordobas, double MontoPagar, double cambio, string NumeroReferencia)
@@ -86,45 +96,46 @@ namespace CapaDatos
         
 
 
-        public DataTable MostrarfACTURAScompletadasEstudiante(string Carnet)
+       
+
+        public DataTable MostrarFacturasEstudiante(string CarnetEstudiantil, int? IdMatricula)
         {
+            DataTable tabla = new DataTable();
+
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select a.Num_Factura,a.Fecha_factura,b.Tipo_Pago,b.PagoCon,c.Descripcion,b.TotalEnCordobas,b.MontoTotal_a_Pagar,b.Cambio,d.Usuario  from Tbl_Factura_Gnral a join Tbl_Detalle_Pago b on a.Num_Factura = b.Num_Factura join Tbl_TipoMoneda c on c.IdMoneda = B.IdMoneda join Tbl_Usuarios d on d.Id_usuario = a.Id_Usuario  where a.CarnetEstudiantil = '" + Carnet + "' and a.Id_estado = '6' order by a.Id_Factura DESC ";
+            comando.CommandText = "SP_ObtenerFacturasEstudiante";
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.AddWithValue(
+                "@CarnetEstudiantil",
+                string.IsNullOrWhiteSpace(CarnetEstudiantil)
+                    ? (object)DBNull.Value
+                    : CarnetEstudiantil
+            );
+
+            comando.Parameters.AddWithValue(
+                "@Id_Matricula",
+                IdMatricula.HasValue
+                    ? (object)IdMatricula.Value
+                    : DBNull.Value
+            );
+
             leer = comando.ExecuteReader();
+
             tabla.Load(leer);
+
+            comando.Parameters.Clear();
             conexion.CerrarConexion();
+
             return tabla;
         }
 
-        public DataTable MostrarfACTURASDetalle(string NumFactura)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select a.Num_Factura,B.Nombre_Arancel,c.Descripcion,a.Total_en_Cordobas,a.Cantidad,a.Monto,a.Observaciones from Factura_Detalle  a join Tbl_Aranceles b on a.Id_Arancel = B.Id_Arancel JOIN Tbl_TipoMoneda c on c.IdMoneda = b.IdMoneda WHERE a.Id_estado = '5' and Num_Factura = '" + NumFactura + "'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-
+      
         /*****************************************************************************************************************************************************/
         //                                  GENERAR NUMERO DE FACTURA Y CONSECUTIVO CON RESPECTO A LA CAJA                                               //
       
-        public DataTable BuscarPorFechasFacturas(string FechaInicial, string FechaFinal, int IdCaja)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "exec MostrarFacturascompletas '" + IdCaja + "','" + FechaInicial + "','" + FechaFinal + "'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-  
-   
-
-
-
         public void InsertarMovimientoCaja(string TipoDocumento, string NumDocumento, string TipoMoviento, double Cantidad, int IdMoneda, DateTime FechaRegistro, int IdUsuario, int IdCaja, string HorayFecha)
         {
             comando.Connection = conexion.AbrirConexion();
@@ -209,6 +220,35 @@ namespace CapaDatos
             }
         }
 
+
+        public DataSet ObtenerFacturasPorFechaYCaja(
+        DateTime FechaDesde,
+        DateTime FechaHasta,
+        int IdCaja)
+        {
+            DataSet ds = new DataSet();
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "sp_ObtenerFacturasPorFechaYCaja";
+            comando.CommandType = CommandType.StoredProcedure;
+
+            comando.CommandTimeout = 120;
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.Add("@FechaDesde", SqlDbType.Date).Value = FechaDesde.Date;
+            comando.Parameters.Add("@FechaHasta", SqlDbType.Date).Value = FechaHasta.Date;
+            comando.Parameters.Add("@IdCaja", SqlDbType.Int).Value = IdCaja;
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+            adaptador.Fill(ds);
+
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+            return ds;
+        }
 
 
 

@@ -23,16 +23,6 @@ namespace CapaNegocio
             return tabla;
         }
 
-
-        public DataTable VerPendientes(DateTime FechaInicial, DateTime FechaFinal)
-        {
-            return objetoCD.VerPendientes(FechaInicial, FechaFinal);
-        }
-
-
-
-
-
-
+        
     }
 }

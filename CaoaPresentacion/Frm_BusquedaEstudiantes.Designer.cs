@@ -151,7 +151,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.txtCodMatricula = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
@@ -161,6 +160,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabCarnetEstudiante.SuspendLayout();
             this.panelCarnet.SuspendLayout();
@@ -181,7 +181,6 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -1383,7 +1382,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.txtCodMatricula);
             this.groupBox1.Controls.Add(this.txtEstado);
@@ -1399,28 +1397,32 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.menuStrip1);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(10, 96);
+            this.groupBox2.Location = new System.Drawing.Point(10, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1222, 91);
+            this.groupBox2.Size = new System.Drawing.Size(1244, 114);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button7.Location = new System.Drawing.Point(403, 46);
+            this.button7.Image = global::CaoaPresentacion.Properties.Resources.lupa;
+            this.button7.Location = new System.Drawing.Point(403, 49);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 39);
+            this.button7.Size = new System.Drawing.Size(45, 36);
             this.button7.TabIndex = 18;
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // dateTimePicker2
@@ -1450,7 +1452,7 @@
             this.bajasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 16);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1216, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1238, 26);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1504,7 +1506,7 @@
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(1153, 68);
+            this.lbltotal.Location = new System.Drawing.Point(1145, 26);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(50, 18);
             this.lbltotal.TabIndex = 5;
@@ -1514,7 +1516,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(906, 67);
+            this.label7.Location = new System.Drawing.Point(898, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(229, 18);
             this.label7.TabIndex = 4;
@@ -1526,7 +1528,7 @@
             this.groupBox5.Controls.Add(this.dataEstudiantes);
             this.groupBox5.Location = new System.Drawing.Point(11, 193);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1225, 383);
+            this.groupBox5.Size = new System.Drawing.Size(1243, 383);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             // 
@@ -1541,7 +1543,7 @@
             this.dataEstudiantes.Location = new System.Drawing.Point(7, 19);
             this.dataEstudiantes.Name = "dataEstudiantes";
             this.dataEstudiantes.ReadOnly = true;
-            this.dataEstudiantes.Size = new System.Drawing.Size(1208, 356);
+            this.dataEstudiantes.Size = new System.Drawing.Size(1230, 356);
             this.dataEstudiantes.TabIndex = 4;
             this.dataEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEstudiantes_CellClick_1);
             this.dataEstudiantes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataEstudiantes_CellPainting);
@@ -1550,7 +1552,7 @@
             // 
             this.groupBox4.Controls.Add(this.radioButton2);
             this.groupBox4.Controls.Add(this.radioButton1);
-            this.groupBox4.Location = new System.Drawing.Point(666, 55);
+            this.groupBox4.Location = new System.Drawing.Point(602, 13);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(186, 42);
             this.groupBox4.TabIndex = 10;
@@ -1582,24 +1584,17 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::CaoaPresentacion.Properties.Resources._4882066;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1254, 30);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // button3
             // 
-            this.button3.Image = global::CaoaPresentacion.Properties.Resources._1814075_find_magnifier_magnifying_glass_search_icon;
-            this.button3.Location = new System.Drawing.Point(523, 59);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::CaoaPresentacion.Properties.Resources.lupa;
+            this.button3.Location = new System.Drawing.Point(535, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(49, 36);
             this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtCodMatricula
@@ -1629,7 +1624,7 @@
             "NOMBRES",
             "CARNET",
             "MATRICULA"});
-            this.cmbBusquedas.Location = new System.Drawing.Point(353, 64);
+            this.cmbBusquedas.Location = new System.Drawing.Point(365, 24);
             this.cmbBusquedas.Name = "cmbBusquedas";
             this.cmbBusquedas.Size = new System.Drawing.Size(164, 26);
             this.cmbBusquedas.TabIndex = 5;
@@ -1637,7 +1632,7 @@
             // txtbusqueda
             // 
             this.txtbusqueda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbusqueda.Location = new System.Drawing.Point(77, 64);
+            this.txtbusqueda.Location = new System.Drawing.Point(89, 24);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(270, 26);
             this.txtbusqueda.TabIndex = 1;
@@ -1646,7 +1641,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 69);
+            this.label1.Location = new System.Drawing.Point(26, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 0;
@@ -1681,11 +1676,24 @@
             this.tabControl1.Controls.Add(this.TabHistorialMatricula);
             this.tabControl1.Controls.Add(this.TabBajas);
             this.tabControl1.Controls.Add(this.tabCarnetEstudiante);
-            this.tabControl1.Location = new System.Drawing.Point(5, 2);
+            this.tabControl1.Location = new System.Drawing.Point(5, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1278, 624);
             this.tabControl1.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(95)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::CaoaPresentacion.Properties.Resources.sobresalir__1_;
+            this.button4.Location = new System.Drawing.Point(452, 49);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(45, 36);
+            this.button4.TabIndex = 27;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Frm_BusquedaEstudiantes
             // 
@@ -1733,7 +1741,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataEstudiantes)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1863,7 +1870,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtCodMatricula;
         private System.Windows.Forms.TextBox txtEstado;
@@ -1873,5 +1879,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.MenuStrip miniToolStrip;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button button4;
     }
 }

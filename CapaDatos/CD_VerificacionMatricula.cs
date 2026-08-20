@@ -25,17 +25,7 @@ namespace CapaDatos
         }
 
 
-        public DataTable VerificarOrigenMatricula(string CarnetEstudiante)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = @"
-                 select b.Origen_Matricula from Tbl_Estudiantes a join Tbl_Matricula b on a.Id_estudiante = B.Id_estudiante
-                 where a.Cod_carnet = '" + CarnetEstudiante + "' AND b.Id_estado = '3'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
+   
 
 
 

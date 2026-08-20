@@ -26,34 +26,51 @@ namespace CapaDatos
             return tabla;
         }
 
-        
+
 
 
         //Metodo Insertar Persona
-        public void Insertar(string CodMatricula, DateTime Fecha, int IdEstudiante, string OrigenMatricula, string IdEmpleado, int IdGrupo, int IdUsuario, DateTime FechaRegistro, int Estado, string observacion, string HoraRegistro, string TipoIngreso, string EstadoGrupo)
+        public int Insertar(
+          string CodMatricula,
+          DateTime Fecha,
+          int IdEstudiante,
+          string OrigenMatricula,
+          string IdEmpleado,
+          int IdGrupo,
+          int IdUsuario,
+          int Estado,
+          string observacion,
+          string TipoIngreso,
+          string EstadoGrupo)
         {
+            int IdMatricula;
+
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarMatricula";
             comando.CommandType = CommandType.StoredProcedure;
+
+            comando.Parameters.Clear();
+
             comando.Parameters.AddWithValue("@CodMatricula", CodMatricula);
             comando.Parameters.AddWithValue("@Fecha", Fecha);
             comando.Parameters.AddWithValue("@IdEstudiante", IdEstudiante);
             comando.Parameters.AddWithValue("@OrigenMatricula", OrigenMatricula);
             comando.Parameters.AddWithValue("@IdEmpleado", IdEmpleado);
-            comando.Parameters.AddWithValue("@Idgrupo", IdGrupo);
+            comando.Parameters.AddWithValue("@IdGrupo", IdGrupo);
             comando.Parameters.AddWithValue("@IdUsuario", IdUsuario);
-            comando.Parameters.AddWithValue("@FechaRegistro", FechaRegistro);
             comando.Parameters.AddWithValue("@IdEstado", Estado);
             comando.Parameters.AddWithValue("@Observacion", observacion);
-            comando.Parameters.AddWithValue("@HoraRegistro", HoraRegistro);
             comando.Parameters.AddWithValue("@TipoIngreso", TipoIngreso);
             comando.Parameters.AddWithValue("@EstadoGrupo", EstadoGrupo);
 
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            IdMatricula = Convert.ToInt32(comando.ExecuteScalar());
 
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+            return IdMatricula;
         }
-        
+
         public DataTable MostrarNumProgramacion(string CodMatricula)
         {
             using (var connection = conexion.AbrirConexion())
@@ -107,26 +124,6 @@ namespace CapaDatos
         }
 
 
-        public DataTable MostrarUniversoPorFecha(DateTime FechaInicio,DateTime FechaFinal)
-        {
-            using (var connection = conexion.AbrirConexion())
-            {
-                using (var command = new SqlCommand("MostrarUniversoPorFechas", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@FechaInicio", FechaInicio);
-                    command.Parameters.AddWithValue("@fechaFinal", FechaFinal);
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        var table = new DataTable();
-                        table.Load(reader);
-                        return table;
-                    }
-                }
-            }
-        }
-
 
         public DataTable ObtenerUltimaMatricula()
         {
@@ -146,23 +143,7 @@ namespace CapaDatos
             }
         }
 
-        public DataTable ObtenerEstudiantesAusentes()
-        {
-            using (var connection = conexion.AbrirConexion())
-            {
-                using (var command = new SqlCommand("SP_ObtenerEstudiantesAusentes", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        var table = new DataTable();
-                        table.Load(reader);
-                        return table;
-                    }
-                }
-            }
-        }
+       
 
         public DataTable ObtenerMatriculadosNoAsignados()
         {
@@ -203,13 +184,19 @@ namespace CapaDatos
         }
 
 
-        public DataTable MostrarMatriculas(string textoBusqueda, int idEstado, string tipoBusqueda)
+        public DataTable MostrarMatriculas(
+     string textoBusqueda,
+     int idEstado,
+     string tipoBusqueda)
         {
             using (var connection = conexion.AbrirConexion())
             {
                 using (var command = new SqlCommand("MostrarMatriculas", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
+
+                    // Tiempo máximo de espera: 120 segundos
+                    command.CommandTimeout = 120;
 
                     command.Parameters.AddWithValue("@TextoBusqueda", textoBusqueda);
                     command.Parameters.AddWithValue("@IdEstado", idEstado);
@@ -219,6 +206,7 @@ namespace CapaDatos
                     {
                         DataTable table = new DataTable();
                         table.Load(reader);
+
                         return table;
                     }
                 }

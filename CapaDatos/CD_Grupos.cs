@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System;
 
 namespace CapaDatos
 {
@@ -82,6 +83,68 @@ namespace CapaDatos
 
         }
 
+
+        public DataTable ConsultarGruposInatecPorFecha(DateTime fechaInicio, DateTime fechaFinal)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand("SP_ConsultarGruposInatecPorFecha", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    command.Parameters.AddWithValue("@FechaFinal", fechaFinal);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var table = new DataTable();
+                        table.Load(reader);
+                        return table;
+                    }
+                }
+            }
+        }
+
+        public DataSet ConsultarEstudiantesGrupoInatec(
+     int idGrupo,
+     DateTime fechaInicio,
+     DateTime fechaFinal,
+     string turno)
+        {
+            using (var connection = conexion.AbrirConexion())
+            {
+                using (var command = new SqlCommand(
+                    "SP_ConsultarEstudiantesOfertaINATEC",
+                    connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue(
+                        "@IdGrupo",
+                        idGrupo);
+
+                    command.Parameters.AddWithValue(
+                        "@FechaInicio",
+                        fechaInicio.Date);
+
+                    command.Parameters.AddWithValue(
+                        "@FechaFinal",
+                        fechaFinal.Date);
+
+                    command.Parameters.AddWithValue(
+                        "@Turno",
+                        turno);
+
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        var dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+
+                        return dataSet;
+                    }
+                }
+            }
+        }
 
 
 

@@ -273,11 +273,7 @@ namespace CaoaPresentacion
         }
 
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Frm_Anulacion_Egreso frm = new Frm_Anulacion_Egreso();
-            frm.ShowDialog();
-        }
+        
 
 
 

@@ -14,11 +14,7 @@ namespace CapaNegocio
             objetoCD.Insertar(NumProgramacion, Convert.ToDateTime(FechaProgramada), concepto, Convert.ToDouble(Monto), Convert.ToInt32(IdMoneda), Convert.ToDateTime(FechaVencimiento), Convert.ToInt32(Mora), Convert.ToInt32(Estado));
         }
 
-        public void EditarEstadoCancelado(string IdDetalleProgramacion)
-        {
-            objetoCD.Editar(Convert.ToInt32(IdDetalleProgramacion));
-        }
-
+       
 
         public void CambiarFecha(DateTime Fecha, string IdDetalle)
         {

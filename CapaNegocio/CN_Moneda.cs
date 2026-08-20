@@ -23,6 +23,14 @@ namespace CapaNegocio
 
         }
 
+        public DataTable MostrarMonedas()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarMonedas();
+            return tabla;
+
+        }
+
 
     }
 }

@@ -15,20 +15,6 @@ namespace CapaNegocio
         }
 
  
-
-        public DataTable MostrarAbonosFactura(string NumFactura)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarAbonosFactura(NumFactura);
-            return tabla;
-        }
-
-        public DataTable MostrarMensualidadesFactura(string NumFactura)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarMensualidadesFactura(NumFactura);
-            return tabla;
-        }
         
         public DataTable BuscarMoviemientosHoy(DateTime FechaActual, string IdCaja)
         {

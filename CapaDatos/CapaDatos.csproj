@@ -144,7 +144,6 @@
     <Compile Include="CD_ActualizandoDatos.cs" />
     <Compile Include="CD_AgendaTelefonica.cs" />
     <Compile Include="CD_AperturaCaja.cs" />
-    <Compile Include="CD_Aprobacion.cs" />
     <Compile Include="CD_Aranceles.cs" />
     <Compile Include="CD_Arqueos.cs" />
     <Compile Include="CD_Arreglos.cs" />
@@ -152,10 +151,10 @@
     <Compile Include="CD_Autorizaciones.cs" />
     <Compile Include="CD_Bajas.cs" />
     <Compile Include="CD_BusquedaFacturas.cs" />
+    <Compile Include="CD_Cajas.cs" />
     <Compile Include="CD_CarterayCobro.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_ConexionesUsuarios.cs" />
-    <Compile Include="CD_Configuraciones.cs" />
     <Compile Include="CD_ConfiguracionImpresiones.cs" />
     <Compile Include="CD_Cursos.cs" />
     <Compile Include="CD_Cursos_Turno.cs" />
@@ -195,7 +194,6 @@
     <Compile Include="CD_Rol_Formularios.cs" />
     <Compile Include="CD_TiposDocumentos.cs" />
     <Compile Include="CD_Usuarios.cs" />
-    <Compile Include="CD_Padre_Tutor.cs" />
     <Compile Include="CD_VerificacionMatricula.cs" />
     <Compile Include="CD_VistaUniverso.cs" />
     <Compile Include="DCierreCaja.cs" />

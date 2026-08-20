@@ -24,10 +24,9 @@ namespace CaoaPresentacion
 {
     public partial class Frm_Facturacion : Form
     {
-       
 
         //*************** Variables **************************
-
+        string Estado;
         string CodigoFactura;
         string Nombres, Apellidos, Cedula, Carnet, Cod_Matricula, NombreCurso, Turno, Horario;
         string FechaProgramada_, Concepto_, Monto_, Descripcion_, Estado_, FechaVencimiento_, Mora_, NumProgramacion_, Id_Detalle_Programacion_, IdMoneda_, TasaCambio_;
@@ -86,8 +85,9 @@ namespace CaoaPresentacion
             
             DataGridViewConfigurator.Configure(this.TablaDetalleFactura,this.dataEstudiantes,this.dataMensualidadesEstudiante,this.dataMensualidadesEstudiante,this.dataDetalles);
             // Cargar los ComboBoxes necesarios
-            CargarCombos();
-            Cargar_ComboMonedaMensualidad();
+            CargarCombobox();
+
+            
         }
 
         private void ConfigurarComboBoxes()
@@ -95,7 +95,7 @@ namespace CaoaPresentacion
             // Lista de ComboBoxes a configurar
             var comboBoxes = new ComboBox[]
             {
-        cmbAranceles, cmbtipobusqueda, cmbBusquedas, cmbTipoMonedaLibreria,
+        cmbAranceles, cmbBusquedas, cmbTipoMonedaLibreria,
         cmbTipoPago, cmbTipoMonedaPago, cmbMonedaAbono, cmbmes,cmbaño, cmbTipoMonedaMensualidad,cmbDescuentos
             };
 
@@ -106,12 +106,24 @@ namespace CaoaPresentacion
             }
         }
 
-        private void CargarCombos()
+        private void CargarCombobox()
         {
-            Cargar_ComboDepartamento();
-            Cargar_ComboMonedaLibreria();
-            Cargar_ComboMonedaPago();
-            Cargar_ComboMonedaAbono();
+            try
+            {
+                Cargar_ComboboxArancel();
+                CargarComboMoneda(cmbTipoMonedaLibreria);
+                CargarComboMoneda(cmbTipoMonedaPago);
+                CargarComboMoneda(cmbMonedaAbono);
+                CargarComboMoneda(cmbTipoMonedaMensualidad);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            
+            
         }
 
         private void ObtenerNumerosCopias()
@@ -444,7 +456,7 @@ namespace CaoaPresentacion
                         this.CalcularTotal(Convert.ToDouble(this.txtSubtotal.Text), 0, 0);
                     }
 
-                    this.DatosEstudiante(CacheDatos.NombreMatricula, CacheDatos.ApellidosMatricula, CacheDatos.CedulaMatricula, CacheDatos.CarnetEstudianteMatricula, CacheDatos.CodMatricula);
+                    this.DatosEstudiante(CacheDatos.NombreMatricula, CacheDatos.ApellidosMatricula, CacheDatos.CedulaMatricula, CacheDatos.CarnetEstudianteMatricula, CacheDatos.CodMatricula,CacheDatos.Id_Matricula);
                 }
 
 
@@ -456,7 +468,27 @@ namespace CaoaPresentacion
             }
         }
 
-    
+        private void CargarComboMoneda(ComboBox combo)
+        {
+            CN_Moneda objetoCN = new CN_Moneda();
+            DataTable tabla = objetoCN.MostrarMonedas();
+
+            DataRow fila = tabla.NewRow();
+
+            fila["IdMoneda"] = 0;
+            fila["Descripcion"] = "Seleccione una moneda";
+            fila["Simbolo"] = string.Empty;
+            fila["ValorMoneda"] = 0;
+
+            tabla.Rows.InsertAt(fila, 0);
+
+            combo.ValueMember = "IdMoneda";
+            combo.DisplayMember = "Descripcion";
+            combo.DataSource = tabla;
+            combo.SelectedIndex = 0;
+        }
+
+
 
 
         private void EvitarReordenacionDataGridView()
@@ -484,13 +516,11 @@ namespace CaoaPresentacion
 
                 // Configuración predeterminada de ComboBoxes
                 const string DefaultPago = "EFECTIVO";
-                const string DefaultBusqueda = "Apellidos";
-                const string DefaultTipoBusqueda = "CARNET";
+                const string DefaultBusqueda = "APELLIDOS";
                 const string DefaultArancel = "MENSUALIDAD";
 
                 cmbTipoPago.Text = DefaultPago;
                 cmbBusquedas.Text = DefaultBusqueda;
-                cmbtipobusqueda.Text = DefaultTipoBusqueda;
                 cmbAranceles.Text = DefaultArancel;
 
                 // Deshabilitar botón agregar abono
@@ -500,8 +530,7 @@ namespace CaoaPresentacion
                 TipoOrigenMatricula = CacheDatos.TipoMatriculaOrigen;
                 IdActivacionMatricula = CacheDatos.IdEstadoMatriculaActivacion;
 
-                // Opcional: Si el CheckBox se habilita y luego se deshabilita, no es necesario
-                Habilitar.Checked = false;
+            
 
                 this.txtSubtotal.Text = "0";
                 this.CalcularTotal(Convert.ToDouble(this.txtSubtotal.Text), 0, 0);
@@ -559,40 +588,15 @@ namespace CaoaPresentacion
                 this.CargarFacturacion();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void Cargar_ComboMonedaMensualidad()
-        {
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cmd = new SqlCommand("Select IdMoneda,Descripcion from Tbl_TipoMoneda", conexion.Conexion());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexion.CerrarConexion();
+      
 
-                DataRow fila = dt.NewRow();
-                fila["Descripcion"] = "Selecciona una Moneda";
-                dt.Rows.InsertAt(fila, 0);
-
-                cmbTipoMonedaMensualidad.ValueMember = "IdMoneda";
-                cmbTipoMonedaMensualidad.DisplayMember = "Descripcion";
-                cmbTipoMonedaMensualidad.DataSource = dt;
-
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
+        
 
         private void CargarComboboxNuevaMensualidad()
         {
@@ -690,75 +694,89 @@ namespace CaoaPresentacion
                     UseColumnTextForButtonValue = true
                 });
         }
-        
-        public void Cargar_ComboDepartamento()
+
+
+
+
+        public void Cargar_ComboboxArancel()
         {
             try
             {
+                CN_Aranceles objetoCN = new CN_Aranceles();
 
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cmd = new SqlCommand("Select Id_Arancel,Nombre_Arancel from Tbl_Aranceles where Id_Estado = '3' and Id_Arancel != '12' order by Nombre_Arancel asc", conexion.Conexion());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexion.CerrarConexion();
-
-                DataRow fila = dt.NewRow();
-                fila["Nombre_Arancel"] = "selecciona un Arancel";
-                dt.Rows.InsertAt(fila, 0);
+                DataTable dt = objetoCN.MostrarAranceles();
 
                 cmbAranceles.ValueMember = "Id_Arancel";
                 cmbAranceles.DisplayMember = "Nombre_Arancel";
                 cmbAranceles.DataSource = dt;
 
-
+                if (dt.Rows.Count > 0)
+                    cmbAranceles.SelectedIndex = 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Error de Sistema " + ex.Message,
+                                "SISTEMA CECNIC",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
-
-        }
-        
-        private void txtIdMoneda_TextChanged(object sender, EventArgs e)
-        {
-
-            CD_Conexion conexion = new CD_Conexion();
-            conexion.AbrirConexion();
-            SqlCommand cm = new SqlCommand("select ValorMoneda from Tbl_TipoMoneda where IdMoneda = '2'", conexion.Conexion());
-            SqlDataReader dr = cm.ExecuteReader();
-            if (dr.Read() == true)
-            {
-                this.txtValorMoneda.Text = dr["ValorMoneda"].ToString();
-
-            }
-            conexion.CerrarConexion();
         }
 
         private void cmbAranceles_SelectedIndexChanged(object sender, EventArgs e)
         {
+             
+            try
+            { 
+                CN_Aranceles objetoCN = new CN_Aranceles();
+                // SelectedIndexChanged puede ejecutarse mientras el ComboBox
+                // todavía está cargando sus datos.
+                if (cmbAranceles.SelectedValue == null ||
+                    cmbAranceles.SelectedValue is DataRowView)
+                {
+                    return;
+                }
 
-            conexion.AbrirConexion();
-            SqlCommand cm = new SqlCommand("select a.Id_Arancel,a.Nombre_Arancel,a.Precio,b.Descripcion,b.ValorMoneda, c.Estado, c.Id_estado, b.IdMoneda from Tbl_Aranceles a join Tbl_TipoMoneda b on a.IdMoneda = b.IdMoneda join Tbl_Estados c on c.Id_estado = a.Id_estado where a.Id_Arancel = '" + cmbAranceles.SelectedValue + "'", conexion.Conexion());
-            SqlDataReader dr = cm.ExecuteReader();
-            if (dr.Read() == true)
-            {
+                if (!int.TryParse(
+                    cmbAranceles.SelectedValue.ToString(),
+                    out int idArancel))
+                {
+                    return;
+                }
+
+                DataTable tabla = objetoCN.MostrarInformacionArancel(idArancel);
+
                
-                double Precio = Convert.ToDouble(dr["Precio"].ToString());
-                double TasaCambio = Convert.ToDouble(dr["ValorMoneda"].ToString());
-                this.TxtEncordobas.Text = Convert.ToString(Precio*TasaCambio);
-                this.txtnombreArancel.Text = dr["Nombre_Arancel"].ToString();
-                this.txtIdArancel.Text = dr["Id_Arancel"].ToString();
-                this.txtMoneda.Text = dr["Descripcion"].ToString();
-                this.txtIdeMoneda.Text = dr["IdMoneda"].ToString();
-                this.txtPrecio.Text = Precio.ToString();
-                this.txtTasaCambio.Text = TasaCambio.ToString();
-                this.VerificarTextBox();
+                DataRow fila = tabla.Rows[0];
 
-                
+                decimal precio = fila["Precio"] == DBNull.Value
+                    ? 0m
+                    : Convert.ToDecimal(fila["Precio"]);
+
+                decimal tasaCambio = fila["ValorMoneda"] == DBNull.Value
+                    ? 0m
+                    : Convert.ToDecimal(fila["ValorMoneda"]);
+
+                decimal precioEnCordobas = precio * tasaCambio;
+
+                TxtEncordobas.Text = precioEnCordobas.ToString("N2");
+                txtnombreArancel.Text = fila["Nombre_Arancel"].ToString();
+                txtIdArancel.Text = fila["Id_Arancel"].ToString();
+                txtMoneda.Text = fila["Descripcion"].ToString();
+                txtIdeMoneda.Text = fila["IdMoneda"].ToString();
+                txtPrecio.Text = precio.ToString("N2");
+                txtTasaCambio.Text = tasaCambio.ToString("N2");
+
+                VerificarTextBox();
             }
-            conexion.CerrarConexion();
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudo obtener la información del arancel.\n\n" +
+                    ex.Message,
+                    "SISTEMA CECNIC",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void btnMensualidades_Click(object sender, EventArgs e)
@@ -772,9 +790,7 @@ namespace CaoaPresentacion
                 }
                 else
                 {
-                    // this.txtbuscar.Text = this.txtcodigocarnet.Text;
-                    this.txtMensualidadFactura.Text = this.txtCodigoFactura.Text;
-                    this.Mostrar();
+               
                     this.tabControl1.SelectedTab = TabMensualidades;
                 }
 
@@ -869,31 +885,13 @@ namespace CaoaPresentacion
         }
 
     
-        private void Habilitar_CheckedChanged(object sender, EventArgs e)
-        {
-            bool habilitado = Habilitar.Checked;
-
-            txtNombreFactura.Enabled = habilitado;
-            txtCedulaRuc.Enabled = habilitado;
-
-            if (habilitado)
-            {
-                txtNombreFactura.Text = string.Empty;
-                txtCedulaRuc.Text = string.Empty;
-                txtNombreFactura.Focus();
-            }
-            else
-            {
-                txtNombreFactura.Text = txtestudiante.Text;
-            }
-
-        }
+    
         
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtestudiante.Text) && string.IsNullOrWhiteSpace(txtNombreFactura.Text))
+                if (string.IsNullOrWhiteSpace(txtestudiante.Text))
                 {
                     MessageBox.Show("Debes de Seleccionar el Estudiante",
                                     "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -927,14 +925,13 @@ namespace CaoaPresentacion
                 }
 
                 // Asignación de valores a campos de pago
-                txtFacturaTemporal.Text = txtCodigoFactura.Text;
                 txtSubtotalPago.Text = txtTotal.Text;
                 txttotalPago.Text = txtTotal.Text;
                 txtIvaPago.Text = txtIva.Text;
                 txtDescuentoPago.Text = txtDescuento.Text;
-                txtNombredeFacturaPago.Text = txtNombreFactura.Text;
+                txtNombredeFacturaPago.Text = txtestudiante.Text;
                 txtCarnetPago.Text = txtcodigocarnet.Text;
-                txtCedulaPago.Text = txtcodigocarnet.Text;
+             
 
                 txtCursoPago.Text = NombreCurso;
                 txtDiasPago.Text = Turno;
@@ -994,28 +991,7 @@ namespace CaoaPresentacion
         }
         
 
-        private void txtcarnetEstudiante_TextChanged(object sender, EventArgs e)
-        {
-
-            CD_Conexion conexion = new CD_Conexion();
-            conexion.AbrirConexion();
-            SqlCommand cm = new SqlCommand("select c.Cod_Matricula,d.Cod_carnet,e.Nombres,e.Apellidos,e.Cedula from Tbl_Factura_Gnral a join Tbl_Facturas_Matriculas b on a.Num_Factura = b.Num_Factura join Tbl_Matricula c on b.Cod_Matricula = c.Cod_Matricula join Tbl_Estudiantes d on d.Id_estudiante = c.Id_estudiante join Tbl_Personas e on e.Id_persona = d.Id_persona where d.Cod_carnet = '" + txtcarnetEstudiante.Text + "'", conexion.Conexion());
-            SqlDataReader dr = cm.ExecuteReader();
-            if (dr.Read() == true)
-            {
-                this.txtestudiante.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                this.txtcodigocarnet.Text = dr["Cod_carnet"].ToString();
-
-                CacheDatos.CodigodeCarnet = this.txtcodigocarnet.Text;
-                CacheDatos.ValorVentanaProgramacion = "nuevamatricula";
-                
-                this.txtNombreFactura.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                this.txtCedulaRuc.Text = dr["Cedula"].ToString();
-                
-
-            }
-            conexion.CerrarConexion();
-        }
+      
 
        
 
@@ -1046,27 +1022,15 @@ namespace CaoaPresentacion
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtBusquedaEstudiante.Text))
+                if (TablaDetalleFactura.Rows.Count != 0)
                 {
-                    tabControl1.SelectedTab = TabBusquedaEstudiante;
+                    MessageBox.Show("Debe finalizar o limpiar la factura antes de seleccionar otro cliente.", "SISTEMA CECNIC",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
                 }
-                else
-                {
-                    switch (cmbtipobusqueda.Text.ToUpper())
-                    {
-                        case "CARNET":
-                            BuscarPorCarnet();
-                            break;
 
-                        case "CEDULA":
-                            BuscarPorCedulaEstudiante();
-                            break;
-
-                        default:
-                            // Opcional: manejar opción inválida
-                            break;
-                    }
-                }
+                tabControl1.SelectedTab = TabBusquedaEstudiante;
+                
+            
             }
             catch (Exception)
             {
@@ -1076,77 +1040,7 @@ namespace CaoaPresentacion
 
         }
         
-        private void BuscarPorCarnet()
-        {
-            try
-            {
-
-                this.txtestudiante.Text = string.Empty;
-                this.txtcodigocarnet.Text = string.Empty;
-                this.txtNombreFactura.Text = string.Empty;
-                this.txtCedulaRuc.Text = string.Empty;
-                
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cm = new SqlCommand("select a.Id_estudiante,a.Cod_carnet,b.Nombres,b.Apellidos,b.Cedula,c.NombreSucursal,d.Estado from Tbl_Estudiantes a join Tbl_Personas b on a.Id_persona = b.Id_persona join TblSucursales c on a.Id_sucursal = c.Id_sucursal join Tbl_Estados d on  a.Id_estado = d.Id_estado where a.Cod_carnet = '" + txtBusquedaEstudiante.Text + "'", conexion.Conexion());
-                SqlDataReader dr = cm.ExecuteReader();
-                if (dr.Read() == true)
-                {
-                    this.txtestudiante.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                    this.txtcodigocarnet.Text = dr["Cod_carnet"].ToString();
-
-                    this.txtNombreFactura.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                    this.txtCedulaRuc.Text = dr["Cedula"].ToString();
-                }
-                conexion.CerrarConexion();
-
-                CacheDatos.CodCarnet = this.txtcodigocarnet.Text;
-                CacheDatos.PasarCarnet = true;
-
-                CacheBusquedaEstudiante.CodigoDeCarnet = this.txtcodigocarnet.Text;
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("");
-            }
-        }
-
-       
-        private void BuscarPorCedulaEstudiante()
-        {
-            try
-            {
-                this.txtestudiante.Text = string.Empty;
-                this.txtcodigocarnet.Text = string.Empty;
-                this.txtNombreFactura.Text = string.Empty;
-                this.txtCedulaRuc.Text = string.Empty;
-
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cm = new SqlCommand("select a.Id_estudiante,a.Cod_carnet,b.Nombres,b.Apellidos,b.Cedula,c.NombreSucursal,d.Estado from Tbl_Estudiantes a join Tbl_Personas b on a.Id_persona = b.Id_persona join TblSucursales c on a.Id_sucursal = c.Id_sucursal join Tbl_Estados d on  a.Id_estado = d.Id_estado where b.cedula = '" + txtBusquedaEstudiante.Text + "' and d.Id_estado = '3'", conexion.Conexion());
-                SqlDataReader dr = cm.ExecuteReader();
-                if (dr.Read() == true)
-                {
-                    this.txtestudiante.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                    this.txtcodigocarnet.Text = dr["Cod_carnet"].ToString();
-
-                    this.txtNombreFactura.Text = dr["Nombres"].ToString() + " " + dr["Apellidos"].ToString();
-                    this.txtCedulaRuc.Text = dr["Cedula"].ToString();
-                }
-                conexion.CerrarConexion();
-
-                CacheDatos.CodCarnet = this.txtcodigocarnet.Text;
-                CacheDatos.PasarCarnet = true;
-
-                CacheBusquedaEstudiante.CodigoDeCarnet = this.txtcodigocarnet.Text;
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+      
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1169,126 +1063,34 @@ namespace CaoaPresentacion
             }
         }
 
-        public void Cargar_ComboMonedaLibreria()
-        {
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cmd = new SqlCommand("Select IdMoneda,Descripcion from Tbl_TipoMoneda", conexion.Conexion());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexion.CerrarConexion();
 
-                DataRow fila = dt.NewRow();
-                fila["Descripcion"] = "Selecciona una Moneda";
-                dt.Rows.InsertAt(fila, 0);
-
-                cmbTipoMonedaLibreria.ValueMember = "IdMoneda";
-                cmbTipoMonedaLibreria.DisplayMember = "Descripcion";
-                cmbTipoMonedaLibreria.DataSource = dt;
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        public void Cargar_ComboMonedaPago()
-        {
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cmd = new SqlCommand("Select IdMoneda,Descripcion from Tbl_TipoMoneda", conexion.Conexion());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexion.CerrarConexion();
-
-                DataRow fila = dt.NewRow();
-                fila["Descripcion"] = "Selecciona una Moneda";
-                dt.Rows.InsertAt(fila, 0);
-
-                cmbTipoMonedaPago.ValueMember = "IdMoneda";
-                cmbTipoMonedaPago.DisplayMember = "Descripcion";
-                cmbTipoMonedaPago.DataSource = dt;
-
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        public void Cargar_ComboMonedaAbono()
-        {
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand cmd = new SqlCommand("Select IdMoneda,Descripcion from Tbl_TipoMoneda", conexion.Conexion());
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                conexion.CerrarConexion();
-
-                DataRow fila = dt.NewRow();
-                fila["Descripcion"] = "Selecciona una Moneda";
-                dt.Rows.InsertAt(fila, 0);
-
-                cmbMonedaAbono.ValueMember = "IdMoneda";
-                cmbMonedaAbono.DisplayMember = "Descripcion";
-                cmbMonedaAbono.DataSource = dt;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        
-       
-        
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            this.Estado_ = "3";
+            this.Estado = "3";
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            this.Estado_ = "4";
+            this.Estado = "4";
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             try
             {
-                switch (this.cmbBusquedas.Text)
+
+                if (this.txtbusqueda.Text == string.Empty)
                 {
-                    case "Carnet":
-                        MostrarPorCarnet();
-                        break;
-
-                    case "Nombres":
-                        MostrarPorNombre();
-                        break;
-
-                    case "Apellidos":
-                        MostrarPorApellidos();
-                        break;
-
-                    default:
-                        MessageBox.Show("Seleccione un tipo de búsqueda válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
+                    MessageBox.Show(
+                      "Por favor, ingrese un criterio de búsqueda antes de continuar.",
+                      "SISTEMA CECNIC",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Warning);
+                    return;
                 }
 
-                OcultarColumnas("Fecha", "Fecha_Registro", "HoraRegistro", "Cedula", "Direccion", "NombreTutor", "CelularTutor", "Parentesco", "FechaNacimiento", "Estado", "Id_Matricula", "Id_Grupo");
+                this.MostrarMatriculas();
+
 
             }
             catch (Exception)
@@ -1298,38 +1100,40 @@ namespace CaoaPresentacion
 
         }
 
-        private void OcultarColumnas(params string[] nombresColumnas)
+        private void MostrarMatriculas()
         {
-            foreach (string nombre in nombresColumnas)
+            try
             {
-                if (dataEstudiantes.Columns.Contains(nombre))
-                {
-                    dataEstudiantes.Columns[nombre].Visible = false;
-                }
+                CN_Matriculas objetoCN = new CN_Matriculas();
+                dataEstudiantes.DataSource = objetoCN.MostrarMatriculas(this.txtbusqueda.Text, Convert.ToInt32(Estado), cmbBusquedas.Text);
+                OcultarColumnas();
+                ContarFilas();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK);
             }
         }
 
-        public void MostrarPorCarnet()
+        private void ContarFilas()
         {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorCarnet(this.txtbusqueda.Text, Estado_);
-
-        }
-        private void MostrarPorNombre()
-        {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorNombre(this.txtbusqueda.Text, Estado_);
-
+            this.lbltotal.Text = Convert.ToString(this.dataEstudiantes.Rows.Count);
         }
 
 
-        private void MostrarPorApellidos()
+        private void OcultarColumnas()
         {
-            CN_VistaUniverso objetoCN = new CN_VistaUniverso();
-            this.dataEstudiantes.DataSource = objetoCN.MostrarPorApellidos(this.txtbusqueda.Text, Estado_);
+            this.dataEstudiantes.Columns["Fecha"].Visible = false;
+            this.dataEstudiantes.Columns["Fecha_Registro"].Visible = false;
+            this.dataEstudiantes.Columns["HoraRegistro"].Visible = false;
+            this.dataEstudiantes.Columns["Cedula"].Visible = false;
+            this.dataEstudiantes.Columns["FechaNacimiento"].Visible = false;
+            this.dataEstudiantes.Columns["Id_Matricula"].Visible = false;
+            this.dataEstudiantes.Columns["Id_Grupo"].Visible = false;
+            this.dataEstudiantes.Columns["Estado"].Visible = false;
 
         }
-        
+
         
 
         private void CargarInformacionCurso(string CodMatricula, string NombreCurso, string Turno, string Horario)
@@ -1927,7 +1731,7 @@ namespace CaoaPresentacion
             this.txtTasaCambioLibreria.Text = string.Empty;
             this.txtMontoEnCordobasLibreria.Text = string.Empty;
             this.txtObservacionLibreria.Text = string.Empty;
-            this.Cargar_ComboMonedaLibreria();
+         
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -1961,7 +1765,7 @@ namespace CaoaPresentacion
                 calcularSubtotal();
                 this.CalcularTotal(Convert.ToDouble(this.txtSubtotal.Text), 0, 0);
 
-                txtNombreFactura.Text = "VENTA DE LIBRERIA";
+                txtestudiante.Text = "VENTA DE LIBRERIA";
                 
                 tabControl1.SelectedTab = TabFacturacion;
                 LimpiarLibreria();
@@ -2151,7 +1955,9 @@ namespace CaoaPresentacion
 
                                 //Guardamos la Factura
                                 CN_Factura objetoFactura = new CN_Factura();
-                                objetoFactura.Insertar(CodigoFact, "EFECTIVO", this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, this.txtCarnetPago.Text, this.txtCarnetPago.Text);
+                                objetoFactura.Insertar(CodigoFact, "EFECTIVO", this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, "","", string.IsNullOrWhiteSpace(this.txtIdMatricula.Text)
+                                ? (int?)null
+                                : Convert.ToInt32(this.txtIdMatricula.Text));
                                 //Insertamos Detalle del Pago
                                 objetoFactura.InsertarDetallePago(CodigoFact, "EFECTIVO", this.txtPagoConPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), this.txtTasaCambioPago.Text, this.txtPagoCon.Text, this.txttotalPago.Text, this.txtCambioPago.Text, "");
                                 //Insertamos Movimiento de Caja
@@ -2241,7 +2047,9 @@ namespace CaoaPresentacion
 
                             //Guardamos la Factura
                             CN_Factura objetoFactura = new CN_Factura();
-                            objetoFactura.Insertar(CodigoFact, "EFECTIVO", this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, this.txtCarnetPago.Text, this.txtCarnetPago.Text);
+                            objetoFactura.Insertar(CodigoFact, "EFECTIVO", this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, "", "", string.IsNullOrWhiteSpace(this.txtIdMatricula.Text)
+                            ? (int?)null
+                            : Convert.ToInt32(this.txtIdMatricula.Text));
                             //Insertamos Detalle del Pago
                             objetoFactura.InsertarDetallePago(CodigoFact, "EFECTIVO", this.txtPagoConPago.Text, this.cmbTipoMonedaPago.SelectedValue.ToString(), this.txtTasaCambioPago.Text, this.txtPagoCon.Text, this.txttotalPago.Text, this.txtCambioPago.Text, "");
                             //Insertamos Movimiento de Caja
@@ -2340,7 +2148,9 @@ namespace CaoaPresentacion
 
                                 //Guardamos la Factura
                                 CN_Factura objetoFactura = new CN_Factura();
-                                objetoFactura.Insertar(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, "1", "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, this.txtCarnetPago.Text, this.txtCarnetPago.Text);
+                                objetoFactura.Insertar(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, "1", "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, "", "", string.IsNullOrWhiteSpace(this.txtIdMatricula.Text)
+                                ? (int?)null
+                                : Convert.ToInt32(this.txtIdMatricula.Text));
                                 //Insertamos Detalle del Pago
                                 objetoFactura.InsertarDetallePago(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtPagoCon.Text, "1", "1", this.txtPagoCon.Text, this.txttotalPago.Text, this.txtCambioPago.Text, this.txtReferenciaPago.Text);
                                 //Insertamos Movimiento de Caja
@@ -2433,7 +2243,9 @@ namespace CaoaPresentacion
 
                             //Guardamos la Factura
                             CN_Factura objetoFactura = new CN_Factura();
-                            objetoFactura.Insertar(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, "1", "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, this.txtCarnetPago.Text, this.txtCarnetPago.Text);
+                            objetoFactura.Insertar(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtSubtotalPago.Text, "0", this.txttotalPago.Text, "1", "6", CacheUsuario.IdUsuario, nombreEquipo, FechaActual, this.txtNombredeFacturaPago.Text, "", "", string.IsNullOrWhiteSpace(this.txtIdMatricula.Text)
+                            ? (int?)null
+                            : Convert.ToInt32(this.txtIdMatricula.Text));
                             //Insertamos Detalle del Pago
                             objetoFactura.InsertarDetallePago(CodigoFact, this.txtSeleccionTipoPago.Text.ToUpper(), this.txtPagoCon.Text, "1", "1", this.txtPagoCon.Text, this.txttotalPago.Text, this.txtCambioPago.Text, this.txtReferenciaPago.Text);
                             //Insertamos Movimiento de Caja
@@ -2693,7 +2505,8 @@ namespace CaoaPresentacion
                     string Cedula = this.dataEstudiantes.CurrentRow.Cells["Cedula"].Value.ToString();
                     string Carnet = this.dataEstudiantes.CurrentRow.Cells["Carnet Estudiantil"].Value.ToString();
                     string CodMat = this.dataEstudiantes.CurrentRow.Cells["Cod_Matricula"].Value.ToString();
-                    this.DatosEstudiante(Nombres, Apellidos, Cedula, Carnet, CodMat);
+                    string IdMatricula = this.dataEstudiantes.CurrentRow.Cells["Id_Matricula"].Value.ToString();
+                    this.DatosEstudiante(Nombres, Apellidos, Cedula, Carnet, CodMat,IdMatricula);
 
                     this.tabControl1.SelectedTab = TabMensualidades;
 
@@ -2705,19 +2518,18 @@ namespace CaoaPresentacion
             }
         }
 
-        private void DatosEstudiante(string NombreEst, string ApellidosEst, string CedulaEst, string CarnetEst, string CodMatricula)
+        private void DatosEstudiante(string NombreEst, string ApellidosEst, string CedulaEst, string CarnetEst, string CodMatricula,string IdMatricula)
         {
             this.txtNombreEstudiante.Text = NombreEst;
             this.txtApellidosEstudiante.Text = ApellidosEst;
             this.txtCedulaEstudiante.Text = CedulaEst;
             this.txtCodEstudiante.Text = CarnetEst;
-
-            this.txtBusquedaEstudiante.Text = CarnetEst;
+            
             this.txtestudiante.Text = NombreEst + " " + ApellidosEst;
             this.txtcodigocarnet.Text = CarnetEst;
-            this.txtNombreFactura.Text = NombreEst + " " + ApellidosEst;
-            this.txtCedulaRuc.Text = CarnetEst;
-            this.txtCedulaPago.Text = CarnetEst;
+            this.txtCodMatricula.Text = CodMatricula;
+           this.txtIdMatricula.Text = IdMatricula;
+          
 
             this.Nombres = NombreEst;
             this.Apellidos = ApellidosEst;
@@ -2850,7 +2662,6 @@ namespace CaoaPresentacion
                 this.tabControl1.SelectedTab = TabFacturacion;
                 this.LimpiarControlesAbono();
                 this.btnAgregarAbono.Enabled = false;
-                this.Cargar_ComboMonedaAbono();
                 this.MostrarDetallePago(NumProgramacion_);
             }
             catch (Exception)
@@ -2867,7 +2678,6 @@ namespace CaoaPresentacion
                 this.tabControl1.SelectedTab = TabFacturacion;
                 this.LimpiarControlesAbono();
                 this.btnAgregarAbono.Enabled = false;
-                this.Cargar_ComboMonedaAbono();
 
             }
             catch (Exception)
@@ -2876,29 +2686,7 @@ namespace CaoaPresentacion
             }
         }
 
-        private void button21_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.TablaDetalleFactura.Rows.Count != 0)
-                {
-                    MessageBox.Show("Tienes aranceles por Cancelar, cierre esta ventana y vuelva a facturar", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    this.txtBusquedaEstudiante.Text = string.Empty;
-                    this.txtestudiante.Text = string.Empty;
-                    this.txtcodigocarnet.Text = string.Empty;
-                    this.txtNombreFactura.Text = string.Empty;
-                    this.txtCedulaRuc.Text = string.Empty;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+      
         private void cmbMonedaAbono_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
@@ -3186,7 +2974,6 @@ namespace CaoaPresentacion
 
                 // Variables para realizar el abono
                 string saldoAnt = this.txttotalAbonado.Text;
-                string factTemp = this.txtMensualidadFactura.Text;
                 string nombCurso = this.txtNombre_Curso.Text;
                 string diasCurso = this.txtDia.Text;
                 string horarioCurso = this.txtHorario_.Text;
@@ -3196,7 +2983,7 @@ namespace CaoaPresentacion
                 string idDetalleProgramacionAbono = this.Id_Detalle_Programacion_;
 
                 // Realizar el abono
-                this.RealizarAbono(saldoAnt, factTemp, nombCurso, diasCurso, horarioCurso, subtotalAbono, concepto, numProgramacionAbono, idDetalleProgramacionAbono);
+                this.RealizarAbono(saldoAnt,nombCurso, diasCurso, horarioCurso, subtotalAbono, concepto, numProgramacionAbono, idDetalleProgramacionAbono);
 
                 // Cambiar a la pestaña correspondiente
                 this.tabControl1.SelectedTab = TabAbonos;
@@ -3361,8 +3148,6 @@ namespace CaoaPresentacion
                 this.panel18.Enabled = true;
                 this.txtMotivoDescuentoMatricula.Enabled = true;
                 
-
-
             }
             catch (Exception)
             {
@@ -3539,15 +3324,72 @@ namespace CaoaPresentacion
                         );
                         return;
                     }
-
-                   
                      ProcesarFilaSeleccionada(currentRowIndex);
-                    
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show($"Ocurrió un error", "Error del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void solicitarArregloDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CacheDatos.NumeroDeProgramacionAbono = this.txtNumProgramacionEstudiante.Text;
+                Frm_SolicitudArreglo frm = new Frm_SolicitudArreglo();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void nuevaMensualidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fechaMasRecienteGlobal = dataMensualidadesEstudiante.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => row.Cells["Fecha_Vencimiento"].Value != null)
+                .Select(row => Convert.ToDateTime(row.Cells["Fecha_Vencimiento"].Value))
+                .Max();
+
+                int ContadorCompletados = 0;
+                int TotalRegistros = dataMensualidadesEstudiante.Rows.Count;
+
+
+                foreach (DataGridViewRow row in dataMensualidadesEstudiante.Rows)
+                {
+                    if (row.Cells["Estado"].Value.ToString() == "Completado")
+                    {
+                        ContadorCompletados = ContadorCompletados + 1;
+                    }
+                }
+
+                if (TotalRegistros == ContadorCompletados)
+                {
+                    this.txtNombresMensualidad.Text = this.txtNombreEstudiante.Text;
+                    this.txtApellidoMensualidad.Text = this.txtApellidosEstudiante.Text;
+                    this.txtNProgramacionMensualidad.Text = this.txtNumProgramacionEstudiante.Text;
+                    this.txtCodMatMensualidad.Text = this.txtCodMatEstudiante.Text;
+
+                    this.tabControl1.SelectedTab = TabNuevaMensualidad;
+                    this.ObtenerelDiaDeVencimiento();
+
+
+                }
+                else if (TotalRegistros != ContadorCompletados)
+                {
+                    MessageBox.Show("Para poder agregar un Nuevo Pago, todos los anteriores deben de estar Completados", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -3591,18 +3433,17 @@ namespace CaoaPresentacion
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error de Sistema: ", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de Sistema " + ex.Message, "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
 
-        private void RealizarAbono(string SaldoAnterior, string FacturaTemporal, string NombreCurso, string DiasCurso, string HorarioCurso, string SubtotalAbono, string Concepto, string NumProgramacion, string IdDetalleProgramacion)
+        private void RealizarAbono(string SaldoAnterior, string NombreCurso, string DiasCurso, string HorarioCurso, string SubtotalAbono, string Concepto, string NumProgramacion, string IdDetalleProgramacion)
         {
             this.txtTotalAbonos.Text = SaldoAnterior;
-            this.txtFacturaABONO.Text = FacturaTemporal;
             this.txtCursoAbono.Text = NombreCurso;
             this.txtDiasAbono.Text = DiasCurso;
             this.txtHorariosAbono.Text = HorarioCurso;
@@ -3738,10 +3579,6 @@ namespace CaoaPresentacion
         {
             try
             {
-
-
-                
-
                 int numeroMes = DateTime.ParseExact(cmbmes.Text, "MMMM", new System.Globalization.CultureInfo("es-ES")).Month;
                 fechaVencimientoMensualidad = new DateTime(int.Parse(cmbaño.Text), numeroMes, int.Parse(DiaVencimientoMensualidad.ToString()));
 

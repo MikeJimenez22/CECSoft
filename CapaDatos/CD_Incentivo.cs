@@ -29,63 +29,7 @@ namespace CapaDatos
 
         }
 
-
-
-     
-
-
-        public DataTable MostrarUniversoPorFechaEjecutivo(string FechaInicial, string FechaFinal, int IdEstado)
-        {
-            DataTable tabla = new DataTable();
-
-
-
-            using (SqlCommand comando = new SqlCommand("MostrarMatriculasPorFechaEjecutivoDatos", conexion.Conexion()))
-            {
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@fechaInicial", FechaInicial);
-                comando.Parameters.AddWithValue("@fechaFinal", FechaFinal);
-                comando.Parameters.AddWithValue("@IdEstado", IdEstado);
-
-                conexion.AbrirConexion();
-                tabla.Load(comando.ExecuteReader());
-            }
-
-
-            return tabla;
-
-        }
-
-
-    
-
-
-        public DataTable MostrarMatriculasAgrupadas(string FechaInicial, string FechaFinal, int IdEstado)
-        {
-            DataTable tabla = new DataTable();
-
-
-
-            using (SqlCommand comando = new SqlCommand("CalcularIncentivo", conexion.Conexion()))
-            {
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@FechaInicial", FechaInicial);
-                comando.Parameters.AddWithValue("@FechaFinal", FechaFinal);
-                comando.Parameters.AddWithValue("@IdEstado", IdEstado);
-
-                conexion.AbrirConexion();
-                tabla.Load(comando.ExecuteReader());
-            }
-
-
-            return tabla;
-
-        }
-
-
-       
-
-
+        
 
         public DataTable MostrarPagoIncentivoTotal(string FechaInicial, string FechaFinal, int Estado)
         {

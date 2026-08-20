@@ -27,12 +27,38 @@ namespace CapaNegocio
 
 
 
-        public void Insertar(string CodMatricula, string Fecha, string IdEstudiante, string OrigenMatricula, string IdEmpleado, string IdGrupo, string IdUsuario, string FechaRegistro, string IdEstado, string observacion, string HoraRegistro, string TipoIngreso, string EstadoGrupo)
-        {
-            objetoCD.Insertar(CodMatricula, Convert.ToDateTime(Fecha), Convert.ToInt32(IdEstudiante), OrigenMatricula, IdEmpleado, Convert.ToInt32(IdGrupo), Convert.ToInt32(IdUsuario), Convert.ToDateTime(FechaRegistro), Convert.ToInt32(IdEstado), observacion, HoraRegistro, TipoIngreso, EstadoGrupo);
-        }
-
     
+
+            public int InsertarMatricula(
+                string CodMatricula,
+                DateTime Fecha,
+                int IdEstudiante,
+                string OrigenMatricula,
+                string IdEmpleado,
+                int IdGrupo,
+                int IdUsuario,
+                int Estado,
+                string observacion,
+                string TipoIngreso,
+                string EstadoGrupo)
+            {
+                return objetoCD.Insertar(
+                    CodMatricula,
+                    Fecha,
+                    IdEstudiante,
+                    OrigenMatricula,
+                    IdEmpleado,
+                    IdGrupo,
+                    IdUsuario,
+                    Estado,
+                    observacion,
+                    TipoIngreso,
+                    EstadoGrupo
+                );
+            }
+        
+
+
 
         public DataTable MostrarNumprogramacion(string CodMatricula)
         {
@@ -48,12 +74,6 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public DataTable MostrarUniversoPorfechas(string fechaInicio,string FechaFinal)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarUniversoPorFecha(Convert.ToDateTime(fechaInicio),Convert.ToDateTime(FechaFinal));
-            return tabla;
-        }
 
         public void ActualizarMatriculaGrupo(string IdGrupo, string CodMatricula)
         {
@@ -68,15 +88,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public DataTable ObtenerEstudiantesAusentes()
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.ObtenerEstudiantesAusentes();
-            return tabla;
-        }
-
-
-
+      
         public DataTable ObtenerEstudiantesNoAsignados()
         {
             DataTable tabla = new DataTable();

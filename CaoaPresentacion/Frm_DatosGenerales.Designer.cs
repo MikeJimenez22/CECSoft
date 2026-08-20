@@ -44,11 +44,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
             this.txtIdPersonaEnfermedades = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataEnfermedadesPersona = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtIdPersonaAgenda = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dataAgenda = new System.Windows.Forms.DataGridView();
             this.txtNumeroTelefonico = new System.Windows.Forms.TextBox();
@@ -57,7 +60,10 @@
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbMedio = new System.Windows.Forms.ComboBox();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtIdPersonaAgenda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtIdPersona = new System.Windows.Forms.TextBox();
             this.txtCodigoPersona = new System.Windows.Forms.TextBox();
             this.cmbNivelAcademico = new System.Windows.Forms.ComboBox();
@@ -114,12 +120,6 @@
             this.txtBusquedaRef = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -127,19 +127,19 @@
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEnfermedadesPersona)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataAgenda)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonas)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -308,6 +308,27 @@
             this.groupBox3.TabIndex = 10001;
             this.groupBox3.TabStop = false;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel8.Controls.Add(this.label22);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 16);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(436, 23);
+            this.panel8.TabIndex = 10010;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(19, 4);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(91, 16);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Enfermedades";
+            // 
             // txtIdPersonaEnfermedades
             // 
             this.txtIdPersonaEnfermedades.Enabled = false;
@@ -363,15 +384,26 @@
             this.groupBox2.TabIndex = 10000;
             this.groupBox2.TabStop = false;
             // 
-            // txtIdPersonaAgenda
+            // panel7
             // 
-            this.txtIdPersonaAgenda.Enabled = false;
-            this.txtIdPersonaAgenda.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtIdPersonaAgenda.Location = new System.Drawing.Point(11, 185);
-            this.txtIdPersonaAgenda.Name = "txtIdPersonaAgenda";
-            this.txtIdPersonaAgenda.Size = new System.Drawing.Size(49, 26);
-            this.txtIdPersonaAgenda.TabIndex = 10007;
-            this.txtIdPersonaAgenda.Visible = false;
+            this.panel7.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel7.Controls.Add(this.label17);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(3, 16);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(441, 23);
+            this.panel7.TabIndex = 10008;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(19, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(113, 16);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Agenda Telefonica";
             // 
             // button2
             // 
@@ -477,6 +509,16 @@
             this.materialLabel16.TabIndex = 9999;
             this.materialLabel16.Text = "Tipo de Medio de Contacto";
             // 
+            // txtIdPersonaAgenda
+            // 
+            this.txtIdPersonaAgenda.Enabled = false;
+            this.txtIdPersonaAgenda.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtIdPersonaAgenda.Location = new System.Drawing.Point(11, 185);
+            this.txtIdPersonaAgenda.Name = "txtIdPersonaAgenda";
+            this.txtIdPersonaAgenda.Size = new System.Drawing.Size(49, 26);
+            this.txtIdPersonaAgenda.TabIndex = 10007;
+            this.txtIdPersonaAgenda.Visible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel6);
@@ -526,6 +568,27 @@
             this.groupBox1.Size = new System.Drawing.Size(705, 521);
             this.groupBox1.TabIndex = 9998;
             this.groupBox1.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 16);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(699, 23);
+            this.panel6.TabIndex = 10007;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(19, 4);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(111, 16);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Datos Personales";
             // 
             // txtIdPersona
             // 
@@ -978,7 +1041,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 19);
+            this.tabControl1.Location = new System.Drawing.Point(0, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1179, 676);
@@ -1106,69 +1169,6 @@
             this.pictureBox1.TabIndex = 10000;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 16);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(699, 23);
-            this.panel6.TabIndex = 10007;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(19, 4);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(111, 16);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Datos Personales";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel7.Controls.Add(this.label17);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(3, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(441, 23);
-            this.panel7.TabIndex = 10008;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(19, 4);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 16);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Agenda Telefonica";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel8.Controls.Add(this.label22);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(3, 16);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(436, 23);
-            this.panel8.TabIndex = 10010;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(19, 4);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(91, 16);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Enfermedades";
-            // 
             // Frm_DatosGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1193,12 +1193,18 @@
             this.panel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEnfermedadesPersona)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataAgenda)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1207,12 +1213,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -15,12 +15,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public DataTable VerificacionOrigenMatricula(string CarnetEstudiante)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.VerificarOrigenMatricula(CarnetEstudiante);
-            return tabla;
-        }
+     
 
     }
 }

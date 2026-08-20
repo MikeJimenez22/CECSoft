@@ -27,6 +27,12 @@ namespace CapaNegocio
             tabla = objetoCD.MostrarRocYROS(NumeroFactura);
             return tabla;
         }
-    
+
+
+        public DataTable MostrarDetalleFactura(string NumFactura)
+        {
+            return objetoCD.MostrarDetalleFactura(NumFactura);
+        }
+
     }
 }

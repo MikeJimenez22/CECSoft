@@ -18,7 +18,7 @@ namespace CaoaPresentacion
     public partial class Frm_Principal : Form
     {
         CN_Usuarios objetoCN2 = new CN_Usuarios();
-        CN_CierreCaja objetoCN3 = new CN_CierreCaja();
+        
         CN_Rol_Formularios objetoCN4 = new CN_Rol_Formularios();
         string fechaVerificacion = DateTime.Now.ToShortDateString();
 
@@ -63,7 +63,7 @@ namespace CaoaPresentacion
                 {
 
                     
-                    FrmFacturasDeEstudiante frm = new FrmFacturasDeEstudiante();
+                    Frm_HistorialFacturasEstudiante frm = new Frm_HistorialFacturasEstudiante();
                     frm.Show();
 
 
@@ -767,7 +767,7 @@ namespace CaoaPresentacion
         {
             try
             {
-                Frm_ArqueodeCaja frm = new Frm_ArqueodeCaja();
+                Frm_ConsultaDeFacturacion frm = new Frm_ConsultaDeFacturacion();
                 frm.Show();
             }
             catch (Exception)
@@ -940,7 +940,6 @@ namespace CaoaPresentacion
             { "CambioMoneda", cambioDeMonedaToolStripMenuItem },
             {"HistorialPagosEstudiante",historialPagosEstudianteToolStripMenuItem},
             {"ReporteDiario",reporteCajaDiariaToolStripMenuItem},
-            {"ReporteAusencias",inasistenciasToolStripMenuItem},
             {"ReporteNoAsignado",matriculasNoAsignadosToolStripMenuItem},
             {"Acerca",acercaDeToolStripMenuItem }
         };
@@ -1084,7 +1083,7 @@ namespace CaoaPresentacion
         {
             try
             {
-                FrmFacturasDeEstudiante frm = new FrmFacturasDeEstudiante();
+                Frm_HistorialFacturasEstudiante frm = new Frm_HistorialFacturasEstudiante();
                 frm.Show();
             }
             catch(Exception)
@@ -1106,19 +1105,7 @@ namespace CaoaPresentacion
             }
         }
 
-        private void inasistenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                Frm_Inasistencias frm = new Frm_Inasistencias();
-                frm.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+      
 
         private void matriculasNoAsignadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1367,6 +1354,19 @@ namespace CaoaPresentacion
             try
             {
                 Frm_Egresados frm = new Frm_Egresados();
+                frm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Sistema", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void matriculasParaINATECToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_MatriculasParaInatec frm = new Frm_MatriculasParaInatec();
                 frm.Show();
             }
             catch (Exception)

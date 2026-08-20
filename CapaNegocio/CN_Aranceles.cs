@@ -26,19 +26,21 @@ namespace CapaNegocio
         }
 
 
-        public DataTable MostrarInformacionArancel(string IdArancel)
+        public DataTable MostrarInformacionArancel(int IdArancel)
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarInformacionArancel(Convert.ToInt32(IdArancel));
+            tabla = objetoCD.MostrarInformacionArancel(IdArancel);
             return tabla;
         }
 
 
 
-        public DataTable CargarAranceles()
+
+
+        public DataTable MostrarAranceles()
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.CargarAranceles();
+            tabla = objetoCD.MostrarAranceles();
             return tabla;
         }
 

@@ -1675,6 +1675,16 @@ namespace CaoaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lupa {
+            get {
+                object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap modal {
             get {
                 object obj = ResourceManager.GetObject("modal", resourceCulture);
@@ -1969,6 +1979,26 @@ namespace CaoaPresentacion.Properties {
         internal static System.Drawing.Bitmap sin_perfil {
             get {
                 object obj = ResourceManager.GetObject("sin-perfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sobresalir {
+            get {
+                object obj = ResourceManager.GetObject("sobresalir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sobresalir__1_ {
+            get {
+                object obj = ResourceManager.GetObject("sobresalir (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using CapaDatos;
 using CapaNegocio;
+using Utils;
+
 
 namespace CaoaPresentacion
 {
@@ -20,9 +22,13 @@ namespace CaoaPresentacion
             InitializeComponent();
             this.cmbEstados.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbAcreditacion.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbModalidad.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataGridViewConfigurator.Configure(dataCursos);
         }
 
         string IdEstado;
+        bool Editar = true;
 
         private void FrmCursos_Load(object sender, EventArgs e)
         {
@@ -30,6 +36,8 @@ namespace CaoaPresentacion
             {
                 this.cmbEstados.Text = "Activos";
                 this.cmbCategoria.Text = "Seleccione";
+                this.cmbAcreditacion.Text = "Seleccione";
+                this.cmbModalidad.Text = "NINGUNA";
                 this.AgregarColumnaConIcono();
                 this.MostrarCursosPorEstado();
 
@@ -78,11 +86,20 @@ namespace CaoaPresentacion
             {
                 // Agregar columna de botón
                 DataGridViewButtonColumn btnColumna = new DataGridViewButtonColumn();
-                btnColumna.HeaderText = "Actualizar estado";
+                btnColumna.HeaderText = "Actualizar";
                 btnColumna.Name = "Actualizar";
                 btnColumna.Text = ""; // El texto no se usará porque dibujaremos un ícono
                 btnColumna.UseColumnTextForButtonValue = false;
                 dataCursos.Columns.Add(btnColumna);
+
+
+                DataGridViewButtonColumn btnColumna2 = new DataGridViewButtonColumn();
+                btnColumna2.HeaderText = "Editar";
+                btnColumna2.Name = "Editar";
+                btnColumna2.Text = ""; // El texto no se usará porque dibujaremos un ícono
+                btnColumna2.UseColumnTextForButtonValue = false;
+                dataCursos.Columns.Add(btnColumna2);
+
 
 
 
@@ -100,21 +117,62 @@ namespace CaoaPresentacion
         {
             if (e.ColumnIndex == dataCursos.Columns["Actualizar"].Index && e.RowIndex >= 0)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                e.PaintBackground(e.CellBounds, false);
 
-                // Cargar el ícono desde recursos (recomendado) o archivo
-                Bitmap icon = Properties.Resources._118839_applications_system_applications_system; // Usa tu recurso de imagen
+                // Editar
+                using (SolidBrush brush = new SolidBrush(Color.DodgerBlue))
+                {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+                Bitmap icon = Properties.Resources.procesamiento_de_datos;
+
                 int iconWidth = 16;
                 int iconHeight = 16;
 
-                // Posición centrada en la celda
                 int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
 
                 e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
-                e.Handled = true; // Indica que la celda está completamente pintada
+
+                // Borde
+                e.Graphics.DrawRectangle(Pens.White,
+                    e.CellBounds.Left,
+                    e.CellBounds.Top,
+                    e.CellBounds.Width - 1,
+                    e.CellBounds.Height - 1);
+
+                e.Handled = true;
             }
-            
+
+            if (e.ColumnIndex == dataCursos.Columns["Editar"].Index && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.CellBounds, false);
+
+                // Editar
+                using (SolidBrush brush = new SolidBrush(Color.Orange))
+                {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+                Bitmap icon = Properties.Resources.edit_button;
+
+                int iconWidth = 16;
+                int iconHeight = 16;
+
+                int x = e.CellBounds.Left + (e.CellBounds.Width - iconWidth) / 2;
+                int y = e.CellBounds.Top + (e.CellBounds.Height - iconHeight) / 2;
+
+                e.Graphics.DrawImage(icon, new Rectangle(x, y, iconWidth, iconHeight));
+
+                // Borde
+                e.Graphics.DrawRectangle(Pens.White,
+                    e.CellBounds.Left,
+                    e.CellBounds.Top,
+                    e.CellBounds.Width - 1,
+                    e.CellBounds.Height - 1);
+
+                e.Handled = true;
+            }
+
         }
 
         private void dataCursos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -146,6 +204,21 @@ namespace CaoaPresentacion
                             this.MostrarCursosPorEstado();
                         }
                     }
+
+                    if (e.ColumnIndex == dataCursos.Columns["Editar"].Index)
+                    {
+                        txtNombreCurso.Text = this.dataCursos.CurrentRow.Cells["Nombre_curso"].Value.ToString();
+                        txtDuracionCurso.Text = this.dataCursos.CurrentRow.Cells["Duracion"].Value.ToString();
+                        cmbCategoria.Text = this.dataCursos.CurrentRow.Cells["TipoCurso"].Value.ToString();
+                        cmbAcreditacion.Text = this.dataCursos.CurrentRow.Cells["Acreditacion"].Value.ToString();
+                        cmbModalidad.Text = this.dataCursos.CurrentRow.Cells["Modalidad"].Value.ToString();
+                        txtIdCurso.Text = this.dataCursos.CurrentRow.Cells["Id_curso"].Value.ToString();
+
+                        Editar = true;
+                        this.tabControl1.SelectedTab = tabEditar;
+
+                      
+                    }
                 }
 
             }
@@ -162,6 +235,8 @@ namespace CaoaPresentacion
                 // Limpiar errores antes de validar
                 errorProvider1.Clear();
 
+              
+
                 // Validar nombre del curso
                 if (string.IsNullOrWhiteSpace(txtNombreCurso.Text))
                 {
@@ -169,6 +244,7 @@ namespace CaoaPresentacion
                     return;
                 }
 
+           
                 // Validar duración del curso
                 if (string.IsNullOrWhiteSpace(txtDuracionCurso.Text))
                 {
@@ -182,27 +258,45 @@ namespace CaoaPresentacion
                     return;
                 }
 
-                // Validar duplicados
-                CN_Cursos objetoCN = new CN_Cursos();
-                DataTable tabla = objetoCN.MostrarCursosPorNombre(txtNombreCurso.Text.Trim());
-
-                if (tabla.Rows.Count > 0)
+                if (cmbCategoria.Text == "Seleccione")
                 {
-                    MessageBox.Show("Ya existe este curso, intente con otro",
-                                    "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione el Tipo de Curso", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Insertar si no existe
-                CN_Cursos objetoCN2 = new CN_Cursos();
-                objetoCN2.InsertarCurso(txtNombreCurso.Text.Trim(),
-                                       txtDuracionCurso.Text.Trim(),
-                                       "3",
-                                       cmbCategoria.Text);
+                if (cmbAcreditacion.Text == "Seleccione")
+                {
+                    MessageBox.Show("Seleccione el Tipo de Acreditacion", "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
 
-                MessageBox.Show("Registrado correctamente",
-                                "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.tabControl1.SelectedIndex = 0;
+                if (Editar == false)
+                {
+                    // Insertar si no existe
+                    CN_Cursos objetoCN2 = new CN_Cursos();
+                    objetoCN2.InsertarCurso(txtNombreCurso.Text.Trim(),
+                                           Convert.ToInt32(txtDuracionCurso.Text),
+                                           cmbCategoria.Text, cmbAcreditacion.Text,
+                                           cmbModalidad.Text);
+
+                    MessageBox.Show("Registrado correctamente",
+                                    "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }else
+                {
+                    CN_Cursos objetoCN3 = new CN_Cursos();
+                    objetoCN3.EditarCurso(this.txtNombreCurso.Text,Convert.ToInt32(this.txtDuracionCurso.Text),cmbCategoria.Text,cmbAcreditacion.Text,cmbModalidad.Text,Convert.ToInt32(this.txtIdCurso.Text));
+                    MessageBox.Show("Actualizado correctamente",
+                                   "SISTEMA CECNIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  
+
+                }
+
+                FrmCursos frm = new FrmCursos();
+                frm.Show();
+                this.Close();
+
             }
             catch (Exception ex)
             {
@@ -250,7 +344,8 @@ namespace CaoaPresentacion
         {
             try
             {
-                this.tabControl1.SelectedIndex = 1;
+                Editar = false;
+                this.tabControl1.SelectedTab = tabEditar;
             }
             catch (Exception)
             {

@@ -105,7 +105,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtAsunto = new System.Windows.Forms.TextBox();
@@ -593,7 +592,6 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.button4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(481, 44);
             this.panel4.Name = "panel4";
@@ -951,19 +949,6 @@
             this.label20.TabIndex = 32;
             this.label20.Text = "Anulación & Reimpresión de Facturas";
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Green;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(577, 24);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 32);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Buscar Egreso";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox1);
@@ -1225,7 +1210,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.Label label22;

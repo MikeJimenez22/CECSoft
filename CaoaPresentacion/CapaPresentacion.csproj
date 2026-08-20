@@ -87,11 +87,11 @@
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    <Reference Include="ClosedXML, Version=0.105.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.105.1\lib\netstandard2.0\ClosedXML.dll</HintPath>
     </Reference>
     <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
-      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+      <HintPath>..\packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>F:\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
@@ -218,8 +218,8 @@
     <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
       <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
     </Reference>
-    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RBush.4.0.0\lib\netstandard2.0\RBush.dll</HintPath>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
     </Reference>
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
@@ -417,12 +417,6 @@
     <Compile Include="FrmCursos_turno.Designer.cs">
       <DependentUpon>FrmCursos_turno.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFacturasDeEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacturasDeEstudiante.Designer.cs">
-      <DependentUpon>FrmFacturasDeEstudiante.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmHistorialGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,23 +453,11 @@
     <Compile Include="Frm_AcercaDe.Designer.cs">
       <DependentUpon>Frm_AcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Anulacion_Egreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Anulacion_Egreso.Designer.cs">
-      <DependentUpon>Frm_Anulacion_Egreso.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Aranceles.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Aranceles.Designer.cs">
       <DependentUpon>Frm_Aranceles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_ArqueodeCaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_ArqueodeCaja.Designer.cs">
-      <DependentUpon>Frm_ArqueodeCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Asistencia.cs">
       <SubType>Form</SubType>
@@ -531,6 +513,12 @@
     <Compile Include="Frm_CarnetEstudiantil.Designer.cs">
       <DependentUpon>Frm_CarnetEstudiantil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_ConsultaDeFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ConsultaDeFacturacion.Designer.cs">
+      <DependentUpon>Frm_ConsultaDeFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CuentasporCobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -585,17 +573,17 @@
     <Compile Include="Frm_Grupo.Designer.cs">
       <DependentUpon>Frm_Grupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_HistorialFacturasEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HistorialFacturasEstudiante.Designer.cs">
+      <DependentUpon>Frm_HistorialFacturasEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_HistorialGestiones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_HistorialGestiones.Designer.cs">
       <DependentUpon>Frm_HistorialGestiones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_Inasistencias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Inasistencias.Designer.cs">
-      <DependentUpon>Frm_Inasistencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Incentivo.cs">
       <SubType>Form</SubType>
@@ -608,6 +596,12 @@
     </Compile>
     <Compile Include="Frm_LibrosRegistro.Designer.cs">
       <DependentUpon>Frm_LibrosRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MatriculasParaInatec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MatriculasParaInatec.Designer.cs">
+      <DependentUpon>Frm_MatriculasParaInatec.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_MovimientosEstudiante.cs">
       <SubType>Form</SubType>
@@ -687,12 +681,6 @@
     <Compile Include="Frm_VerificacionReferencia.Designer.cs">
       <DependentUpon>Frm_VerificacionReferencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_VistaEstudiantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_VistaEstudiantes.Designer.cs">
-      <DependentUpon>Frm_VistaEstudiantes.cs</DependentUpon>
-    </Compile>
     <Compile Include="NotificacionMatriculaONLINE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -744,9 +732,6 @@
     <EmbeddedResource Include="FrmCursos_turno.resx">
       <DependentUpon>FrmCursos_turno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacturasDeEstudiante.resx">
-      <DependentUpon>FrmFacturasDeEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmHistorialGestion.resx">
       <DependentUpon>FrmHistorialGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -765,14 +750,8 @@
     <EmbeddedResource Include="Frm_AcercaDe.resx">
       <DependentUpon>Frm_AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Anulacion_Egreso.resx">
-      <DependentUpon>Frm_Anulacion_Egreso.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Aranceles.resx">
       <DependentUpon>Frm_Aranceles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ArqueodeCaja.resx">
-      <DependentUpon>Frm_ArqueodeCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Asistencia.resx">
       <DependentUpon>Frm_Asistencia.cs</DependentUpon>
@@ -801,6 +780,9 @@
     <EmbeddedResource Include="Frm_CarnetEstudiantil.resx">
       <DependentUpon>Frm_CarnetEstudiantil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ConsultaDeFacturacion.resx">
+      <DependentUpon>Frm_ConsultaDeFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CuentasporCobrar.resx">
       <DependentUpon>Frm_CuentasporCobrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -828,17 +810,20 @@
     <EmbeddedResource Include="Frm_Grupo.resx">
       <DependentUpon>Frm_Grupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HistorialFacturasEstudiante.resx">
+      <DependentUpon>Frm_HistorialFacturasEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_HistorialGestiones.resx">
       <DependentUpon>Frm_HistorialGestiones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Inasistencias.resx">
-      <DependentUpon>Frm_Inasistencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Incentivo.resx">
       <DependentUpon>Frm_Incentivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_LibrosRegistro.resx">
       <DependentUpon>Frm_LibrosRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MatriculasParaInatec.resx">
+      <DependentUpon>Frm_MatriculasParaInatec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MovimientosEstudiante.resx">
       <DependentUpon>Frm_MovimientosEstudiante.cs</DependentUpon>
@@ -878,9 +863,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_VerificacionReferencia.resx">
       <DependentUpon>Frm_VerificacionReferencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_VistaEstudiantes.resx">
-      <DependentUpon>Frm_VistaEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotificacionMatriculaONLINE.resx">
       <DependentUpon>NotificacionMatriculaONLINE.cs</DependentUpon>
@@ -1195,6 +1177,9 @@
     <None Include="Resources\ojo-abierto.png" />
     <None Include="Resources\ojoCerrado.png" />
     <None Include="Resources\actualizar.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\sobresalir.png" />
+    <None Include="Resources\sobresalir %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

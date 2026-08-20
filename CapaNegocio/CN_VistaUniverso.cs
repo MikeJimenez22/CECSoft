@@ -36,48 +36,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public DataTable CalcularCantidadActualUniverso()
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.CantidadTotalUniverso();
-            return tabla;
-        }
-
-        public DataTable CalcularCantidadActualUniversoHoy(DateTime fecha)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.CantidadTotalUniversoHoy(fecha.ToString("yyyy-MM-dd"));
-            return tabla;
-        }
-
-
-      
-      
+  
 
 
         public DataTable MostrarAltas(string IdMatricula)
@@ -94,24 +53,7 @@ namespace CapaNegocio
             return tabla;
         }
 
-
-        public DataTable VERIFICARREGISTRO_MATRICULAS(DateTime fecha)
-        {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarSIEXISTE_REGISTROMATRICULA(fecha.ToString("yyyy-MM-dd"));
-            return tabla;
-        }
-
-
-        public void InsertarREGISTROFECHA(DateTime Fecha, string total)
-        {
-            objetoCD.InsertarREGISTROFECHA(Fecha.ToString("yyyy-MM-dd"), Convert.ToInt32(total));
-        }
-
-        public void ActualizarREGISTROFECHA(DateTime Fecha, string total)
-        {
-            objetoCD.Actualizar_REGISTROFECHA(Fecha.ToString("yyyy-MM-dd"), Convert.ToInt32(total));
-        }
+        
 
         public DataTable GenerarExpediente(string CodigoMatricula)
         {
@@ -120,11 +62,6 @@ namespace CapaNegocio
             return tabla;
         }
 
-       
-       
-
-
-        
 
         public DataTable ObtenerFacturaInicio(string CodMatricula)
         {

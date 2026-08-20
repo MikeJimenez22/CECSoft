@@ -14,7 +14,7 @@ namespace CapaDatos
 
 
 
-        public void Insertar(DateTime FechaReingreso, int IdmMatricula, int IdUsuario, string NombrePC)
+        public void InsertarReingreso(DateTime FechaReingreso, int IdmMatricula, int IdUsuario, string NombrePC)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar_Reingreso";

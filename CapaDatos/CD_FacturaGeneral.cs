@@ -28,25 +28,7 @@ namespace CapaDatos
 
 
 
-        public DataTable MostrarAbonosFactura(string NumFactura)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select a.Id_Abono,a.Fecha,a.Num_Factura,a.Monto,b.Descripcion,C.Estado from Tbl_Abonos a join Tbl_TipoMoneda b on a.IdMoneda = b.IdMoneda join Tbl_Estados c on c.Id_estado = a.Id_estado where a.Num_Factura = '" + NumFactura + "'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
-
-        public DataTable MostrarMensualidadesFactura(string NumFactura)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select* from Tbl_Factura_Mensualidades where Codigo = '" + NumFactura + "'";
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
-        }
+  
 
 
         public DataTable BuscarMoviemientosHoy(string FechaFactura, int IdCaja)
